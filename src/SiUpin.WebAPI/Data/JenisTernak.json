@@ -1,0 +1,46 @@
+{
+	"table": "jenis_ternak",
+	"rows":
+	[
+		{
+            "id_ternak": "1",
+			"nama_ternak": "kambing"
+		},
+		{
+            "id_ternak": "2",
+			"nama_ternak": "ayam"
+		},
+		{
+            "id_ternak": "3",
+			"nama_ternak": "itik"
+		},
+		{
+            "id_ternak": "4",
+			"nama_ternak": "sapi"
+		},
+		{
+            "id_ternak": "5",
+			"nama_ternak": "Bebek"
+		},
+		{
+            "id_ternak": "6",
+			"nama_ternak": "puyuh"
+		},
+		{
+            "id_ternak": "7",
+			"nama_ternak": "entog"
+		},
+		{
+            "id_ternak": "8",
+			"nama_ternak": "kerbau"
+		},
+		{
+            "id_ternak": "9",
+			"nama_ternak": "kelinci"
+		},
+		{
+            "id_ternak": "10",
+			"nama_ternak": "merpati"
+		}
+	]
+}

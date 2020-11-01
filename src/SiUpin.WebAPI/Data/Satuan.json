@@ -1,0 +1,18 @@
+{
+	"table": "",
+	"rows":
+	[
+		{
+			"id_satuan": "1",
+			"nama_satuan": "Kilogram"
+		},
+		{
+			"id_satuan": "2",
+			"nama_satuan": "Liter"
+		},
+		{
+			"id_satuan": "3",
+			"nama_satuan": "Ton"
+		}
+	]
+}

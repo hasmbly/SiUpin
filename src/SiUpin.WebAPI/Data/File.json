@@ -1,0 +1,20 @@
+{
+	"rows":
+	[
+		{
+			"entity_id": "4",
+			"entity_type": "BERITA",
+			"name": "organik.PNG"
+		},
+		{
+			"entity_id": "5",
+			"entity_type": "BERITA",
+			"name": "rantiang ameh_1.jpg"
+		},
+		{
+			"entity_id": "6",
+			"entity_type": "BERITA",
+			"name": "aster.jpg"
+        }
+	]
+}

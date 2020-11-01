@@ -1,0 +1,26 @@
+{
+	"table": "",
+	"rows":
+	[
+		{
+			"id_aspek": "1",
+			"nama_aspek": "Kelembagaan"
+		},
+		{
+			"id_aspek": "2",
+			"nama_aspek": "Kemitraan"
+		},
+		{
+			"id_aspek": "3",
+			"nama_aspek": "Sumber Daya"
+        },
+        {
+			"id_aspek": "4",
+			"nama_aspek": "Produksi"
+        },
+        {
+			"id_aspek": "5",
+			"nama_aspek": "Pemasaran"
+		}                
+	]
+}

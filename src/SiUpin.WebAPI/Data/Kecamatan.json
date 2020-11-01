@@ -1,0 +1,5006 @@
+{
+	"table": "kecamatan",
+	"rows":
+	[
+		{
+			"id_kecamatan": "110101",
+			"id_kota_fk": "1101",
+			"nama_kecamatan": "Bakongan"
+		},
+		{
+			"id_kecamatan": "110102",
+			"id_kota_fk": "1101",
+			"nama_kecamatan": "Kluet Utara"
+		},
+		{
+			"id_kecamatan": "110103",
+			"id_kota_fk": "1101",
+			"nama_kecamatan": "Kluet Selatan"
+		},
+		{
+			"id_kecamatan": "110104",
+			"id_kota_fk": "1101",
+			"nama_kecamatan": "Labuhan Haji"
+		},
+		{
+			"id_kecamatan": "110105",
+			"id_kota_fk": "1101",
+			"nama_kecamatan": "Meukek"
+		},
+		{
+			"id_kecamatan": "110106",
+			"id_kota_fk": "1101",
+			"nama_kecamatan": "Samadua"
+		},
+		{
+			"id_kecamatan": "110107",
+			"id_kota_fk": "1101",
+			"nama_kecamatan": "Sawang"
+		},
+		{
+			"id_kecamatan": "110108",
+			"id_kota_fk": "1101",
+			"nama_kecamatan": "Tapaktuan"
+		},
+		{
+			"id_kecamatan": "110109",
+			"id_kota_fk": "1101",
+			"nama_kecamatan": "Trumon"
+		},
+		{
+			"id_kecamatan": "110110",
+			"id_kota_fk": "1101",
+			"nama_kecamatan": "Pasi Raja"
+		},
+		{
+			"id_kecamatan": "110111",
+			"id_kota_fk": "1101",
+			"nama_kecamatan": "Labuhan Haji Timur"
+		},
+		{
+			"id_kecamatan": "110112",
+			"id_kota_fk": "1101",
+			"nama_kecamatan": "Labuhan Haji Barat"
+		},
+		{
+			"id_kecamatan": "110113",
+			"id_kota_fk": "1101",
+			"nama_kecamatan": "Kluet Tengah"
+		},
+		{
+			"id_kecamatan": "110114",
+			"id_kota_fk": "1101",
+			"nama_kecamatan": "Kluet Timur"
+		},
+		{
+			"id_kecamatan": "110115",
+			"id_kota_fk": "1101",
+			"nama_kecamatan": "Bakongan Timur"
+		},
+		{
+			"id_kecamatan": "110116",
+			"id_kota_fk": "1101",
+			"nama_kecamatan": "Trumon Timur"
+		},
+		{
+			"id_kecamatan": "110117",
+			"id_kota_fk": "1101",
+			"nama_kecamatan": "Kota Bahagia"
+		},
+		{
+			"id_kecamatan": "110118",
+			"id_kota_fk": "1101",
+			"nama_kecamatan": "Trumon Tengah"
+		},
+		{
+			"id_kecamatan": "110201",
+			"id_kota_fk": "1102",
+			"nama_kecamatan": "Lawe Alas"
+		},
+		{
+			"id_kecamatan": "110202",
+			"id_kota_fk": "1102",
+			"nama_kecamatan": "Lawe Sigala-Gala"
+		},
+		{
+			"id_kecamatan": "110203",
+			"id_kota_fk": "1102",
+			"nama_kecamatan": "Bambel"
+		},
+		{
+			"id_kecamatan": "110204",
+			"id_kota_fk": "1102",
+			"nama_kecamatan": "Babussalam"
+		},
+		{
+			"id_kecamatan": "110205",
+			"id_kota_fk": "1102",
+			"nama_kecamatan": "Badar"
+		},
+		{
+			"id_kecamatan": "110206",
+			"id_kota_fk": "1102",
+			"nama_kecamatan": "Babul Makmur"
+		},
+		{
+			"id_kecamatan": "110207",
+			"id_kota_fk": "1102",
+			"nama_kecamatan": "Darul Hasanah"
+		},
+		{
+			"id_kecamatan": "110208",
+			"id_kota_fk": "1102",
+			"nama_kecamatan": "Lawe Bulan"
+		},
+		{
+			"id_kecamatan": "110209",
+			"id_kota_fk": "1102",
+			"nama_kecamatan": "Bukit Tusam"
+		},
+		{
+			"id_kecamatan": "110210",
+			"id_kota_fk": "1102",
+			"nama_kecamatan": "Semadam"
+		},
+		{
+			"id_kecamatan": "110211",
+			"id_kota_fk": "1102",
+			"nama_kecamatan": "Babul Rahmah"
+		},
+		{
+			"id_kecamatan": "110212",
+			"id_kota_fk": "1102",
+			"nama_kecamatan": "Ketambe"
+		},
+		{
+			"id_kecamatan": "110213",
+			"id_kota_fk": "1102",
+			"nama_kecamatan": "Deleng Pokhkisen"
+		},
+		{
+			"id_kecamatan": "110214",
+			"id_kota_fk": "1102",
+			"nama_kecamatan": "Lawe Sumur"
+		},
+		{
+			"id_kecamatan": "110215",
+			"id_kota_fk": "1102",
+			"nama_kecamatan": "Tanoh Alas"
+		},
+		{
+			"id_kecamatan": "110216",
+			"id_kota_fk": "1102",
+			"nama_kecamatan": "Leuser"
+		},
+		{
+			"id_kecamatan": "110301",
+			"id_kota_fk": "1103",
+			"nama_kecamatan": "Darul Aman"
+		},
+		{
+			"id_kecamatan": "110302",
+			"id_kota_fk": "1103",
+			"nama_kecamatan": "Julok"
+		},
+		{
+			"id_kecamatan": "110303",
+			"id_kota_fk": "1103",
+			"nama_kecamatan": "Idi Rayeuk"
+		},
+		{
+			"id_kecamatan": "110304",
+			"id_kota_fk": "1103",
+			"nama_kecamatan": "Birem Bayeun"
+		},
+		{
+			"id_kecamatan": "110305",
+			"id_kota_fk": "1103",
+			"nama_kecamatan": "Serbajadi"
+		},
+		{
+			"id_kecamatan": "110306",
+			"id_kota_fk": "1103",
+			"nama_kecamatan": "Nurussalam"
+		},
+		{
+			"id_kecamatan": "110307",
+			"id_kota_fk": "1103",
+			"nama_kecamatan": "Peureulak"
+		},
+		{
+			"id_kecamatan": "110308",
+			"id_kota_fk": "1103",
+			"nama_kecamatan": "Rantau Selamat"
+		},
+		{
+			"id_kecamatan": "110309",
+			"id_kota_fk": "1103",
+			"nama_kecamatan": "Simpang Ulim"
+		},
+		{
+			"id_kecamatan": "110310",
+			"id_kota_fk": "1103",
+			"nama_kecamatan": "Rantau Peureulak"
+		},
+		{
+			"id_kecamatan": "110311",
+			"id_kota_fk": "1103",
+			"nama_kecamatan": "Pante Bidari"
+		},
+		{
+			"id_kecamatan": "110312",
+			"id_kota_fk": "1103",
+			"nama_kecamatan": "Madat"
+		},
+		{
+			"id_kecamatan": "110313",
+			"id_kota_fk": "1103",
+			"nama_kecamatan": "Indra Makmu"
+		},
+		{
+			"id_kecamatan": "110314",
+			"id_kota_fk": "1103",
+			"nama_kecamatan": "Idi Tunong"
+		},
+		{
+			"id_kecamatan": "110315",
+			"id_kota_fk": "1103",
+			"nama_kecamatan": "Banda Alam"
+		},
+		{
+			"id_kecamatan": "110316",
+			"id_kota_fk": "1103",
+			"nama_kecamatan": "Peudawa"
+		},
+		{
+			"id_kecamatan": "110317",
+			"id_kota_fk": "1103",
+			"nama_kecamatan": "Peureulak Timur"
+		},
+		{
+			"id_kecamatan": "110318",
+			"id_kota_fk": "1103",
+			"nama_kecamatan": "Peureulak Barat"
+		},
+		{
+			"id_kecamatan": "110319",
+			"id_kota_fk": "1103",
+			"nama_kecamatan": "Sungai Raya"
+		},
+		{
+			"id_kecamatan": "110320",
+			"id_kota_fk": "1103",
+			"nama_kecamatan": "Simpang Jernih"
+		},
+		{
+			"id_kecamatan": "110321",
+			"id_kota_fk": "1103",
+			"nama_kecamatan": "Darul Ihsan"
+		},
+		{
+			"id_kecamatan": "110322",
+			"id_kota_fk": "1103",
+			"nama_kecamatan": "Darul Falah"
+		},
+		{
+			"id_kecamatan": "110323",
+			"id_kota_fk": "1103",
+			"nama_kecamatan": "Idi Timur"
+		},
+		{
+			"id_kecamatan": "110324",
+			"id_kota_fk": "1103",
+			"nama_kecamatan": "Peunaron"
+		},
+		{
+			"id_kecamatan": "110401",
+			"id_kota_fk": "1104",
+			"nama_kecamatan": "Linge"
+		},
+		{
+			"id_kecamatan": "110402",
+			"id_kota_fk": "1104",
+			"nama_kecamatan": "Silih Nara"
+		},
+		{
+			"id_kecamatan": "110403",
+			"id_kota_fk": "1104",
+			"nama_kecamatan": "Bebesen"
+		},
+		{
+			"id_kecamatan": "110407",
+			"id_kota_fk": "1104",
+			"nama_kecamatan": "Pegasing"
+		},
+		{
+			"id_kecamatan": "110408",
+			"id_kota_fk": "1104",
+			"nama_kecamatan": "Bintang"
+		},
+		{
+			"id_kecamatan": "110410",
+			"id_kota_fk": "1104",
+			"nama_kecamatan": "Ketol"
+		},
+		{
+			"id_kecamatan": "110411",
+			"id_kota_fk": "1104",
+			"nama_kecamatan": "Kebayakan"
+		},
+		{
+			"id_kecamatan": "110412",
+			"id_kota_fk": "1104",
+			"nama_kecamatan": "Kute Panang"
+		},
+		{
+			"id_kecamatan": "110413",
+			"id_kota_fk": "1104",
+			"nama_kecamatan": "Celala"
+		},
+		{
+			"id_kecamatan": "110417",
+			"id_kota_fk": "1104",
+			"nama_kecamatan": "Laut Tawar"
+		},
+		{
+			"id_kecamatan": "110418",
+			"id_kota_fk": "1104",
+			"nama_kecamatan": "Atu Lintang"
+		},
+		{
+			"id_kecamatan": "110419",
+			"id_kota_fk": "1104",
+			"nama_kecamatan": "Jagong Jeget"
+		},
+		{
+			"id_kecamatan": "110420",
+			"id_kota_fk": "1104",
+			"nama_kecamatan": "Bies"
+		},
+		{
+			"id_kecamatan": "110421",
+			"id_kota_fk": "1104",
+			"nama_kecamatan": "Rusip Antara"
+		},
+		{
+			"id_kecamatan": "110501",
+			"id_kota_fk": "1105",
+			"nama_kecamatan": "Johan Pahwalan"
+		},
+		{
+			"id_kecamatan": "110502",
+			"id_kota_fk": "1105",
+			"nama_kecamatan": "Kaway XVI"
+		},
+		{
+			"id_kecamatan": "110503",
+			"id_kota_fk": "1105",
+			"nama_kecamatan": "Sungai Mas"
+		},
+		{
+			"id_kecamatan": "110504",
+			"id_kota_fk": "1105",
+			"nama_kecamatan": "Woyla"
+		},
+		{
+			"id_kecamatan": "110505",
+			"id_kota_fk": "1105",
+			"nama_kecamatan": "Samatiga"
+		},
+		{
+			"id_kecamatan": "110506",
+			"id_kota_fk": "1105",
+			"nama_kecamatan": "Bubon"
+		},
+		{
+			"id_kecamatan": "110507",
+			"id_kota_fk": "1105",
+			"nama_kecamatan": "Arongan Lambalek"
+		},
+		{
+			"id_kecamatan": "110508",
+			"id_kota_fk": "1105",
+			"nama_kecamatan": "Pante Ceureumen"
+		},
+		{
+			"id_kecamatan": "110509",
+			"id_kota_fk": "1105",
+			"nama_kecamatan": "Meureubo"
+		},
+		{
+			"id_kecamatan": "110510",
+			"id_kota_fk": "1105",
+			"nama_kecamatan": "Woyla Barat"
+		},
+		{
+			"id_kecamatan": "110511",
+			"id_kota_fk": "1105",
+			"nama_kecamatan": "Woyla Timur"
+		},
+		{
+			"id_kecamatan": "110512",
+			"id_kota_fk": "1105",
+			"nama_kecamatan": "Panton Reu"
+		},
+		{
+			"id_kecamatan": "110601",
+			"id_kota_fk": "1106",
+			"nama_kecamatan": "Lhoong"
+		},
+		{
+			"id_kecamatan": "110602",
+			"id_kota_fk": "1106",
+			"nama_kecamatan": "Lhoknga"
+		},
+		{
+			"id_kecamatan": "110603",
+			"id_kota_fk": "1106",
+			"nama_kecamatan": "Indrapuri"
+		},
+		{
+			"id_kecamatan": "110604",
+			"id_kota_fk": "1106",
+			"nama_kecamatan": "Seulimeum"
+		},
+		{
+			"id_kecamatan": "110605",
+			"id_kota_fk": "1106",
+			"nama_kecamatan": "Montasik"
+		},
+		{
+			"id_kecamatan": "110606",
+			"id_kota_fk": "1106",
+			"nama_kecamatan": "Sukamakmur"
+		},
+		{
+			"id_kecamatan": "110607",
+			"id_kota_fk": "1106",
+			"nama_kecamatan": "Darul Imarah"
+		},
+		{
+			"id_kecamatan": "110608",
+			"id_kota_fk": "1106",
+			"nama_kecamatan": "Peukan Bada"
+		},
+		{
+			"id_kecamatan": "110609",
+			"id_kota_fk": "1106",
+			"nama_kecamatan": "Mesjid Raya"
+		},
+		{
+			"id_kecamatan": "110610",
+			"id_kota_fk": "1106",
+			"nama_kecamatan": "Ingin Jaya"
+		},
+		{
+			"id_kecamatan": "110611",
+			"id_kota_fk": "1106",
+			"nama_kecamatan": "Kuta Baro"
+		},
+		{
+			"id_kecamatan": "110612",
+			"id_kota_fk": "1106",
+			"nama_kecamatan": "Darussalam"
+		},
+		{
+			"id_kecamatan": "110613",
+			"id_kota_fk": "1106",
+			"nama_kecamatan": "Pulo Aceh"
+		},
+		{
+			"id_kecamatan": "110614",
+			"id_kota_fk": "1106",
+			"nama_kecamatan": "Lembah Seulawah"
+		},
+		{
+			"id_kecamatan": "110615",
+			"id_kota_fk": "1106",
+			"nama_kecamatan": "Kota Jantho"
+		},
+		{
+			"id_kecamatan": "110616",
+			"id_kota_fk": "1106",
+			"nama_kecamatan": "Kota Cot Glie"
+		},
+		{
+			"id_kecamatan": "110617",
+			"id_kota_fk": "1106",
+			"nama_kecamatan": "Kuta Malaka"
+		},
+		{
+			"id_kecamatan": "110618",
+			"id_kota_fk": "1106",
+			"nama_kecamatan": "Simpang Tiga"
+		},
+		{
+			"id_kecamatan": "110619",
+			"id_kota_fk": "1106",
+			"nama_kecamatan": "Darul Kamal"
+		},
+		{
+			"id_kecamatan": "110620",
+			"id_kota_fk": "1106",
+			"nama_kecamatan": "Baitussalam"
+		},
+		{
+			"id_kecamatan": "110621",
+			"id_kota_fk": "1106",
+			"nama_kecamatan": "Krueng Barona Jaya"
+		},
+		{
+			"id_kecamatan": "110622",
+			"id_kota_fk": "1106",
+			"nama_kecamatan": "Leupung"
+		},
+		{
+			"id_kecamatan": "110623",
+			"id_kota_fk": "1106",
+			"nama_kecamatan": "Blang Bintang"
+		},
+		{
+			"id_kecamatan": "110703",
+			"id_kota_fk": "1107",
+			"nama_kecamatan": "Batee"
+		},
+		{
+			"id_kecamatan": "110704",
+			"id_kota_fk": "1107",
+			"nama_kecamatan": "Delima"
+		},
+		{
+			"id_kecamatan": "110705",
+			"id_kota_fk": "1107",
+			"nama_kecamatan": "Geumpang"
+		},
+		{
+			"id_kecamatan": "110706",
+			"id_kota_fk": "1107",
+			"nama_kecamatan": "Geulumpang Tiga"
+		},
+		{
+			"id_kecamatan": "110707",
+			"id_kota_fk": "1107",
+			"nama_kecamatan": "Indra Jaya"
+		},
+		{
+			"id_kecamatan": "110708",
+			"id_kota_fk": "1107",
+			"nama_kecamatan": "Kembang Tanjong"
+		},
+		{
+			"id_kecamatan": "110709",
+			"id_kota_fk": "1107",
+			"nama_kecamatan": "Kota Sigli"
+		},
+		{
+			"id_kecamatan": "110711",
+			"id_kota_fk": "1107",
+			"nama_kecamatan": "Mila"
+		},
+		{
+			"id_kecamatan": "110712",
+			"id_kota_fk": "1107",
+			"nama_kecamatan": "Muara Tiga"
+		},
+		{
+			"id_kecamatan": "110713",
+			"id_kota_fk": "1107",
+			"nama_kecamatan": "Mutiara"
+		},
+		{
+			"id_kecamatan": "110714",
+			"id_kota_fk": "1107",
+			"nama_kecamatan": "Padang Tiji"
+		},
+		{
+			"id_kecamatan": "110715",
+			"id_kota_fk": "1107",
+			"nama_kecamatan": "Peukan Baro"
+		},
+		{
+			"id_kecamatan": "110716",
+			"id_kota_fk": "1107",
+			"nama_kecamatan": "Pidie"
+		},
+		{
+			"id_kecamatan": "110717",
+			"id_kota_fk": "1107",
+			"nama_kecamatan": "Sakti"
+		},
+		{
+			"id_kecamatan": "110718",
+			"id_kota_fk": "1107",
+			"nama_kecamatan": "Simpang Tiga"
+		},
+		{
+			"id_kecamatan": "110719",
+			"id_kota_fk": "1107",
+			"nama_kecamatan": "Tangse"
+		},
+		{
+			"id_kecamatan": "110721",
+			"id_kota_fk": "1107",
+			"nama_kecamatan": "Tiro/Truseb"
+		},
+		{
+			"id_kecamatan": "110722",
+			"id_kota_fk": "1107",
+			"nama_kecamatan": "Keumala"
+		},
+		{
+			"id_kecamatan": "110724",
+			"id_kota_fk": "1107",
+			"nama_kecamatan": "Mutiara Timur"
+		},
+		{
+			"id_kecamatan": "110725",
+			"id_kota_fk": "1107",
+			"nama_kecamatan": "Grong-grong"
+		},
+		{
+			"id_kecamatan": "110727",
+			"id_kota_fk": "1107",
+			"nama_kecamatan": "Mane"
+		},
+		{
+			"id_kecamatan": "110729",
+			"id_kota_fk": "1107",
+			"nama_kecamatan": "Glumpang Baro"
+		},
+		{
+			"id_kecamatan": "110731",
+			"id_kota_fk": "1107",
+			"nama_kecamatan": "Titeue"
+		},
+		{
+			"id_kecamatan": "110801",
+			"id_kota_fk": "1108",
+			"nama_kecamatan": "Baktiya"
+		},
+		{
+			"id_kecamatan": "110802",
+			"id_kota_fk": "1108",
+			"nama_kecamatan": "Dewantara"
+		},
+		{
+			"id_kecamatan": "110803",
+			"id_kota_fk": "1108",
+			"nama_kecamatan": "Kuta Makmur"
+		},
+		{
+			"id_kecamatan": "110804",
+			"id_kota_fk": "1108",
+			"nama_kecamatan": "Lhoksukon"
+		},
+		{
+			"id_kecamatan": "110805",
+			"id_kota_fk": "1108",
+			"nama_kecamatan": "Matangkuli"
+		},
+		{
+			"id_kecamatan": "110806",
+			"id_kota_fk": "1108",
+			"nama_kecamatan": "Muara Batu"
+		},
+		{
+			"id_kecamatan": "110807",
+			"id_kota_fk": "1108",
+			"nama_kecamatan": "Meurah Mulia"
+		},
+		{
+			"id_kecamatan": "110808",
+			"id_kota_fk": "1108",
+			"nama_kecamatan": "Samudera"
+		},
+		{
+			"id_kecamatan": "110809",
+			"id_kota_fk": "1108",
+			"nama_kecamatan": "Seunuddon"
+		},
+		{
+			"id_kecamatan": "110810",
+			"id_kota_fk": "1108",
+			"nama_kecamatan": "Syamtalira Aron"
+		},
+		{
+			"id_kecamatan": "110811",
+			"id_kota_fk": "1108",
+			"nama_kecamatan": "Syamtalira Bayu"
+		},
+		{
+			"id_kecamatan": "110812",
+			"id_kota_fk": "1108",
+			"nama_kecamatan": "Tanah Luas"
+		},
+		{
+			"id_kecamatan": "110813",
+			"id_kota_fk": "1108",
+			"nama_kecamatan": "Tanah Pasir"
+		},
+		{
+			"id_kecamatan": "110814",
+			"id_kota_fk": "1108",
+			"nama_kecamatan": "T. Jambo Aye"
+		},
+		{
+			"id_kecamatan": "110815",
+			"id_kota_fk": "1108",
+			"nama_kecamatan": "Sawang"
+		},
+		{
+			"id_kecamatan": "110816",
+			"id_kota_fk": "1108",
+			"nama_kecamatan": "Nisam"
+		},
+		{
+			"id_kecamatan": "110817",
+			"id_kota_fk": "1108",
+			"nama_kecamatan": "Cot Girek"
+		},
+		{
+			"id_kecamatan": "110818",
+			"id_kota_fk": "1108",
+			"nama_kecamatan": "Langkahan"
+		},
+		{
+			"id_kecamatan": "110819",
+			"id_kota_fk": "1108",
+			"nama_kecamatan": "Baktiya Barat"
+		},
+		{
+			"id_kecamatan": "110820",
+			"id_kota_fk": "1108",
+			"nama_kecamatan": "Paya Bakong"
+		},
+		{
+			"id_kecamatan": "110821",
+			"id_kota_fk": "1108",
+			"nama_kecamatan": "Nibong"
+		},
+		{
+			"id_kecamatan": "110822",
+			"id_kota_fk": "1108",
+			"nama_kecamatan": "Simpang Kramat"
+		},
+		{
+			"id_kecamatan": "110823",
+			"id_kota_fk": "1108",
+			"nama_kecamatan": "Lapang"
+		},
+		{
+			"id_kecamatan": "110824",
+			"id_kota_fk": "1108",
+			"nama_kecamatan": "Pirak Timur"
+		},
+		{
+			"id_kecamatan": "110825",
+			"id_kota_fk": "1108",
+			"nama_kecamatan": "Geuredong Pase"
+		},
+		{
+			"id_kecamatan": "110826",
+			"id_kota_fk": "1108",
+			"nama_kecamatan": "Banda Baro"
+		},
+		{
+			"id_kecamatan": "110827",
+			"id_kota_fk": "1108",
+			"nama_kecamatan": "Nisam Antara"
+		},
+		{
+			"id_kecamatan": "110901",
+			"id_kota_fk": "1109",
+			"nama_kecamatan": "Simeulue Tengah"
+		},
+		{
+			"id_kecamatan": "110902",
+			"id_kota_fk": "1109",
+			"nama_kecamatan": "Salang"
+		},
+		{
+			"id_kecamatan": "110903",
+			"id_kota_fk": "1109",
+			"nama_kecamatan": "Teupah Barat"
+		},
+		{
+			"id_kecamatan": "110904",
+			"id_kota_fk": "1109",
+			"nama_kecamatan": "Simeulue Timur"
+		},
+		{
+			"id_kecamatan": "110905",
+			"id_kota_fk": "1109",
+			"nama_kecamatan": "Teluk Dalam"
+		},
+		{
+			"id_kecamatan": "110906",
+			"id_kota_fk": "1109",
+			"nama_kecamatan": "Simeulue Barat"
+		},
+		{
+			"id_kecamatan": "110907",
+			"id_kota_fk": "1109",
+			"nama_kecamatan": "Teupah Selatan"
+		},
+		{
+			"id_kecamatan": "110908",
+			"id_kota_fk": "1109",
+			"nama_kecamatan": "Alapan"
+		},
+		{
+			"id_kecamatan": "110909",
+			"id_kota_fk": "1109",
+			"nama_kecamatan": "Teupah Tengah"
+		},
+		{
+			"id_kecamatan": "110910",
+			"id_kota_fk": "1109",
+			"nama_kecamatan": "Simeulue Cut"
+		},
+		{
+			"id_kecamatan": "111001",
+			"id_kota_fk": "1110",
+			"nama_kecamatan": "Pulau Banyak"
+		},
+		{
+			"id_kecamatan": "111002",
+			"id_kota_fk": "1110",
+			"nama_kecamatan": "Simpang Kanan"
+		},
+		{
+			"id_kecamatan": "111004",
+			"id_kota_fk": "1110",
+			"nama_kecamatan": "Singkil"
+		},
+		{
+			"id_kecamatan": "111006",
+			"id_kota_fk": "1110",
+			"nama_kecamatan": "Gunung Meriah"
+		},
+		{
+			"id_kecamatan": "111009",
+			"id_kota_fk": "1110",
+			"nama_kecamatan": "Kota Baharu"
+		},
+		{
+			"id_kecamatan": "111010",
+			"id_kota_fk": "1110",
+			"nama_kecamatan": "Singkil Utara"
+		},
+		{
+			"id_kecamatan": "111011",
+			"id_kota_fk": "1110",
+			"nama_kecamatan": "Danau Paris"
+		},
+		{
+			"id_kecamatan": "111012",
+			"id_kota_fk": "1110",
+			"nama_kecamatan": "Suro Makmur"
+		},
+		{
+			"id_kecamatan": "111013",
+			"id_kota_fk": "1110",
+			"nama_kecamatan": "Singkohor"
+		},
+		{
+			"id_kecamatan": "111014",
+			"id_kota_fk": "1110",
+			"nama_kecamatan": "Kuala Baru"
+		},
+		{
+			"id_kecamatan": "111016",
+			"id_kota_fk": "1110",
+			"nama_kecamatan": "Pulau Banyak Barat"
+		},
+		{
+			"id_kecamatan": "111101",
+			"id_kota_fk": "1111",
+			"nama_kecamatan": "Samalanga"
+		},
+		{
+			"id_kecamatan": "111102",
+			"id_kota_fk": "1111",
+			"nama_kecamatan": "Jeunieb"
+		},
+		{
+			"id_kecamatan": "111103",
+			"id_kota_fk": "1111",
+			"nama_kecamatan": "Peudada"
+		},
+		{
+			"id_kecamatan": "111104",
+			"id_kota_fk": "1111",
+			"nama_kecamatan": "Jeumpa"
+		},
+		{
+			"id_kecamatan": "111105",
+			"id_kota_fk": "1111",
+			"nama_kecamatan": "Peusangan"
+		},
+		{
+			"id_kecamatan": "111106",
+			"id_kota_fk": "1111",
+			"nama_kecamatan": "Makmur"
+		},
+		{
+			"id_kecamatan": "111107",
+			"id_kota_fk": "1111",
+			"nama_kecamatan": "Gandapura"
+		},
+		{
+			"id_kecamatan": "111108",
+			"id_kota_fk": "1111",
+			"nama_kecamatan": "Pandrah"
+		},
+		{
+			"id_kecamatan": "111109",
+			"id_kota_fk": "1111",
+			"nama_kecamatan": "Juli"
+		},
+		{
+			"id_kecamatan": "111110",
+			"id_kota_fk": "1111",
+			"nama_kecamatan": "Jangka"
+		},
+		{
+			"id_kecamatan": "111111",
+			"id_kota_fk": "1111",
+			"nama_kecamatan": "Simpang Mamplam"
+		},
+		{
+			"id_kecamatan": "111112",
+			"id_kota_fk": "1111",
+			"nama_kecamatan": "Peulimbang"
+		},
+		{
+			"id_kecamatan": "111113",
+			"id_kota_fk": "1111",
+			"nama_kecamatan": "Kota Juang"
+		},
+		{
+			"id_kecamatan": "111114",
+			"id_kota_fk": "1111",
+			"nama_kecamatan": "Kuala"
+		},
+		{
+			"id_kecamatan": "111115",
+			"id_kota_fk": "1111",
+			"nama_kecamatan": "Peusangan Siblah Krueng"
+		},
+		{
+			"id_kecamatan": "111116",
+			"id_kota_fk": "1111",
+			"nama_kecamatan": "Peusangan Selatan"
+		},
+		{
+			"id_kecamatan": "111117",
+			"id_kota_fk": "1111",
+			"nama_kecamatan": "Kuta Blang"
+		},
+		{
+			"id_kecamatan": "111201",
+			"id_kota_fk": "1112",
+			"nama_kecamatan": "Blang Pidie"
+		},
+		{
+			"id_kecamatan": "111202",
+			"id_kota_fk": "1112",
+			"nama_kecamatan": "Tangan-Tangan"
+		},
+		{
+			"id_kecamatan": "111203",
+			"id_kota_fk": "1112",
+			"nama_kecamatan": "Manggeng"
+		},
+		{
+			"id_kecamatan": "111204",
+			"id_kota_fk": "1112",
+			"nama_kecamatan": "Susoh"
+		},
+		{
+			"id_kecamatan": "111205",
+			"id_kota_fk": "1112",
+			"nama_kecamatan": "Kuala Batee"
+		},
+		{
+			"id_kecamatan": "111206",
+			"id_kota_fk": "1112",
+			"nama_kecamatan": "Babah Rot"
+		},
+		{
+			"id_kecamatan": "111207",
+			"id_kota_fk": "1112",
+			"nama_kecamatan": "Setia"
+		},
+		{
+			"id_kecamatan": "111208",
+			"id_kota_fk": "1112",
+			"nama_kecamatan": "Jeumpa"
+		},
+		{
+			"id_kecamatan": "111209",
+			"id_kota_fk": "1112",
+			"nama_kecamatan": "Lembah Sabil"
+		},
+		{
+			"id_kecamatan": "111301",
+			"id_kota_fk": "1113",
+			"nama_kecamatan": "Blangkejeren"
+		},
+		{
+			"id_kecamatan": "111302",
+			"id_kota_fk": "1113",
+			"nama_kecamatan": "Kutapanjang"
+		},
+		{
+			"id_kecamatan": "111303",
+			"id_kota_fk": "1113",
+			"nama_kecamatan": "Rikit Gaib"
+		},
+		{
+			"id_kecamatan": "111304",
+			"id_kota_fk": "1113",
+			"nama_kecamatan": "Terangun"
+		},
+		{
+			"id_kecamatan": "111305",
+			"id_kota_fk": "1113",
+			"nama_kecamatan": "Pining"
+		},
+		{
+			"id_kecamatan": "111306",
+			"id_kota_fk": "1113",
+			"nama_kecamatan": "Blangpegayon"
+		},
+		{
+			"id_kecamatan": "111307",
+			"id_kota_fk": "1113",
+			"nama_kecamatan": "Puteri Betung"
+		},
+		{
+			"id_kecamatan": "111308",
+			"id_kota_fk": "1113",
+			"nama_kecamatan": "Dabun Gelang"
+		},
+		{
+			"id_kecamatan": "111309",
+			"id_kota_fk": "1113",
+			"nama_kecamatan": "Blangjerango"
+		},
+		{
+			"id_kecamatan": "111310",
+			"id_kota_fk": "1113",
+			"nama_kecamatan": "Teripe Jaya"
+		},
+		{
+			"id_kecamatan": "111311",
+			"id_kota_fk": "1113",
+			"nama_kecamatan": "Pantan Cuaca"
+		},
+		{
+			"id_kecamatan": "111401",
+			"id_kota_fk": "1114",
+			"nama_kecamatan": "Teunom"
+		},
+		{
+			"id_kecamatan": "111402",
+			"id_kota_fk": "1114",
+			"nama_kecamatan": "Krueng Sabee"
+		},
+		{
+			"id_kecamatan": "111403",
+			"id_kota_fk": "1114",
+			"nama_kecamatan": "Setia Bhakti"
+		},
+		{
+			"id_kecamatan": "111404",
+			"id_kota_fk": "1114",
+			"nama_kecamatan": "Sampoiniet"
+		},
+		{
+			"id_kecamatan": "111405",
+			"id_kota_fk": "1114",
+			"nama_kecamatan": "Jaya"
+		},
+		{
+			"id_kecamatan": "111406",
+			"id_kota_fk": "1114",
+			"nama_kecamatan": "Panga"
+		},
+		{
+			"id_kecamatan": "111407",
+			"id_kota_fk": "1114",
+			"nama_kecamatan": "Indra Jaya"
+		},
+		{
+			"id_kecamatan": "111408",
+			"id_kota_fk": "1114",
+			"nama_kecamatan": "Darul Hikmah"
+		},
+		{
+			"id_kecamatan": "111409",
+			"id_kota_fk": "1114",
+			"nama_kecamatan": "Pasie Raya"
+		},
+		{
+			"id_kecamatan": "111501",
+			"id_kota_fk": "1115",
+			"nama_kecamatan": "Kuala"
+		},
+		{
+			"id_kecamatan": "111502",
+			"id_kota_fk": "1115",
+			"nama_kecamatan": "Seunagan"
+		},
+		{
+			"id_kecamatan": "111503",
+			"id_kota_fk": "1115",
+			"nama_kecamatan": "Seunagan Timur"
+		},
+		{
+			"id_kecamatan": "111504",
+			"id_kota_fk": "1115",
+			"nama_kecamatan": "Beutong"
+		},
+		{
+			"id_kecamatan": "111505",
+			"id_kota_fk": "1115",
+			"nama_kecamatan": "Darul Makmur"
+		},
+		{
+			"id_kecamatan": "111506",
+			"id_kota_fk": "1115",
+			"nama_kecamatan": "Suka Makmue"
+		},
+		{
+			"id_kecamatan": "111507",
+			"id_kota_fk": "1115",
+			"nama_kecamatan": "Kuala Pesisir"
+		},
+		{
+			"id_kecamatan": "111508",
+			"id_kota_fk": "1115",
+			"nama_kecamatan": "Tadu Raya"
+		},
+		{
+			"id_kecamatan": "111509",
+			"id_kota_fk": "1115",
+			"nama_kecamatan": "Tripa Makmur"
+		},
+		{
+			"id_kecamatan": "111510",
+			"id_kota_fk": "1115",
+			"nama_kecamatan": "Beutong Ateuh Banggalang"
+		},
+		{
+			"id_kecamatan": "111601",
+			"id_kota_fk": "1116",
+			"nama_kecamatan": "Manyak Payed"
+		},
+		{
+			"id_kecamatan": "111602",
+			"id_kota_fk": "1116",
+			"nama_kecamatan": "Bendahara"
+		},
+		{
+			"id_kecamatan": "111603",
+			"id_kota_fk": "1116",
+			"nama_kecamatan": "Karang Baru"
+		},
+		{
+			"id_kecamatan": "111604",
+			"id_kota_fk": "1116",
+			"nama_kecamatan": "Seruway"
+		},
+		{
+			"id_kecamatan": "111605",
+			"id_kota_fk": "1116",
+			"nama_kecamatan": "Kota Kualasinpang"
+		},
+		{
+			"id_kecamatan": "111606",
+			"id_kota_fk": "1116",
+			"nama_kecamatan": "Kejuruan Muda"
+		},
+		{
+			"id_kecamatan": "111607",
+			"id_kota_fk": "1116",
+			"nama_kecamatan": "Tamiang Hulu"
+		},
+		{
+			"id_kecamatan": "111608",
+			"id_kota_fk": "1116",
+			"nama_kecamatan": "Rantau"
+		},
+		{
+			"id_kecamatan": "111609",
+			"id_kota_fk": "1116",
+			"nama_kecamatan": "Banda Mulia"
+		},
+		{
+			"id_kecamatan": "111610",
+			"id_kota_fk": "1116",
+			"nama_kecamatan": "Bandar Pusaka"
+		},
+		{
+			"id_kecamatan": "111611",
+			"id_kota_fk": "1116",
+			"nama_kecamatan": "Tenggulun"
+		},
+		{
+			"id_kecamatan": "111612",
+			"id_kota_fk": "1116",
+			"nama_kecamatan": "Sekerak"
+		},
+		{
+			"id_kecamatan": "111701",
+			"id_kota_fk": "1117",
+			"nama_kecamatan": "Pintu Rime Gayo"
+		},
+		{
+			"id_kecamatan": "111702",
+			"id_kota_fk": "1117",
+			"nama_kecamatan": "Permata"
+		},
+		{
+			"id_kecamatan": "111703",
+			"id_kota_fk": "1117",
+			"nama_kecamatan": "Syiah Utama"
+		},
+		{
+			"id_kecamatan": "111704",
+			"id_kota_fk": "1117",
+			"nama_kecamatan": "Bandar"
+		},
+		{
+			"id_kecamatan": "111705",
+			"id_kota_fk": "1117",
+			"nama_kecamatan": "Bukit"
+		},
+		{
+			"id_kecamatan": "111706",
+			"id_kota_fk": "1117",
+			"nama_kecamatan": "Wih Pesam"
+		},
+		{
+			"id_kecamatan": "111707",
+			"id_kota_fk": "1117",
+			"nama_kecamatan": "Timang gajah"
+		},
+		{
+			"id_kecamatan": "111708",
+			"id_kota_fk": "1117",
+			"nama_kecamatan": "Bener Kelipah"
+		},
+		{
+			"id_kecamatan": "111709",
+			"id_kota_fk": "1117",
+			"nama_kecamatan": "Mesidah"
+		},
+		{
+			"id_kecamatan": "111710",
+			"id_kota_fk": "1117",
+			"nama_kecamatan": "Gajah Putih"
+		},
+		{
+			"id_kecamatan": "111801",
+			"id_kota_fk": "1118",
+			"nama_kecamatan": "Meureudu"
+		},
+		{
+			"id_kecamatan": "111802",
+			"id_kota_fk": "1118",
+			"nama_kecamatan": "Ulim"
+		},
+		{
+			"id_kecamatan": "111803",
+			"id_kota_fk": "1118",
+			"nama_kecamatan": "Jangka Buaya"
+		},
+		{
+			"id_kecamatan": "111804",
+			"id_kota_fk": "1118",
+			"nama_kecamatan": "Bandar Dua"
+		},
+		{
+			"id_kecamatan": "111805",
+			"id_kota_fk": "1118",
+			"nama_kecamatan": "Meurah Dua"
+		},
+		{
+			"id_kecamatan": "111806",
+			"id_kota_fk": "1118",
+			"nama_kecamatan": "Bandar Baru"
+		},
+		{
+			"id_kecamatan": "111807",
+			"id_kota_fk": "1118",
+			"nama_kecamatan": "Panteraja"
+		},
+		{
+			"id_kecamatan": "111808",
+			"id_kota_fk": "1118",
+			"nama_kecamatan": "Trienggadeng"
+		},
+		{
+			"id_kecamatan": "117101",
+			"id_kota_fk": "1171",
+			"nama_kecamatan": "Baiturrahman"
+		},
+		{
+			"id_kecamatan": "117102",
+			"id_kota_fk": "1171",
+			"nama_kecamatan": "Kuta Alam"
+		},
+		{
+			"id_kecamatan": "117103",
+			"id_kota_fk": "1171",
+			"nama_kecamatan": "Meuraxa"
+		},
+		{
+			"id_kecamatan": "117104",
+			"id_kota_fk": "1171",
+			"nama_kecamatan": "Syiah Kuala"
+		},
+		{
+			"id_kecamatan": "117105",
+			"id_kota_fk": "1171",
+			"nama_kecamatan": "Lueng Bata"
+		},
+		{
+			"id_kecamatan": "117106",
+			"id_kota_fk": "1171",
+			"nama_kecamatan": "Kuta Raja"
+		},
+		{
+			"id_kecamatan": "117107",
+			"id_kota_fk": "1171",
+			"nama_kecamatan": "Banda Raya"
+		},
+		{
+			"id_kecamatan": "117108",
+			"id_kota_fk": "1171",
+			"nama_kecamatan": "Jaya Baru"
+		},
+		{
+			"id_kecamatan": "117109",
+			"id_kota_fk": "1171",
+			"nama_kecamatan": "Ulee Kareng"
+		},
+		{
+			"id_kecamatan": "117201",
+			"id_kota_fk": "1172",
+			"nama_kecamatan": "Sukakarya"
+		},
+		{
+			"id_kecamatan": "117202",
+			"id_kota_fk": "1172",
+			"nama_kecamatan": "Sukajaya"
+		},
+		{
+			"id_kecamatan": "117301",
+			"id_kota_fk": "1173",
+			"nama_kecamatan": "Muara Dua"
+		},
+		{
+			"id_kecamatan": "117302",
+			"id_kota_fk": "1173",
+			"nama_kecamatan": "Banda Sakti"
+		},
+		{
+			"id_kecamatan": "117303",
+			"id_kota_fk": "1173",
+			"nama_kecamatan": "Blang Mangat"
+		},
+		{
+			"id_kecamatan": "117304",
+			"id_kota_fk": "1173",
+			"nama_kecamatan": "Muara Satu"
+		},
+		{
+			"id_kecamatan": "117401",
+			"id_kota_fk": "1174",
+			"nama_kecamatan": "Langsa Timur"
+		},
+		{
+			"id_kecamatan": "117402",
+			"id_kota_fk": "1174",
+			"nama_kecamatan": "Langsa Barat"
+		},
+		{
+			"id_kecamatan": "117403",
+			"id_kota_fk": "1174",
+			"nama_kecamatan": "Langsa Kota"
+		},
+		{
+			"id_kecamatan": "117404",
+			"id_kota_fk": "1174",
+			"nama_kecamatan": "Langsa Lama"
+		},
+		{
+			"id_kecamatan": "117405",
+			"id_kota_fk": "1174",
+			"nama_kecamatan": "Langsa Baro"
+		},
+		{
+			"id_kecamatan": "117501",
+			"id_kota_fk": "1175",
+			"nama_kecamatan": "Simpang Kiri"
+		},
+		{
+			"id_kecamatan": "117502",
+			"id_kota_fk": "1175",
+			"nama_kecamatan": "Penanggalan"
+		},
+		{
+			"id_kecamatan": "117503",
+			"id_kota_fk": "1175",
+			"nama_kecamatan": "Rundeng"
+		},
+		{
+			"id_kecamatan": "117504",
+			"id_kota_fk": "1175",
+			"nama_kecamatan": "Sultan Daulat"
+		},
+		{
+			"id_kecamatan": "117505",
+			"id_kota_fk": "1175",
+			"nama_kecamatan": "Longkib"
+		},
+		{
+			"id_kecamatan": "120101",
+			"id_kota_fk": "1201",
+			"nama_kecamatan": "Barus"
+		},
+		{
+			"id_kecamatan": "120102",
+			"id_kota_fk": "1201",
+			"nama_kecamatan": "Sorkam"
+		},
+		{
+			"id_kecamatan": "120103",
+			"id_kota_fk": "1201",
+			"nama_kecamatan": "Pandan"
+		},
+		{
+			"id_kecamatan": "120104",
+			"id_kota_fk": "1201",
+			"nama_kecamatan": "Pinangsori"
+		},
+		{
+			"id_kecamatan": "120105",
+			"id_kota_fk": "1201",
+			"nama_kecamatan": "Manduamas"
+		},
+		{
+			"id_kecamatan": "120106",
+			"id_kota_fk": "1201",
+			"nama_kecamatan": "Kolang"
+		},
+		{
+			"id_kecamatan": "120107",
+			"id_kota_fk": "1201",
+			"nama_kecamatan": "Tapian Nauli"
+		},
+		{
+			"id_kecamatan": "120108",
+			"id_kota_fk": "1201",
+			"nama_kecamatan": "Sibabangun"
+		},
+		{
+			"id_kecamatan": "120109",
+			"id_kota_fk": "1201",
+			"nama_kecamatan": "Sosor Gadong"
+		},
+		{
+			"id_kecamatan": "120110",
+			"id_kota_fk": "1201",
+			"nama_kecamatan": "Sorkam Barat"
+		},
+		{
+			"id_kecamatan": "120111",
+			"id_kota_fk": "1201",
+			"nama_kecamatan": "Sirandorung"
+		},
+		{
+			"id_kecamatan": "120112",
+			"id_kota_fk": "1201",
+			"nama_kecamatan": "Andam Dewi"
+		},
+		{
+			"id_kecamatan": "120113",
+			"id_kota_fk": "1201",
+			"nama_kecamatan": "Sitahuis"
+		},
+		{
+			"id_kecamatan": "120114",
+			"id_kota_fk": "1201",
+			"nama_kecamatan": "Tukka"
+		},
+		{
+			"id_kecamatan": "120115",
+			"id_kota_fk": "1201",
+			"nama_kecamatan": "Badiri"
+		},
+		{
+			"id_kecamatan": "120116",
+			"id_kota_fk": "1201",
+			"nama_kecamatan": "Pasaribu Tobing"
+		},
+		{
+			"id_kecamatan": "120117",
+			"id_kota_fk": "1201",
+			"nama_kecamatan": "Barus Utara"
+		},
+		{
+			"id_kecamatan": "120118",
+			"id_kota_fk": "1201",
+			"nama_kecamatan": "Suka Bangun"
+		},
+		{
+			"id_kecamatan": "120119",
+			"id_kota_fk": "1201",
+			"nama_kecamatan": "Lumut"
+		},
+		{
+			"id_kecamatan": "120120",
+			"id_kota_fk": "1201",
+			"nama_kecamatan": "Sarudik"
+		},
+		{
+			"id_kecamatan": "120201",
+			"id_kota_fk": "1202",
+			"nama_kecamatan": "Tarutung"
+		},
+		{
+			"id_kecamatan": "120202",
+			"id_kota_fk": "1202",
+			"nama_kecamatan": "Siatas Barita"
+		},
+		{
+			"id_kecamatan": "120203",
+			"id_kota_fk": "1202",
+			"nama_kecamatan": "Adian Koting"
+		},
+		{
+			"id_kecamatan": "120204",
+			"id_kota_fk": "1202",
+			"nama_kecamatan": "Sipoholon"
+		},
+		{
+			"id_kecamatan": "120205",
+			"id_kota_fk": "1202",
+			"nama_kecamatan": "Pahae Julu"
+		},
+		{
+			"id_kecamatan": "120206",
+			"id_kota_fk": "1202",
+			"nama_kecamatan": "Pahae Jae"
+		},
+		{
+			"id_kecamatan": "120207",
+			"id_kota_fk": "1202",
+			"nama_kecamatan": "Simangumban"
+		},
+		{
+			"id_kecamatan": "120208",
+			"id_kota_fk": "1202",
+			"nama_kecamatan": "Purba Tua"
+		},
+		{
+			"id_kecamatan": "120209",
+			"id_kota_fk": "1202",
+			"nama_kecamatan": "Siborong-Borong"
+		},
+		{
+			"id_kecamatan": "120210",
+			"id_kota_fk": "1202",
+			"nama_kecamatan": "Pagaran"
+		},
+		{
+			"id_kecamatan": "120211",
+			"id_kota_fk": "1202",
+			"nama_kecamatan": "Parmonangan"
+		},
+		{
+			"id_kecamatan": "120212",
+			"id_kota_fk": "1202",
+			"nama_kecamatan": "Sipahutar"
+		},
+		{
+			"id_kecamatan": "120213",
+			"id_kota_fk": "1202",
+			"nama_kecamatan": "Pangaribuan"
+		},
+		{
+			"id_kecamatan": "120214",
+			"id_kota_fk": "1202",
+			"nama_kecamatan": "Garoga"
+		},
+		{
+			"id_kecamatan": "120215",
+			"id_kota_fk": "1202",
+			"nama_kecamatan": "Muara"
+		},
+		{
+			"id_kecamatan": "120301",
+			"id_kota_fk": "1203",
+			"nama_kecamatan": "Angkola Barat"
+		},
+		{
+			"id_kecamatan": "120302",
+			"id_kota_fk": "1203",
+			"nama_kecamatan": "Batang Toru"
+		},
+		{
+			"id_kecamatan": "120303",
+			"id_kota_fk": "1203",
+			"nama_kecamatan": "Angkola Timur"
+		},
+		{
+			"id_kecamatan": "120304",
+			"id_kota_fk": "1203",
+			"nama_kecamatan": "Sipirok"
+		},
+		{
+			"id_kecamatan": "120305",
+			"id_kota_fk": "1203",
+			"nama_kecamatan": "Saipar Dolok Hole"
+		},
+		{
+			"id_kecamatan": "120306",
+			"id_kota_fk": "1203",
+			"nama_kecamatan": "Angkola Selatan"
+		},
+		{
+			"id_kecamatan": "120307",
+			"id_kota_fk": "1203",
+			"nama_kecamatan": "Batang Angkola"
+		},
+		{
+			"id_kecamatan": "120314",
+			"id_kota_fk": "1203",
+			"nama_kecamatan": "Arse"
+		},
+		{
+			"id_kecamatan": "120320",
+			"id_kota_fk": "1203",
+			"nama_kecamatan": "Marancar"
+		},
+		{
+			"id_kecamatan": "120321",
+			"id_kota_fk": "1203",
+			"nama_kecamatan": "Sayur Matinggi"
+		},
+		{
+			"id_kecamatan": "120322",
+			"id_kota_fk": "1203",
+			"nama_kecamatan": "Aek Bilah"
+		},
+		{
+			"id_kecamatan": "120329",
+			"id_kota_fk": "1203",
+			"nama_kecamatan": "Muara Batang Toru"
+		},
+		{
+			"id_kecamatan": "120330",
+			"id_kota_fk": "1203",
+			"nama_kecamatan": "Tano Tombangan Angkola"
+		},
+		{
+			"id_kecamatan": "120331",
+			"id_kota_fk": "1203",
+			"nama_kecamatan": "Angkola Sangkunur"
+		},
+		{
+			"id_kecamatan": "120405",
+			"id_kota_fk": "1204",
+			"nama_kecamatan": "Hiliduho"
+		},
+		{
+			"id_kecamatan": "120406",
+			"id_kota_fk": "1204",
+			"nama_kecamatan": "Gido"
+		},
+		{
+			"id_kecamatan": "120410",
+			"id_kota_fk": "1204",
+			"nama_kecamatan": "Idanogawo"
+		},
+		{
+			"id_kecamatan": "120411",
+			"id_kota_fk": "1204",
+			"nama_kecamatan": "Bawolato"
+		},
+		{
+			"id_kecamatan": "120420",
+			"id_kota_fk": "1204",
+			"nama_kecamatan": "Hiliserangkai"
+		},
+		{
+			"id_kecamatan": "120421",
+			"id_kota_fk": "1204",
+			"nama_kecamatan": "Botomuzoi"
+		},
+		{
+			"id_kecamatan": "120427",
+			"id_kota_fk": "1204",
+			"nama_kecamatan": "Ulugawo"
+		},
+		{
+			"id_kecamatan": "120428",
+			"id_kota_fk": "1204",
+			"nama_kecamatan": "Ma'u"
+		},
+		{
+			"id_kecamatan": "120429",
+			"id_kota_fk": "1204",
+			"nama_kecamatan": "Somolo-molo"
+		},
+		{
+			"id_kecamatan": "120435",
+			"id_kota_fk": "1204",
+			"nama_kecamatan": "Sogae'adu"
+		},
+		{
+			"id_kecamatan": "120501",
+			"id_kota_fk": "1205",
+			"nama_kecamatan": "Bahorok"
+		},
+		{
+			"id_kecamatan": "120502",
+			"id_kota_fk": "1205",
+			"nama_kecamatan": "Salapian"
+		},
+		{
+			"id_kecamatan": "120503",
+			"id_kota_fk": "1205",
+			"nama_kecamatan": "Kuala"
+		},
+		{
+			"id_kecamatan": "120504",
+			"id_kota_fk": "1205",
+			"nama_kecamatan": "Sei Bingei"
+		},
+		{
+			"id_kecamatan": "120505",
+			"id_kota_fk": "1205",
+			"nama_kecamatan": "Binjai"
+		},
+		{
+			"id_kecamatan": "120506",
+			"id_kota_fk": "1205",
+			"nama_kecamatan": "Selesai"
+		},
+		{
+			"id_kecamatan": "120507",
+			"id_kota_fk": "1205",
+			"nama_kecamatan": "Stabat"
+		},
+		{
+			"id_kecamatan": "120508",
+			"id_kota_fk": "1205",
+			"nama_kecamatan": "Wampu"
+		},
+		{
+			"id_kecamatan": "120509",
+			"id_kota_fk": "1205",
+			"nama_kecamatan": "Secanggang"
+		},
+		{
+			"id_kecamatan": "120510",
+			"id_kota_fk": "1205",
+			"nama_kecamatan": "Hinai"
+		},
+		{
+			"id_kecamatan": "120511",
+			"id_kota_fk": "1205",
+			"nama_kecamatan": "Tanjung Pura"
+		},
+		{
+			"id_kecamatan": "120512",
+			"id_kota_fk": "1205",
+			"nama_kecamatan": "Padang Tualang"
+		},
+		{
+			"id_kecamatan": "120513",
+			"id_kota_fk": "1205",
+			"nama_kecamatan": "Gebang"
+		},
+		{
+			"id_kecamatan": "120514",
+			"id_kota_fk": "1205",
+			"nama_kecamatan": "Babalan"
+		},
+		{
+			"id_kecamatan": "120515",
+			"id_kota_fk": "1205",
+			"nama_kecamatan": "Pangkalan Susu"
+		},
+		{
+			"id_kecamatan": "120516",
+			"id_kota_fk": "1205",
+			"nama_kecamatan": "Besitang"
+		},
+		{
+			"id_kecamatan": "120517",
+			"id_kota_fk": "1205",
+			"nama_kecamatan": "Sei Lepan"
+		},
+		{
+			"id_kecamatan": "120518",
+			"id_kota_fk": "1205",
+			"nama_kecamatan": "Brandan Barat"
+		},
+		{
+			"id_kecamatan": "120519",
+			"id_kota_fk": "1205",
+			"nama_kecamatan": "Batang Serangan"
+		},
+		{
+			"id_kecamatan": "120520",
+			"id_kota_fk": "1205",
+			"nama_kecamatan": "Sawit Seberang"
+		},
+		{
+			"id_kecamatan": "120521",
+			"id_kota_fk": "1205",
+			"nama_kecamatan": "Sirapit"
+		},
+		{
+			"id_kecamatan": "120522",
+			"id_kota_fk": "1205",
+			"nama_kecamatan": "Kutambaru"
+		},
+		{
+			"id_kecamatan": "120523",
+			"id_kota_fk": "1205",
+			"nama_kecamatan": "Pematang Jaya"
+		},
+		{
+			"id_kecamatan": "120601",
+			"id_kota_fk": "1206",
+			"nama_kecamatan": "Kabanjahe"
+		},
+		{
+			"id_kecamatan": "120602",
+			"id_kota_fk": "1206",
+			"nama_kecamatan": "Berastagi"
+		},
+		{
+			"id_kecamatan": "120603",
+			"id_kota_fk": "1206",
+			"nama_kecamatan": "Barusjahe"
+		},
+		{
+			"id_kecamatan": "120604",
+			"id_kota_fk": "1206",
+			"nama_kecamatan": "Tigapanah"
+		},
+		{
+			"id_kecamatan": "120605",
+			"id_kota_fk": "1206",
+			"nama_kecamatan": "Merek"
+		},
+		{
+			"id_kecamatan": "120606",
+			"id_kota_fk": "1206",
+			"nama_kecamatan": "Munte"
+		},
+		{
+			"id_kecamatan": "120607",
+			"id_kota_fk": "1206",
+			"nama_kecamatan": "Juhar"
+		},
+		{
+			"id_kecamatan": "120608",
+			"id_kota_fk": "1206",
+			"nama_kecamatan": "Tigabinanga"
+		},
+		{
+			"id_kecamatan": "120609",
+			"id_kota_fk": "1206",
+			"nama_kecamatan": "Laubaleng"
+		},
+		{
+			"id_kecamatan": "120610",
+			"id_kota_fk": "1206",
+			"nama_kecamatan": "Mardingding"
+		},
+		{
+			"id_kecamatan": "120611",
+			"id_kota_fk": "1206",
+			"nama_kecamatan": "Payung"
+		},
+		{
+			"id_kecamatan": "120612",
+			"id_kota_fk": "1206",
+			"nama_kecamatan": "Simpang Empat"
+		},
+		{
+			"id_kecamatan": "120613",
+			"id_kota_fk": "1206",
+			"nama_kecamatan": "Kutabuluh"
+		},
+		{
+			"id_kecamatan": "120614",
+			"id_kota_fk": "1206",
+			"nama_kecamatan": "Dolat Rayat"
+		},
+		{
+			"id_kecamatan": "120615",
+			"id_kota_fk": "1206",
+			"nama_kecamatan": "Merdeka"
+		},
+		{
+			"id_kecamatan": "120616",
+			"id_kota_fk": "1206",
+			"nama_kecamatan": "Naman Teran"
+		},
+		{
+			"id_kecamatan": "120617",
+			"id_kota_fk": "1206",
+			"nama_kecamatan": "Tiganderket"
+		},
+		{
+			"id_kecamatan": "120701",
+			"id_kota_fk": "1207",
+			"nama_kecamatan": "Gunung Meriah"
+		},
+		{
+			"id_kecamatan": "120702",
+			"id_kota_fk": "1207",
+			"nama_kecamatan": "Tanjung Morawa"
+		},
+		{
+			"id_kecamatan": "120703",
+			"id_kota_fk": "1207",
+			"nama_kecamatan": "Sibolangit"
+		},
+		{
+			"id_kecamatan": "120704",
+			"id_kota_fk": "1207",
+			"nama_kecamatan": "Kutalimbaru"
+		},
+		{
+			"id_kecamatan": "120705",
+			"id_kota_fk": "1207",
+			"nama_kecamatan": "Pancur Batu"
+		},
+		{
+			"id_kecamatan": "120706",
+			"id_kota_fk": "1207",
+			"nama_kecamatan": "Namorambe"
+		},
+		{
+			"id_kecamatan": "120707",
+			"id_kota_fk": "1207",
+			"nama_kecamatan": "Sibiru-biru"
+		},
+		{
+			"id_kecamatan": "120708",
+			"id_kota_fk": "1207",
+			"nama_kecamatan": "STM Hilir"
+		},
+		{
+			"id_kecamatan": "120709",
+			"id_kota_fk": "1207",
+			"nama_kecamatan": "Bangun Purba"
+		},
+		{
+			"id_kecamatan": "120719",
+			"id_kota_fk": "1207",
+			"nama_kecamatan": "Galang"
+		},
+		{
+			"id_kecamatan": "120720",
+			"id_kota_fk": "1207",
+			"nama_kecamatan": "STM Hulu"
+		},
+		{
+			"id_kecamatan": "120721",
+			"id_kota_fk": "1207",
+			"nama_kecamatan": "Patumbak"
+		},
+		{
+			"id_kecamatan": "120722",
+			"id_kota_fk": "1207",
+			"nama_kecamatan": "Deli Tua"
+		},
+		{
+			"id_kecamatan": "120723",
+			"id_kota_fk": "1207",
+			"nama_kecamatan": "Sunggal"
+		},
+		{
+			"id_kecamatan": "120724",
+			"id_kota_fk": "1207",
+			"nama_kecamatan": "Hamparan Perak"
+		},
+		{
+			"id_kecamatan": "120725",
+			"id_kota_fk": "1207",
+			"nama_kecamatan": "Labuhan Deli"
+		},
+		{
+			"id_kecamatan": "120726",
+			"id_kota_fk": "1207",
+			"nama_kecamatan": "Percut Sei Tuan"
+		},
+		{
+			"id_kecamatan": "120727",
+			"id_kota_fk": "1207",
+			"nama_kecamatan": "Batang Kuis"
+		},
+		{
+			"id_kecamatan": "120728",
+			"id_kota_fk": "1207",
+			"nama_kecamatan": "Lubuk Pakam"
+		},
+		{
+			"id_kecamatan": "120731",
+			"id_kota_fk": "1207",
+			"nama_kecamatan": "Pagar Merbau"
+		},
+		{
+			"id_kecamatan": "120732",
+			"id_kota_fk": "1207",
+			"nama_kecamatan": "Pantai Labu"
+		},
+		{
+			"id_kecamatan": "120733",
+			"id_kota_fk": "1207",
+			"nama_kecamatan": "Beringin"
+		},
+		{
+			"id_kecamatan": "120801",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Siantar"
+		},
+		{
+			"id_kecamatan": "120802",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Gunung Malela"
+		},
+		{
+			"id_kecamatan": "120803",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Gunung Maligas"
+		},
+		{
+			"id_kecamatan": "120804",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Panei"
+		},
+		{
+			"id_kecamatan": "120805",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Panombeian Pane"
+		},
+		{
+			"id_kecamatan": "120806",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Jorlang Hataran"
+		},
+		{
+			"id_kecamatan": "120807",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Raya Kahean"
+		},
+		{
+			"id_kecamatan": "120808",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Bosar Maligas"
+		},
+		{
+			"id_kecamatan": "120809",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Sidamanik"
+		},
+		{
+			"id_kecamatan": "120810",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Pematang Sidamanik"
+		},
+		{
+			"id_kecamatan": "120811",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Tanah Jawa"
+		},
+		{
+			"id_kecamatan": "120812",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Hatonduhan"
+		},
+		{
+			"id_kecamatan": "120813",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Dolok Panribuan"
+		},
+		{
+			"id_kecamatan": "120814",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Purba"
+		},
+		{
+			"id_kecamatan": "120815",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Haranggaol Horison"
+		},
+		{
+			"id_kecamatan": "120816",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Girsang Sipangan Bolon"
+		},
+		{
+			"id_kecamatan": "120817",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Dolok Batu Nanggar"
+		},
+		{
+			"id_kecamatan": "120818",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Huta Bayu Raja"
+		},
+		{
+			"id_kecamatan": "120819",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Jawa Maraja Bah Jambi"
+		},
+		{
+			"id_kecamatan": "120820",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Dolok Pardamean"
+		},
+		{
+			"id_kecamatan": "120821",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Pematang Bandar"
+		},
+		{
+			"id_kecamatan": "120822",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Bandar Huluan"
+		},
+		{
+			"id_kecamatan": "120823",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Bandar"
+		},
+		{
+			"id_kecamatan": "120824",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Bandar Masilam"
+		},
+		{
+			"id_kecamatan": "120825",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Silimakuta"
+		},
+		{
+			"id_kecamatan": "120826",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Dolok Silau"
+		},
+		{
+			"id_kecamatan": "120827",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Silou Kahean"
+		},
+		{
+			"id_kecamatan": "120828",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Tapian Dolok"
+		},
+		{
+			"id_kecamatan": "120829",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Raya"
+		},
+		{
+			"id_kecamatan": "120830",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Ujung Padang"
+		},
+		{
+			"id_kecamatan": "120831",
+			"id_kota_fk": "1208",
+			"nama_kecamatan": "Pamatang Silima Huta"
+		},
+		{
+			"id_kecamatan": "120908",
+			"id_kota_fk": "1209",
+			"nama_kecamatan": "Meranti"
+		},
+		{
+			"id_kecamatan": "120909",
+			"id_kota_fk": "1209",
+			"nama_kecamatan": "Air Joman"
+		},
+		{
+			"id_kecamatan": "120910",
+			"id_kota_fk": "1209",
+			"nama_kecamatan": "Tanjung Balai"
+		},
+		{
+			"id_kecamatan": "120911",
+			"id_kota_fk": "1209",
+			"nama_kecamatan": "Sei Kepayang"
+		},
+		{
+			"id_kecamatan": "120912",
+			"id_kota_fk": "1209",
+			"nama_kecamatan": "Simpang Empat"
+		},
+		{
+			"id_kecamatan": "120913",
+			"id_kota_fk": "1209",
+			"nama_kecamatan": "Air Batu"
+		},
+		{
+			"id_kecamatan": "120914",
+			"id_kota_fk": "1209",
+			"nama_kecamatan": "Pulau Rakyat"
+		},
+		{
+			"id_kecamatan": "120915",
+			"id_kota_fk": "1209",
+			"nama_kecamatan": "Bandar Pulau"
+		},
+		{
+			"id_kecamatan": "120916",
+			"id_kota_fk": "1209",
+			"nama_kecamatan": "Buntu Pane"
+		},
+		{
+			"id_kecamatan": "120917",
+			"id_kota_fk": "1209",
+			"nama_kecamatan": "Bandar Pasir Mandoge"
+		},
+		{
+			"id_kecamatan": "120918",
+			"id_kota_fk": "1209",
+			"nama_kecamatan": "Aek Kuasan"
+		},
+		{
+			"id_kecamatan": "120919",
+			"id_kota_fk": "1209",
+			"nama_kecamatan": "Kota Kisaran Barat"
+		},
+		{
+			"id_kecamatan": "120920",
+			"id_kota_fk": "1209",
+			"nama_kecamatan": "Kota Kisaran Timur"
+		},
+		{
+			"id_kecamatan": "120921",
+			"id_kota_fk": "1209",
+			"nama_kecamatan": "Aek Songsongan"
+		},
+		{
+			"id_kecamatan": "120922",
+			"id_kota_fk": "1209",
+			"nama_kecamatan": "Rahunig"
+		},
+		{
+			"id_kecamatan": "120923",
+			"id_kota_fk": "1209",
+			"nama_kecamatan": "Sei Dadap"
+		},
+		{
+			"id_kecamatan": "120924",
+			"id_kota_fk": "1209",
+			"nama_kecamatan": "Sei Kepayang Barat"
+		},
+		{
+			"id_kecamatan": "120925",
+			"id_kota_fk": "1209",
+			"nama_kecamatan": "Sei Kepayang Timur"
+		},
+		{
+			"id_kecamatan": "120926",
+			"id_kota_fk": "1209",
+			"nama_kecamatan": "Tinggi Raja"
+		},
+		{
+			"id_kecamatan": "120927",
+			"id_kota_fk": "1209",
+			"nama_kecamatan": "Setia Janji"
+		},
+		{
+			"id_kecamatan": "120928",
+			"id_kota_fk": "1209",
+			"nama_kecamatan": "Silau Laut"
+		},
+		{
+			"id_kecamatan": "120929",
+			"id_kota_fk": "1209",
+			"nama_kecamatan": "Rawang Panca Arga"
+		},
+		{
+			"id_kecamatan": "120930",
+			"id_kota_fk": "1209",
+			"nama_kecamatan": "Pulo Bandring"
+		},
+		{
+			"id_kecamatan": "120931",
+			"id_kota_fk": "1209",
+			"nama_kecamatan": "Teluk Dalam"
+		},
+		{
+			"id_kecamatan": "120932",
+			"id_kota_fk": "1209",
+			"nama_kecamatan": "Aek Ledong"
+		},
+		{
+			"id_kecamatan": "121001",
+			"id_kota_fk": "1210",
+			"nama_kecamatan": "Rantau Utara"
+		},
+		{
+			"id_kecamatan": "121002",
+			"id_kota_fk": "1210",
+			"nama_kecamatan": "Rantau Selatan"
+		},
+		{
+			"id_kecamatan": "121007",
+			"id_kota_fk": "1210",
+			"nama_kecamatan": "Bilah Barat"
+		},
+		{
+			"id_kecamatan": "121008",
+			"id_kota_fk": "1210",
+			"nama_kecamatan": "Bilah Hilir"
+		},
+		{
+			"id_kecamatan": "121009",
+			"id_kota_fk": "1210",
+			"nama_kecamatan": "Bilah Hulu"
+		},
+		{
+			"id_kecamatan": "121014",
+			"id_kota_fk": "1210",
+			"nama_kecamatan": "Pangkatan"
+		},
+		{
+			"id_kecamatan": "121018",
+			"id_kota_fk": "1210",
+			"nama_kecamatan": "Panai Tengah"
+		},
+		{
+			"id_kecamatan": "121019",
+			"id_kota_fk": "1210",
+			"nama_kecamatan": "Panai Hilir"
+		},
+		{
+			"id_kecamatan": "121020",
+			"id_kota_fk": "1210",
+			"nama_kecamatan": "Panai Hulu"
+		},
+		{
+			"id_kecamatan": "121101",
+			"id_kota_fk": "1211",
+			"nama_kecamatan": "Sidikalang"
+		},
+		{
+			"id_kecamatan": "121102",
+			"id_kota_fk": "1211",
+			"nama_kecamatan": "Sumbul"
+		},
+		{
+			"id_kecamatan": "121103",
+			"id_kota_fk": "1211",
+			"nama_kecamatan": "Tigalingga"
+		},
+		{
+			"id_kecamatan": "121104",
+			"id_kota_fk": "1211",
+			"nama_kecamatan": "Siempat Nempu"
+		},
+		{
+			"id_kecamatan": "121105",
+			"id_kota_fk": "1211",
+			"nama_kecamatan": "Silima Pungga Punga"
+		},
+		{
+			"id_kecamatan": "121106",
+			"id_kota_fk": "1211",
+			"nama_kecamatan": "Tanah Pinem"
+		},
+		{
+			"id_kecamatan": "121107",
+			"id_kota_fk": "1211",
+			"nama_kecamatan": "Siempat Nempu Hulu"
+		},
+		{
+			"id_kecamatan": "121108",
+			"id_kota_fk": "1211",
+			"nama_kecamatan": "Siempat Nempu Hilir"
+		},
+		{
+			"id_kecamatan": "121109",
+			"id_kota_fk": "1211",
+			"nama_kecamatan": "Pegagan Hilir"
+		},
+		{
+			"id_kecamatan": "121110",
+			"id_kota_fk": "1211",
+			"nama_kecamatan": "Parbuluan"
+		},
+		{
+			"id_kecamatan": "121111",
+			"id_kota_fk": "1211",
+			"nama_kecamatan": "Lae Parira"
+		},
+		{
+			"id_kecamatan": "121112",
+			"id_kota_fk": "1211",
+			"nama_kecamatan": "Gunung Sitember"
+		},
+		{
+			"id_kecamatan": "121113",
+			"id_kota_fk": "1211",
+			"nama_kecamatan": "Brampu"
+		},
+		{
+			"id_kecamatan": "121114",
+			"id_kota_fk": "1211",
+			"nama_kecamatan": "Silahisabungan"
+		},
+		{
+			"id_kecamatan": "121115",
+			"id_kota_fk": "1211",
+			"nama_kecamatan": "Sitinjo"
+		},
+		{
+			"id_kecamatan": "121201",
+			"id_kota_fk": "1212",
+			"nama_kecamatan": "Balige"
+		},
+		{
+			"id_kecamatan": "121202",
+			"id_kota_fk": "1212",
+			"nama_kecamatan": "Laguboti"
+		},
+		{
+			"id_kecamatan": "121203",
+			"id_kota_fk": "1212",
+			"nama_kecamatan": "Silaen"
+		},
+		{
+			"id_kecamatan": "121204",
+			"id_kota_fk": "1212",
+			"nama_kecamatan": "Habinsaran"
+		},
+		{
+			"id_kecamatan": "121205",
+			"id_kota_fk": "1212",
+			"nama_kecamatan": "Pintu Pohan Meranti"
+		},
+		{
+			"id_kecamatan": "121206",
+			"id_kota_fk": "1212",
+			"nama_kecamatan": "Borbor"
+		},
+		{
+			"id_kecamatan": "121207",
+			"id_kota_fk": "1212",
+			"nama_kecamatan": "Porsea"
+		},
+		{
+			"id_kecamatan": "121208",
+			"id_kota_fk": "1212",
+			"nama_kecamatan": "Ajibata"
+		},
+		{
+			"id_kecamatan": "121209",
+			"id_kota_fk": "1212",
+			"nama_kecamatan": "Lumban Julu"
+		},
+		{
+			"id_kecamatan": "121210",
+			"id_kota_fk": "1212",
+			"nama_kecamatan": "Uluan"
+		},
+		{
+			"id_kecamatan": "121219",
+			"id_kota_fk": "1212",
+			"nama_kecamatan": "Sigumpar"
+		},
+		{
+			"id_kecamatan": "121220",
+			"id_kota_fk": "1212",
+			"nama_kecamatan": "Siantar Narumonda"
+		},
+		{
+			"id_kecamatan": "121221",
+			"id_kota_fk": "1212",
+			"nama_kecamatan": "Nassau"
+		},
+		{
+			"id_kecamatan": "121222",
+			"id_kota_fk": "1212",
+			"nama_kecamatan": "Tampahan"
+		},
+		{
+			"id_kecamatan": "121223",
+			"id_kota_fk": "1212",
+			"nama_kecamatan": "Bonatua Lunasi"
+		},
+		{
+			"id_kecamatan": "121224",
+			"id_kota_fk": "1212",
+			"nama_kecamatan": "Parmaksian"
+		},
+		{
+			"id_kecamatan": "121301",
+			"id_kota_fk": "1213",
+			"nama_kecamatan": "Panyabungan"
+		},
+		{
+			"id_kecamatan": "121302",
+			"id_kota_fk": "1213",
+			"nama_kecamatan": "Panyabungan Utara"
+		},
+		{
+			"id_kecamatan": "121303",
+			"id_kota_fk": "1213",
+			"nama_kecamatan": "Panyabungan Timur"
+		},
+		{
+			"id_kecamatan": "121304",
+			"id_kota_fk": "1213",
+			"nama_kecamatan": "Panyabungan Selatan"
+		},
+		{
+			"id_kecamatan": "121305",
+			"id_kota_fk": "1213",
+			"nama_kecamatan": "Panyabungan Barat"
+		},
+		{
+			"id_kecamatan": "121306",
+			"id_kota_fk": "1213",
+			"nama_kecamatan": "Siabu"
+		},
+		{
+			"id_kecamatan": "121307",
+			"id_kota_fk": "1213",
+			"nama_kecamatan": "Bukit Malintang"
+		},
+		{
+			"id_kecamatan": "121308",
+			"id_kota_fk": "1213",
+			"nama_kecamatan": "Kotanopan"
+		},
+		{
+			"id_kecamatan": "121309",
+			"id_kota_fk": "1213",
+			"nama_kecamatan": "Lembah Sorik Marapi"
+		},
+		{
+			"id_kecamatan": "121310",
+			"id_kota_fk": "1213",
+			"nama_kecamatan": "Tambangan"
+		},
+		{
+			"id_kecamatan": "121311",
+			"id_kota_fk": "1213",
+			"nama_kecamatan": "Ulu Pungkut"
+		},
+		{
+			"id_kecamatan": "121312",
+			"id_kota_fk": "1213",
+			"nama_kecamatan": "Muara Sipongi"
+		},
+		{
+			"id_kecamatan": "121313",
+			"id_kota_fk": "1213",
+			"nama_kecamatan": "Batang Natal"
+		},
+		{
+			"id_kecamatan": "121314",
+			"id_kota_fk": "1213",
+			"nama_kecamatan": "Lingga Bayu"
+		},
+		{
+			"id_kecamatan": "121315",
+			"id_kota_fk": "1213",
+			"nama_kecamatan": "Batahan"
+		},
+		{
+			"id_kecamatan": "121316",
+			"id_kota_fk": "1213",
+			"nama_kecamatan": "Natal"
+		},
+		{
+			"id_kecamatan": "121317",
+			"id_kota_fk": "1213",
+			"nama_kecamatan": "Muara Batang Gadis"
+		},
+		{
+			"id_kecamatan": "121318",
+			"id_kota_fk": "1213",
+			"nama_kecamatan": "Ranto Baek"
+		},
+		{
+			"id_kecamatan": "121319",
+			"id_kota_fk": "1213",
+			"nama_kecamatan": "Huta Bargot"
+		},
+		{
+			"id_kecamatan": "121320",
+			"id_kota_fk": "1213",
+			"nama_kecamatan": "Puncak Sorik Marapi"
+		},
+		{
+			"id_kecamatan": "121321",
+			"id_kota_fk": "1213",
+			"nama_kecamatan": "Pakantan"
+		},
+		{
+			"id_kecamatan": "121322",
+			"id_kota_fk": "1213",
+			"nama_kecamatan": "Sinunukan"
+		},
+		{
+			"id_kecamatan": "121323",
+			"id_kota_fk": "1213",
+			"nama_kecamatan": "Naga Juang"
+		},
+		{
+			"id_kecamatan": "121401",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Lolomatua"
+		},
+		{
+			"id_kecamatan": "121402",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Gomo"
+		},
+		{
+			"id_kecamatan": "121403",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Lahusa"
+		},
+		{
+			"id_kecamatan": "121404",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Hibala"
+		},
+		{
+			"id_kecamatan": "121405",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Pulau-Pulau Batu"
+		},
+		{
+			"id_kecamatan": "121406",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Teluk Dalam"
+		},
+		{
+			"id_kecamatan": "121407",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Amandraya"
+		},
+		{
+			"id_kecamatan": "121408",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Lalowa'u"
+		},
+		{
+			"id_kecamatan": "121409",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Susua"
+		},
+		{
+			"id_kecamatan": "121410",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Maniamolo"
+		},
+		{
+			"id_kecamatan": "121411",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Hilimegai"
+		},
+		{
+			"id_kecamatan": "121412",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Toma"
+		},
+		{
+			"id_kecamatan": "121413",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Mazino"
+		},
+		{
+			"id_kecamatan": "121414",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Umbunasi"
+		},
+		{
+			"id_kecamatan": "121415",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Aramo"
+		},
+		{
+			"id_kecamatan": "121416",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Pulau-Pulau Batu Timur"
+		},
+		{
+			"id_kecamatan": "121417",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Mazo"
+		},
+		{
+			"id_kecamatan": "121418",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Fanayama"
+		},
+		{
+			"id_kecamatan": "121419",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Ulunoyo"
+		},
+		{
+			"id_kecamatan": "121420",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Huruna"
+		},
+		{
+			"id_kecamatan": "121421",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "O'o'u"
+		},
+		{
+			"id_kecamatan": "121422",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Onohazumba"
+		},
+		{
+			"id_kecamatan": "121423",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Hilisalawa'ahe"
+		},
+		{
+			"id_kecamatan": "121424",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Ulususua"
+		},
+		{
+			"id_kecamatan": "121425",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Sidua'ori"
+		},
+		{
+			"id_kecamatan": "121426",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Somambawa"
+		},
+		{
+			"id_kecamatan": "121427",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Boronadu"
+		},
+		{
+			"id_kecamatan": "121428",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Simuk"
+		},
+		{
+			"id_kecamatan": "121429",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Pulau-Pulau Batu Barat"
+		},
+		{
+			"id_kecamatan": "121430",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Pulau-Pulau Batu Utara"
+		},
+		{
+			"id_kecamatan": "121431",
+			"id_kota_fk": "1214",
+			"nama_kecamatan": "Tanah Masa"
+		},
+		{
+			"id_kecamatan": "121501",
+			"id_kota_fk": "1215",
+			"nama_kecamatan": "Sitelu Tali Urang Jehe"
+		},
+		{
+			"id_kecamatan": "121502",
+			"id_kota_fk": "1215",
+			"nama_kecamatan": "Kerajaan"
+		},
+		{
+			"id_kecamatan": "121503",
+			"id_kota_fk": "1215",
+			"nama_kecamatan": "Salak"
+		},
+		{
+			"id_kecamatan": "121504",
+			"id_kota_fk": "1215",
+			"nama_kecamatan": "Sitelu Tali Urang Julu"
+		},
+		{
+			"id_kecamatan": "121505",
+			"id_kota_fk": "1215",
+			"nama_kecamatan": "Pergetteng Getteng Sengkut"
+		},
+		{
+			"id_kecamatan": "121506",
+			"id_kota_fk": "1215",
+			"nama_kecamatan": "Pagindar"
+		},
+		{
+			"id_kecamatan": "121507",
+			"id_kota_fk": "1215",
+			"nama_kecamatan": "Tinada"
+		},
+		{
+			"id_kecamatan": "121508",
+			"id_kota_fk": "1215",
+			"nama_kecamatan": "Siempat Rube"
+		},
+		{
+			"id_kecamatan": "121601",
+			"id_kota_fk": "1216",
+			"nama_kecamatan": "Parlilitan"
+		},
+		{
+			"id_kecamatan": "121602",
+			"id_kota_fk": "1216",
+			"nama_kecamatan": "Pollung"
+		},
+		{
+			"id_kecamatan": "121603",
+			"id_kota_fk": "1216",
+			"nama_kecamatan": "Baktiraja"
+		},
+		{
+			"id_kecamatan": "121604",
+			"id_kota_fk": "1216",
+			"nama_kecamatan": "Paranginan"
+		},
+		{
+			"id_kecamatan": "121605",
+			"id_kota_fk": "1216",
+			"nama_kecamatan": "Lintong Nihuta"
+		},
+		{
+			"id_kecamatan": "121606",
+			"id_kota_fk": "1216",
+			"nama_kecamatan": "Dolok Sanggul"
+		},
+		{
+			"id_kecamatan": "121607",
+			"id_kota_fk": "1216",
+			"nama_kecamatan": "Sijamapolang"
+		},
+		{
+			"id_kecamatan": "121608",
+			"id_kota_fk": "1216",
+			"nama_kecamatan": "Onan Ganjang"
+		},
+		{
+			"id_kecamatan": "121609",
+			"id_kota_fk": "1216",
+			"nama_kecamatan": "Pakkat"
+		},
+		{
+			"id_kecamatan": "121610",
+			"id_kota_fk": "1216",
+			"nama_kecamatan": "Tarabintang"
+		},
+		{
+			"id_kecamatan": "121701",
+			"id_kota_fk": "1217",
+			"nama_kecamatan": "Simanindo"
+		},
+		{
+			"id_kecamatan": "121702",
+			"id_kota_fk": "1217",
+			"nama_kecamatan": "Onan Runggu"
+		},
+		{
+			"id_kecamatan": "121703",
+			"id_kota_fk": "1217",
+			"nama_kecamatan": "Nainggolan"
+		},
+		{
+			"id_kecamatan": "121704",
+			"id_kota_fk": "1217",
+			"nama_kecamatan": "Palipi"
+		},
+		{
+			"id_kecamatan": "121705",
+			"id_kota_fk": "1217",
+			"nama_kecamatan": "Harian"
+		},
+		{
+			"id_kecamatan": "121706",
+			"id_kota_fk": "1217",
+			"nama_kecamatan": "Sianjar Mula Mula"
+		},
+		{
+			"id_kecamatan": "121707",
+			"id_kota_fk": "1217",
+			"nama_kecamatan": "Ronggur Nihuta"
+		},
+		{
+			"id_kecamatan": "121708",
+			"id_kota_fk": "1217",
+			"nama_kecamatan": "Pangururan"
+		},
+		{
+			"id_kecamatan": "121709",
+			"id_kota_fk": "1217",
+			"nama_kecamatan": "Sitio-tio"
+		},
+		{
+			"id_kecamatan": "121801",
+			"id_kota_fk": "1218",
+			"nama_kecamatan": "Pantai Cermin"
+		},
+		{
+			"id_kecamatan": "121802",
+			"id_kota_fk": "1218",
+			"nama_kecamatan": "Perbaungan"
+		},
+		{
+			"id_kecamatan": "121803",
+			"id_kota_fk": "1218",
+			"nama_kecamatan": "Teluk Mengkudu"
+		},
+		{
+			"id_kecamatan": "121804",
+			"id_kota_fk": "1218",
+			"nama_kecamatan": "Sei. Rampah"
+		},
+		{
+			"id_kecamatan": "121805",
+			"id_kota_fk": "1218",
+			"nama_kecamatan": "Tanjung Beringin"
+		},
+		{
+			"id_kecamatan": "121806",
+			"id_kota_fk": "1218",
+			"nama_kecamatan": "Bandar Khalifah"
+		},
+		{
+			"id_kecamatan": "121807",
+			"id_kota_fk": "1218",
+			"nama_kecamatan": "Dolok Merawan"
+		},
+		{
+			"id_kecamatan": "121808",
+			"id_kota_fk": "1218",
+			"nama_kecamatan": "Sipispis"
+		},
+		{
+			"id_kecamatan": "121809",
+			"id_kota_fk": "1218",
+			"nama_kecamatan": "Dolok Masihul"
+		},
+		{
+			"id_kecamatan": "121810",
+			"id_kota_fk": "1218",
+			"nama_kecamatan": "Kotarih"
+		},
+		{
+			"id_kecamatan": "121811",
+			"id_kota_fk": "1218",
+			"nama_kecamatan": "Silinda"
+		},
+		{
+			"id_kecamatan": "121812",
+			"id_kota_fk": "1218",
+			"nama_kecamatan": "Serba Jadi"
+		},
+		{
+			"id_kecamatan": "121813",
+			"id_kota_fk": "1218",
+			"nama_kecamatan": "Tebing Tinggi"
+		},
+		{
+			"id_kecamatan": "121814",
+			"id_kota_fk": "1218",
+			"nama_kecamatan": "Pegajahan"
+		},
+		{
+			"id_kecamatan": "121815",
+			"id_kota_fk": "1218",
+			"nama_kecamatan": "Sei Bamban"
+		},
+		{
+			"id_kecamatan": "121816",
+			"id_kota_fk": "1218",
+			"nama_kecamatan": "Tebing Syahbandar"
+		},
+		{
+			"id_kecamatan": "121817",
+			"id_kota_fk": "1218",
+			"nama_kecamatan": "Bintang Bayu"
+		},
+		{
+			"id_kecamatan": "121901",
+			"id_kota_fk": "1219",
+			"nama_kecamatan": "Medang Deras"
+		},
+		{
+			"id_kecamatan": "121902",
+			"id_kota_fk": "1219",
+			"nama_kecamatan": "Sei Suka"
+		},
+		{
+			"id_kecamatan": "121903",
+			"id_kota_fk": "1219",
+			"nama_kecamatan": "Air Putih"
+		},
+		{
+			"id_kecamatan": "121904",
+			"id_kota_fk": "1219",
+			"nama_kecamatan": "Lima Puluh"
+		},
+		{
+			"id_kecamatan": "121905",
+			"id_kota_fk": "1219",
+			"nama_kecamatan": "Talawi"
+		},
+		{
+			"id_kecamatan": "121906",
+			"id_kota_fk": "1219",
+			"nama_kecamatan": "Tanjung Tiram"
+		},
+		{
+			"id_kecamatan": "121907",
+			"id_kota_fk": "1219",
+			"nama_kecamatan": "Sei Balai"
+		},
+		{
+			"id_kecamatan": "122001",
+			"id_kota_fk": "1220",
+			"nama_kecamatan": "Dolok Sigompulon"
+		},
+		{
+			"id_kecamatan": "122002",
+			"id_kota_fk": "1220",
+			"nama_kecamatan": "Dolok"
+		},
+		{
+			"id_kecamatan": "122003",
+			"id_kota_fk": "1220",
+			"nama_kecamatan": "Halongonan"
+		},
+		{
+			"id_kecamatan": "122004",
+			"id_kota_fk": "1220",
+			"nama_kecamatan": "Padang Bolak"
+		},
+		{
+			"id_kecamatan": "122005",
+			"id_kota_fk": "1220",
+			"nama_kecamatan": "Padang Bolak Julu"
+		},
+		{
+			"id_kecamatan": "122006",
+			"id_kota_fk": "1220",
+			"nama_kecamatan": "Portibi"
+		},
+		{
+			"id_kecamatan": "122007",
+			"id_kota_fk": "1220",
+			"nama_kecamatan": "Batang Onang"
+		},
+		{
+			"id_kecamatan": "122008",
+			"id_kota_fk": "1220",
+			"nama_kecamatan": "Simangambat"
+		},
+		{
+			"id_kecamatan": "122009",
+			"id_kota_fk": "1220",
+			"nama_kecamatan": "Hulu Sihapas"
+		},
+		{
+			"id_kecamatan": "122101",
+			"id_kota_fk": "1221",
+			"nama_kecamatan": "Sosopan"
+		},
+		{
+			"id_kecamatan": "122102",
+			"id_kota_fk": "1221",
+			"nama_kecamatan": "Barumun Tengah"
+		},
+		{
+			"id_kecamatan": "122103",
+			"id_kota_fk": "1221",
+			"nama_kecamatan": "Huristak"
+		},
+		{
+			"id_kecamatan": "122104",
+			"id_kota_fk": "1221",
+			"nama_kecamatan": "Lubuk Barumun"
+		},
+		{
+			"id_kecamatan": "122105",
+			"id_kota_fk": "1221",
+			"nama_kecamatan": "Huta Raja Tinggi"
+		},
+		{
+			"id_kecamatan": "122106",
+			"id_kota_fk": "1221",
+			"nama_kecamatan": "Ulu Barumun"
+		},
+		{
+			"id_kecamatan": "122107",
+			"id_kota_fk": "1221",
+			"nama_kecamatan": "Barumun"
+		},
+		{
+			"id_kecamatan": "122108",
+			"id_kota_fk": "1221",
+			"nama_kecamatan": "Sosa"
+		},
+		{
+			"id_kecamatan": "122109",
+			"id_kota_fk": "1221",
+			"nama_kecamatan": "Batang Lubu Sutam"
+		},
+		{
+			"id_kecamatan": "122110",
+			"id_kota_fk": "1221",
+			"nama_kecamatan": "Barumun Selatan"
+		},
+		{
+			"id_kecamatan": "122111",
+			"id_kota_fk": "1221",
+			"nama_kecamatan": "Aek Nabara Barumun"
+		},
+		{
+			"id_kecamatan": "122112",
+			"id_kota_fk": "1221",
+			"nama_kecamatan": "Sihapas Barumun"
+		},
+		{
+			"id_kecamatan": "122201",
+			"id_kota_fk": "1222",
+			"nama_kecamatan": "Kotapinang"
+		},
+		{
+			"id_kecamatan": "122202",
+			"id_kota_fk": "1222",
+			"nama_kecamatan": "Kampung Rakyat"
+		},
+		{
+			"id_kecamatan": "122203",
+			"id_kota_fk": "1222",
+			"nama_kecamatan": "Torgamba"
+		},
+		{
+			"id_kecamatan": "122204",
+			"id_kota_fk": "1222",
+			"nama_kecamatan": "Sungai Kanan"
+		},
+		{
+			"id_kecamatan": "122205",
+			"id_kota_fk": "1222",
+			"nama_kecamatan": "Silangkitang"
+		},
+		{
+			"id_kecamatan": "122301",
+			"id_kota_fk": "1223",
+			"nama_kecamatan": "Kualuh Hulu"
+		},
+		{
+			"id_kecamatan": "122302",
+			"id_kota_fk": "1223",
+			"nama_kecamatan": "Kualuh Leidong"
+		},
+		{
+			"id_kecamatan": "122303",
+			"id_kota_fk": "1223",
+			"nama_kecamatan": "Kualuh Hilir"
+		},
+		{
+			"id_kecamatan": "122304",
+			"id_kota_fk": "1223",
+			"nama_kecamatan": "Aek Kuo"
+		},
+		{
+			"id_kecamatan": "122305",
+			"id_kota_fk": "1223",
+			"nama_kecamatan": "Marbau"
+		},
+		{
+			"id_kecamatan": "122306",
+			"id_kota_fk": "1223",
+			"nama_kecamatan": "Na IX - X"
+		},
+		{
+			"id_kecamatan": "122307",
+			"id_kota_fk": "1223",
+			"nama_kecamatan": "Aek Natas"
+		},
+		{
+			"id_kecamatan": "122308",
+			"id_kota_fk": "1223",
+			"nama_kecamatan": "Kualuh Selatan"
+		},
+		{
+			"id_kecamatan": "122401",
+			"id_kota_fk": "1224",
+			"nama_kecamatan": "Lotu"
+		},
+		{
+			"id_kecamatan": "122402",
+			"id_kota_fk": "1224",
+			"nama_kecamatan": "Sawo"
+		},
+		{
+			"id_kecamatan": "122403",
+			"id_kota_fk": "1224",
+			"nama_kecamatan": "Tuhemberua"
+		},
+		{
+			"id_kecamatan": "122404",
+			"id_kota_fk": "1224",
+			"nama_kecamatan": "Sitolu Ori"
+		},
+		{
+			"id_kecamatan": "122405",
+			"id_kota_fk": "1224",
+			"nama_kecamatan": "Namohalu Esiwa"
+		},
+		{
+			"id_kecamatan": "122406",
+			"id_kota_fk": "1224",
+			"nama_kecamatan": "Alasa Talumuzoi"
+		},
+		{
+			"id_kecamatan": "122407",
+			"id_kota_fk": "1224",
+			"nama_kecamatan": "Alasa"
+		},
+		{
+			"id_kecamatan": "122408",
+			"id_kota_fk": "1224",
+			"nama_kecamatan": "Tugala Oyo"
+		},
+		{
+			"id_kecamatan": "122409",
+			"id_kota_fk": "1224",
+			"nama_kecamatan": "Afulu"
+		},
+		{
+			"id_kecamatan": "122410",
+			"id_kota_fk": "1224",
+			"nama_kecamatan": "Lahewa"
+		},
+		{
+			"id_kecamatan": "122411",
+			"id_kota_fk": "1224",
+			"nama_kecamatan": "Lahewa Timur"
+		},
+		{
+			"id_kecamatan": "122501",
+			"id_kota_fk": "1225",
+			"nama_kecamatan": "Lahomi"
+		},
+		{
+			"id_kecamatan": "122502",
+			"id_kota_fk": "1225",
+			"nama_kecamatan": "Sirombu"
+		},
+		{
+			"id_kecamatan": "122503",
+			"id_kota_fk": "1225",
+			"nama_kecamatan": "Mandrehe Barat"
+		},
+		{
+			"id_kecamatan": "122504",
+			"id_kota_fk": "1225",
+			"nama_kecamatan": "Moro'o"
+		},
+		{
+			"id_kecamatan": "122505",
+			"id_kota_fk": "1225",
+			"nama_kecamatan": "Mandrehe"
+		},
+		{
+			"id_kecamatan": "122506",
+			"id_kota_fk": "1225",
+			"nama_kecamatan": "Mandrehe Utara"
+		},
+		{
+			"id_kecamatan": "122507",
+			"id_kota_fk": "1225",
+			"nama_kecamatan": "Lolofitu Moi"
+		},
+		{
+			"id_kecamatan": "122508",
+			"id_kota_fk": "1225",
+			"nama_kecamatan": "Ulu Moro'o"
+		},
+		{
+			"id_kecamatan": "127101",
+			"id_kota_fk": "1271",
+			"nama_kecamatan": "Medan Kota"
+		},
+		{
+			"id_kecamatan": "127102",
+			"id_kota_fk": "1271",
+			"nama_kecamatan": "Medan Sunggal"
+		},
+		{
+			"id_kecamatan": "127103",
+			"id_kota_fk": "1271",
+			"nama_kecamatan": "Medan Helvetia"
+		},
+		{
+			"id_kecamatan": "127104",
+			"id_kota_fk": "1271",
+			"nama_kecamatan": "Medan Denai"
+		},
+		{
+			"id_kecamatan": "127105",
+			"id_kota_fk": "1271",
+			"nama_kecamatan": "Medan Barat"
+		},
+		{
+			"id_kecamatan": "127106",
+			"id_kota_fk": "1271",
+			"nama_kecamatan": "Medan Deli"
+		},
+		{
+			"id_kecamatan": "127107",
+			"id_kota_fk": "1271",
+			"nama_kecamatan": "Medan Tuntungan"
+		},
+		{
+			"id_kecamatan": "127108",
+			"id_kota_fk": "1271",
+			"nama_kecamatan": "Medan Belawan"
+		},
+		{
+			"id_kecamatan": "127109",
+			"id_kota_fk": "1271",
+			"nama_kecamatan": "Medan Amplas"
+		},
+		{
+			"id_kecamatan": "127110",
+			"id_kota_fk": "1271",
+			"nama_kecamatan": "Medan Area"
+		},
+		{
+			"id_kecamatan": "127111",
+			"id_kota_fk": "1271",
+			"nama_kecamatan": "Medan Johor"
+		},
+		{
+			"id_kecamatan": "127112",
+			"id_kota_fk": "1271",
+			"nama_kecamatan": "Medan Marelan"
+		},
+		{
+			"id_kecamatan": "127113",
+			"id_kota_fk": "1271",
+			"nama_kecamatan": "Medan Labuhan"
+		},
+		{
+			"id_kecamatan": "127114",
+			"id_kota_fk": "1271",
+			"nama_kecamatan": "Medan Tembung"
+		},
+		{
+			"id_kecamatan": "127115",
+			"id_kota_fk": "1271",
+			"nama_kecamatan": "Medan Maimun"
+		},
+		{
+			"id_kecamatan": "127116",
+			"id_kota_fk": "1271",
+			"nama_kecamatan": "Medan Polonia"
+		},
+		{
+			"id_kecamatan": "127117",
+			"id_kota_fk": "1271",
+			"nama_kecamatan": "Medan Baru"
+		},
+		{
+			"id_kecamatan": "127118",
+			"id_kota_fk": "1271",
+			"nama_kecamatan": "Medan Perjuangan"
+		},
+		{
+			"id_kecamatan": "127119",
+			"id_kota_fk": "1271",
+			"nama_kecamatan": "Medan Petisah"
+		},
+		{
+			"id_kecamatan": "127120",
+			"id_kota_fk": "1271",
+			"nama_kecamatan": "Medan Timur"
+		},
+		{
+			"id_kecamatan": "127121",
+			"id_kota_fk": "1271",
+			"nama_kecamatan": "Medan Selayang"
+		},
+		{
+			"id_kecamatan": "127201",
+			"id_kota_fk": "1272",
+			"nama_kecamatan": "Siantar Timur"
+		},
+		{
+			"id_kecamatan": "127202",
+			"id_kota_fk": "1272",
+			"nama_kecamatan": "Siantar Barat"
+		},
+		{
+			"id_kecamatan": "127203",
+			"id_kota_fk": "1272",
+			"nama_kecamatan": "Siantar Utara"
+		},
+		{
+			"id_kecamatan": "127204",
+			"id_kota_fk": "1272",
+			"nama_kecamatan": "Siantar Selatan"
+		},
+		{
+			"id_kecamatan": "127205",
+			"id_kota_fk": "1272",
+			"nama_kecamatan": "Siantar Marihat"
+		},
+		{
+			"id_kecamatan": "127206",
+			"id_kota_fk": "1272",
+			"nama_kecamatan": "Siantar Martoba"
+		},
+		{
+			"id_kecamatan": "127207",
+			"id_kota_fk": "1272",
+			"nama_kecamatan": "Siantar Sitalasari"
+		},
+		{
+			"id_kecamatan": "127208",
+			"id_kota_fk": "1272",
+			"nama_kecamatan": "Siantar Marimbun"
+		},
+		{
+			"id_kecamatan": "127301",
+			"id_kota_fk": "1273",
+			"nama_kecamatan": "Sibolga Utara"
+		},
+		{
+			"id_kecamatan": "127302",
+			"id_kota_fk": "1273",
+			"nama_kecamatan": "Sibolga Kota"
+		},
+		{
+			"id_kecamatan": "127303",
+			"id_kota_fk": "1273",
+			"nama_kecamatan": "Sibolga Selatan"
+		},
+		{
+			"id_kecamatan": "127304",
+			"id_kota_fk": "1273",
+			"nama_kecamatan": "Sibolga Sambas"
+		},
+		{
+			"id_kecamatan": "127401",
+			"id_kota_fk": "1274",
+			"nama_kecamatan": "Tanjung Balai Selatan"
+		},
+		{
+			"id_kecamatan": "127402",
+			"id_kota_fk": "1274",
+			"nama_kecamatan": "Tanjung Balai Utara"
+		},
+		{
+			"id_kecamatan": "127403",
+			"id_kota_fk": "1274",
+			"nama_kecamatan": "Sei Tualang Raso"
+		},
+		{
+			"id_kecamatan": "127404",
+			"id_kota_fk": "1274",
+			"nama_kecamatan": "Teluk Nibung"
+		},
+		{
+			"id_kecamatan": "127405",
+			"id_kota_fk": "1274",
+			"nama_kecamatan": "Datuk Bandar"
+		},
+		{
+			"id_kecamatan": "127406",
+			"id_kota_fk": "1274",
+			"nama_kecamatan": "Datuk Bandar Timur"
+		},
+		{
+			"id_kecamatan": "127501",
+			"id_kota_fk": "1275",
+			"nama_kecamatan": "Binjai Utara"
+		},
+		{
+			"id_kecamatan": "127502",
+			"id_kota_fk": "1275",
+			"nama_kecamatan": "Binjai Kota"
+		},
+		{
+			"id_kecamatan": "127503",
+			"id_kota_fk": "1275",
+			"nama_kecamatan": "Binjai Barat"
+		},
+		{
+			"id_kecamatan": "127504",
+			"id_kota_fk": "1275",
+			"nama_kecamatan": "Binjai Timur"
+		},
+		{
+			"id_kecamatan": "127505",
+			"id_kota_fk": "1275",
+			"nama_kecamatan": "Binjai Selatan"
+		},
+		{
+			"id_kecamatan": "127601",
+			"id_kota_fk": "1276",
+			"nama_kecamatan": "Padang Hulu"
+		},
+		{
+			"id_kecamatan": "127602",
+			"id_kota_fk": "1276",
+			"nama_kecamatan": "Rambutan"
+		},
+		{
+			"id_kecamatan": "127603",
+			"id_kota_fk": "1276",
+			"nama_kecamatan": "Padang Hilir"
+		},
+		{
+			"id_kecamatan": "127604",
+			"id_kota_fk": "1276",
+			"nama_kecamatan": "Bajenis"
+		},
+		{
+			"id_kecamatan": "127605",
+			"id_kota_fk": "1276",
+			"nama_kecamatan": "Tebing Tinggi Kota"
+		},
+		{
+			"id_kecamatan": "127701",
+			"id_kota_fk": "1277",
+			"nama_kecamatan": "Padangsidimpuan Utara"
+		},
+		{
+			"id_kecamatan": "127702",
+			"id_kota_fk": "1277",
+			"nama_kecamatan": "Padangsidimpuan Selatan"
+		},
+		{
+			"id_kecamatan": "127703",
+			"id_kota_fk": "1277",
+			"nama_kecamatan": "Padangsidimpuan Batunadua"
+		},
+		{
+			"id_kecamatan": "127704",
+			"id_kota_fk": "1277",
+			"nama_kecamatan": "Padangsidimpuan Hutaimbaru"
+		},
+		{
+			"id_kecamatan": "127705",
+			"id_kota_fk": "1277",
+			"nama_kecamatan": "Padangsidimpuan Tenggara"
+		},
+		{
+			"id_kecamatan": "127706",
+			"id_kota_fk": "1277",
+			"nama_kecamatan": "Padangsidimpuan Angkola Julu"
+		},
+		{
+			"id_kecamatan": "127801",
+			"id_kota_fk": "1278",
+			"nama_kecamatan": "Gunungsitoli"
+		},
+		{
+			"id_kecamatan": "127802",
+			"id_kota_fk": "1278",
+			"nama_kecamatan": "Gunungsitoli Selatan"
+		},
+		{
+			"id_kecamatan": "127803",
+			"id_kota_fk": "1278",
+			"nama_kecamatan": "Gunungsitoli Utara"
+		},
+		{
+			"id_kecamatan": "127804",
+			"id_kota_fk": "1278",
+			"nama_kecamatan": "Gunungsitoli Idanoi"
+		},
+		{
+			"id_kecamatan": "127805",
+			"id_kota_fk": "1278",
+			"nama_kecamatan": "Gunungsitoli Alo'oa"
+		},
+		{
+			"id_kecamatan": "127806",
+			"id_kota_fk": "1278",
+			"nama_kecamatan": "Gunungsitoli Barat"
+		},
+		{
+			"id_kecamatan": "130101",
+			"id_kota_fk": "1301",
+			"nama_kecamatan": "Pancung Soal"
+		},
+		{
+			"id_kecamatan": "130102",
+			"id_kota_fk": "1301",
+			"nama_kecamatan": "Ranah Pesisir"
+		},
+		{
+			"id_kecamatan": "130103",
+			"id_kota_fk": "1301",
+			"nama_kecamatan": "Lengayang"
+		},
+		{
+			"id_kecamatan": "130104",
+			"id_kota_fk": "1301",
+			"nama_kecamatan": "Batang Kapas"
+		},
+		{
+			"id_kecamatan": "130105",
+			"id_kota_fk": "1301",
+			"nama_kecamatan": "IV Jurai"
+		},
+		{
+			"id_kecamatan": "130106",
+			"id_kota_fk": "1301",
+			"nama_kecamatan": "Bayang"
+		},
+		{
+			"id_kecamatan": "130107",
+			"id_kota_fk": "1301",
+			"nama_kecamatan": "Koto XI Tarusan"
+		},
+		{
+			"id_kecamatan": "130108",
+			"id_kota_fk": "1301",
+			"nama_kecamatan": "Sutera"
+		},
+		{
+			"id_kecamatan": "130109",
+			"id_kota_fk": "1301",
+			"nama_kecamatan": "Linggo Sari Baganti"
+		},
+		{
+			"id_kecamatan": "130110",
+			"id_kota_fk": "1301",
+			"nama_kecamatan": "Lunang"
+		},
+		{
+			"id_kecamatan": "130111",
+			"id_kota_fk": "1301",
+			"nama_kecamatan": "Basa Ampek Balai Tapan"
+		},
+		{
+			"id_kecamatan": "130112",
+			"id_kota_fk": "1301",
+			"nama_kecamatan": "IV Nagari Bayang Utara"
+		},
+		{
+			"id_kecamatan": "130113",
+			"id_kota_fk": "1301",
+			"nama_kecamatan": "Airpura"
+		},
+		{
+			"id_kecamatan": "130114",
+			"id_kota_fk": "1301",
+			"nama_kecamatan": "Ranah Ampek Hulu Tapan"
+		},
+		{
+			"id_kecamatan": "130115",
+			"id_kota_fk": "1301",
+			"nama_kecamatan": "Silaut"
+		},
+		{
+			"id_kecamatan": "130203",
+			"id_kota_fk": "1302",
+			"nama_kecamatan": "Pantai Cermin"
+		},
+		{
+			"id_kecamatan": "130204",
+			"id_kota_fk": "1302",
+			"nama_kecamatan": "Lembah Gumanti"
+		},
+		{
+			"id_kecamatan": "130205",
+			"id_kota_fk": "1302",
+			"nama_kecamatan": "Payung Sekaki"
+		},
+		{
+			"id_kecamatan": "130206",
+			"id_kota_fk": "1302",
+			"nama_kecamatan": "Lembang Jaya"
+		},
+		{
+			"id_kecamatan": "130207",
+			"id_kota_fk": "1302",
+			"nama_kecamatan": "Gunung Talang"
+		},
+		{
+			"id_kecamatan": "130208",
+			"id_kota_fk": "1302",
+			"nama_kecamatan": "Bukit Sundi"
+		},
+		{
+			"id_kecamatan": "130209",
+			"id_kota_fk": "1302",
+			"nama_kecamatan": "IX Koto Sungai Lasi"
+		},
+		{
+			"id_kecamatan": "130210",
+			"id_kota_fk": "1302",
+			"nama_kecamatan": "Kubung"
+		},
+		{
+			"id_kecamatan": "130211",
+			"id_kota_fk": "1302",
+			"nama_kecamatan": "X Koto Singkarak"
+		},
+		{
+			"id_kecamatan": "130212",
+			"id_kota_fk": "1302",
+			"nama_kecamatan": "X Koto Diatas"
+		},
+		{
+			"id_kecamatan": "130213",
+			"id_kota_fk": "1302",
+			"nama_kecamatan": "Junjung Sirih"
+		},
+		{
+			"id_kecamatan": "130217",
+			"id_kota_fk": "1302",
+			"nama_kecamatan": "Hiliran Gumanti"
+		},
+		{
+			"id_kecamatan": "130218",
+			"id_kota_fk": "1302",
+			"nama_kecamatan": "Tigo Lurah"
+		},
+		{
+			"id_kecamatan": "130219",
+			"id_kota_fk": "1302",
+			"nama_kecamatan": "Danau Kembar"
+		},
+		{
+			"id_kecamatan": "130303",
+			"id_kota_fk": "1303",
+			"nama_kecamatan": "Tanjung Gadang"
+		},
+		{
+			"id_kecamatan": "130304",
+			"id_kota_fk": "1303",
+			"nama_kecamatan": "Sijunjung"
+		},
+		{
+			"id_kecamatan": "130305",
+			"id_kota_fk": "1303",
+			"nama_kecamatan": "IV Nagari"
+		},
+		{
+			"id_kecamatan": "130306",
+			"id_kota_fk": "1303",
+			"nama_kecamatan": "Kamang Baru"
+		},
+		{
+			"id_kecamatan": "130307",
+			"id_kota_fk": "1303",
+			"nama_kecamatan": "Lubuak Tarok"
+		},
+		{
+			"id_kecamatan": "130308",
+			"id_kota_fk": "1303",
+			"nama_kecamatan": "Koto VII"
+		},
+		{
+			"id_kecamatan": "130309",
+			"id_kota_fk": "1303",
+			"nama_kecamatan": "Sumpur Kudus"
+		},
+		{
+			"id_kecamatan": "130310",
+			"id_kota_fk": "1303",
+			"nama_kecamatan": "Kupitan"
+		},
+		{
+			"id_kecamatan": "130401",
+			"id_kota_fk": "1304",
+			"nama_kecamatan": "X Koto"
+		},
+		{
+			"id_kecamatan": "130402",
+			"id_kota_fk": "1304",
+			"nama_kecamatan": "Batipuh"
+		},
+		{
+			"id_kecamatan": "130403",
+			"id_kota_fk": "1304",
+			"nama_kecamatan": "Rambatan"
+		},
+		{
+			"id_kecamatan": "130404",
+			"id_kota_fk": "1304",
+			"nama_kecamatan": "Lima Kaum"
+		},
+		{
+			"id_kecamatan": "130405",
+			"id_kota_fk": "1304",
+			"nama_kecamatan": "Tanjung Emas"
+		},
+		{
+			"id_kecamatan": "130406",
+			"id_kota_fk": "1304",
+			"nama_kecamatan": "Lintau Buo"
+		},
+		{
+			"id_kecamatan": "130407",
+			"id_kota_fk": "1304",
+			"nama_kecamatan": "Sungayang"
+		},
+		{
+			"id_kecamatan": "130408",
+			"id_kota_fk": "1304",
+			"nama_kecamatan": "Sungai Tarab"
+		},
+		{
+			"id_kecamatan": "130409",
+			"id_kota_fk": "1304",
+			"nama_kecamatan": "Pariangan"
+		},
+		{
+			"id_kecamatan": "130410",
+			"id_kota_fk": "1304",
+			"nama_kecamatan": "Salimpauang"
+		},
+		{
+			"id_kecamatan": "130411",
+			"id_kota_fk": "1304",
+			"nama_kecamatan": "Padang Ganting"
+		},
+		{
+			"id_kecamatan": "130412",
+			"id_kota_fk": "1304",
+			"nama_kecamatan": "Tanjuang Baru"
+		},
+		{
+			"id_kecamatan": "130413",
+			"id_kota_fk": "1304",
+			"nama_kecamatan": "Lintau Buo Utara"
+		},
+		{
+			"id_kecamatan": "130414",
+			"id_kota_fk": "1304",
+			"nama_kecamatan": "Batipuah Selatan"
+		},
+		{
+			"id_kecamatan": "130501",
+			"id_kota_fk": "1305",
+			"nama_kecamatan": "Lubuk Alung"
+		},
+		{
+			"id_kecamatan": "130502",
+			"id_kota_fk": "1305",
+			"nama_kecamatan": "Batang Anai"
+		},
+		{
+			"id_kecamatan": "130503",
+			"id_kota_fk": "1305",
+			"nama_kecamatan": "Nan Sabaris"
+		},
+		{
+			"id_kecamatan": "130504",
+			"id_kota_fk": "1305",
+			"nama_kecamatan": "x Enam Lingkuang"
+		},
+		{
+			"id_kecamatan": "130505",
+			"id_kota_fk": "1305",
+			"nama_kecamatan": "VII Koto Sungai Sarik"
+		},
+		{
+			"id_kecamatan": "130506",
+			"id_kota_fk": "1305",
+			"nama_kecamatan": "V Koto Kampung Dalam"
+		},
+		{
+			"id_kecamatan": "130507",
+			"id_kota_fk": "1305",
+			"nama_kecamatan": "Sungai Garingging"
+		},
+		{
+			"id_kecamatan": "130508",
+			"id_kota_fk": "1305",
+			"nama_kecamatan": "Sungai Limau"
+		},
+		{
+			"id_kecamatan": "130509",
+			"id_kota_fk": "1305",
+			"nama_kecamatan": "IV Koto Aur Malintang"
+		},
+		{
+			"id_kecamatan": "130510",
+			"id_kota_fk": "1305",
+			"nama_kecamatan": "Ulakan Tapakih"
+		},
+		{
+			"id_kecamatan": "130511",
+			"id_kota_fk": "1305",
+			"nama_kecamatan": "Sintuak Toboh Gadang"
+		},
+		{
+			"id_kecamatan": "130512",
+			"id_kota_fk": "1305",
+			"nama_kecamatan": "Padang Sago"
+		},
+		{
+			"id_kecamatan": "130513",
+			"id_kota_fk": "1305",
+			"nama_kecamatan": "Batang Gasan"
+		},
+		{
+			"id_kecamatan": "130514",
+			"id_kota_fk": "1305",
+			"nama_kecamatan": "V Koto Timur"
+		},
+		{
+			"id_kecamatan": "130515",
+			"id_kota_fk": "1305",
+			"nama_kecamatan": "x Kayu Tanam"
+		},
+		{
+			"id_kecamatan": "130516",
+			"id_kota_fk": "1305",
+			"nama_kecamatan": "Patamuan"
+		},
+		{
+			"id_kecamatan": "130517",
+			"id_kota_fk": "1305",
+			"nama_kecamatan": "Enam Lingkung"
+		},
+		{
+			"id_kecamatan": "130601",
+			"id_kota_fk": "1306",
+			"nama_kecamatan": "Tanjung Mutiara"
+		},
+		{
+			"id_kecamatan": "130602",
+			"id_kota_fk": "1306",
+			"nama_kecamatan": "Lubuk Basung"
+		},
+		{
+			"id_kecamatan": "130603",
+			"id_kota_fk": "1306",
+			"nama_kecamatan": "Tanjung Raya"
+		},
+		{
+			"id_kecamatan": "130604",
+			"id_kota_fk": "1306",
+			"nama_kecamatan": "Matur"
+		},
+		{
+			"id_kecamatan": "130605",
+			"id_kota_fk": "1306",
+			"nama_kecamatan": "IV Koto"
+		},
+		{
+			"id_kecamatan": "130606",
+			"id_kota_fk": "1306",
+			"nama_kecamatan": "Banuhampu"
+		},
+		{
+			"id_kecamatan": "130607",
+			"id_kota_fk": "1306",
+			"nama_kecamatan": "Ampek Angkek"
+		},
+		{
+			"id_kecamatan": "130608",
+			"id_kota_fk": "1306",
+			"nama_kecamatan": "Baso"
+		},
+		{
+			"id_kecamatan": "130609",
+			"id_kota_fk": "1306",
+			"nama_kecamatan": "Tilatang Kamang"
+		},
+		{
+			"id_kecamatan": "130610",
+			"id_kota_fk": "1306",
+			"nama_kecamatan": "Palupuh"
+		},
+		{
+			"id_kecamatan": "130611",
+			"id_kota_fk": "1306",
+			"nama_kecamatan": "Pelembayan"
+		},
+		{
+			"id_kecamatan": "130612",
+			"id_kota_fk": "1306",
+			"nama_kecamatan": "Sungai Pua"
+		},
+		{
+			"id_kecamatan": "130613",
+			"id_kota_fk": "1306",
+			"nama_kecamatan": "Ampek Nagari"
+		},
+		{
+			"id_kecamatan": "130614",
+			"id_kota_fk": "1306",
+			"nama_kecamatan": "Candung"
+		},
+		{
+			"id_kecamatan": "130615",
+			"id_kota_fk": "1306",
+			"nama_kecamatan": "Kamang Magek"
+		},
+		{
+			"id_kecamatan": "130616",
+			"id_kota_fk": "1306",
+			"nama_kecamatan": "Malalak"
+		},
+		{
+			"id_kecamatan": "130701",
+			"id_kota_fk": "1307",
+			"nama_kecamatan": "Suliki"
+		},
+		{
+			"id_kecamatan": "130702",
+			"id_kota_fk": "1307",
+			"nama_kecamatan": "Guguak"
+		},
+		{
+			"id_kecamatan": "130703",
+			"id_kota_fk": "1307",
+			"nama_kecamatan": "Payakumbuh"
+		},
+		{
+			"id_kecamatan": "130704",
+			"id_kota_fk": "1307",
+			"nama_kecamatan": "Luak"
+		},
+		{
+			"id_kecamatan": "130705",
+			"id_kota_fk": "1307",
+			"nama_kecamatan": "Harau"
+		},
+		{
+			"id_kecamatan": "130706",
+			"id_kota_fk": "1307",
+			"nama_kecamatan": "Pangkalan Koto Baru"
+		},
+		{
+			"id_kecamatan": "130707",
+			"id_kota_fk": "1307",
+			"nama_kecamatan": "Kapur IX"
+		},
+		{
+			"id_kecamatan": "130708",
+			"id_kota_fk": "1307",
+			"nama_kecamatan": "Gunuang Omeh"
+		},
+		{
+			"id_kecamatan": "130709",
+			"id_kota_fk": "1307",
+			"nama_kecamatan": "Lareh Sago Halaban"
+		},
+		{
+			"id_kecamatan": "130710",
+			"id_kota_fk": "1307",
+			"nama_kecamatan": "Situjuah Limo Nagari"
+		},
+		{
+			"id_kecamatan": "130711",
+			"id_kota_fk": "1307",
+			"nama_kecamatan": "Mungka"
+		},
+		{
+			"id_kecamatan": "130712",
+			"id_kota_fk": "1307",
+			"nama_kecamatan": "Bukik Barisan"
+		},
+		{
+			"id_kecamatan": "130713",
+			"id_kota_fk": "1307",
+			"nama_kecamatan": "Akabiluru"
+		},
+		{
+			"id_kecamatan": "130804",
+			"id_kota_fk": "1308",
+			"nama_kecamatan": "Bonjol"
+		},
+		{
+			"id_kecamatan": "130805",
+			"id_kota_fk": "1308",
+			"nama_kecamatan": "Lubuk Sikaping"
+		},
+		{
+			"id_kecamatan": "130807",
+			"id_kota_fk": "1308",
+			"nama_kecamatan": "Panti"
+		},
+		{
+			"id_kecamatan": "130808",
+			"id_kota_fk": "1308",
+			"nama_kecamatan": "Mapat Tunggul"
+		},
+		{
+			"id_kecamatan": "130812",
+			"id_kota_fk": "1308",
+			"nama_kecamatan": "Duo Koto"
+		},
+		{
+			"id_kecamatan": "130813",
+			"id_kota_fk": "1308",
+			"nama_kecamatan": "Tigo Nagari"
+		},
+		{
+			"id_kecamatan": "130814",
+			"id_kota_fk": "1308",
+			"nama_kecamatan": "Rao"
+		},
+		{
+			"id_kecamatan": "130815",
+			"id_kota_fk": "1308",
+			"nama_kecamatan": "Mapat Tunggul Selatan"
+		},
+		{
+			"id_kecamatan": "130816",
+			"id_kota_fk": "1308",
+			"nama_kecamatan": "Simpang Alahan Mati"
+		},
+		{
+			"id_kecamatan": "130817",
+			"id_kota_fk": "1308",
+			"nama_kecamatan": "Padang Gelugur"
+		},
+		{
+			"id_kecamatan": "130818",
+			"id_kota_fk": "1308",
+			"nama_kecamatan": "Rao Utara"
+		},
+		{
+			"id_kecamatan": "130819",
+			"id_kota_fk": "1308",
+			"nama_kecamatan": "Rao Selatan"
+		},
+		{
+			"id_kecamatan": "130901",
+			"id_kota_fk": "1309",
+			"nama_kecamatan": "Pagai Utara"
+		},
+		{
+			"id_kecamatan": "130902",
+			"id_kota_fk": "1309",
+			"nama_kecamatan": "Sipora Selatan"
+		},
+		{
+			"id_kecamatan": "130903",
+			"id_kota_fk": "1309",
+			"nama_kecamatan": "Siberut Selatan"
+		},
+		{
+			"id_kecamatan": "130904",
+			"id_kota_fk": "1309",
+			"nama_kecamatan": "Siberut Utara"
+		},
+		{
+			"id_kecamatan": "130905",
+			"id_kota_fk": "1309",
+			"nama_kecamatan": "Siberut Barat"
+		},
+		{
+			"id_kecamatan": "130906",
+			"id_kota_fk": "1309",
+			"nama_kecamatan": "Siberut Barat Daya"
+		},
+		{
+			"id_kecamatan": "130907",
+			"id_kota_fk": "1309",
+			"nama_kecamatan": "Siberut Tengah"
+		},
+		{
+			"id_kecamatan": "130908",
+			"id_kota_fk": "1309",
+			"nama_kecamatan": "Sipora Utara"
+		},
+		{
+			"id_kecamatan": "130909",
+			"id_kota_fk": "1309",
+			"nama_kecamatan": "Sikakap"
+		},
+		{
+			"id_kecamatan": "130910",
+			"id_kota_fk": "1309",
+			"nama_kecamatan": "Pagai Selatan"
+		},
+		{
+			"id_kecamatan": "131001",
+			"id_kota_fk": "1310",
+			"nama_kecamatan": "Koto Baru"
+		},
+		{
+			"id_kecamatan": "131002",
+			"id_kota_fk": "1310",
+			"nama_kecamatan": "Pulau Punjung"
+		},
+		{
+			"id_kecamatan": "131003",
+			"id_kota_fk": "1310",
+			"nama_kecamatan": "Sungai Rumbai"
+		},
+		{
+			"id_kecamatan": "131004",
+			"id_kota_fk": "1310",
+			"nama_kecamatan": "Sitiung"
+		},
+		{
+			"id_kecamatan": "131005",
+			"id_kota_fk": "1310",
+			"nama_kecamatan": "Sembilan Koto"
+		},
+		{
+			"id_kecamatan": "131006",
+			"id_kota_fk": "1310",
+			"nama_kecamatan": "Timpeh"
+		},
+		{
+			"id_kecamatan": "131007",
+			"id_kota_fk": "1310",
+			"nama_kecamatan": "Koto Salak"
+		},
+		{
+			"id_kecamatan": "131008",
+			"id_kota_fk": "1310",
+			"nama_kecamatan": "Tiumang"
+		},
+		{
+			"id_kecamatan": "131009",
+			"id_kota_fk": "1310",
+			"nama_kecamatan": "Padang Laweh"
+		},
+		{
+			"id_kecamatan": "131010",
+			"id_kota_fk": "1310",
+			"nama_kecamatan": "Asam Jujuhan"
+		},
+		{
+			"id_kecamatan": "131011",
+			"id_kota_fk": "1310",
+			"nama_kecamatan": "Koto Besar"
+		},
+		{
+			"id_kecamatan": "131101",
+			"id_kota_fk": "1311",
+			"nama_kecamatan": "Sangir"
+		},
+		{
+			"id_kecamatan": "131102",
+			"id_kota_fk": "1311",
+			"nama_kecamatan": "Sungai Pagu"
+		},
+		{
+			"id_kecamatan": "131103",
+			"id_kota_fk": "1311",
+			"nama_kecamatan": "Koto Parik Gadang Diateh"
+		},
+		{
+			"id_kecamatan": "131104",
+			"id_kota_fk": "1311",
+			"nama_kecamatan": "Sangir Jujuan"
+		},
+		{
+			"id_kecamatan": "131105",
+			"id_kota_fk": "1311",
+			"nama_kecamatan": "Sangir Batang Hari"
+		},
+		{
+			"id_kecamatan": "131106",
+			"id_kota_fk": "1311",
+			"nama_kecamatan": "Pauh Duo"
+		},
+		{
+			"id_kecamatan": "131107",
+			"id_kota_fk": "1311",
+			"nama_kecamatan": "Sangir Balai Janggo"
+		},
+		{
+			"id_kecamatan": "131201",
+			"id_kota_fk": "1312",
+			"nama_kecamatan": "Sungaiberemas"
+		},
+		{
+			"id_kecamatan": "131202",
+			"id_kota_fk": "1312",
+			"nama_kecamatan": "Lembah Melintang"
+		},
+		{
+			"id_kecamatan": "131203",
+			"id_kota_fk": "1312",
+			"nama_kecamatan": "Pasaman"
+		},
+		{
+			"id_kecamatan": "131204",
+			"id_kota_fk": "1312",
+			"nama_kecamatan": "Talamau"
+		},
+		{
+			"id_kecamatan": "131205",
+			"id_kota_fk": "1312",
+			"nama_kecamatan": "Kinali"
+		},
+		{
+			"id_kecamatan": "131206",
+			"id_kota_fk": "1312",
+			"nama_kecamatan": "Gunungtuleh"
+		},
+		{
+			"id_kecamatan": "131207",
+			"id_kota_fk": "1312",
+			"nama_kecamatan": "Ranah Batahan"
+		},
+		{
+			"id_kecamatan": "131208",
+			"id_kota_fk": "1312",
+			"nama_kecamatan": "Koto Balingka"
+		},
+		{
+			"id_kecamatan": "131209",
+			"id_kota_fk": "1312",
+			"nama_kecamatan": "Sungaiaur"
+		},
+		{
+			"id_kecamatan": "131210",
+			"id_kota_fk": "1312",
+			"nama_kecamatan": "Luhak Nan Duo"
+		},
+		{
+			"id_kecamatan": "131211",
+			"id_kota_fk": "1312",
+			"nama_kecamatan": "Sasak Ranah Pesisir"
+		},
+		{
+			"id_kecamatan": "137101",
+			"id_kota_fk": "1371",
+			"nama_kecamatan": "Padang Selatan"
+		},
+		{
+			"id_kecamatan": "137102",
+			"id_kota_fk": "1371",
+			"nama_kecamatan": "Padang Timur"
+		},
+		{
+			"id_kecamatan": "137103",
+			"id_kota_fk": "1371",
+			"nama_kecamatan": "Padang Barat"
+		},
+		{
+			"id_kecamatan": "137104",
+			"id_kota_fk": "1371",
+			"nama_kecamatan": "Padang Utara"
+		},
+		{
+			"id_kecamatan": "137105",
+			"id_kota_fk": "1371",
+			"nama_kecamatan": "Bungus Teluk Kabung"
+		},
+		{
+			"id_kecamatan": "137106",
+			"id_kota_fk": "1371",
+			"nama_kecamatan": "Lubuk Begalung"
+		},
+		{
+			"id_kecamatan": "137107",
+			"id_kota_fk": "1371",
+			"nama_kecamatan": "Lubuk Kilangan"
+		},
+		{
+			"id_kecamatan": "137108",
+			"id_kota_fk": "1371",
+			"nama_kecamatan": "Pauh"
+		},
+		{
+			"id_kecamatan": "137109",
+			"id_kota_fk": "1371",
+			"nama_kecamatan": "Kuranji"
+		},
+		{
+			"id_kecamatan": "137110",
+			"id_kota_fk": "1371",
+			"nama_kecamatan": "Nanggalo"
+		},
+		{
+			"id_kecamatan": "137111",
+			"id_kota_fk": "1371",
+			"nama_kecamatan": "Koto Tangah"
+		},
+		{
+			"id_kecamatan": "137201",
+			"id_kota_fk": "1372",
+			"nama_kecamatan": "Lubuk Sikarah"
+		},
+		{
+			"id_kecamatan": "137202",
+			"id_kota_fk": "1372",
+			"nama_kecamatan": "Tanjung Harapan"
+		},
+		{
+			"id_kecamatan": "137301",
+			"id_kota_fk": "1373",
+			"nama_kecamatan": "Lembah Segar"
+		},
+		{
+			"id_kecamatan": "137302",
+			"id_kota_fk": "1373",
+			"nama_kecamatan": "Barangin"
+		},
+		{
+			"id_kecamatan": "137303",
+			"id_kota_fk": "1373",
+			"nama_kecamatan": "Silungkang"
+		},
+		{
+			"id_kecamatan": "137304",
+			"id_kota_fk": "1373",
+			"nama_kecamatan": "Talawi"
+		},
+		{
+			"id_kecamatan": "137401",
+			"id_kota_fk": "1374",
+			"nama_kecamatan": "Padang Panjang Timur"
+		},
+		{
+			"id_kecamatan": "137402",
+			"id_kota_fk": "1374",
+			"nama_kecamatan": "Padang Panjang Barat"
+		},
+		{
+			"id_kecamatan": "137501",
+			"id_kota_fk": "1375",
+			"nama_kecamatan": "Guguak Panjang"
+		},
+		{
+			"id_kecamatan": "137502",
+			"id_kota_fk": "1375",
+			"nama_kecamatan": "Mandiangin K. Selayan"
+		},
+		{
+			"id_kecamatan": "137503",
+			"id_kota_fk": "1375",
+			"nama_kecamatan": "Aur Birugo Tigo Baleh"
+		},
+		{
+			"id_kecamatan": "137601",
+			"id_kota_fk": "1376",
+			"nama_kecamatan": "Payakumbuh Barat"
+		},
+		{
+			"id_kecamatan": "137602",
+			"id_kota_fk": "1376",
+			"nama_kecamatan": "Payakumbuh Utara"
+		},
+		{
+			"id_kecamatan": "137603",
+			"id_kota_fk": "1376",
+			"nama_kecamatan": "Payakumbuh Timur"
+		},
+		{
+			"id_kecamatan": "137604",
+			"id_kota_fk": "1376",
+			"nama_kecamatan": "Lamposi Tigo Nagori"
+		},
+		{
+			"id_kecamatan": "137605",
+			"id_kota_fk": "1376",
+			"nama_kecamatan": "Payakumbuh Selatan"
+		},
+		{
+			"id_kecamatan": "137701",
+			"id_kota_fk": "1377",
+			"nama_kecamatan": "Pariaman Tengah"
+		},
+		{
+			"id_kecamatan": "137702",
+			"id_kota_fk": "1377",
+			"nama_kecamatan": "Pariaman Utara"
+		},
+		{
+			"id_kecamatan": "137703",
+			"id_kota_fk": "1377",
+			"nama_kecamatan": "Pariaman Selatan"
+		},
+		{
+			"id_kecamatan": "137704",
+			"id_kota_fk": "1377",
+			"nama_kecamatan": "Pariaman Timur"
+		},
+		{
+			"id_kecamatan": "140101",
+			"id_kota_fk": "1401",
+			"nama_kecamatan": "Bangkinang Kota"
+		},
+		{
+			"id_kecamatan": "140102",
+			"id_kota_fk": "1401",
+			"nama_kecamatan": "Kampar"
+		},
+		{
+			"id_kecamatan": "140103",
+			"id_kota_fk": "1401",
+			"nama_kecamatan": "Tambang"
+		},
+		{
+			"id_kecamatan": "140104",
+			"id_kota_fk": "1401",
+			"nama_kecamatan": "XIII Koto Kampar"
+		},
+		{
+			"id_kecamatan": "140105",
+			"id_kota_fk": "1401",
+			"nama_kecamatan": "Kuok"
+		},
+		{
+			"id_kecamatan": "140106",
+			"id_kota_fk": "1401",
+			"nama_kecamatan": "Siak Hulu"
+		},
+		{
+			"id_kecamatan": "140107",
+			"id_kota_fk": "1401",
+			"nama_kecamatan": "Kampar Kiri"
+		},
+		{
+			"id_kecamatan": "140108",
+			"id_kota_fk": "1401",
+			"nama_kecamatan": "Kampar Kiri Hilir"
+		},
+		{
+			"id_kecamatan": "140109",
+			"id_kota_fk": "1401",
+			"nama_kecamatan": "Kampar Kiri Hulu"
+		},
+		{
+			"id_kecamatan": "140110",
+			"id_kota_fk": "1401",
+			"nama_kecamatan": "Tapung"
+		},
+		{
+			"id_kecamatan": "140111",
+			"id_kota_fk": "1401",
+			"nama_kecamatan": "Tapung Hilir"
+		},
+		{
+			"id_kecamatan": "140112",
+			"id_kota_fk": "1401",
+			"nama_kecamatan": "Tapung Hulu"
+		},
+		{
+			"id_kecamatan": "140113",
+			"id_kota_fk": "1401",
+			"nama_kecamatan": "Salo"
+		},
+		{
+			"id_kecamatan": "140114",
+			"id_kota_fk": "1401",
+			"nama_kecamatan": "Rumbio Jaya"
+		},
+		{
+			"id_kecamatan": "140115",
+			"id_kota_fk": "1401",
+			"nama_kecamatan": "Bangkinang"
+		},
+		{
+			"id_kecamatan": "140116",
+			"id_kota_fk": "1401",
+			"nama_kecamatan": "Perhentian Raja"
+		},
+		{
+			"id_kecamatan": "140117",
+			"id_kota_fk": "1401",
+			"nama_kecamatan": "Kampar Timur"
+		},
+		{
+			"id_kecamatan": "140118",
+			"id_kota_fk": "1401",
+			"nama_kecamatan": "Kampar Utara"
+		},
+		{
+			"id_kecamatan": "140119",
+			"id_kota_fk": "1401",
+			"nama_kecamatan": "Kampar Kiri Tengah"
+		},
+		{
+			"id_kecamatan": "140120",
+			"id_kota_fk": "1401",
+			"nama_kecamatan": "Gunung Sahilan"
+		},
+		{
+			"id_kecamatan": "140121",
+			"id_kota_fk": "1401",
+			"nama_kecamatan": "Koto Kampar Hulu"
+		},
+		{
+			"id_kecamatan": "140201",
+			"id_kota_fk": "1402",
+			"nama_kecamatan": "Rengat"
+		},
+		{
+			"id_kecamatan": "140202",
+			"id_kota_fk": "1402",
+			"nama_kecamatan": "Rengat Barat"
+		},
+		{
+			"id_kecamatan": "140203",
+			"id_kota_fk": "1402",
+			"nama_kecamatan": "Kelayang"
+		},
+		{
+			"id_kecamatan": "140204",
+			"id_kota_fk": "1402",
+			"nama_kecamatan": "Pasir Penyu"
+		},
+		{
+			"id_kecamatan": "140205",
+			"id_kota_fk": "1402",
+			"nama_kecamatan": "Peranap"
+		},
+		{
+			"id_kecamatan": "140206",
+			"id_kota_fk": "1402",
+			"nama_kecamatan": "Siberida"
+		},
+		{
+			"id_kecamatan": "140207",
+			"id_kota_fk": "1402",
+			"nama_kecamatan": "Batang Cenaku"
+		},
+		{
+			"id_kecamatan": "140208",
+			"id_kota_fk": "1402",
+			"nama_kecamatan": "Batang Gangsal"
+		},
+		{
+			"id_kecamatan": "140209",
+			"id_kota_fk": "1402",
+			"nama_kecamatan": "Lirik"
+		},
+		{
+			"id_kecamatan": "140210",
+			"id_kota_fk": "1402",
+			"nama_kecamatan": "Kuala Cenaku"
+		},
+		{
+			"id_kecamatan": "140211",
+			"id_kota_fk": "1402",
+			"nama_kecamatan": "Sungai Lala"
+		},
+		{
+			"id_kecamatan": "140212",
+			"id_kota_fk": "1402",
+			"nama_kecamatan": "Lubuk Batu Jaya"
+		},
+		{
+			"id_kecamatan": "140213",
+			"id_kota_fk": "1402",
+			"nama_kecamatan": "Rakit Kulim"
+		},
+		{
+			"id_kecamatan": "140214",
+			"id_kota_fk": "1402",
+			"nama_kecamatan": "Batang Peranap"
+		},
+		{
+			"id_kecamatan": "140301",
+			"id_kota_fk": "1403",
+			"nama_kecamatan": "Bengkalis"
+		},
+		{
+			"id_kecamatan": "140302",
+			"id_kota_fk": "1403",
+			"nama_kecamatan": "Bantan"
+		},
+		{
+			"id_kecamatan": "140303",
+			"id_kota_fk": "1403",
+			"nama_kecamatan": "Bukit Batu"
+		},
+		{
+			"id_kecamatan": "140309",
+			"id_kota_fk": "1403",
+			"nama_kecamatan": "Mandau"
+		},
+		{
+			"id_kecamatan": "140310",
+			"id_kota_fk": "1403",
+			"nama_kecamatan": "Rupat"
+		},
+		{
+			"id_kecamatan": "140311",
+			"id_kota_fk": "1403",
+			"nama_kecamatan": "Rupat Utara"
+		},
+		{
+			"id_kecamatan": "140312",
+			"id_kota_fk": "1403",
+			"nama_kecamatan": "Siak Kecil"
+		},
+		{
+			"id_kecamatan": "140313",
+			"id_kota_fk": "1403",
+			"nama_kecamatan": "Pinggir"
+		},
+		{
+			"id_kecamatan": "140401",
+			"id_kota_fk": "1404",
+			"nama_kecamatan": "Reteh"
+		},
+		{
+			"id_kecamatan": "140402",
+			"id_kota_fk": "1404",
+			"nama_kecamatan": "Enok"
+		},
+		{
+			"id_kecamatan": "140403",
+			"id_kota_fk": "1404",
+			"nama_kecamatan": "Kuala Indragiri"
+		},
+		{
+			"id_kecamatan": "140404",
+			"id_kota_fk": "1404",
+			"nama_kecamatan": "Tembilahan"
+		},
+		{
+			"id_kecamatan": "140405",
+			"id_kota_fk": "1404",
+			"nama_kecamatan": "Tempuling"
+		},
+		{
+			"id_kecamatan": "140406",
+			"id_kota_fk": "1404",
+			"nama_kecamatan": "Gaung Anak Serka"
+		},
+		{
+			"id_kecamatan": "140407",
+			"id_kota_fk": "1404",
+			"nama_kecamatan": "Mandah"
+		},
+		{
+			"id_kecamatan": "140408",
+			"id_kota_fk": "1404",
+			"nama_kecamatan": "Kateman"
+		},
+		{
+			"id_kecamatan": "140409",
+			"id_kota_fk": "1404",
+			"nama_kecamatan": "Keritang"
+		},
+		{
+			"id_kecamatan": "140410",
+			"id_kota_fk": "1404",
+			"nama_kecamatan": "Tanah Merah"
+		},
+		{
+			"id_kecamatan": "140411",
+			"id_kota_fk": "1404",
+			"nama_kecamatan": "Batang Tuaka"
+		},
+		{
+			"id_kecamatan": "140412",
+			"id_kota_fk": "1404",
+			"nama_kecamatan": "Gaung"
+		},
+		{
+			"id_kecamatan": "140413",
+			"id_kota_fk": "1404",
+			"nama_kecamatan": "Tembilahan Hulu"
+		},
+		{
+			"id_kecamatan": "140414",
+			"id_kota_fk": "1404",
+			"nama_kecamatan": "Kemuning"
+		},
+		{
+			"id_kecamatan": "140415",
+			"id_kota_fk": "1404",
+			"nama_kecamatan": "Pelangiran"
+		},
+		{
+			"id_kecamatan": "140416",
+			"id_kota_fk": "1404",
+			"nama_kecamatan": "Teluk Belengkong"
+		},
+		{
+			"id_kecamatan": "140417",
+			"id_kota_fk": "1404",
+			"nama_kecamatan": "Pulau Burung"
+		},
+		{
+			"id_kecamatan": "140418",
+			"id_kota_fk": "1404",
+			"nama_kecamatan": "Concong"
+		},
+		{
+			"id_kecamatan": "140419",
+			"id_kota_fk": "1404",
+			"nama_kecamatan": "Kempas"
+		},
+		{
+			"id_kecamatan": "140420",
+			"id_kota_fk": "1404",
+			"nama_kecamatan": "Sungai Batang"
+		},
+		{
+			"id_kecamatan": "140501",
+			"id_kota_fk": "1405",
+			"nama_kecamatan": "Ukui"
+		},
+		{
+			"id_kecamatan": "140502",
+			"id_kota_fk": "1405",
+			"nama_kecamatan": "Pangkalan Kerinci"
+		},
+		{
+			"id_kecamatan": "140503",
+			"id_kota_fk": "1405",
+			"nama_kecamatan": "Pangkalan Kuras"
+		},
+		{
+			"id_kecamatan": "140504",
+			"id_kota_fk": "1405",
+			"nama_kecamatan": "Pangkalan Lesung"
+		},
+		{
+			"id_kecamatan": "140505",
+			"id_kota_fk": "1405",
+			"nama_kecamatan": "Langgam"
+		},
+		{
+			"id_kecamatan": "140506",
+			"id_kota_fk": "1405",
+			"nama_kecamatan": "Pelalawan"
+		},
+		{
+			"id_kecamatan": "140507",
+			"id_kota_fk": "1405",
+			"nama_kecamatan": "Kerumutan"
+		},
+		{
+			"id_kecamatan": "140508",
+			"id_kota_fk": "1405",
+			"nama_kecamatan": "Bunut"
+		},
+		{
+			"id_kecamatan": "140509",
+			"id_kota_fk": "1405",
+			"nama_kecamatan": "Teluk Meranti"
+		},
+		{
+			"id_kecamatan": "140510",
+			"id_kota_fk": "1405",
+			"nama_kecamatan": "Kuala Kampar"
+		},
+		{
+			"id_kecamatan": "140511",
+			"id_kota_fk": "1405",
+			"nama_kecamatan": "Bandar Sei Kijang"
+		},
+		{
+			"id_kecamatan": "140512",
+			"id_kota_fk": "1405",
+			"nama_kecamatan": "Bandar Petalangan"
+		},
+		{
+			"id_kecamatan": "140601",
+			"id_kota_fk": "1406",
+			"nama_kecamatan": "Ujung Batu"
+		},
+		{
+			"id_kecamatan": "140602",
+			"id_kota_fk": "1406",
+			"nama_kecamatan": "Rokan IV Koto"
+		},
+		{
+			"id_kecamatan": "140603",
+			"id_kota_fk": "1406",
+			"nama_kecamatan": "Rambah"
+		},
+		{
+			"id_kecamatan": "140604",
+			"id_kota_fk": "1406",
+			"nama_kecamatan": "Tambusai"
+		},
+		{
+			"id_kecamatan": "140605",
+			"id_kota_fk": "1406",
+			"nama_kecamatan": "Kepenuhan"
+		},
+		{
+			"id_kecamatan": "140606",
+			"id_kota_fk": "1406",
+			"nama_kecamatan": "Kunto Darussalam"
+		},
+		{
+			"id_kecamatan": "140607",
+			"id_kota_fk": "1406",
+			"nama_kecamatan": "Rambah Samo"
+		},
+		{
+			"id_kecamatan": "140608",
+			"id_kota_fk": "1406",
+			"nama_kecamatan": "Rambah Hilir"
+		},
+		{
+			"id_kecamatan": "140609",
+			"id_kota_fk": "1406",
+			"nama_kecamatan": "Tambusai Utara"
+		},
+		{
+			"id_kecamatan": "140610",
+			"id_kota_fk": "1406",
+			"nama_kecamatan": "Bangun Purba"
+		},
+		{
+			"id_kecamatan": "140611",
+			"id_kota_fk": "1406",
+			"nama_kecamatan": "Tandun"
+		},
+		{
+			"id_kecamatan": "140612",
+			"id_kota_fk": "1406",
+			"nama_kecamatan": "Kabun"
+		},
+		{
+			"id_kecamatan": "140613",
+			"id_kota_fk": "1406",
+			"nama_kecamatan": "Bonai Darussalam"
+		},
+		{
+			"id_kecamatan": "140614",
+			"id_kota_fk": "1406",
+			"nama_kecamatan": "Pagaran Tapah Darussalam"
+		},
+		{
+			"id_kecamatan": "140615",
+			"id_kota_fk": "1406",
+			"nama_kecamatan": "Kepenuhan Hulu"
+		},
+		{
+			"id_kecamatan": "140616",
+			"id_kota_fk": "1406",
+			"nama_kecamatan": "Pendalian IV Koto"
+		},
+		{
+			"id_kecamatan": "140701",
+			"id_kota_fk": "1407",
+			"nama_kecamatan": "Kubu"
+		},
+		{
+			"id_kecamatan": "140702",
+			"id_kota_fk": "1407",
+			"nama_kecamatan": "Bangko"
+		},
+		{
+			"id_kecamatan": "140703",
+			"id_kota_fk": "1407",
+			"nama_kecamatan": "Tanah Putih"
+		},
+		{
+			"id_kecamatan": "140704",
+			"id_kota_fk": "1407",
+			"nama_kecamatan": "Rimba Melintang"
+		},
+		{
+			"id_kecamatan": "140705",
+			"id_kota_fk": "1407",
+			"nama_kecamatan": "Bagan Sinembah"
+		}
+	]
+}

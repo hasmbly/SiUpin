@@ -1,0 +1,26 @@
+{
+	"table": "jenis_komoditi",
+	"rows":
+	[
+		{
+			"id_komoditi": "1",
+			"nama_komoditi": "Daging"
+		},
+		{
+			"id_komoditi": "2",
+			"nama_komoditi": "Susu "
+		},
+		{
+			"id_komoditi": "3",
+			"nama_komoditi": "Unggas dan Aneka Ternak"
+		},
+		{
+			"id_komoditi": "4",
+			"nama_komoditi": "Hasil Ikutan Ternak"
+		},
+		{
+			"id_komoditi": "5",
+			"nama_komoditi": "Limbah"
+		}
+	]
+}

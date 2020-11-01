@@ -1,0 +1,18 @@
+{
+	"table": "tb_edar",
+	"rows":
+	[
+		{
+			"id_edar": "1",
+			"nama_edar": "MD"
+		},
+		{
+			"id_edar": "2",
+			"nama_edar": "PIRT"
+		},
+		{
+			"id_edar": "3",
+			"nama_edar": "NA"
+		}
+	]
+}

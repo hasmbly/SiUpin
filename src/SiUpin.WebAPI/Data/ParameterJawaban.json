@@ -1,0 +1,114 @@
+{
+	"table": "",
+	"rows":
+	[
+		{
+            "id_jawaban": "1",
+            "id_indikator": "1",
+            "nama_jawaban": "Gapoktan",
+            "skor": "0"
+		},
+		{
+            "id_jawaban": "2",
+            "id_indikator": "1",
+            "nama_jawaban": "Poktan",
+            "skor": "0"
+		},
+		{
+            "id_jawaban": "3",
+            "id_indikator": "1",
+            "nama_jawaban": "Koperasi",
+            "skor": "0"
+        },
+        {   
+            "id_jawaban": "4",
+            "id_indikator": "1",
+            "nama_jawaban": "Asosiasi",
+            "skor": "0"
+        },
+        {
+            "id_jawaban": "5",
+            "id_indikator": "1",
+            "nama_jawaban": "Perseorangan",
+            "skor": "0"
+        },
+        {
+            "id_jawaban": "6",
+            "id_indikator": "2",
+            "nama_jawaban": "PT",
+            "skor": "0"
+        },
+        {
+            "id_jawaban": "7",
+            "id_indikator": "2",
+            "nama_jawaban": "Koperasi",
+            "skor": "0"
+        },
+        {
+            "id_jawaban": "8",
+            "id_indikator": "2",
+            "nama_jawaban": "Tidak berbadan hukum",
+            "skor": "0"
+        },  
+        {
+            "id_jawaban": "9",
+            "id_indikator": "3",
+            "nama_jawaban": "Aktif berproduksi",
+            "skor": "0"
+        },
+        {
+            "id_jawaban": "10",
+            "id_indikator": "3",
+            "nama_jawaban": "Aktif, tidak berproduksi",
+            "skor": "0"
+        }, 
+        {
+            "id_jawaban": "11",
+            "id_indikator": "3",
+            "nama_jawaban": "Tutup sementara",
+            "skor": "0"
+        }, 
+        {
+            "id_jawaban": "11",
+            "id_indikator": "5",
+            "nama_jawaban": "Kesesuaian dengan GMP",
+            "skor": "0"
+        },                         
+        {
+            "id_jawaban": "12",
+            "id_indikator": "6",
+            "nama_jawaban": "Rasio kapasitas terpakai terhadap kapasitas terpasang",
+            "skor": "0"
+        },
+        {
+            "id_jawaban": "13",
+            "id_indikator": "6",
+            "nama_jawaban": "Jumlah hari produksi",
+            "skor": "0"
+        },
+        {
+            "id_jawaban": "14",
+            "id_indikator": "7",
+            "nama_jawaban": "Sertifikat",
+            "skor": "0"
+        },
+        {
+            "id_jawaban": "15",
+            "id_indikator": "8",
+            "nama_jawaban": "Izin edar",
+            "skor": "0"
+        },        
+        {
+            "id_jawaban": "16",
+            "id_indikator": "9",
+            "nama_jawaban": "Mekanisme pemasaran",
+            "skor": "0"
+        },
+        {
+            "id_jawaban": "17",
+            "id_indikator": "10",
+            "nama_jawaban": "Jangkauan Pemasaran",
+            "skor": "0"
+        }                                        
+	]
+}

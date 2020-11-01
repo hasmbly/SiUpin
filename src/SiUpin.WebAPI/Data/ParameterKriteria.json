@@ -1,0 +1,56 @@
+{
+	"table": "",
+	"rows":
+	[
+		{
+            "id_kriteria": "1",
+            "id_aspek": "1",
+			"nama_kriteria": "Kelembagaan"
+		},
+		{
+            "id_kriteria": "2",
+            "id_aspek": "1",
+			"nama_kriteria": "Kapasitas kelembagaan"
+		},
+		{
+            "id_kriteria": "3",
+            "id_aspek": "2",
+			"nama_kriteria": "Kemitraan"
+        },
+        {
+            "id_kriteria": "4",
+            "id_aspek": "3",
+			"nama_kriteria": "Permodalan"
+        },
+        {
+            "id_kriteria": "5",
+            "id_aspek": "4",
+			"nama_kriteria": "Gmp"
+        },
+        {
+            "id_kriteria": "6",
+            "id_aspek": "4",
+			"nama_kriteria": "Kapasitas produksi"
+        },
+        {
+            "id_kriteria": "7",
+            "id_aspek": "4",
+			"nama_kriteria": "Sertifikat"
+        },
+        {
+            "id_kriteria": "8",
+            "id_aspek": "4",
+			"nama_kriteria": "Izin edar"
+        },
+        {
+            "id_kriteria": "9",
+            "id_aspek": "5",
+			"nama_kriteria": "Mekanisme pemasaran"
+        },
+        {
+            "id_kriteria": "10",
+            "id_aspek": "5",
+			"nama_kriteria": "Jangkauan Pemasaran"
+        }                
+	]
+}

@@ -1,0 +1,426 @@
+{
+	"table": "tb_olahan",
+	"rows":
+	[
+		{
+			"id_olahan": 1,
+			"nama_olahan": "Bakso",
+			"id_komoditi_fk": "1"
+		},
+		{
+			"id_olahan": 2,
+			"nama_olahan": "Rendang",
+			"id_komoditi_fk": "1"
+		},
+		{
+			"id_olahan": 3,
+			"nama_olahan": "Burger",
+			"id_komoditi_fk": "1"
+		},
+		{
+			"id_olahan": 4,
+			"nama_olahan": "Abon",
+			"id_komoditi_fk": "1"
+		},
+		{
+			"id_olahan": 6,
+			"nama_olahan": "UHT",
+			"id_komoditi_fk": "2"
+		},
+		{
+			"id_olahan": 7,
+			"nama_olahan": "Pasteurisasi",
+			"id_komoditi_fk": "2"
+		},
+		{
+			"id_olahan": 8,
+			"nama_olahan": "Yogurt",
+			"id_komoditi_fk": "2"
+		},
+		{
+			"id_olahan": 9,
+			"nama_olahan": "Susu Bubuk",
+			"id_komoditi_fk": "2"
+		},
+		{
+			"id_olahan": 10,
+			"nama_olahan": "Es krim",
+			"id_komoditi_fk": "2"
+		},
+		{
+			"id_olahan": 11,
+			"nama_olahan": "Keju",
+			"id_komoditi_fk": "2"
+		},
+		{
+			"id_olahan": 12,
+			"nama_olahan": "Kefir",
+			"id_komoditi_fk": "2"
+		},
+		{
+			"id_olahan": 13,
+			"nama_olahan": "Kerupuk Susu",
+			"id_komoditi_fk": "2"
+		},
+		{
+			"id_olahan": 14,
+			"nama_olahan": "Noga Susu",
+			"id_komoditi_fk": "2"
+		},
+		{
+			"id_olahan": 15,
+			"nama_olahan": "Dodol Susu",
+			"id_komoditi_fk": "2"
+		},
+		{
+			"id_olahan": 16,
+			"nama_olahan": "Stik Susu",
+			"id_komoditi_fk": "2"
+		},
+		{
+			"id_olahan": 17,
+			"nama_olahan": "Permen Susu",
+			"id_komoditi_fk": "2"
+		},
+		{
+			"id_olahan": 18,
+			"nama_olahan": "Kosmetik",
+			"id_komoditi_fk": "2"
+		},
+		{
+			"id_olahan": 19,
+			"nama_olahan": "Nugget Ayam",
+			"id_komoditi_fk": "3"
+		},
+		{
+			"id_olahan": 20,
+			"nama_olahan": "Sosis Ayam",
+			"id_komoditi_fk": "3"
+		},
+		{
+			"id_olahan": 21,
+			"nama_olahan": "Ayam Ungkep",
+			"id_komoditi_fk": "3"
+		},
+		{
+			"id_olahan": 22,
+			"nama_olahan": "Bebek Ungkep",
+			"id_komoditi_fk": "3"
+		},
+		{
+			"id_olahan": 23,
+			"nama_olahan": "Ayam Suwir",
+			"id_komoditi_fk": "3"
+		},
+		{
+			"id_olahan": 24,
+			"nama_olahan": "Daging Ayam Organik",
+			"id_komoditi_fk": "3"
+		},
+		{
+			"id_olahan": 25,
+			"nama_olahan": "Telur Ayam",
+			"id_komoditi_fk": "3"
+		},
+		{
+			"id_olahan": 26,
+			"nama_olahan": "Telur Ayam Organik",
+			"id_komoditi_fk": "3"
+		},
+		{
+			"id_olahan": 27,
+			"nama_olahan": "Telur Itik",
+			"id_komoditi_fk": "3"
+		},
+		{
+			"id_olahan": 28,
+			"nama_olahan": "Telur Itik Organik",
+			"id_komoditi_fk": "3"
+		},
+		{
+			"id_olahan": 29,
+			"nama_olahan": "Telur Asin",
+			"id_komoditi_fk": "3"
+		},
+		{
+			"id_olahan": 30,
+			"nama_olahan": "Ceker Ayam",
+			"id_komoditi_fk": "3"
+		},
+		{
+			"id_olahan": 31,
+			"nama_olahan": "Rambak Usus Ayam",
+			"id_komoditi_fk": "3"
+		},
+		{
+			"id_olahan": 32,
+			"nama_olahan": "Tepung Darah",
+			"id_komoditi_fk": "4"
+		},
+		{
+			"id_olahan": 33,
+			"nama_olahan": "Tepung Tulang",
+			"id_komoditi_fk": "4"
+		},
+		{
+			"id_olahan": 34,
+			"nama_olahan": "Kerajinan Tanduk",
+			"id_komoditi_fk": "4"
+		},
+		{
+			"id_olahan": 35,
+			"nama_olahan": "Kerajinan Kulit",
+			"id_komoditi_fk": "4"
+		},
+		{
+			"id_olahan": 36,
+			"nama_olahan": "Suttlecock",
+			"id_komoditi_fk": "4"
+		},
+		{
+			"id_olahan": 37,
+			"nama_olahan": "Pakan Ternak",
+			"id_komoditi_fk": "4"
+		},
+		{
+			"id_olahan": 38,
+			"nama_olahan": "Obat-obatan",
+			"id_komoditi_fk": "4"
+		},
+		{
+			"id_olahan": 39,
+			"nama_olahan": "Biogas",
+			"id_komoditi_fk": "5"
+		},
+		{
+			"id_olahan": 40,
+			"nama_olahan": "Kompos",
+			"id_komoditi_fk": "5"
+		},
+		{
+			"id_olahan": 41,
+			"nama_olahan": "Kompos Organik",
+			"id_komoditi_fk": "5"
+		},
+		{
+			"id_olahan": 42,
+			"nama_olahan": "Pupuk Cair",
+			"id_komoditi_fk": "5"
+		},
+		{
+			"id_olahan": 43,
+			"nama_olahan": "Pupuk Organik Cair",
+			"id_komoditi_fk": "5"
+		},
+		{
+			"id_olahan": 46,
+			"nama_olahan": "Dendeng",
+			"id_komoditi_fk": "1"
+		},
+		{
+			"id_olahan": 47,
+			"nama_olahan": "Sosis",
+			"id_komoditi_fk": "1"
+		},
+		{
+			"id_olahan": 48,
+			"nama_olahan": "Keripik Paru Sapi",
+			"id_komoditi_fk": "4"
+		},
+		{
+			"id_olahan": 49,
+			"nama_olahan": "Kornet",
+			"id_komoditi_fk": "1"
+		},
+		{
+			"id_olahan": 50,
+			"nama_olahan": "Puding Susu",
+			"id_komoditi_fk": "2"
+		},
+		{
+			"id_olahan": 51,
+			"nama_olahan": "Kerupuk Kulit",
+			"id_komoditi_fk": "4"
+		},
+		{
+			"id_olahan": 52,
+			"nama_olahan": "Kerupuk Ceker",
+			"id_komoditi_fk": "4"
+		},
+		{
+			"id_olahan": 53,
+			"nama_olahan": "Kerupuk Paru",
+			"id_komoditi_fk": "4"
+		},
+		{
+			"id_olahan": 54,
+			"nama_olahan": "Rendang Paru",
+			"id_komoditi_fk": "4"
+		},
+		{
+			"id_olahan": 55,
+			"nama_olahan": "Rendang Telur",
+			"id_komoditi_fk": "3"
+		},
+		{
+			"id_olahan": 56,
+			"nama_olahan": "Itik Lado Ijo",
+			"id_komoditi_fk": "3"
+		},
+		{
+			"id_olahan": 58,
+			"nama_olahan": "kerupuk usus",
+			"id_komoditi_fk": "4"
+		},
+		{
+			"id_olahan": 59,
+			"nama_olahan": "Gulai",
+			"id_komoditi_fk": "1"
+		},
+		{
+			"id_olahan": 61,
+			"nama_olahan": "Rendang Sapi",
+			"id_komoditi_fk": "1"
+		},
+		{
+			"id_olahan": 62,
+			"nama_olahan": "Rendang Domba",
+			"id_komoditi_fk": "1"
+		},
+		{
+			"id_olahan": 63,
+			"nama_olahan": "Ayam Betutu",
+			"id_komoditi_fk": "3"
+		},
+		{
+			"id_olahan": 64,
+			"nama_olahan": "Kerupuk Tulang Ayam",
+			"id_komoditi_fk": "4"
+		},
+		{
+			"id_olahan": 65,
+			"nama_olahan": "Kerupuk Telur",
+			"id_komoditi_fk": "3"
+		},
+		{
+			"id_olahan": 66,
+			"nama_olahan": "Bolu Yogurt",
+			"id_komoditi_fk": "2"
+		},
+		{
+			"id_olahan": 67,
+			"nama_olahan": "Saus Telur Asin",
+			"id_komoditi_fk": "3"
+		},
+		{
+			"id_olahan": 68,
+			"nama_olahan": "Stick Tulang",
+			"id_komoditi_fk": "4"
+		},
+		{
+			"id_olahan": 69,
+			"nama_olahan": "Puyuh Pesmol",
+			"id_komoditi_fk": "3"
+		},
+		{
+			"id_olahan": 70,
+			"nama_olahan": "Fried Chicken Beku",
+			"id_komoditi_fk": "3"
+		},
+		{
+			"id_olahan": 71,
+			"nama_olahan": "Kerupuk Telur Puyuh",
+			"id_komoditi_fk": "3"
+		},
+		{
+			"id_olahan": 72,
+			"nama_olahan": "Dadiah",
+			"id_komoditi_fk": "2"
+		},
+		{
+			"id_olahan": 73,
+			"nama_olahan": "Sabun Yoghurt",
+			"id_komoditi_fk": "2"
+		},
+		{
+			"id_olahan": 74,
+			"nama_olahan": "Sagon Puan",
+			"id_komoditi_fk": "2"
+		},
+		{
+			"id_olahan": 75,
+			"nama_olahan": "Gula Puan",
+			"id_komoditi_fk": "2"
+		},
+		{
+			"id_olahan": 76,
+			"nama_olahan": "Bakso Ayam",
+			"id_komoditi_fk": "3"
+		},
+		{
+			"id_olahan": 77,
+			"nama_olahan": "Abon Telur",
+			"id_komoditi_fk": "3"
+		},
+		{
+			"id_olahan": 78,
+			"nama_olahan": "Abon Ayam",
+			"id_komoditi_fk": "3"
+		},
+		{
+			"id_olahan": 79,
+			"nama_olahan": "dangke",
+			"id_komoditi_fk": "2"
+		},
+		{
+			"id_olahan": 85,
+			"nama_olahan": "Sarang Burung Walet Bersih",
+			"id_komoditi_fk": "3"
+		},
+		{
+			"id_olahan": 86,
+			"nama_olahan": "Sabun Susu",
+			"id_komoditi_fk": "2"
+		},
+		{
+			"id_olahan": 87,
+			"nama_olahan": "Sei",
+			"id_komoditi_fk": "1"
+		},
+		{
+			"id_olahan": 88,
+			"nama_olahan": "Susu Goreng",
+			"id_komoditi_fk": "2"
+		},
+		{
+			"id_olahan": 89,
+			"nama_olahan": "gelatin",
+			"id_komoditi_fk": "3"
+		},
+		{
+			"id_olahan": 90,
+			"nama_olahan": "galantin ayam",
+			"id_komoditi_fk": "3"
+		},
+		{
+			"id_olahan": 91,
+			"nama_olahan": "Madu",
+			"id_komoditi_fk": "3"
+		},
+		{
+			"id_olahan": 92,
+			"nama_olahan": "Kulit samak",
+			"id_komoditi_fk": "4"
+		},
+		{
+			"id_olahan": 93,
+			"nama_olahan": "Sarung Tangan Kulit (gloves)",
+			"id_komoditi_fk": "4"
+		},
+		{
+			"id_olahan": 94,
+			"nama_olahan": "upper leather",
+			"id_komoditi_fk": "4"
+		}
+	]
+}

@@ -1,0 +1,96 @@
+{
+	"table": "",
+	"rows":
+	[
+		{
+            "id_indikator": "1",
+            "id_kriteria": "1",
+			"nama_indikator": "Bentuk kelembagaan"
+		},
+		{
+            "id_indikator": "2",
+            "id_kriteria": "1",
+			"nama_indikator": "Badan hukum"
+		},
+		{
+            "id_indikator": "3",
+            "id_kriteria": "2",
+			"nama_indikator": "Status UPH"
+        },
+        {   
+            "id_indikator": "4",
+            "id_kriteria": "2",
+			"nama_indikator": "Administrasi kegiatan dan keuangan"
+        },
+        {
+            "id_indikator": "5",
+            "id_kriteria": "3",
+			"nama_indikator": "Bermitra"
+        },
+        {
+            "id_indikator": "6",
+            "id_kriteria": "3",
+			"nama_indikator": "MoU"
+        },
+        {
+            "id_indikator": "7",
+            "id_kriteria": "3",
+			"nama_indikator": "Jenis Kemitraan"
+        },
+        {
+            "id_indikator": "8",
+            "id_kriteria": "3",
+			"nama_indikator": "Lembaga yang bermitra"
+        },
+        {
+            "id_indikator": "9",
+            "id_kriteria": "4",
+			"nama_indikator": "Struktur permodalan"
+        },
+        {
+            "id_indikator": "10",
+            "id_kriteria": "4",
+			"nama_indikator": "Sumber modal"
+        }, 
+        {
+            "id_indikator": "11",
+            "id_kriteria": "5",
+			"nama_indikator": "Kesesuaian dengan GMP"
+        }, 
+        {
+            "id_indikator": "11",
+            "id_kriteria": "5",
+			"nama_indikator": "Kesesuaian dengan GMP"
+        },                         
+        {
+            "id_indikator": "12",
+            "id_kriteria": "6",
+			"nama_indikator": "Rasio kapasitas terpakai terhadap kapasitas terpasang"
+        },
+        {
+            "id_indikator": "13",
+            "id_kriteria": "6",
+			"nama_indikator": "Jumlah hari produksi"
+        },
+        {
+            "id_indikator": "14",
+            "id_kriteria": "7",
+			"nama_indikator": "Sertifikat"
+        },
+        {
+            "id_indikator": "15",
+            "id_kriteria": "8",
+			"nama_indikator": "Izin edar"
+        },        
+        {
+            "id_indikator": "16",
+            "id_kriteria": "9",
+			"nama_indikator": "Mekanisme pemasaran"
+        },
+        {
+            "id_indikator": "17",
+            "id_kriteria": "10",
+			"nama_indikator": "Jangkauan Pemasaran"
+        }                                        
+	]
+}

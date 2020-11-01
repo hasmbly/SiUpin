@@ -1,0 +1,46 @@
+{
+	"table": "tb_gmp_master",
+	"rows":
+	[
+		{
+			"id_gmp_master": "1",
+			"nama_gmp_master": "Lokasi"
+		},
+		{
+			"id_gmp_master": "2",
+			"nama_gmp_master": "Bangunan"
+		},
+		{
+			"id_gmp_master": "3",
+			"nama_gmp_master": "Fasilitas Sanitasi"
+        },
+        {
+			"id_gmp_master": "4",
+			"nama_gmp_master": "Mesin dan alat"
+        },
+        {
+			"id_gmp_master": "5",
+			"nama_gmp_master": "Kesehatan dan kebersihan karyawan"
+        },
+        {
+			"id_gmp_master": "6",
+			"nama_gmp_master": "Gudang"
+        },
+        {
+			"id_gmp_master": "7",
+			"nama_gmp_master": "Pemeliharaan bangunan dan sarana kerja"
+        },
+        {
+			"id_gmp_master": "8",
+			"nama_gmp_master": "Proses Produksi"
+        },
+        {
+			"id_gmp_master": "9",
+			"nama_gmp_master": "Keselamatan dan keamanan kerja"
+        },
+        {
+			"id_gmp_master": "10",
+			"nama_gmp_master": "Pengelolaan Lingkungan"
+		}
+	]
+}

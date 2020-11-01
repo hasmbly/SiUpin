@@ -1,0 +1,30 @@
+{
+	"table": "role",
+	"rows":
+	[
+		{
+			"id_role": "1",
+			"nama_role": "ADMIN"
+		},
+		{
+			"id_role": "2",
+			"nama_role": "USER_PROVINSI "
+		},
+		{
+			"id_role": "3",
+			"nama_role": "USER_KABUPATEN"
+		},
+		{
+			"id_role": "4",
+			"nama_role": "USER_KECAMATAN"
+		},
+		{
+			"id_role": "5",
+			"nama_role": "USER_KELURAHAN"
+        },
+		{
+			"id_role": "6",
+			"nama_role": "USER_USAHA"
+		}        
+	]
+}

@@ -1,0 +1,22 @@
+{
+	"table": "tb_sertifikat",
+	"rows":
+	[
+		{
+			"id_sertifikat": "1",
+			"nama_sertifikat": "Organik"
+		},
+		{
+			"id_sertifikat": "2",
+			"nama_sertifikat": "Halal"
+		},
+		{
+			"id_sertifikat": "3",
+			"nama_sertifikat": "Sertifikat Penyuluhan"
+		},
+		{
+			"id_sertifikat": "4",
+			"nama_sertifikat": "NKV"
+		}		
+	]
+}

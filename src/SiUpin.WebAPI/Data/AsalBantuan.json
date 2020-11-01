@@ -1,0 +1,14 @@
+{
+	"table": "",
+	"rows":
+	[
+		{
+			"id_asal_bantuan": "1",
+			"nama_asal_bantuan": "APBN"
+		},
+		{
+			"id_asal_bantuan": "2",
+			"nama_asal_bantuan": "APBD"
+		}
+	]
+}

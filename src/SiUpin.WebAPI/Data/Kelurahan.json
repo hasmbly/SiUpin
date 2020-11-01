@@ -1,0 +1,5006 @@
+{
+	"table": "kelurahan",
+	"rows":
+	[
+		{
+			"id_kelurahan": "1101012001",
+			"id_kecamatan_fk": "110101",
+			"nama_kelurahan": "Keude Bakongan"
+		},
+		{
+			"id_kelurahan": "1101012002",
+			"id_kecamatan_fk": "110101",
+			"nama_kelurahan": "Ujung Mangki"
+		},
+		{
+			"id_kelurahan": "1101012003",
+			"id_kecamatan_fk": "110101",
+			"nama_kelurahan": "Ujung Padang"
+		},
+		{
+			"id_kelurahan": "1101012004",
+			"id_kecamatan_fk": "110101",
+			"nama_kelurahan": "Kampong Drien"
+		},
+		{
+			"id_kelurahan": "1101012015",
+			"id_kecamatan_fk": "110101",
+			"nama_kelurahan": "Darul Ikhsan"
+		},
+		{
+			"id_kelurahan": "1101012016",
+			"id_kecamatan_fk": "110101",
+			"nama_kelurahan": "Padang Berahan"
+		},
+		{
+			"id_kelurahan": "1101012017",
+			"id_kecamatan_fk": "110101",
+			"nama_kelurahan": "Gampong Baro"
+		},
+		{
+			"id_kelurahan": "1101022001",
+			"id_kecamatan_fk": "110102",
+			"nama_kelurahan": "Fajar Harapan"
+		},
+		{
+			"id_kelurahan": "1101022002",
+			"id_kecamatan_fk": "110102",
+			"nama_kelurahan": "Krueng Batee"
+		},
+		{
+			"id_kelurahan": "1101022003",
+			"id_kecamatan_fk": "110102",
+			"nama_kelurahan": "Pasi Kuala Asahan"
+		},
+		{
+			"id_kelurahan": "1101022004",
+			"id_kecamatan_fk": "110102",
+			"nama_kelurahan": "Gunung Pulo"
+		},
+		{
+			"id_kelurahan": "1101022005",
+			"id_kecamatan_fk": "110102",
+			"nama_kelurahan": "Pulo IE I"
+		},
+		{
+			"id_kelurahan": "1101022006",
+			"id_kecamatan_fk": "110102",
+			"nama_kelurahan": "Jambo Manyang"
+		},
+		{
+			"id_kelurahan": "1101022007",
+			"id_kecamatan_fk": "110102",
+			"nama_kelurahan": "Simpang Empat"
+		},
+		{
+			"id_kelurahan": "1101022008",
+			"id_kecamatan_fk": "110102",
+			"nama_kelurahan": "Limau Purut"
+		},
+		{
+			"id_kelurahan": "1101022009",
+			"id_kecamatan_fk": "110102",
+			"nama_kelurahan": "Pulo Kambing"
+		},
+		{
+			"id_kelurahan": "1101022010",
+			"id_kecamatan_fk": "110102",
+			"nama_kelurahan": "Kampung Paya"
+		},
+		{
+			"id_kelurahan": "1101022011",
+			"id_kecamatan_fk": "110102",
+			"nama_kelurahan": "Krueng Batu"
+		},
+		{
+			"id_kelurahan": "1101022012",
+			"id_kecamatan_fk": "110102",
+			"nama_kelurahan": "Krueng Kluet"
+		},
+		{
+			"id_kelurahan": "1101022013",
+			"id_kecamatan_fk": "110102",
+			"nama_kelurahan": "Alur Mas"
+		},
+		{
+			"id_kelurahan": "1101022014",
+			"id_kecamatan_fk": "110102",
+			"nama_kelurahan": "Simpang Dua"
+		},
+		{
+			"id_kelurahan": "1101022015",
+			"id_kecamatan_fk": "110102",
+			"nama_kelurahan": "Simpang Tiga"
+		},
+		{
+			"id_kelurahan": "1101022016",
+			"id_kecamatan_fk": "110102",
+			"nama_kelurahan": "Simpang Lhee"
+		},
+		{
+			"id_kelurahan": "1101022017",
+			"id_kecamatan_fk": "110102",
+			"nama_kelurahan": "Suag Geuringgeng"
+		},
+		{
+			"id_kelurahan": "1101022018",
+			"id_kecamatan_fk": "110102",
+			"nama_kelurahan": "Pasi Kuala Baku"
+		},
+		{
+			"id_kelurahan": "1101022019",
+			"id_kecamatan_fk": "110102",
+			"nama_kelurahan": "Kedai Padang"
+		},
+		{
+			"id_kelurahan": "1101022020",
+			"id_kecamatan_fk": "110102",
+			"nama_kelurahan": "Kotafajar"
+		},
+		{
+			"id_kelurahan": "1101022021",
+			"id_kecamatan_fk": "110102",
+			"nama_kelurahan": "Gunung Pudung"
+		},
+		{
+			"id_kelurahan": "1101032001",
+			"id_kecamatan_fk": "110103",
+			"nama_kelurahan": "Suaq Bakong"
+		},
+		{
+			"id_kelurahan": "1101032002",
+			"id_kecamatan_fk": "110103",
+			"nama_kelurahan": "Rantau Benuang"
+		},
+		{
+			"id_kelurahan": "1101032003",
+			"id_kecamatan_fk": "110103",
+			"nama_kelurahan": "Barat Daya"
+		},
+		{
+			"id_kelurahan": "1101032004",
+			"id_kecamatan_fk": "110103",
+			"nama_kelurahan": "Sialang"
+		},
+		{
+			"id_kelurahan": "1101032005",
+			"id_kecamatan_fk": "110103",
+			"nama_kelurahan": "Kapeh"
+		},
+		{
+			"id_kelurahan": "1101032006",
+			"id_kecamatan_fk": "110103",
+			"nama_kelurahan": "Pulo IE"
+		},
+		{
+			"id_kelurahan": "1101032007",
+			"id_kecamatan_fk": "110103",
+			"nama_kelurahan": "Kedai Runding"
+		},
+		{
+			"id_kelurahan": "1101032008",
+			"id_kecamatan_fk": "110103",
+			"nama_kelurahan": "Kedai Kandang"
+		},
+		{
+			"id_kelurahan": "1101032009",
+			"id_kecamatan_fk": "110103",
+			"nama_kelurahan": "Luar"
+		},
+		{
+			"id_kelurahan": "1101032010",
+			"id_kecamatan_fk": "110103",
+			"nama_kelurahan": "Ujong"
+		},
+		{
+			"id_kelurahan": "1101032011",
+			"id_kecamatan_fk": "110103",
+			"nama_kelurahan": "Jua"
+		},
+		{
+			"id_kelurahan": "1101032012",
+			"id_kecamatan_fk": "110103",
+			"nama_kelurahan": "Pasi Meurapat"
+		},
+		{
+			"id_kelurahan": "1101032013",
+			"id_kecamatan_fk": "110103",
+			"nama_kelurahan": "Ujung Pasir"
+		},
+		{
+			"id_kelurahan": "1101032014",
+			"id_kecamatan_fk": "110103",
+			"nama_kelurahan": "Geulumbuk"
+		},
+		{
+			"id_kelurahan": "1101032015",
+			"id_kecamatan_fk": "110103",
+			"nama_kelurahan": "Pasie Lambang"
+		},
+		{
+			"id_kelurahan": "1101032016",
+			"id_kecamatan_fk": "110103",
+			"nama_kelurahan": "Ujung Padang"
+		},
+		{
+			"id_kelurahan": "1101032017",
+			"id_kecamatan_fk": "110103",
+			"nama_kelurahan": "Indra Damai"
+		},
+		{
+			"id_kelurahan": "1101042001",
+			"id_kecamatan_fk": "110104",
+			"nama_kelurahan": "Bakau Hulu"
+		},
+		{
+			"id_kelurahan": "1101042002",
+			"id_kecamatan_fk": "110104",
+			"nama_kelurahan": "Padang Baku"
+		},
+		{
+			"id_kelurahan": "1101042003",
+			"id_kecamatan_fk": "110104",
+			"nama_kelurahan": "Manggis Harapan"
+		},
+		{
+			"id_kelurahan": "1101042004",
+			"id_kecamatan_fk": "110104",
+			"nama_kelurahan": "Pasar Lama"
+		},
+		{
+			"id_kelurahan": "1101042005",
+			"id_kecamatan_fk": "110104",
+			"nama_kelurahan": "Apha"
+		},
+		{
+			"id_kelurahan": "1101042006",
+			"id_kecamatan_fk": "110104",
+			"nama_kelurahan": "Ujung Batu"
+		},
+		{
+			"id_kelurahan": "1101042007",
+			"id_kecamatan_fk": "110104",
+			"nama_kelurahan": "Pawoh"
+		},
+		{
+			"id_kelurahan": "1101042008",
+			"id_kecamatan_fk": "110104",
+			"nama_kelurahan": "Dalam"
+		},
+		{
+			"id_kelurahan": "1101042009",
+			"id_kecamatan_fk": "110104",
+			"nama_kelurahan": "Kota Palak"
+		},
+		{
+			"id_kelurahan": "1101042010",
+			"id_kecamatan_fk": "110104",
+			"nama_kelurahan": "Cacang"
+		},
+		{
+			"id_kelurahan": "1101042011",
+			"id_kecamatan_fk": "110104",
+			"nama_kelurahan": "Tengoh Pisang"
+		},
+		{
+			"id_kelurahan": "1101042012",
+			"id_kecamatan_fk": "110104",
+			"nama_kelurahan": "Pisang"
+		},
+		{
+			"id_kelurahan": "1101042013",
+			"id_kecamatan_fk": "110104",
+			"nama_kelurahan": "Hulu Pisang"
+		},
+		{
+			"id_kelurahan": "1101042014",
+			"id_kecamatan_fk": "110104",
+			"nama_kelurahan": "Tengah Baru"
+		},
+		{
+			"id_kelurahan": "1101042015",
+			"id_kecamatan_fk": "110104",
+			"nama_kelurahan": "Lembah Baru"
+		},
+		{
+			"id_kelurahan": "1101042016",
+			"id_kecamatan_fk": "110104",
+			"nama_kelurahan": "Padang Baru"
+		},
+		{
+			"id_kelurahan": "1101052001",
+			"id_kecamatan_fk": "110105",
+			"nama_kelurahan": "Kuta Buloh II"
+		},
+		{
+			"id_kelurahan": "1101052002",
+			"id_kecamatan_fk": "110105",
+			"nama_kelurahan": "Kuta Buloh I"
+		},
+		{
+			"id_kelurahan": "1101052003",
+			"id_kecamatan_fk": "110105",
+			"nama_kelurahan": "IE Dingin"
+		},
+		{
+			"id_kelurahan": "1101052004",
+			"id_kecamatan_fk": "110105",
+			"nama_kelurahan": "Drien Jalo"
+		},
+		{
+			"id_kelurahan": "1101052005",
+			"id_kecamatan_fk": "110105",
+			"nama_kelurahan": "Jambo Papeun"
+		},
+		{
+			"id_kelurahan": "1101052006",
+			"id_kecamatan_fk": "110105",
+			"nama_kelurahan": "Buket Mas"
+		},
+		{
+			"id_kelurahan": "1101052007",
+			"id_kecamatan_fk": "110105",
+			"nama_kelurahan": "Blang Kuala"
+		},
+		{
+			"id_kelurahan": "1101052008",
+			"id_kecamatan_fk": "110105",
+			"nama_kelurahan": "Rot Teungoh"
+		},
+		{
+			"id_kelurahan": "1101052009",
+			"id_kecamatan_fk": "110105",
+			"nama_kelurahan": "Alue Baro"
+		},
+		{
+			"id_kelurahan": "1101052010",
+			"id_kecamatan_fk": "110105",
+			"nama_kelurahan": "Ladang Tuha"
+		},
+		{
+			"id_kelurahan": "1101052011",
+			"id_kecamatan_fk": "110105",
+			"nama_kelurahan": "Lhok Mamplam"
+		},
+		{
+			"id_kelurahan": "1101052012",
+			"id_kecamatan_fk": "110105",
+			"nama_kelurahan": "Aron Tunggai"
+		},
+		{
+			"id_kelurahan": "1101052013",
+			"id_kecamatan_fk": "110105",
+			"nama_kelurahan": "Blang Teungoh"
+		},
+		{
+			"id_kelurahan": "1101052014",
+			"id_kecamatan_fk": "110105",
+			"nama_kelurahan": "Blang Bladeh"
+		},
+		{
+			"id_kelurahan": "1101052015",
+			"id_kecamatan_fk": "110105",
+			"nama_kelurahan": "IE Buboh"
+		},
+		{
+			"id_kelurahan": "1101052016",
+			"id_kecamatan_fk": "110105",
+			"nama_kelurahan": "Keudai Meukek"
+		},
+		{
+			"id_kelurahan": "1101052017",
+			"id_kecamatan_fk": "110105",
+			"nama_kelurahan": "Kota Baro"
+		},
+		{
+			"id_kelurahan": "1101052018",
+			"id_kecamatan_fk": "110105",
+			"nama_kelurahan": "Tanjung Harapan"
+		},
+		{
+			"id_kelurahan": "1101052019",
+			"id_kecamatan_fk": "110105",
+			"nama_kelurahan": "Labuhan Tarok"
+		},
+		{
+			"id_kelurahan": "1101052020",
+			"id_kecamatan_fk": "110105",
+			"nama_kelurahan": "Lhok Aman"
+		},
+		{
+			"id_kelurahan": "1101052021",
+			"id_kecamatan_fk": "110105",
+			"nama_kelurahan": "Alue Meutuwah"
+		},
+		{
+			"id_kelurahan": "1101052022",
+			"id_kecamatan_fk": "110105",
+			"nama_kelurahan": "Ladang Baro"
+		},
+		{
+			"id_kelurahan": "1101052023",
+			"id_kecamatan_fk": "110105",
+			"nama_kelurahan": "Labuhan Tarok II"
+		},
+		{
+			"id_kelurahan": "1101062001",
+			"id_kecamatan_fk": "110106",
+			"nama_kelurahan": "Dalam"
+		},
+		{
+			"id_kelurahan": "1101062002",
+			"id_kecamatan_fk": "110106",
+			"nama_kelurahan": "Subarang"
+		},
+		{
+			"id_kelurahan": "1101062003",
+			"id_kecamatan_fk": "110106",
+			"nama_kelurahan": "Kuta Baro"
+		},
+		{
+			"id_kelurahan": "1101062004",
+			"id_kecamatan_fk": "110106",
+			"nama_kelurahan": "Gunung Ketek"
+		},
+		{
+			"id_kelurahan": "1101062005",
+			"id_kecamatan_fk": "110106",
+			"nama_kelurahan": "Ladang Panton Luas"
+		},
+		{
+			"id_kelurahan": "1101062006",
+			"id_kecamatan_fk": "110106",
+			"nama_kelurahan": "Madat"
+		},
+		{
+			"id_kelurahan": "1101062007",
+			"id_kecamatan_fk": "110106",
+			"nama_kelurahan": "Alu Seumirah"
+		},
+		{
+			"id_kelurahan": "1101062008",
+			"id_kecamatan_fk": "110106",
+			"nama_kelurahan": "Tengah"
+		},
+		{
+			"id_kelurahan": "1101062009",
+			"id_kecamatan_fk": "110106",
+			"nama_kelurahan": "Gunung Cut"
+		},
+		{
+			"id_kelurahan": "1101062010",
+			"id_kecamatan_fk": "110106",
+			"nama_kelurahan": "Alur Pinang"
+		},
+		{
+			"id_kelurahan": "1101062011",
+			"id_kecamatan_fk": "110106",
+			"nama_kelurahan": "Kuta Blang"
+		},
+		{
+			"id_kelurahan": "1101062012",
+			"id_kecamatan_fk": "110106",
+			"nama_kelurahan": "Batee Tunggal"
+		},
+		{
+			"id_kelurahan": "1101062013",
+			"id_kecamatan_fk": "110106",
+			"nama_kelurahan": "Ujung Tanoh"
+		},
+		{
+			"id_kelurahan": "1101062014",
+			"id_kecamatan_fk": "110106",
+			"nama_kelurahan": "Ujung Kampung"
+		},
+		{
+			"id_kelurahan": "1101062015",
+			"id_kecamatan_fk": "110106",
+			"nama_kelurahan": "Jilatang"
+		},
+		{
+			"id_kelurahan": "1101062016",
+			"id_kecamatan_fk": "110106",
+			"nama_kelurahan": "Luar"
+		},
+		{
+			"id_kelurahan": "1101062017",
+			"id_kecamatan_fk": "110106",
+			"nama_kelurahan": "Lubuk Kayu"
+		},
+		{
+			"id_kelurahan": "1101062018",
+			"id_kecamatan_fk": "110106",
+			"nama_kelurahan": "Suaq Hulu"
+		},
+		{
+			"id_kelurahan": "1101062019",
+			"id_kecamatan_fk": "110106",
+			"nama_kelurahan": "Tampang"
+		},
+		{
+			"id_kelurahan": "1101062020",
+			"id_kecamatan_fk": "110106",
+			"nama_kelurahan": "Payo Nanggadang"
+		},
+		{
+			"id_kelurahan": "1101062021",
+			"id_kecamatan_fk": "110106",
+			"nama_kelurahan": "Gadang"
+		},
+		{
+			"id_kelurahan": "1101062022",
+			"id_kecamatan_fk": "110106",
+			"nama_kelurahan": "Baru"
+		},
+		{
+			"id_kelurahan": "1101062023",
+			"id_kecamatan_fk": "110106",
+			"nama_kelurahan": "Ladang Kasik Putih"
+		},
+		{
+			"id_kelurahan": "1101062024",
+			"id_kecamatan_fk": "110106",
+			"nama_kelurahan": "Air Sialang Hilir."
+		},
+		{
+			"id_kelurahan": "1101062025",
+			"id_kecamatan_fk": "110106",
+			"nama_kelurahan": "Air Sialang Hulu"
+		},
+		{
+			"id_kelurahan": "1101062026",
+			"id_kecamatan_fk": "110106",
+			"nama_kelurahan": "Air Sialang Tengah"
+		},
+		{
+			"id_kelurahan": "1101062027",
+			"id_kecamatan_fk": "110106",
+			"nama_kelurahan": "Balai"
+		},
+		{
+			"id_kelurahan": "1101062028",
+			"id_kecamatan_fk": "110106",
+			"nama_kelurahan": "Arafah"
+		},
+		{
+			"id_kelurahan": "1101072001",
+			"id_kecamatan_fk": "110107",
+			"nama_kelurahan": "Sikulat"
+		},
+		{
+			"id_kelurahan": "1101072002",
+			"id_kecamatan_fk": "110107",
+			"nama_kelurahan": "Sawang I"
+		},
+		{
+			"id_kelurahan": "1101072003",
+			"id_kecamatan_fk": "110107",
+			"nama_kelurahan": "Meuligo"
+		},
+		{
+			"id_kelurahan": "1101072004",
+			"id_kecamatan_fk": "110107",
+			"nama_kelurahan": "Lhok Pawoh"
+		},
+		{
+			"id_kelurahan": "1101072005",
+			"id_kecamatan_fk": "110107",
+			"nama_kelurahan": "Sawang II"
+		},
+		{
+			"id_kelurahan": "1101072006",
+			"id_kecamatan_fk": "110107",
+			"nama_kelurahan": "Ujung Karang"
+		},
+		{
+			"id_kelurahan": "1101072007",
+			"id_kecamatan_fk": "110107",
+			"nama_kelurahan": "Trieng Meudeuro Baroh"
+		},
+		{
+			"id_kelurahan": "1101072008",
+			"id_kecamatan_fk": "110107",
+			"nama_kelurahan": "Trieng Meudeuro Tunong"
+		},
+		{
+			"id_kelurahan": "1101072009",
+			"id_kecamatan_fk": "110107",
+			"nama_kelurahan": "Panton Luas"
+		},
+		{
+			"id_kelurahan": "1101072010",
+			"id_kecamatan_fk": "110107",
+			"nama_kelurahan": "Simpang Tiga"
+		},
+		{
+			"id_kelurahan": "1101072011",
+			"id_kecamatan_fk": "110107",
+			"nama_kelurahan": "Kuta Baro"
+		},
+		{
+			"id_kelurahan": "1101072012",
+			"id_kecamatan_fk": "110107",
+			"nama_kelurahan": "Blang Geulinggang"
+		},
+		{
+			"id_kelurahan": "1101072013",
+			"id_kecamatan_fk": "110107",
+			"nama_kelurahan": "Mutiara"
+		},
+		{
+			"id_kelurahan": "1101072014",
+			"id_kecamatan_fk": "110107",
+			"nama_kelurahan": "Ujung Padang"
+		},
+		{
+			"id_kelurahan": "1101072015",
+			"id_kecamatan_fk": "110107",
+			"nama_kelurahan": "Sawang Ba'u"
+		},
+		{
+			"id_kelurahan": "1101082001",
+			"id_kecamatan_fk": "110108",
+			"nama_kelurahan": "Lhok Keutapang"
+		},
+		{
+			"id_kelurahan": "1101082002",
+			"id_kecamatan_fk": "110108",
+			"nama_kelurahan": "Hilir"
+		},
+		{
+			"id_kelurahan": "1101082003",
+			"id_kecamatan_fk": "110108",
+			"nama_kelurahan": "Padang"
+		},
+		{
+			"id_kelurahan": "1101082004",
+			"id_kecamatan_fk": "110108",
+			"nama_kelurahan": "Hulu"
+		},
+		{
+			"id_kelurahan": "1101082005",
+			"id_kecamatan_fk": "110108",
+			"nama_kelurahan": "Jambo Apha"
+		},
+		{
+			"id_kelurahan": "1101082006",
+			"id_kecamatan_fk": "110108",
+			"nama_kelurahan": "Tepi Air"
+		},
+		{
+			"id_kelurahan": "1101082007",
+			"id_kecamatan_fk": "110108",
+			"nama_kelurahan": "Pasar Tapaktuan"
+		},
+		{
+			"id_kelurahan": "1101082008",
+			"id_kecamatan_fk": "110108",
+			"nama_kelurahan": "Lhok Bengkuang"
+		},
+		{
+			"id_kelurahan": "1101082009",
+			"id_kecamatan_fk": "110108",
+			"nama_kelurahan": "Panton Luas"
+		},
+		{
+			"id_kelurahan": "1101082010",
+			"id_kecamatan_fk": "110108",
+			"nama_kelurahan": "Gunung Kerambil"
+		},
+		{
+			"id_kelurahan": "1101082011",
+			"id_kecamatan_fk": "110108",
+			"nama_kelurahan": "Air Berundang"
+		},
+		{
+			"id_kelurahan": "1101082012",
+			"id_kecamatan_fk": "110108",
+			"nama_kelurahan": "Batu Itam"
+		},
+		{
+			"id_kelurahan": "1101082013",
+			"id_kecamatan_fk": "110108",
+			"nama_kelurahan": "Panju Plan"
+		},
+		{
+			"id_kelurahan": "1101082014",
+			"id_kecamatan_fk": "110108",
+			"nama_kelurahan": "Lhok Rukam"
+		},
+		{
+			"id_kelurahan": "1101082015",
+			"id_kecamatan_fk": "110108",
+			"nama_kelurahan": "Air Pinang"
+		},
+		{
+			"id_kelurahan": "1101082016",
+			"id_kecamatan_fk": "110108",
+			"nama_kelurahan": "Lhok Bengkuang Timur"
+		},
+		{
+			"id_kelurahan": "1101092001",
+			"id_kecamatan_fk": "110109",
+			"nama_kelurahan": "Kede Trumon"
+		},
+		{
+			"id_kelurahan": "1101092002",
+			"id_kecamatan_fk": "110109",
+			"nama_kelurahan": "Ujung Tanoh"
+		},
+		{
+			"id_kelurahan": "1101092003",
+			"id_kecamatan_fk": "110109",
+			"nama_kelurahan": "Sigleng"
+		},
+		{
+			"id_kelurahan": "1101092004",
+			"id_kecamatan_fk": "110109",
+			"nama_kelurahan": "Ie Meudama"
+		},
+		{
+			"id_kelurahan": "1101092005",
+			"id_kecamatan_fk": "110109",
+			"nama_kelurahan": "Tepin Tinggi"
+		},
+		{
+			"id_kelurahan": "1101092006",
+			"id_kecamatan_fk": "110109",
+			"nama_kelurahan": "Kuta Baro"
+		},
+		{
+			"id_kelurahan": "1101092007",
+			"id_kecamatan_fk": "110109",
+			"nama_kelurahan": "Panton Bilie"
+		},
+		{
+			"id_kelurahan": "1101092012",
+			"id_kecamatan_fk": "110109",
+			"nama_kelurahan": "Kuta Padang"
+		},
+		{
+			"id_kelurahan": "1101092013",
+			"id_kecamatan_fk": "110109",
+			"nama_kelurahan": "Raket"
+		},
+		{
+			"id_kelurahan": "1101092015",
+			"id_kecamatan_fk": "110109",
+			"nama_kelurahan": "Seuneubok Jaya"
+		},
+		{
+			"id_kelurahan": "1101092016",
+			"id_kecamatan_fk": "110109",
+			"nama_kelurahan": "Padang Harapan"
+		},
+		{
+			"id_kelurahan": "1101102001",
+			"id_kecamatan_fk": "110110",
+			"nama_kelurahan": "Ladang Teungoh"
+		},
+		{
+			"id_kelurahan": "1101102002",
+			"id_kecamatan_fk": "110110",
+			"nama_kelurahan": "Pucok Krueng"
+		},
+		{
+			"id_kelurahan": "1101102003",
+			"id_kecamatan_fk": "110110",
+			"nama_kelurahan": "Silolo"
+		},
+		{
+			"id_kelurahan": "1101102004",
+			"id_kecamatan_fk": "110110",
+			"nama_kelurahan": "Kampong Baru"
+		},
+		{
+			"id_kelurahan": "1101102005",
+			"id_kecamatan_fk": "110110",
+			"nama_kelurahan": "Panton Bili"
+		},
+		{
+			"id_kelurahan": "1101102006",
+			"id_kecamatan_fk": "110110",
+			"nama_kelurahan": "Paya Teuk"
+		},
+		{
+			"id_kelurahan": "1101102007",
+			"id_kecamatan_fk": "110110",
+			"nama_kelurahan": "Ladang Tuha"
+		},
+		{
+			"id_kelurahan": "1101102008",
+			"id_kecamatan_fk": "110110",
+			"nama_kelurahan": "Mata Ie"
+		},
+		{
+			"id_kelurahan": "1101102009",
+			"id_kecamatan_fk": "110110",
+			"nama_kelurahan": "Ujong Batee"
+		},
+		{
+			"id_kelurahan": "1101102010",
+			"id_kecamatan_fk": "110110",
+			"nama_kelurahan": "Lhok Sialang Cut"
+		},
+		{
+			"id_kelurahan": "1101102011",
+			"id_kecamatan_fk": "110110",
+			"nama_kelurahan": "Seunebok"
+		},
+		{
+			"id_kelurahan": "1101102012",
+			"id_kecamatan_fk": "110110",
+			"nama_kelurahan": "Ie Mirah"
+		},
+		{
+			"id_kelurahan": "1101102013",
+			"id_kecamatan_fk": "110110",
+			"nama_kelurahan": "Pasie Rasian"
+		},
+		{
+			"id_kelurahan": "1101102014",
+			"id_kecamatan_fk": "110110",
+			"nama_kelurahan": "Ujung Padang Rasian"
+		},
+		{
+			"id_kelurahan": "1101102015",
+			"id_kecamatan_fk": "110110",
+			"nama_kelurahan": "Krueng Kalee"
+		},
+		{
+			"id_kelurahan": "1101102016",
+			"id_kecamatan_fk": "110110",
+			"nama_kelurahan": "Lhok Sialang Rayeuk"
+		},
+		{
+			"id_kelurahan": "1101102017",
+			"id_kecamatan_fk": "110110",
+			"nama_kelurahan": "Pd. Macan Brs"
+		},
+		{
+			"id_kelurahan": "1101102018",
+			"id_kecamatan_fk": "110110",
+			"nama_kelurahan": "Teupin Gajah"
+		},
+		{
+			"id_kelurahan": "1101102019",
+			"id_kecamatan_fk": "110110",
+			"nama_kelurahan": "Ujung Padang Asahan"
+		},
+		{
+			"id_kelurahan": "1101102020",
+			"id_kecamatan_fk": "110110",
+			"nama_kelurahan": "Pulo Ie II"
+		},
+		{
+			"id_kelurahan": "1101102021",
+			"id_kecamatan_fk": "110110",
+			"nama_kelurahan": "Pante Raja"
+		},
+		{
+			"id_kelurahan": "1101112001",
+			"id_kecamatan_fk": "110111",
+			"nama_kelurahan": "Tengoh Peulumat"
+		},
+		{
+			"id_kelurahan": "1101112002",
+			"id_kecamatan_fk": "110111",
+			"nama_kelurahan": "Paya Peulumat"
+		},
+		{
+			"id_kelurahan": "1101112003",
+			"id_kecamatan_fk": "110111",
+			"nama_kelurahan": "Padang Peulumat"
+		},
+		{
+			"id_kelurahan": "1101112004",
+			"id_kecamatan_fk": "110111",
+			"nama_kelurahan": "Alur Peulumat"
+		},
+		{
+			"id_kelurahan": "1101112005",
+			"id_kecamatan_fk": "110111",
+			"nama_kelurahan": "Limau Saring"
+		},
+		{
+			"id_kelurahan": "1101112006",
+			"id_kecamatan_fk": "110111",
+			"nama_kelurahan": "Beutong"
+		},
+		{
+			"id_kelurahan": "1101112007",
+			"id_kecamatan_fk": "110111",
+			"nama_kelurahan": "Peuneulop"
+		},
+		{
+			"id_kelurahan": "1101112008",
+			"id_kecamatan_fk": "110111",
+			"nama_kelurahan": "Gunung Rotan"
+		},
+		{
+			"id_kelurahan": "1101112009",
+			"id_kecamatan_fk": "110111",
+			"nama_kelurahan": "Keumumu Hilir"
+		},
+		{
+			"id_kelurahan": "1101112010",
+			"id_kecamatan_fk": "110111",
+			"nama_kelurahan": "Keumumu Hulu"
+		},
+		{
+			"id_kelurahan": "1101112011",
+			"id_kecamatan_fk": "110111",
+			"nama_kelurahan": "Keumumu Seberang"
+		},
+		{
+			"id_kelurahan": "1101112012",
+			"id_kecamatan_fk": "110111",
+			"nama_kelurahan": "Sawang Indah"
+		},
+		{
+			"id_kelurahan": "1101122001",
+			"id_kecamatan_fk": "110112",
+			"nama_kelurahan": "Tutong"
+		},
+		{
+			"id_kelurahan": "1101122002",
+			"id_kecamatan_fk": "110112",
+			"nama_kelurahan": "Tengah Iboh"
+		},
+		{
+			"id_kelurahan": "1101122003",
+			"id_kecamatan_fk": "110112",
+			"nama_kelurahan": "Peulokan"
+		},
+		{
+			"id_kelurahan": "1101122004",
+			"id_kecamatan_fk": "110112",
+			"nama_kelurahan": "Kuta Iboh"
+		},
+		{
+			"id_kelurahan": "1101122005",
+			"id_kecamatan_fk": "110112",
+			"nama_kelurahan": "Ujung Padang"
+		},
+		{
+			"id_kelurahan": "1101122006",
+			"id_kecamatan_fk": "110112",
+			"nama_kelurahan": "Blang Baru"
+		},
+		{
+			"id_kelurahan": "1101122007",
+			"id_kecamatan_fk": "110112",
+			"nama_kelurahan": "Blang Poroh"
+		},
+		{
+			"id_kelurahan": "1101122008",
+			"id_kecamatan_fk": "110112",
+			"nama_kelurahan": "Pulo Ie"
+		},
+		{
+			"id_kelurahan": "1101122009",
+			"id_kecamatan_fk": "110112",
+			"nama_kelurahan": "Suaq Lokan"
+		},
+		{
+			"id_kelurahan": "1101122010",
+			"id_kecamatan_fk": "110112",
+			"nama_kelurahan": "Iku Lhung"
+		},
+		{
+			"id_kelurahan": "1101122011",
+			"id_kecamatan_fk": "110112",
+			"nama_kelurahan": "Kuta Trieng"
+		},
+		{
+			"id_kelurahan": "1101122012",
+			"id_kecamatan_fk": "110112",
+			"nama_kelurahan": "Pante Geulima"
+		},
+		{
+			"id_kelurahan": "1101122013",
+			"id_kecamatan_fk": "110112",
+			"nama_kelurahan": "Panton Pawoh"
+		},
+		{
+			"id_kelurahan": "1101122014",
+			"id_kecamatan_fk": "110112",
+			"nama_kelurahan": "Batee Meucanang"
+		},
+		{
+			"id_kelurahan": "1101122015",
+			"id_kecamatan_fk": "110112",
+			"nama_kelurahan": "Panton Rubek"
+		},
+		{
+			"id_kelurahan": "1101132001",
+			"id_kecamatan_fk": "110113",
+			"nama_kelurahan": "Koto Manggamat"
+		},
+		{
+			"id_kelurahan": "1101132002",
+			"id_kecamatan_fk": "110113",
+			"nama_kelurahan": "Alur Kejrun"
+		},
+		{
+			"id_kelurahan": "1101132003",
+			"id_kecamatan_fk": "110113",
+			"nama_kelurahan": "Jambo Papeun"
+		},
+		{
+			"id_kelurahan": "1101132004",
+			"id_kecamatan_fk": "110113",
+			"nama_kelurahan": "Malaka"
+		},
+		{
+			"id_kelurahan": "1101132005",
+			"id_kecamatan_fk": "110113",
+			"nama_kelurahan": "Koto Indarung"
+		},
+		{
+			"id_kelurahan": "1101132006",
+			"id_kecamatan_fk": "110113",
+			"nama_kelurahan": "Siurai-Urai"
+		},
+		{
+			"id_kelurahan": "1101132007",
+			"id_kecamatan_fk": "110113",
+			"nama_kelurahan": "Kampung Sawah"
+		},
+		{
+			"id_kelurahan": "1101132008",
+			"id_kecamatan_fk": "110113",
+			"nama_kelurahan": "Kampung Padang"
+		},
+		{
+			"id_kelurahan": "1101132009",
+			"id_kecamatan_fk": "110113",
+			"nama_kelurahan": "Pulo Air"
+		},
+		{
+			"id_kelurahan": "1101132010",
+			"id_kecamatan_fk": "110113",
+			"nama_kelurahan": "Lawe Melang"
+		},
+		{
+			"id_kelurahan": "1101132011",
+			"id_kecamatan_fk": "110113",
+			"nama_kelurahan": "Mersak"
+		},
+		{
+			"id_kelurahan": "1101132012",
+			"id_kecamatan_fk": "110113",
+			"nama_kelurahan": "Kampung Tinggi"
+		},
+		{
+			"id_kelurahan": "1101132013",
+			"id_kecamatan_fk": "110113",
+			"nama_kelurahan": "Ruak"
+		},
+		{
+			"id_kelurahan": "1101142001",
+			"id_kecamatan_fk": "110114",
+			"nama_kelurahan": "Paya Dapur"
+		},
+		{
+			"id_kelurahan": "1101142002",
+			"id_kecamatan_fk": "110114",
+			"nama_kelurahan": "Sapik"
+		},
+		{
+			"id_kelurahan": "1101142003",
+			"id_kecamatan_fk": "110114",
+			"nama_kelurahan": "Alai"
+		},
+		{
+			"id_kelurahan": "1101142004",
+			"id_kecamatan_fk": "110114",
+			"nama_kelurahan": "Durian Kawan"
+		},
+		{
+			"id_kelurahan": "1101142005",
+			"id_kecamatan_fk": "110114",
+			"nama_kelurahan": "Lawe Sawah"
+		},
+		{
+			"id_kelurahan": "1101142006",
+			"id_kecamatan_fk": "110114",
+			"nama_kelurahan": "Lawe Buluh Didi"
+		},
+		{
+			"id_kelurahan": "1101142007",
+			"id_kecamatan_fk": "110114",
+			"nama_kelurahan": "Pucuk Lembang"
+		},
+		{
+			"id_kelurahan": "1101142008",
+			"id_kecamatan_fk": "110114",
+			"nama_kelurahan": "Paya Laba"
+		},
+		{
+			"id_kelurahan": "1101142009",
+			"id_kecamatan_fk": "110114",
+			"nama_kelurahan": "Lawe Cimanok"
+		},
+		{
+			"id_kelurahan": "1101152001",
+			"id_kecamatan_fk": "110115",
+			"nama_kelurahan": "Seubadeh"
+		},
+		{
+			"id_kelurahan": "1101152002",
+			"id_kecamatan_fk": "110115",
+			"nama_kelurahan": "Ladang Rimba"
+		},
+		{
+			"id_kelurahan": "1101152003",
+			"id_kecamatan_fk": "110115",
+			"nama_kelurahan": "Ujong Pulo Rayeuk"
+		},
+		{
+			"id_kelurahan": "1101152004",
+			"id_kecamatan_fk": "110115",
+			"nama_kelurahan": "Sawah Tingkeum"
+		},
+		{
+			"id_kelurahan": "1101152005",
+			"id_kecamatan_fk": "110115",
+			"nama_kelurahan": "Simpang"
+		},
+		{
+			"id_kelurahan": "1101152006",
+			"id_kecamatan_fk": "110115",
+			"nama_kelurahan": "Ujong Pulo Cut"
+		},
+		{
+			"id_kelurahan": "1101152007",
+			"id_kecamatan_fk": "110115",
+			"nama_kelurahan": "Kampung Baru"
+		},
+		{
+			"id_kelurahan": "1101152008",
+			"id_kecamatan_fk": "110115",
+			"nama_kelurahan": "Seuleukat"
+		},
+		{
+			"id_kelurahan": "1101162005",
+			"id_kecamatan_fk": "110116",
+			"nama_kelurahan": "Pinto Rimba"
+		},
+		{
+			"id_kelurahan": "1101162006",
+			"id_kecamatan_fk": "110116",
+			"nama_kelurahan": "Krueng Luas"
+		},
+		{
+			"id_kelurahan": "1101162007",
+			"id_kecamatan_fk": "110116",
+			"nama_kelurahan": "Jambo Dalem"
+		},
+		{
+			"id_kelurahan": "1101162008",
+			"id_kecamatan_fk": "110116",
+			"nama_kelurahan": "Kapai Seusak"
+		},
+		{
+			"id_kelurahan": "1101162009",
+			"id_kecamatan_fk": "110116",
+			"nama_kelurahan": "Seuneubok Punto"
+		},
+		{
+			"id_kelurahan": "1101162010",
+			"id_kecamatan_fk": "110116",
+			"nama_kelurahan": "Seuneubok Psk."
+		},
+		{
+			"id_kelurahan": "1101162011",
+			"id_kecamatan_fk": "110116",
+			"nama_kelurahan": "Alur Bujok"
+		},
+		{
+			"id_kelurahan": "1101162012",
+			"id_kecamatan_fk": "110116",
+			"nama_kelurahan": "Titi Polem"
+		},
+		{
+			"id_kelurahan": "1101172001",
+			"id_kecamatan_fk": "110117",
+			"nama_kelurahan": "Bukit Gadeng"
+		},
+		{
+			"id_kelurahan": "1101172002",
+			"id_kecamatan_fk": "110117",
+			"nama_kelurahan": "Rambong"
+		},
+		{
+			"id_kelurahan": "1101172003",
+			"id_kecamatan_fk": "110117",
+			"nama_kelurahan": "Seuneubok Keuranji"
+		},
+		{
+			"id_kelurahan": "1101172004",
+			"id_kecamatan_fk": "110117",
+			"nama_kelurahan": "Seuneubok Alur Buloh"
+		},
+		{
+			"id_kelurahan": "1101172005",
+			"id_kecamatan_fk": "110117",
+			"nama_kelurahan": "Ujong Tanoh"
+		},
+		{
+			"id_kelurahan": "1101172006",
+			"id_kecamatan_fk": "110117",
+			"nama_kelurahan": "Gunong Cut"
+		},
+		{
+			"id_kelurahan": "1101172007",
+			"id_kecamatan_fk": "110117",
+			"nama_kelurahan": "Gunong Rayeuk"
+		},
+		{
+			"id_kelurahan": "1101172008",
+			"id_kecamatan_fk": "110117",
+			"nama_kelurahan": "Beutong"
+		},
+		{
+			"id_kelurahan": "1101172009",
+			"id_kecamatan_fk": "110117",
+			"nama_kelurahan": "Jambo Keupok"
+		},
+		{
+			"id_kelurahan": "1101172010",
+			"id_kecamatan_fk": "110117",
+			"nama_kelurahan": "Alurduamas"
+		},
+		{
+			"id_kelurahan": "1101182001",
+			"id_kecamatan_fk": "110118",
+			"nama_kelurahan": "Ladang Rimba"
+		},
+		{
+			"id_kelurahan": "1101182002",
+			"id_kecamatan_fk": "110118",
+			"nama_kelurahan": "Gunong Kapo"
+		},
+		{
+			"id_kelurahan": "1101182003",
+			"id_kecamatan_fk": "110118",
+			"nama_kelurahan": "Kampong Teungoh"
+		},
+		{
+			"id_kelurahan": "1101182004",
+			"id_kecamatan_fk": "110118",
+			"nama_kelurahan": "Krueng Batee"
+		},
+		{
+			"id_kelurahan": "1101182005",
+			"id_kecamatan_fk": "110118",
+			"nama_kelurahan": "Pulo Paya"
+		},
+		{
+			"id_kelurahan": "1101182006",
+			"id_kecamatan_fk": "110118",
+			"nama_kelurahan": "Jambo Papeun"
+		},
+		{
+			"id_kelurahan": "1101182007",
+			"id_kecamatan_fk": "110118",
+			"nama_kelurahan": "Cot Bayu"
+		},
+		{
+			"id_kelurahan": "1101182008",
+			"id_kecamatan_fk": "110118",
+			"nama_kelurahan": "Naca"
+		},
+		{
+			"id_kelurahan": "1101182009",
+			"id_kecamatan_fk": "110118",
+			"nama_kelurahan": "Ie Jeureuneh"
+		},
+		{
+			"id_kelurahan": "1101182010",
+			"id_kecamatan_fk": "110118",
+			"nama_kelurahan": "Lhok Raya"
+		},
+		{
+			"id_kelurahan": "1102012001",
+			"id_kecamatan_fk": "110201",
+			"nama_kelurahan": "Ngkeren"
+		},
+		{
+			"id_kelurahan": "1102012002",
+			"id_kecamatan_fk": "110201",
+			"nama_kelurahan": "Rumah Kampung"
+		},
+		{
+			"id_kelurahan": "1102012004",
+			"id_kecamatan_fk": "110201",
+			"nama_kelurahan": "Pasir Bangun"
+		},
+		{
+			"id_kelurahan": "1102012006",
+			"id_kecamatan_fk": "110201",
+			"nama_kelurahan": "Kubu"
+		},
+		{
+			"id_kelurahan": "1102012007",
+			"id_kecamatan_fk": "110201",
+			"nama_kelurahan": "Lawe Kongker"
+		},
+		{
+			"id_kelurahan": "1102012008",
+			"id_kecamatan_fk": "110201",
+			"nama_kelurahan": "Kuta Cingkam II"
+		},
+		{
+			"id_kelurahan": "1102012009",
+			"id_kecamatan_fk": "110201",
+			"nama_kelurahan": "Muara Baru"
+		},
+		{
+			"id_kelurahan": "1102012011",
+			"id_kecamatan_fk": "110201",
+			"nama_kelurahan": "Kuta Batu I"
+		},
+		{
+			"id_kelurahan": "1102012012",
+			"id_kecamatan_fk": "110201",
+			"nama_kelurahan": "Kuta Cingkam I"
+		},
+		{
+			"id_kelurahan": "1102012013",
+			"id_kecamatan_fk": "110201",
+			"nama_kelurahan": "Kuta Batu II"
+		},
+		{
+			"id_kelurahan": "1102012014",
+			"id_kecamatan_fk": "110201",
+			"nama_kelurahan": "Lawe Sempilang"
+		},
+		{
+			"id_kelurahan": "1102012015",
+			"id_kecamatan_fk": "110201",
+			"nama_kelurahan": "Prapat Batu Nunggul"
+		},
+		{
+			"id_kelurahan": "1102012016",
+			"id_kecamatan_fk": "110201",
+			"nama_kelurahan": "Pulo Sepang"
+		},
+		{
+			"id_kelurahan": "1102012017",
+			"id_kecamatan_fk": "110201",
+			"nama_kelurahan": "Rih Mbelang"
+		},
+		{
+			"id_kelurahan": "1102012018",
+			"id_kecamatan_fk": "110201",
+			"nama_kelurahan": "Kute Batu Baru"
+		},
+		{
+			"id_kelurahan": "1102012019",
+			"id_kecamatan_fk": "110201",
+			"nama_kelurahan": "Darul Amin"
+		},
+		{
+			"id_kelurahan": "1102012020",
+			"id_kecamatan_fk": "110201",
+			"nama_kelurahan": "Lawe Lumbang Indah"
+		},
+		{
+			"id_kelurahan": "1102012021",
+			"id_kecamatan_fk": "110201",
+			"nama_kelurahan": "Batu Hamparan"
+		},
+		{
+			"id_kelurahan": "1102012022",
+			"id_kecamatan_fk": "110201",
+			"nama_kelurahan": "Paye Munje"
+		},
+		{
+			"id_kelurahan": "1102012023",
+			"id_kecamatan_fk": "110201",
+			"nama_kelurahan": "Pulo Ndadap"
+		},
+		{
+			"id_kelurahan": "1102012024",
+			"id_kecamatan_fk": "110201",
+			"nama_kelurahan": "Pasir Nunggul"
+		},
+		{
+			"id_kelurahan": "1102012025",
+			"id_kecamatan_fk": "110201",
+			"nama_kelurahan": "Cingkham Mekhanggun"
+		},
+		{
+			"id_kelurahan": "1102012026",
+			"id_kecamatan_fk": "110201",
+			"nama_kelurahan": "Pintu Khimbe"
+		},
+		{
+			"id_kelurahan": "1102012027",
+			"id_kecamatan_fk": "110201",
+			"nama_kelurahan": "Lawe Kongker Hilir"
+		},
+		{
+			"id_kelurahan": "1102012028",
+			"id_kecamatan_fk": "110201",
+			"nama_kelurahan": "Polu Gadung"
+		},
+		{
+			"id_kelurahan": "1102012029",
+			"id_kecamatan_fk": "110201",
+			"nama_kelurahan": "Pasikh Pekhemate"
+		},
+		{
+			"id_kelurahan": "1102012030",
+			"id_kecamatan_fk": "110201",
+			"nama_kelurahan": "Pasikh Nunang"
+		},
+		{
+			"id_kelurahan": "1102012031",
+			"id_kecamatan_fk": "110201",
+			"nama_kelurahan": "Deleng Kukusen"
+		},
+		{
+			"id_kelurahan": "1102022001",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Bukit Merdeka"
+		},
+		{
+			"id_kelurahan": "1102022002",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Darul Aman"
+		},
+		{
+			"id_kelurahan": "1102022003",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Lawe Kesumpat"
+		},
+		{
+			"id_kelurahan": "1102022004",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Lawe Tua Gabungan"
+		},
+		{
+			"id_kelurahan": "1102022005",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Lawe Sigala II"
+		},
+		{
+			"id_kelurahan": "1102022006",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Lawe Sigala Timur"
+		},
+		{
+			"id_kelurahan": "1102022007",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Lawe Sigala Barat"
+		},
+		{
+			"id_kelurahan": "1102022008",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Suka Damai"
+		},
+		{
+			"id_kelurahan": "1102022009",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Kute Tengah"
+		},
+		{
+			"id_kelurahan": "1102022010",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Tanah Baru"
+		},
+		{
+			"id_kelurahan": "1102022011",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Kedataran Gabungan"
+		},
+		{
+			"id_kelurahan": "1102022012",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Gabungan Parsaroan"
+		},
+		{
+			"id_kelurahan": "1102022013",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Lawe Loning Gabungan"
+		},
+		{
+			"id_kelurahan": "1102022014",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Lawe Loning Aman"
+		},
+		{
+			"id_kelurahan": "1102022015",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Suka Maju"
+		},
+		{
+			"id_kelurahan": "1102022016",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Lawe Tua Makmur"
+		},
+		{
+			"id_kelurahan": "1102022017",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Lawe Tua Pusat"
+		},
+		{
+			"id_kelurahan": "1102022018",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Kute Serke"
+		},
+		{
+			"id_kelurahan": "1102022019",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Lawe Rakat"
+		},
+		{
+			"id_kelurahan": "1102022020",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Suka Jaya"
+		},
+		{
+			"id_kelurahan": "1102022021",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Emiya Batu Dua Ratus"
+		},
+		{
+			"id_kelurahan": "1102022022",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Sebungke"
+		},
+		{
+			"id_kelurahan": "1102022023",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Bukit Sepakat"
+		},
+		{
+			"id_kelurahan": "1102022024",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Lawe Loning Sepakat"
+		},
+		{
+			"id_kelurahan": "1102022025",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Lawe Loning I"
+		},
+		{
+			"id_kelurahan": "1102022026",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Gaya Jaya"
+		},
+		{
+			"id_kelurahan": "1102022027",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Gajah Musara"
+		},
+		{
+			"id_kelurahan": "1102022028",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Mulie Damai"
+		},
+		{
+			"id_kelurahan": "1102022029",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Lawe Loning Hakhapen"
+		},
+		{
+			"id_kelurahan": "1102022030",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Karya Indah"
+		},
+		{
+			"id_kelurahan": "1102022031",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Kayu Mbelin"
+		},
+		{
+			"id_kelurahan": "1102022032",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Lawe Sigala Barat Jaya"
+		},
+		{
+			"id_kelurahan": "1102022033",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Lawe Pekhidinen"
+		},
+		{
+			"id_kelurahan": "1102022034",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Kertimbang"
+		},
+		{
+			"id_kelurahan": "1102022035",
+			"id_kecamatan_fk": "110202",
+			"nama_kelurahan": "Kute Dauh Nitenggau"
+		},
+		{
+			"id_kelurahan": "1102032001",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Bambel Gabungan"
+		},
+		{
+			"id_kelurahan": "1102032002",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Kisam"
+		},
+		{
+			"id_kelurahan": "1102032005",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Lawe Hijo"
+		},
+		{
+			"id_kelurahan": "1102032006",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Pinding"
+		},
+		{
+			"id_kelurahan": "1102032009",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Terutung Megara Asli"
+		},
+		{
+			"id_kelurahan": "1102032011",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Biak Muli"
+		},
+		{
+			"id_kelurahan": "1102032012",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Kute Lang-Lang"
+		},
+		{
+			"id_kelurahan": "1102032013",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Pedesi"
+		},
+		{
+			"id_kelurahan": "1102032014",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Terutung Peyung Hulu"
+		},
+		{
+			"id_kelurahan": "1102032015",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Terutung Peyung Hilir"
+		},
+		{
+			"id_kelurahan": "1102032016",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Tualang Sembilar"
+		},
+		{
+			"id_kelurahan": "1102032017",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Kuning I"
+		},
+		{
+			"id_kelurahan": "1102032018",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Kuning II"
+		},
+		{
+			"id_kelurahan": "1102032019",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Cinta Damai"
+		},
+		{
+			"id_kelurahan": "1102032020",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Likat"
+		},
+		{
+			"id_kelurahan": "1102032021",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Rikit"
+		},
+		{
+			"id_kelurahan": "1102032023",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Bambel"
+		},
+		{
+			"id_kelurahan": "1102032025",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Lawe Kihing"
+		},
+		{
+			"id_kelurahan": "1102032026",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Terutung Seperai"
+		},
+		{
+			"id_kelurahan": "1102032027",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Kute Sari"
+		},
+		{
+			"id_kelurahan": "1102032028",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Kute Antara"
+		},
+		{
+			"id_kelurahan": "1102032029",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Pulo Perengge"
+		},
+		{
+			"id_kelurahan": "1102032031",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Pulo Kendondong"
+		},
+		{
+			"id_kelurahan": "1102032033",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Pancakh Iman"
+		},
+		{
+			"id_kelurahan": "1102032034",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Biak Muli Bukhu"
+		},
+		{
+			"id_kelurahan": "1102032035",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Biak Muli Pantai Raja"
+		},
+		{
+			"id_kelurahan": "1102032036",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Biak Muli Sejahtera"
+		},
+		{
+			"id_kelurahan": "1102032037",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Lembah Haji"
+		},
+		{
+			"id_kelurahan": "1102032038",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Terutung Payung Gabungan"
+		},
+		{
+			"id_kelurahan": "1102032039",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Lawe Hijo Metuah"
+		},
+		{
+			"id_kelurahan": "1102032040",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Ampera"
+		},
+		{
+			"id_kelurahan": "1102032041",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Tembilakh Mbakhu"
+		},
+		{
+			"id_kelurahan": "1102032042",
+			"id_kecamatan_fk": "110203",
+			"nama_kelurahan": "Kute Lang-Lang Bakhu"
+		},
+		{
+			"id_kelurahan": "1102042001",
+			"id_kecamatan_fk": "110204",
+			"nama_kelurahan": "Kota Kutacane"
+		},
+		{
+			"id_kelurahan": "1102042002",
+			"id_kecamatan_fk": "110204",
+			"nama_kelurahan": "Perapat Hilir"
+		},
+		{
+			"id_kelurahan": "1102042003",
+			"id_kecamatan_fk": "110204",
+			"nama_kelurahan": "Perapat Hulu"
+		},
+		{
+			"id_kelurahan": "1102042004",
+			"id_kecamatan_fk": "110204",
+			"nama_kelurahan": "Muara Lawe Bulan"
+		},
+		{
+			"id_kelurahan": "1102042005",
+			"id_kecamatan_fk": "110204",
+			"nama_kelurahan": "Mbarung"
+		},
+		{
+			"id_kelurahan": "1102042006",
+			"id_kecamatan_fk": "110204",
+			"nama_kelurahan": "Batu Mbulan Asli"
+		},
+		{
+			"id_kelurahan": "1102042007",
+			"id_kecamatan_fk": "110204",
+			"nama_kelurahan": "Batu Mbulan I"
+		},
+		{
+			"id_kelurahan": "1102042008",
+			"id_kecamatan_fk": "110204",
+			"nama_kelurahan": "Batu Mbulan II"
+		},
+		{
+			"id_kelurahan": "1102042009",
+			"id_kecamatan_fk": "110204",
+			"nama_kelurahan": "Kampung Raja"
+		},
+		{
+			"id_kelurahan": "1102042010",
+			"id_kecamatan_fk": "110204",
+			"nama_kelurahan": "Pulonas"
+		},
+		{
+			"id_kelurahan": "1102042011",
+			"id_kecamatan_fk": "110204",
+			"nama_kelurahan": "Kampung Melayu Gabungan"
+		},
+		{
+			"id_kelurahan": "1102042012",
+			"id_kecamatan_fk": "110204",
+			"nama_kelurahan": "Terutung Pedi"
+		},
+		{
+			"id_kelurahan": "1102042013",
+			"id_kecamatan_fk": "110204",
+			"nama_kelurahan": "Kute Rih"
+		},
+		{
+			"id_kelurahan": "1102042014",
+			"id_kecamatan_fk": "110204",
+			"nama_kelurahan": "Gumpang Jaya"
+		},
+		{
+			"id_kelurahan": "1102042015",
+			"id_kecamatan_fk": "110204",
+			"nama_kelurahan": "Pulo Latong"
+		},
+		{
+			"id_kelurahan": "1102042016",
+			"id_kecamatan_fk": "110204",
+			"nama_kelurahan": "Kutacane Lama"
+		},
+		{
+			"id_kelurahan": "1102042017",
+			"id_kecamatan_fk": "110204",
+			"nama_kelurahan": "Batum Bln Baru"
+		},
+		{
+			"id_kelurahan": "1102042018",
+			"id_kecamatan_fk": "110204",
+			"nama_kelurahan": "Pulo Peding"
+		},
+		{
+			"id_kelurahan": "1102042019",
+			"id_kecamatan_fk": "110204",
+			"nama_kelurahan": "Mendabe"
+		},
+		{
+			"id_kelurahan": "1102042020",
+			"id_kecamatan_fk": "110204",
+			"nama_kelurahan": "Ujung Barat"
+		},
+		{
+			"id_kelurahan": "1102042021",
+			"id_kecamatan_fk": "110204",
+			"nama_kelurahan": "Perapat Titi Panjang"
+		},
+		{
+			"id_kelurahan": "1102042022",
+			"id_kecamatan_fk": "110204",
+			"nama_kelurahan": "Perapat Sepakat"
+		},
+		{
+			"id_kelurahan": "1102042023",
+			"id_kecamatan_fk": "110204",
+			"nama_kelurahan": "Alas Memancar"
+		},
+		{
+			"id_kelurahan": "1102042024",
+			"id_kecamatan_fk": "110204",
+			"nama_kelurahan": "Batu Mbulan Sepakat"
+		},
+		{
+			"id_kelurahan": "1102042025",
+			"id_kecamatan_fk": "110204",
+			"nama_kelurahan": "Pulo Sanggakh"
+		},
+		{
+			"id_kelurahan": "1102042026",
+			"id_kecamatan_fk": "110204",
+			"nama_kelurahan": "Melayu I"
+		},
+		{
+			"id_kelurahan": "1102042027",
+			"id_kecamatan_fk": "110204",
+			"nama_kelurahan": "Mburung Datuk Sekhudane"
+		},
+		{
+			"id_kelurahan": "1102052005",
+			"id_kecamatan_fk": "110205",
+			"nama_kelurahan": "Salang Alas"
+		},
+		{
+			"id_kelurahan": "1102052009",
+			"id_kecamatan_fk": "110205",
+			"nama_kelurahan": "Kute Pasir"
+		},
+		{
+			"id_kelurahan": "1102052011",
+			"id_kecamatan_fk": "110205",
+			"nama_kelurahan": "Purwodadi"
+		},
+		{
+			"id_kelurahan": "1102052012",
+			"id_kecamatan_fk": "110205",
+			"nama_kelurahan": "Kute Tinggi"
+		},
+		{
+			"id_kelurahan": "1102052013",
+			"id_kecamatan_fk": "110205",
+			"nama_kelurahan": "Kampung Baru"
+		},
+		{
+			"id_kelurahan": "1102052014",
+			"id_kecamatan_fk": "110205",
+			"nama_kelurahan": "Peranginan"
+		},
+		{
+			"id_kelurahan": "1102052015",
+			"id_kecamatan_fk": "110205",
+			"nama_kelurahan": "Natam"
+		},
+		{
+			"id_kelurahan": "1102052025",
+			"id_kecamatan_fk": "110205",
+			"nama_kelurahan": "Kumbang Jaya"
+		},
+		{
+			"id_kelurahan": "1102052026",
+			"id_kecamatan_fk": "110205",
+			"nama_kelurahan": "Kumbang Indah"
+		},
+		{
+			"id_kelurahan": "1102052027",
+			"id_kecamatan_fk": "110205",
+			"nama_kelurahan": "Natam Baru"
+		},
+		{
+			"id_kelurahan": "1102052029",
+			"id_kecamatan_fk": "110205",
+			"nama_kelurahan": "Delem Megakhae"
+		},
+		{
+			"id_kelurahan": "1102052030",
+			"id_kecamatan_fk": "110205",
+			"nama_kelurahan": "Lawe Bekung"
+		},
+		{
+			"id_kelurahan": "1102052031",
+			"id_kecamatan_fk": "110205",
+			"nama_kelurahan": "Lawe Bekung Tampahan"
+		},
+		{
+			"id_kelurahan": "1102052032",
+			"id_kecamatan_fk": "110205",
+			"nama_kelurahan": "Badar Indah"
+		},
+		{
+			"id_kelurahan": "1102052033",
+			"id_kecamatan_fk": "110205",
+			"nama_kelurahan": "Batu Mberong"
+		},
+		{
+			"id_kelurahan": "1102052034",
+			"id_kecamatan_fk": "110205",
+			"nama_kelurahan": "Tanah Merah"
+		},
+		{
+			"id_kelurahan": "1102052035",
+			"id_kecamatan_fk": "110205",
+			"nama_kelurahan": "Tanoh Megakhe"
+		},
+		{
+			"id_kelurahan": "1102052036",
+			"id_kecamatan_fk": "110205",
+			"nama_kelurahan": "Lawe Sekekhah"
+		},
+		{
+			"id_kelurahan": "1102062001",
+			"id_kecamatan_fk": "110206",
+			"nama_kelurahan": "Pardomuan II"
+		},
+		{
+			"id_kelurahan": "1102062002",
+			"id_kecamatan_fk": "110206",
+			"nama_kelurahan": "Lawe Desky I"
+		},
+		{
+			"id_kelurahan": "1102062003",
+			"id_kecamatan_fk": "110206",
+			"nama_kelurahan": "Lawe Desky Sabas"
+		},
+		{
+			"id_kelurahan": "1102062004",
+			"id_kecamatan_fk": "110206",
+			"nama_kelurahan": "Pardomuan I"
+		},
+		{
+			"id_kelurahan": "1102062005",
+			"id_kecamatan_fk": "110206",
+			"nama_kelurahan": "Cinta Damai"
+		},
+		{
+			"id_kelurahan": "1102062006",
+			"id_kecamatan_fk": "110206",
+			"nama_kelurahan": "Pardamean"
+		},
+		{
+			"id_kelurahan": "1102062007",
+			"id_kecamatan_fk": "110206",
+			"nama_kelurahan": "Lawe Desky Tengah"
+		},
+		{
+			"id_kelurahan": "1102062008",
+			"id_kecamatan_fk": "110206",
+			"nama_kelurahan": "Kute Bakti"
+		},
+		{
+			"id_kelurahan": "1102062010",
+			"id_kecamatan_fk": "110206",
+			"nama_kelurahan": "Muara Situlen"
+		},
+		{
+			"id_kelurahan": "1102062011",
+			"id_kecamatan_fk": "110206",
+			"nama_kelurahan": "Sejahtera"
+		},
+		{
+			"id_kelurahan": "1102062012",
+			"id_kecamatan_fk": "110206",
+			"nama_kelurahan": "Kute Makmur"
+		},
+		{
+			"id_kelurahan": "1102062013",
+			"id_kecamatan_fk": "110206",
+			"nama_kelurahan": "Perdamaian"
+		},
+		{
+			"id_kelurahan": "1102062014",
+			"id_kecamatan_fk": "110206",
+			"nama_kelurahan": "Lawe Mantik"
+		},
+		{
+			"id_kelurahan": "1102062015",
+			"id_kecamatan_fk": "110206",
+			"nama_kelurahan": "Cinta Makmur"
+		},
+		{
+			"id_kelurahan": "1102062016",
+			"id_kecamatan_fk": "110206",
+			"nama_kelurahan": "Muara Setia"
+		},
+		{
+			"id_kelurahan": "1102062017",
+			"id_kecamatan_fk": "110206",
+			"nama_kelurahan": "Tanoh Alas"
+		},
+		{
+			"id_kelurahan": "1102062018",
+			"id_kecamatan_fk": "110206",
+			"nama_kelurahan": "Sejahtera Baru"
+		},
+		{
+			"id_kelurahan": "1102062024",
+			"id_kecamatan_fk": "110206",
+			"nama_kelurahan": "Lawe Tawakh"
+		},
+		{
+			"id_kelurahan": "1102062025",
+			"id_kecamatan_fk": "110206",
+			"nama_kelurahan": "Sabilussalam"
+		},
+		{
+			"id_kelurahan": "1102062026",
+			"id_kecamatan_fk": "110206",
+			"nama_kelurahan": "Desky Jaya"
+		},
+		{
+			"id_kelurahan": "1102062027",
+			"id_kecamatan_fk": "110206",
+			"nama_kelurahan": "Pintu Alas"
+		},
+		{
+			"id_kelurahan": "1102072001",
+			"id_kecamatan_fk": "110207",
+			"nama_kelurahan": "Gulo"
+		},
+		{
+			"id_kelurahan": "1102072002",
+			"id_kecamatan_fk": "110207",
+			"nama_kelurahan": "Pulo Piku"
+		},
+		{
+			"id_kelurahan": "1102072003",
+			"id_kecamatan_fk": "110207",
+			"nama_kelurahan": "Terutung Kute"
+		},
+		{
+			"id_kelurahan": "1102072004",
+			"id_kecamatan_fk": "110207",
+			"nama_kelurahan": "Kuta Ujung"
+		},
+		{
+			"id_kelurahan": "1102072005",
+			"id_kecamatan_fk": "110207",
+			"nama_kelurahan": "Lawe Setul"
+		},
+		{
+			"id_kelurahan": "1102072006",
+			"id_kecamatan_fk": "110207",
+			"nama_kelurahan": "Kite Merangun"
+		},
+		{
+			"id_kelurahan": "1102072007",
+			"id_kecamatan_fk": "110207",
+			"nama_kelurahan": "Mamas"
+		},
+		{
+			"id_kelurahan": "1102072008",
+			"id_kecamatan_fk": "110207",
+			"nama_kelurahan": "Tanjung Lama"
+		},
+		{
+			"id_kelurahan": "1102072009",
+			"id_kecamatan_fk": "110207",
+			"nama_kelurahan": "Tanjung Muda"
+		},
+		{
+			"id_kelurahan": "1102072010",
+			"id_kecamatan_fk": "110207",
+			"nama_kelurahan": "Rambung Teldak"
+		},
+		{
+			"id_kelurahan": "1102072011",
+			"id_kecamatan_fk": "110207",
+			"nama_kelurahan": "Tanjung Aman"
+		},
+		{
+			"id_kelurahan": "1102072012",
+			"id_kecamatan_fk": "110207",
+			"nama_kelurahan": "Seri Muda"
+		},
+		{
+			"id_kelurahan": "1102072013",
+			"id_kecamatan_fk": "110207",
+			"nama_kelurahan": "Ujung Baru"
+		},
+		{
+			"id_kelurahan": "1102072014",
+			"id_kecamatan_fk": "110207",
+			"nama_kelurahan": "Kute Rambe"
+		},
+		{
+			"id_kelurahan": "1102072015",
+			"id_kecamatan_fk": "110207",
+			"nama_kelurahan": "Mamas Baru"
+		},
+		{
+			"id_kelurahan": "1102072016",
+			"id_kecamatan_fk": "110207",
+			"nama_kelurahan": "Rambung Jaya"
+		},
+		{
+			"id_kelurahan": "1102072017",
+			"id_kecamatan_fk": "110207",
+			"nama_kelurahan": "Makmur Jaya"
+		},
+		{
+			"id_kelurahan": "1102072018",
+			"id_kecamatan_fk": "110207",
+			"nama_kelurahan": "Darul Makmur"
+		},
+		{
+			"id_kelurahan": "1102072019",
+			"id_kecamatan_fk": "110207",
+			"nama_kelurahan": "Tanjung Mbakhu"
+		},
+		{
+			"id_kelurahan": "1102072020",
+			"id_kecamatan_fk": "110207",
+			"nama_kelurahan": "Pulo Gadung"
+		},
+		{
+			"id_kelurahan": "1102072021",
+			"id_kecamatan_fk": "110207",
+			"nama_kelurahan": "Kokthan Jaya"
+		},
+		{
+			"id_kelurahan": "1102072022",
+			"id_kecamatan_fk": "110207",
+			"nama_kelurahan": "Istikamah"
+		},
+		{
+			"id_kelurahan": "1102072023",
+			"id_kecamatan_fk": "110207",
+			"nama_kelurahan": "Lawe Mamas Indah"
+		},
+		{
+			"id_kelurahan": "1102072024",
+			"id_kecamatan_fk": "110207",
+			"nama_kelurahan": "Tanjung Leuser"
+		},
+		{
+			"id_kelurahan": "1102072025",
+			"id_kecamatan_fk": "110207",
+			"nama_kelurahan": "Simpang Empat Tanjung"
+		},
+		{
+			"id_kelurahan": "1102072026",
+			"id_kecamatan_fk": "110207",
+			"nama_kelurahan": "Lawe Pinis"
+		},
+		{
+			"id_kelurahan": "1102072027",
+			"id_kecamatan_fk": "110207",
+			"nama_kelurahan": "Buntul Kendawi"
+		},
+		{
+			"id_kelurahan": "1102072028",
+			"id_kecamatan_fk": "110207",
+			"nama_kelurahan": "Kuning Abadi"
+		},
+		{
+			"id_kelurahan": "1102082001",
+			"id_kecamatan_fk": "110208",
+			"nama_kelurahan": "Pasir Gala"
+		},
+		{
+			"id_kelurahan": "1102082002",
+			"id_kecamatan_fk": "110208",
+			"nama_kelurahan": "Pasir Penjengakan"
+		},
+		{
+			"id_kelurahan": "1102082003",
+			"id_kecamatan_fk": "110208",
+			"nama_kelurahan": "Kutem Baru"
+		},
+		{
+			"id_kelurahan": "1102082004",
+			"id_kecamatan_fk": "110208",
+			"nama_kelurahan": "Lawe Sagu Hulu"
+		},
+		{
+			"id_kelurahan": "1102082005",
+			"id_kecamatan_fk": "110208",
+			"nama_kelurahan": "Lawe Sagu Hilir"
+		},
+		{
+			"id_kelurahan": "1102082006",
+			"id_kecamatan_fk": "110208",
+			"nama_kelurahan": "Kute Bantil"
+		},
+		{
+			"id_kelurahan": "1102082011",
+			"id_kecamatan_fk": "110208",
+			"nama_kelurahan": "Lawe Kolok"
+		},
+		{
+			"id_kelurahan": "1102082012",
+			"id_kecamatan_fk": "110208",
+			"nama_kelurahan": "Lawe Rutung"
+		},
+		{
+			"id_kelurahan": "1102082013",
+			"id_kecamatan_fk": "110208",
+			"nama_kelurahan": "Kampung Nangka"
+		},
+		{
+			"id_kelurahan": "1102082014",
+			"id_kecamatan_fk": "110208",
+			"nama_kelurahan": "Tenembak Juhar"
+		},
+		{
+			"id_kelurahan": "1102082015",
+			"id_kecamatan_fk": "110208",
+			"nama_kelurahan": "Simpang Empat"
+		},
+		{
+			"id_kelurahan": "1102082016",
+			"id_kecamatan_fk": "110208",
+			"nama_kelurahan": "Kuta Buluh Botong"
+		},
+		{
+			"id_kelurahan": "1102082017",
+			"id_kecamatan_fk": "110208",
+			"nama_kelurahan": "Katembaru Bencawan"
+		},
+		{
+			"id_kelurahan": "1102082018",
+			"id_kecamatan_fk": "110208",
+			"nama_kelurahan": "Lawe Kinge"
+		},
+		{
+			"id_kelurahan": "1102082019",
+			"id_kecamatan_fk": "110208",
+			"nama_kelurahan": "Kd. Mbelang Mandiri"
+		},
+		{
+			"id_kelurahan": "1102082020",
+			"id_kecamatan_fk": "110208",
+			"nama_kelurahan": "Mbacang Racun"
+		},
+		{
+			"id_kelurahan": "1102082021",
+			"id_kecamatan_fk": "110208",
+			"nama_kelurahan": "Telaga Mekar"
+		},
+		{
+			"id_kelurahan": "1102082023",
+			"id_kecamatan_fk": "110208",
+			"nama_kelurahan": "Pulonas Baru"
+		},
+		{
+			"id_kelurahan": "1102082025",
+			"id_kecamatan_fk": "110208",
+			"nama_kelurahan": "Kuta Genting"
+		},
+		{
+			"id_kelurahan": "1102082026",
+			"id_kecamatan_fk": "110208",
+			"nama_kelurahan": "Lawe Sagu Baru"
+		},
+		{
+			"id_kelurahan": "1102082027",
+			"id_kecamatan_fk": "110208",
+			"nama_kelurahan": "Lawe Sagu"
+		},
+		{
+			"id_kelurahan": "1102082028",
+			"id_kecamatan_fk": "110208",
+			"nama_kelurahan": "Pekhapat Timur"
+		},
+		{
+			"id_kelurahan": "1102082029",
+			"id_kecamatan_fk": "110208",
+			"nama_kelurahan": "Bahagia"
+		},
+		{
+			"id_kelurahan": "1102082030",
+			"id_kecamatan_fk": "110208",
+			"nama_kelurahan": "Kuta Galuh Asli"
+		},
+		{
+			"id_kelurahan": "1102092001",
+			"id_kecamatan_fk": "110209",
+			"nama_kelurahan": "Kute Lengat Pangan"
+		},
+		{
+			"id_kelurahan": "1102092002",
+			"id_kecamatan_fk": "110209",
+			"nama_kelurahan": "Kute Lengat Selian"
+		},
+		{
+			"id_kelurahan": "1102092003",
+			"id_kecamatan_fk": "110209",
+			"nama_kelurahan": "Tualang Baru"
+		},
+		{
+			"id_kelurahan": "1102092004",
+			"id_kecamatan_fk": "110209",
+			"nama_kelurahan": "Alur Buluh"
+		},
+		{
+			"id_kelurahan": "1102092005",
+			"id_kecamatan_fk": "110209",
+			"nama_kelurahan": "Maha Singkil"
+		},
+		{
+			"id_kelurahan": "1102092006",
+			"id_kecamatan_fk": "110209",
+			"nama_kelurahan": "Tenembak Bintang"
+		},
+		{
+			"id_kelurahan": "1102092007",
+			"id_kecamatan_fk": "110209",
+			"nama_kelurahan": "Kute Lingga"
+		},
+		{
+			"id_kelurahan": "1102092008",
+			"id_kecamatan_fk": "110209",
+			"nama_kelurahan": "Rikit Bur"
+		},
+		{
+			"id_kelurahan": "1102092010",
+			"id_kecamatan_fk": "110209",
+			"nama_kelurahan": "Kerukunan"
+		},
+		{
+			"id_kelurahan": "1102092011",
+			"id_kecamatan_fk": "110209",
+			"nama_kelurahan": "Lawe Dua"
+		},
+		{
+			"id_kelurahan": "1102092012",
+			"id_kecamatan_fk": "110209",
+			"nama_kelurahan": "Rema"
+		},
+		{
+			"id_kelurahan": "1102092013",
+			"id_kecamatan_fk": "110209",
+			"nama_kelurahan": "Bambel Baru"
+		},
+		{
+			"id_kelurahan": "1102092014",
+			"id_kecamatan_fk": "110209",
+			"nama_kelurahan": "Pejuang"
+		},
+		{
+			"id_kelurahan": "1102092015",
+			"id_kecamatan_fk": "110209",
+			"nama_kelurahan": "Darussalam"
+		},
+		{
+			"id_kelurahan": "1102092016",
+			"id_kecamatan_fk": "110209",
+			"nama_kelurahan": "Amaliah"
+		},
+		{
+			"id_kelurahan": "1102092017",
+			"id_kecamatan_fk": "110209",
+			"nama_kelurahan": "Sebudi Jaya"
+		},
+		{
+			"id_kelurahan": "1102092018",
+			"id_kecamatan_fk": "110209",
+			"nama_kelurahan": "Gumpang"
+		},
+		{
+			"id_kelurahan": "1102092019",
+			"id_kecamatan_fk": "110209",
+			"nama_kelurahan": "Kute Gekhat"
+		},
+		{
+			"id_kelurahan": "1102092020",
+			"id_kecamatan_fk": "110209",
+			"nama_kelurahan": "Paye Khambung"
+		},
+		{
+			"id_kelurahan": "1102092021",
+			"id_kecamatan_fk": "110209",
+			"nama_kelurahan": "Mbak Sako"
+		},
+		{
+			"id_kelurahan": "1102092022",
+			"id_kecamatan_fk": "110209",
+			"nama_kelurahan": "Darul Imami"
+		},
+		{
+			"id_kelurahan": "1102092023",
+			"id_kecamatan_fk": "110209",
+			"nama_kelurahan": "Bukit Bur-II"
+		},
+		{
+			"id_kelurahan": "1102092024",
+			"id_kecamatan_fk": "110209",
+			"nama_kelurahan": "Kute Empat Lima"
+		},
+		{
+			"id_kelurahan": "1102102001",
+			"id_kecamatan_fk": "110210",
+			"nama_kelurahan": "Simpang Semadam"
+		},
+		{
+			"id_kelurahan": "1102102002",
+			"id_kecamatan_fk": "110210",
+			"nama_kelurahan": "Semadam Awal"
+		},
+		{
+			"id_kelurahan": "1102102003",
+			"id_kecamatan_fk": "110210",
+			"nama_kelurahan": "Semadam Asal"
+		},
+		{
+			"id_kelurahan": "1102102004",
+			"id_kecamatan_fk": "110210",
+			"nama_kelurahan": "Lawe Kinga Gabungan"
+		},
+		{
+			"id_kelurahan": "1102102005",
+			"id_kecamatan_fk": "110210",
+			"nama_kelurahan": "Lawe Kinga Tebing Tinggi"
+		},
+		{
+			"id_kelurahan": "1102102006",
+			"id_kecamatan_fk": "110210",
+			"nama_kelurahan": "Kebun Sere"
+		},
+		{
+			"id_kelurahan": "1102102007",
+			"id_kecamatan_fk": "110210",
+			"nama_kelurahan": "Laawe Berigin Horas"
+		},
+		{
+			"id_kelurahan": "1102102008",
+			"id_kecamatan_fk": "110210",
+			"nama_kelurahan": "Lawe. Berigin Gayo"
+		},
+		{
+			"id_kelurahan": "1102102009",
+			"id_kecamatan_fk": "110210",
+			"nama_kelurahan": "Suka Makmur"
+		},
+		{
+			"id_kelurahan": "1102102010",
+			"id_kecamatan_fk": "110210",
+			"nama_kelurahan": "Pasar Puntung"
+		},
+		{
+			"id_kelurahan": "1102102011",
+			"id_kecamatan_fk": "110210",
+			"nama_kelurahan": "Titi Pasir"
+		},
+		{
+			"id_kelurahan": "1102102012",
+			"id_kecamatan_fk": "110210",
+			"nama_kelurahan": "Lawe Petanduk"
+		},
+		{
+			"id_kelurahan": "1102102013",
+			"id_kecamatan_fk": "110210",
+			"nama_kelurahan": "Ngkeran Alur Buluh"
+		},
+		{
+			"id_kelurahan": "1102102014",
+			"id_kecamatan_fk": "110210",
+			"nama_kelurahan": "Kampung Baru"
+		},
+		{
+			"id_kelurahan": "1102102015",
+			"id_kecamatan_fk": "110210",
+			"nama_kelurahan": "Sepakat Segenap"
+		},
+		{
+			"id_kelurahan": "1102102016",
+			"id_kecamatan_fk": "110210",
+			"nama_kelurahan": "Selamat Indah"
+		},
+		{
+			"id_kelurahan": "1102102017",
+			"id_kecamatan_fk": "110210",
+			"nama_kelurahan": "Lawe Kinge"
+		},
+		{
+			"id_kelurahan": "1102102018",
+			"id_kecamatan_fk": "110210",
+			"nama_kelurahan": "Lawe Mejilai"
+		},
+		{
+			"id_kelurahan": "1102102019",
+			"id_kecamatan_fk": "110210",
+			"nama_kelurahan": "Lawe Petanduk-II"
+		},
+		{
+			"id_kelurahan": "1102112004",
+			"id_kecamatan_fk": "110211",
+			"nama_kelurahan": "Titi Mas"
+		},
+		{
+			"id_kelurahan": "1102112005",
+			"id_kecamatan_fk": "110211",
+			"nama_kelurahan": "Meranti"
+		},
+		{
+			"id_kelurahan": "1102112006",
+			"id_kecamatan_fk": "110211",
+			"nama_kelurahan": "Kute Lang-Lang"
+		},
+		{
+			"id_kelurahan": "1102112007",
+			"id_kecamatan_fk": "110211",
+			"nama_kelurahan": "Lawe Sumur"
+		},
+		{
+			"id_kelurahan": "1102112008",
+			"id_kecamatan_fk": "110211",
+			"nama_kelurahan": "Perdamaian"
+		},
+		{
+			"id_kelurahan": "1102112009",
+			"id_kecamatan_fk": "110211",
+			"nama_kelurahan": "Salim Pipit"
+		},
+		{
+			"id_kelurahan": "1102112010",
+			"id_kecamatan_fk": "110211",
+			"nama_kelurahan": "Penguhapan"
+		},
+		{
+			"id_kelurahan": "1102112011",
+			"id_kecamatan_fk": "110211",
+			"nama_kelurahan": "Lumban Tua"
+		},
+		{
+			"id_kelurahan": "1102112012",
+			"id_kecamatan_fk": "110211",
+			"nama_kelurahan": "Mutiara Damai"
+		},
+		{
+			"id_kelurahan": "1102112013",
+			"id_kecamatan_fk": "110211",
+			"nama_kelurahan": "Dolok Nauli"
+		},
+		{
+			"id_kelurahan": "1102112014",
+			"id_kecamatan_fk": "110211",
+			"nama_kelurahan": "Tuhi Jongkat"
+		},
+		{
+			"id_kelurahan": "1102112015",
+			"id_kecamatan_fk": "110211",
+			"nama_kelurahan": "Uning Sigugur"
+		},
+		{
+			"id_kelurahan": "1102112016",
+			"id_kecamatan_fk": "110211",
+			"nama_kelurahan": "Lumban Sitio"
+		},
+		{
+			"id_kelurahan": "1102112017",
+			"id_kecamatan_fk": "110211",
+			"nama_kelurahan": "Lawe Malum"
+		},
+		{
+			"id_kelurahan": "1102112018",
+			"id_kecamatan_fk": "110211",
+			"nama_kelurahan": "Alur Baning"
+		},
+		{
+			"id_kelurahan": "1102112019",
+			"id_kecamatan_fk": "110211",
+			"nama_kelurahan": "Lingge Alas"
+		},
+		{
+			"id_kelurahan": "1102112020",
+			"id_kecamatan_fk": "110211",
+			"nama_kelurahan": "Khambung Tumbung"
+		},
+		{
+			"id_kelurahan": "1102112021",
+			"id_kecamatan_fk": "110211",
+			"nama_kelurahan": "Tuah Mesade"
+		},
+		{
+			"id_kelurahan": "1102112022",
+			"id_kecamatan_fk": "110211",
+			"nama_kelurahan": "Sumukh Alas"
+		},
+		{
+			"id_kelurahan": "1102112023",
+			"id_kecamatan_fk": "110211",
+			"nama_kelurahan": "Alukh Bakhu"
+		},
+		{
+			"id_kelurahan": "1102112024",
+			"id_kecamatan_fk": "110211",
+			"nama_kelurahan": "Sepekhiding"
+		},
+		{
+			"id_kelurahan": "1102112025",
+			"id_kecamatan_fk": "110211",
+			"nama_kelurahan": "Tanoh Subukh"
+		},
+		{
+			"id_kelurahan": "1102112026",
+			"id_kecamatan_fk": "110211",
+			"nama_kelurahan": "Pinggan Mbelang"
+		},
+		{
+			"id_kelurahan": "1102112027",
+			"id_kecamatan_fk": "110211",
+			"nama_kelurahan": "Sigai Indah"
+		},
+		{
+			"id_kelurahan": "1102112028",
+			"id_kecamatan_fk": "110211",
+			"nama_kelurahan": "Ukekh Deleng"
+		},
+		{
+			"id_kelurahan": "1102112029",
+			"id_kecamatan_fk": "110211",
+			"nama_kelurahan": "Alas Mesikhat"
+		},
+		{
+			"id_kelurahan": "1102112030",
+			"id_kecamatan_fk": "110211",
+			"nama_kelurahan": "Titi Hakhapen"
+		},
+		{
+			"id_kelurahan": "1102122001",
+			"id_kecamatan_fk": "110212",
+			"nama_kelurahan": "Aunan Sepakat"
+		},
+		{
+			"id_kelurahan": "1102122002",
+			"id_kecamatan_fk": "110212",
+			"nama_kelurahan": "Lawe Penanggalan"
+		},
+		{
+			"id_kelurahan": "1102122003",
+			"id_kecamatan_fk": "110212",
+			"nama_kelurahan": "Lawe Mengkudu"
+		},
+		{
+			"id_kelurahan": "1102122004",
+			"id_kecamatan_fk": "110212",
+			"nama_kelurahan": "Jambur Lak-lak"
+		},
+		{
+			"id_kelurahan": "1102122005",
+			"id_kecamatan_fk": "110212",
+			"nama_kelurahan": "Simpang Tiga Jongar"
+		},
+		{
+			"id_kelurahan": "1102122006",
+			"id_kecamatan_fk": "110212",
+			"nama_kelurahan": "Jongar Asli"
+		},
+		{
+			"id_kelurahan": "1102122007",
+			"id_kecamatan_fk": "110212",
+			"nama_kelurahan": "Ketambe"
+		},
+		{
+			"id_kelurahan": "1102122008",
+			"id_kecamatan_fk": "110212",
+			"nama_kelurahan": "Rumah Bundar"
+		},
+		{
+			"id_kelurahan": "1102122009",
+			"id_kecamatan_fk": "110212",
+			"nama_kelurahan": "Penyeb. Cingkam"
+		},
+		{
+			"id_kelurahan": "1102122010",
+			"id_kecamatan_fk": "110212",
+			"nama_kelurahan": "Deleng Damar"
+		},
+		{
+			"id_kelurahan": "1102122011",
+			"id_kecamatan_fk": "110212",
+			"nama_kelurahan": "Bintang Bener"
+		},
+		{
+			"id_kelurahan": "1102122012",
+			"id_kecamatan_fk": "110212",
+			"nama_kelurahan": "Sukarimbun"
+		},
+		{
+			"id_kelurahan": "1102122013",
+			"id_kecamatan_fk": "110212",
+			"nama_kelurahan": "Lawe Aunen"
+		},
+		{
+			"id_kelurahan": "1102122014",
+			"id_kecamatan_fk": "110212",
+			"nama_kelurahan": "Bener Bepapah"
+		},
+		{
+			"id_kelurahan": "1102122015",
+			"id_kecamatan_fk": "110212",
+			"nama_kelurahan": "Penungkenen"
+		},
+		{
+			"id_kelurahan": "1102122016",
+			"id_kecamatan_fk": "110212",
+			"nama_kelurahan": "Datok Pining"
+		},
+		{
+			"id_kelurahan": "1102122017",
+			"id_kecamatan_fk": "110212",
+			"nama_kelurahan": "Kati Maju"
+		},
+		{
+			"id_kelurahan": "1102122018",
+			"id_kecamatan_fk": "110212",
+			"nama_kelurahan": "Leuser"
+		},
+		{
+			"id_kelurahan": "1102122019",
+			"id_kecamatan_fk": "110212",
+			"nama_kelurahan": "Jati Sara"
+		},
+		{
+			"id_kelurahan": "1102122020",
+			"id_kecamatan_fk": "110212",
+			"nama_kelurahan": "Buket Mbakhu"
+		},
+		{
+			"id_kelurahan": "1102122021",
+			"id_kecamatan_fk": "110212",
+			"nama_kelurahan": "Kayu Mentangur"
+		},
+		{
+			"id_kelurahan": "1102122022",
+			"id_kecamatan_fk": "110212",
+			"nama_kelurahan": "Lawe Sembekan"
+		},
+		{
+			"id_kelurahan": "1102122023",
+			"id_kecamatan_fk": "110212",
+			"nama_kelurahan": "Lawe Bekhingin"
+		},
+		{
+			"id_kelurahan": "1102122024",
+			"id_kecamatan_fk": "110212",
+			"nama_kelurahan": "Lawe Ger-Ger"
+		},
+		{
+			"id_kelurahan": "1102122025",
+			"id_kecamatan_fk": "110212",
+			"nama_kelurahan": "Simpur Jaya"
+		},
+		{
+			"id_kelurahan": "1102132001",
+			"id_kecamatan_fk": "110213",
+			"nama_kelurahan": "Salang Baru"
+		},
+		{
+			"id_kelurahan": "1102132002",
+			"id_kecamatan_fk": "110213",
+			"nama_kelurahan": "Ranta Dior"
+		},
+		{
+			"id_kelurahan": "1102132003",
+			"id_kecamatan_fk": "110213",
+			"nama_kelurahan": "Lembah Alas"
+		},
+		{
+			"id_kelurahan": "1102132004",
+			"id_kecamatan_fk": "110213",
+			"nama_kelurahan": "Tenembak Lang-Lang"
+		},
+		{
+			"id_kelurahan": "1102132005",
+			"id_kecamatan_fk": "110213",
+			"nama_kelurahan": "Salang Sigotom"
+		},
+		{
+			"id_kelurahan": "1102132006",
+			"id_kecamatan_fk": "110213",
+			"nama_kelurahan": "Tualang Lama"
+		},
+		{
+			"id_kelurahan": "1102132007",
+			"id_kecamatan_fk": "110213",
+			"nama_kelurahan": "Gusung Batu"
+		},
+		{
+			"id_kelurahan": "1102132008",
+			"id_kecamatan_fk": "110213",
+			"nama_kelurahan": "Kayu Pangor"
+		},
+		{
+			"id_kelurahan": "1102132009",
+			"id_kecamatan_fk": "110213",
+			"nama_kelurahan": "Sepakat"
+		},
+		{
+			"id_kelurahan": "1102132010",
+			"id_kecamatan_fk": "110213",
+			"nama_kelurahan": "Lawe Pangkat"
+		},
+		{
+			"id_kelurahan": "1102132011",
+			"id_kecamatan_fk": "110213",
+			"nama_kelurahan": "Bunga Melur"
+		},
+		{
+			"id_kelurahan": "1102132012",
+			"id_kecamatan_fk": "110213",
+			"nama_kelurahan": "Penampaan"
+		},
+		{
+			"id_kelurahan": "1102132013",
+			"id_kecamatan_fk": "110213",
+			"nama_kelurahan": "Terutung Mbelang"
+		},
+		{
+			"id_kelurahan": "1102132014",
+			"id_kecamatan_fk": "110213",
+			"nama_kelurahan": "Salang Muara"
+		},
+		{
+			"id_kelurahan": "1102132015",
+			"id_kecamatan_fk": "110213",
+			"nama_kelurahan": "Lawe Hakhum"
+		},
+		{
+			"id_kelurahan": "1102132016",
+			"id_kecamatan_fk": "110213",
+			"nama_kelurahan": "Tanoh Khukahen"
+		},
+		{
+			"id_kelurahan": "1102132017",
+			"id_kecamatan_fk": "110213",
+			"nama_kelurahan": "Tading Niulihi"
+		},
+		{
+			"id_kelurahan": "1102132018",
+			"id_kecamatan_fk": "110213",
+			"nama_kelurahan": "Peseluk Pesimbe"
+		},
+		{
+			"id_kelurahan": "1102132019",
+			"id_kecamatan_fk": "110213",
+			"nama_kelurahan": "Kane Lot"
+		},
+		{
+			"id_kelurahan": "1102132020",
+			"id_kecamatan_fk": "110213",
+			"nama_kelurahan": "Muhajirin"
+		},
+		{
+			"id_kelurahan": "1102132021",
+			"id_kecamatan_fk": "110213",
+			"nama_kelurahan": "Beriring Naru"
+		},
+		{
+			"id_kelurahan": "1102132022",
+			"id_kecamatan_fk": "110213",
+			"nama_kelurahan": "Kati Jeroh"
+		},
+		{
+			"id_kelurahan": "1102142001",
+			"id_kecamatan_fk": "110214",
+			"nama_kelurahan": "Terutung Megara Lawe Pasaran"
+		},
+		{
+			"id_kelurahan": "1102142002",
+			"id_kecamatan_fk": "110214",
+			"nama_kelurahan": "Kisam Gabungan"
+		},
+		{
+			"id_kelurahan": "1102142003",
+			"id_kecamatan_fk": "110214",
+			"nama_kelurahan": "Kisam Kute Pasir"
+		},
+		{
+			"id_kelurahan": "1102142004",
+			"id_kecamatan_fk": "110214",
+			"nama_kelurahan": "Lawe Sumur"
+		},
+		{
+			"id_kelurahan": "1102142005",
+			"id_kecamatan_fk": "110214",
+			"nama_kelurahan": "Lawe Sumur Baru"
+		},
+		{
+			"id_kelurahan": "1102142006",
+			"id_kecamatan_fk": "110214",
+			"nama_kelurahan": "Kuta Lesung"
+		},
+		{
+			"id_kelurahan": "1102142007",
+			"id_kecamatan_fk": "110214",
+			"nama_kelurahan": "Berandang"
+		},
+		{
+			"id_kelurahan": "1102142008",
+			"id_kecamatan_fk": "110214",
+			"nama_kelurahan": "Kute Bunin"
+		},
+		{
+			"id_kelurahan": "1102142009",
+			"id_kecamatan_fk": "110214",
+			"nama_kelurahan": "Buah Pala"
+		},
+		{
+			"id_kelurahan": "1102142010",
+			"id_kecamatan_fk": "110214",
+			"nama_kelurahan": "Penosan"
+		},
+		{
+			"id_kelurahan": "1102142011",
+			"id_kecamatan_fk": "110214",
+			"nama_kelurahan": "Tengku Mbelim"
+		},
+		{
+			"id_kelurahan": "1102142012",
+			"id_kecamatan_fk": "110214",
+			"nama_kelurahan": "Megakhe Bakhu"
+		},
+		{
+			"id_kelurahan": "1102142013",
+			"id_kecamatan_fk": "110214",
+			"nama_kelurahan": "Kisam Lestari"
+		},
+		{
+			"id_kelurahan": "1102142014",
+			"id_kecamatan_fk": "110214",
+			"nama_kelurahan": "Kisam Kue Khambe"
+		},
+		{
+			"id_kelurahan": "1102142015",
+			"id_kecamatan_fk": "110214",
+			"nama_kelurahan": "Lawe Polak"
+		},
+		{
+			"id_kelurahan": "1102142016",
+			"id_kecamatan_fk": "110214",
+			"nama_kelurahan": "Lawe Semukh Sepakat"
+		},
+		{
+			"id_kelurahan": "1102142017",
+			"id_kecamatan_fk": "110214",
+			"nama_kelurahan": "Setia Baru"
+		},
+		{
+			"id_kelurahan": "1102142018",
+			"id_kecamatan_fk": "110214",
+			"nama_kelurahan": "Teger Miko"
+		},
+		{
+			"id_kelurahan": "1102152001",
+			"id_kecamatan_fk": "110215",
+			"nama_kelurahan": "Salim Pinim"
+		},
+		{
+			"id_kelurahan": "1102152002",
+			"id_kecamatan_fk": "110215",
+			"nama_kelurahan": "Jambur Damar"
+		},
+		{
+			"id_kelurahan": "1102152003",
+			"id_kecamatan_fk": "110215",
+			"nama_kelurahan": "Alur Langsat"
+		},
+		{
+			"id_kelurahan": "1102152004",
+			"id_kecamatan_fk": "110215",
+			"nama_kelurahan": "Rambah Sayang"
+		},
+		{
+			"id_kelurahan": "1102152006",
+			"id_kecamatan_fk": "110215",
+			"nama_kelurahan": "Rumah Luar"
+		},
+		{
+			"id_kelurahan": "1102152007",
+			"id_kecamatan_fk": "110215",
+			"nama_kelurahan": "Tenembak Alas"
+		},
+		{
+			"id_kelurahan": "1102152008",
+			"id_kecamatan_fk": "110215",
+			"nama_kelurahan": "Lawe Tungkal"
+		},
+		{
+			"id_kelurahan": "1102152009",
+			"id_kecamatan_fk": "110215",
+			"nama_kelurahan": "Salim Pinim II"
+		},
+		{
+			"id_kelurahan": "1102152010",
+			"id_kecamatan_fk": "110215",
+			"nama_kelurahan": "Jambukh Pekhmate"
+		},
+		{
+			"id_kelurahan": "1102152011",
+			"id_kecamatan_fk": "110215",
+			"nama_kelurahan": "Khutung Mbelang"
+		},
+		{
+			"id_kelurahan": "1102152012",
+			"id_kecamatan_fk": "110215",
+			"nama_kelurahan": "Timang Khase"
+		},
+		{
+			"id_kelurahan": "1102152013",
+			"id_kecamatan_fk": "110215",
+			"nama_kelurahan": "Stambul Jaya"
+		},
+		{
+			"id_kelurahan": "1102152014",
+			"id_kecamatan_fk": "110215",
+			"nama_kelurahan": "Alukh Nangke"
+		},
+		{
+			"id_kelurahan": "1102152015",
+			"id_kecamatan_fk": "110215",
+			"nama_kelurahan": "Mejile"
+		},
+		{
+			"id_kelurahan": "1102162001",
+			"id_kecamatan_fk": "110216",
+			"nama_kelurahan": "Bintang Alga Musara"
+		},
+		{
+			"id_kelurahan": "1102162002",
+			"id_kecamatan_fk": "110216",
+			"nama_kelurahan": "Bukit Bintang Indah"
+		},
+		{
+			"id_kelurahan": "1102162003",
+			"id_kecamatan_fk": "110216",
+			"nama_kelurahan": "Tanjung Sari"
+		},
+		{
+			"id_kelurahan": "1102162004",
+			"id_kecamatan_fk": "110216",
+			"nama_kelurahan": "Bunbun Alas"
+		},
+		{
+			"id_kelurahan": "1102162005",
+			"id_kecamatan_fk": "110216",
+			"nama_kelurahan": "Naga Timbul"
+		},
+		{
+			"id_kelurahan": "1102162006",
+			"id_kecamatan_fk": "110216",
+			"nama_kelurahan": "Gunung Pak-Pak"
+		},
+		{
+			"id_kelurahan": "1102162007",
+			"id_kecamatan_fk": "110216",
+			"nama_kelurahan": "Bukit Mekhiah"
+		},
+		{
+			"id_kelurahan": "1102162008",
+			"id_kecamatan_fk": "110216",
+			"nama_kelurahan": "Permata Musara"
+		},
+		{
+			"id_kelurahan": "1102162009",
+			"id_kecamatan_fk": "110216",
+			"nama_kelurahan": "Laut Tawar"
+		},
+		{
+			"id_kelurahan": "1102162010",
+			"id_kecamatan_fk": "110216",
+			"nama_kelurahan": "Kane Mende"
+		},
+		{
+			"id_kelurahan": "1102162011",
+			"id_kecamatan_fk": "110216",
+			"nama_kelurahan": "Lawe Sekhakut"
+		},
+		{
+			"id_kelurahan": "1102162012",
+			"id_kecamatan_fk": "110216",
+			"nama_kelurahan": "Bunbun Indah War"
+		},
+		{
+			"id_kelurahan": "1102162013",
+			"id_kecamatan_fk": "110216",
+			"nama_kelurahan": "Suka Damai"
+		},
+		{
+			"id_kelurahan": "1102162014",
+			"id_kecamatan_fk": "110216",
+			"nama_kelurahan": "Tanah Khekhine"
+		},
+		{
+			"id_kelurahan": "1102162015",
+			"id_kecamatan_fk": "110216",
+			"nama_kelurahan": "Punce Nali"
+		},
+		{
+			"id_kelurahan": "1102162016",
+			"id_kecamatan_fk": "110216",
+			"nama_kelurahan": "Sade Ate"
+		},
+		{
+			"id_kelurahan": "1102162017",
+			"id_kecamatan_fk": "110216",
+			"nama_kelurahan": "Akhih Majile"
+		},
+		{
+			"id_kelurahan": "1102162018",
+			"id_kecamatan_fk": "110216",
+			"nama_kelurahan": "Ukhat Peseluk"
+		},
+		{
+			"id_kelurahan": "1102162019",
+			"id_kecamatan_fk": "110216",
+			"nama_kelurahan": "Tunas Mude"
+		},
+		{
+			"id_kelurahan": "1102162020",
+			"id_kecamatan_fk": "110216",
+			"nama_kelurahan": "Gaye Sendah"
+		},
+		{
+			"id_kelurahan": "1102162021",
+			"id_kecamatan_fk": "110216",
+			"nama_kelurahan": "Hakhapen"
+		},
+		{
+			"id_kelurahan": "1102162022",
+			"id_kecamatan_fk": "110216",
+			"nama_kelurahan": "Kompas"
+		},
+		{
+			"id_kelurahan": "1102162023",
+			"id_kecamatan_fk": "110216",
+			"nama_kelurahan": "Sepakat"
+		},
+		{
+			"id_kelurahan": "1103012001",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Alue Luddin Sa"
+		},
+		{
+			"id_kelurahan": "1103012002",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Alue Luddin Dua"
+		},
+		{
+			"id_kelurahan": "1103012003",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Alue Dalam"
+		},
+		{
+			"id_kelurahan": "1103012004",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Dama Pulo Sa"
+		},
+		{
+			"id_kelurahan": "1103012005",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Dama Pulo Dua"
+		},
+		{
+			"id_kelurahan": "1103012006",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Buket Kulam"
+		},
+		{
+			"id_kelurahan": "1103012007",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Seuneubok Teungoh"
+		},
+		{
+			"id_kelurahan": "1103012008",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Jungka Gajah"
+		},
+		{
+			"id_kelurahan": "1103012009",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Seuneubok Simpang"
+		},
+		{
+			"id_kelurahan": "1103012010",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Matang Pineung"
+		},
+		{
+			"id_kelurahan": "1103012011",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Lhok Geulumpang"
+		},
+		{
+			"id_kelurahan": "1103012012",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Blang Buket"
+		},
+		{
+			"id_kelurahan": "1103012013",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Meunasah Keutapang"
+		},
+		{
+			"id_kelurahan": "1103012014",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Buket Rumia"
+		},
+		{
+			"id_kelurahan": "1103012015",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Alue Gadeng"
+		},
+		{
+			"id_kelurahan": "1103012016",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Kapai Baro"
+		},
+		{
+			"id_kelurahan": "1103012017",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Seuneubok Tuha Sa"
+		},
+		{
+			"id_kelurahan": "1103012018",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Seuneubok Tuha Dua"
+		},
+		{
+			"id_kelurahan": "1103012019",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Seuneubok Buloh"
+		},
+		{
+			"id_kelurahan": "1103012020",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Gaseh Sayang"
+		},
+		{
+			"id_kelurahan": "1103012021",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Alue Lhok"
+		},
+		{
+			"id_kelurahan": "1103012022",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Trieng Gadeng"
+		},
+		{
+			"id_kelurahan": "1103012023",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Grong-Grong"
+		},
+		{
+			"id_kelurahan": "1103012024",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Matang Geutou"
+		},
+		{
+			"id_kelurahan": "1103012025",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Alue Merbo"
+		},
+		{
+			"id_kelurahan": "1103012026",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Buket Raya"
+		},
+		{
+			"id_kelurahan": "1103012027",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Gampong Keude"
+		},
+		{
+			"id_kelurahan": "1103012028",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Peukan Idi Cut"
+		},
+		{
+			"id_kelurahan": "1103012029",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Gampong Beunot"
+		},
+		{
+			"id_kelurahan": "1103012030",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Seuneubok Baroh"
+		},
+		{
+			"id_kelurahan": "1103012031",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Teupin Drum"
+		},
+		{
+			"id_kelurahan": "1103012032",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Kuala Idi Cut"
+		},
+		{
+			"id_kelurahan": "1103012034",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Seuneubok Aceh"
+		},
+		{
+			"id_kelurahan": "1103012035",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Gampong Baro"
+		},
+		{
+			"id_kelurahan": "1103012036",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Bagok Panah Sa"
+		},
+		{
+			"id_kelurahan": "1103012037",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Bagok Panah Dua"
+		},
+		{
+			"id_kelurahan": "1103012038",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Bagok Panah Lhee"
+		},
+		{
+			"id_kelurahan": "1103012039",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Bagok Panah Peut"
+		},
+		{
+			"id_kelurahan": "1103012040",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Buket Tualang"
+		},
+		{
+			"id_kelurahan": "1103012041",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Keumuneng Sa"
+		},
+		{
+			"id_kelurahan": "1103012042",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Keumuneng Dua"
+		},
+		{
+			"id_kelurahan": "1103012043",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Keumuneng Lhee"
+		},
+		{
+			"id_kelurahan": "1103012044",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Keumuneng Peut"
+		},
+		{
+			"id_kelurahan": "1103012045",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Keumuneng Limong"
+		},
+		{
+			"id_kelurahan": "1103012046",
+			"id_kecamatan_fk": "110301",
+			"nama_kelurahan": "Meunasah Blang"
+		},
+		{
+			"id_kelurahan": "1103022001",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Blang Keumahang"
+		},
+		{
+			"id_kelurahan": "1103022002",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Blang Jambee"
+		},
+		{
+			"id_kelurahan": "1103022003",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Keumuneng"
+		},
+		{
+			"id_kelurahan": "1103022004",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Ladang Baro"
+		},
+		{
+			"id_kelurahan": "1103022005",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Buket Panyang"
+		},
+		{
+			"id_kelurahan": "1103022006",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Seuneubok Rambong"
+		},
+		{
+			"id_kelurahan": "1103022007",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Seuneubok Baro"
+		},
+		{
+			"id_kelurahan": "1103022008",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Blang Mideun"
+		},
+		{
+			"id_kelurahan": "1103022009",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Paya Bakong"
+		},
+		{
+			"id_kelurahan": "1103022010",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Teupin Raya"
+		},
+		{
+			"id_kelurahan": "1103022011",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Lhok Rambong"
+		},
+		{
+			"id_kelurahan": "1103022012",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Julok Tunong"
+		},
+		{
+			"id_kelurahan": "1103022013",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Ulee Ateung"
+		},
+		{
+			"id_kelurahan": "1103022014",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Ulee Blang"
+		},
+		{
+			"id_kelurahan": "1103022015",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Labuhan"
+		},
+		{
+			"id_kelurahan": "1103022016",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Naleung"
+		},
+		{
+			"id_kelurahan": "1103022017",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Mane Rampak"
+		},
+		{
+			"id_kelurahan": "1103022018",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Matang"
+		},
+		{
+			"id_kelurahan": "1103022019",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Blang Uyok"
+		},
+		{
+			"id_kelurahan": "1103022020",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Blang Pauh Sa"
+		},
+		{
+			"id_kelurahan": "1103022021",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Blang Pauh Dua"
+		},
+		{
+			"id_kelurahan": "1103022022",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Ulee Tanoh"
+		},
+		{
+			"id_kelurahan": "1103022023",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Keude Kuta Binjei"
+		},
+		{
+			"id_kelurahan": "1103022024",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Buket Seuraja"
+		},
+		{
+			"id_kelurahan": "1103022025",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Kuala Geulumpang"
+		},
+		{
+			"id_kelurahan": "1103022026",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Gampong Baro"
+		},
+		{
+			"id_kelurahan": "1103022027",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Tumpok Teungoh"
+		},
+		{
+			"id_kelurahan": "1103022028",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Seumatang"
+		},
+		{
+			"id_kelurahan": "1103022029",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Ujong Tunong"
+		},
+		{
+			"id_kelurahan": "1103022030",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Bukit Dindeng"
+		},
+		{
+			"id_kelurahan": "1103022031",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Paya Pasi"
+		},
+		{
+			"id_kelurahan": "1103022032",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Alue Cek Doi"
+		},
+		{
+			"id_kelurahan": "1103022033",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Blang Gleum"
+		},
+		{
+			"id_kelurahan": "1103022034",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Tanjong Tok Blang"
+		},
+		{
+			"id_kelurahan": "1103022035",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Buket Makmu"
+		},
+		{
+			"id_kelurahan": "1103022036",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Lhok Seuntang"
+		},
+		{
+			"id_kelurahan": "1103022037",
+			"id_kecamatan_fk": "110302",
+			"nama_kelurahan": "Simpang Lhee"
+		},
+		{
+			"id_kelurahan": "1103032001",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Gampong Jawa"
+		},
+		{
+			"id_kelurahan": "1103032002",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Keude Blang"
+		},
+		{
+			"id_kelurahan": "1103032003",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Tanoh Anoe"
+		},
+		{
+			"id_kelurahan": "1103032004",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Kuala Peudawa Puntong"
+		},
+		{
+			"id_kelurahan": "1103032005",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Gampong Aceh"
+		},
+		{
+			"id_kelurahan": "1103032006",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Kuta Blang"
+		},
+		{
+			"id_kelurahan": "1103032007",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Gampong Tanjong"
+		},
+		{
+			"id_kelurahan": "1103032008",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Blang Geulumpang"
+		},
+		{
+			"id_kelurahan": "1103032009",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Meunasah Pu'uk"
+		},
+		{
+			"id_kelurahan": "1103032010",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Bantayan Timu"
+		},
+		{
+			"id_kelurahan": "1103032011",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Keutapang Mameh"
+		},
+		{
+			"id_kelurahan": "1103032012",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Seuneubok Rambong"
+		},
+		{
+			"id_kelurahan": "1103032013",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Kuala Idi"
+		},
+		{
+			"id_kelurahan": "1103032014",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Keude Aceh"
+		},
+		{
+			"id_kelurahan": "1103032023",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Seuneubok Bacee"
+		},
+		{
+			"id_kelurahan": "1103032029",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Titi Baro"
+		},
+		{
+			"id_kelurahan": "1103032047",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Tanjong Kapai"
+		},
+		{
+			"id_kelurahan": "1103032048",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Alue Dua Muka O"
+		},
+		{
+			"id_kelurahan": "1103032049",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Alue Dua Muka S"
+		},
+		{
+			"id_kelurahan": "1103032050",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Ulee Blang"
+		},
+		{
+			"id_kelurahan": "1103032051",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Buket Jok"
+		},
+		{
+			"id_kelurahan": "1103032052",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Buket Meulinteung"
+		},
+		{
+			"id_kelurahan": "1103032053",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Gampong Jalan"
+		},
+		{
+			"id_kelurahan": "1103032054",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Teupin Batee"
+		},
+		{
+			"id_kelurahan": "1103032055",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Buket Langa"
+		},
+		{
+			"id_kelurahan": "1103032056",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Buket Pala"
+		},
+		{
+			"id_kelurahan": "1103032057",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Buket Juara"
+		},
+		{
+			"id_kelurahan": "1103032058",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Seuneubok Tutong"
+		},
+		{
+			"id_kelurahan": "1103032059",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Seuneubok Tuha"
+		},
+		{
+			"id_kelurahan": "1103032060",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Sampoimah"
+		},
+		{
+			"id_kelurahan": "1103032061",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Dama pulo"
+		},
+		{
+			"id_kelurahan": "1103032062",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Gureb Blang"
+		},
+		{
+			"id_kelurahan": "1103032064",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Gampong Baro"
+		},
+		{
+			"id_kelurahan": "1103032065",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "SeunebokTeungoh P Puntong"
+		},
+		{
+			"id_kelurahan": "1103032067",
+			"id_kecamatan_fk": "110303",
+			"nama_kelurahan": "Kuta Lawah"
+		},
+		{
+			"id_kelurahan": "1103042001",
+			"id_kecamatan_fk": "110304",
+			"nama_kelurahan": "Jambo Labu"
+		},
+		{
+			"id_kelurahan": "1103042002",
+			"id_kecamatan_fk": "110304",
+			"nama_kelurahan": "Alue Canang"
+		},
+		{
+			"id_kelurahan": "1103042003",
+			"id_kecamatan_fk": "110304",
+			"nama_kelurahan": "Alue Drien"
+		},
+		{
+			"id_kelurahan": "1103042004",
+			"id_kecamatan_fk": "110304",
+			"nama_kelurahan": "Buket Tiga"
+		},
+		{
+			"id_kelurahan": "1103042005",
+			"id_kecamatan_fk": "110304",
+			"nama_kelurahan": "Benteng"
+		},
+		{
+			"id_kelurahan": "1103042006",
+			"id_kecamatan_fk": "110304",
+			"nama_kelurahan": "Afdeling II Bukit"
+		},
+		{
+			"id_kelurahan": "1103042007",
+			"id_kecamatan_fk": "110304",
+			"nama_kelurahan": "Keumuneng Hulu"
+		},
+		{
+			"id_kelurahan": "1103042008",
+			"id_kecamatan_fk": "110304",
+			"nama_kelurahan": "Peutow"
+		},
+		{
+			"id_kelurahan": "1103042009",
+			"id_kecamatan_fk": "110304",
+			"nama_kelurahan": "Alue Buloh"
+		},
+		{
+			"id_kelurahan": "1103042010",
+			"id_kecamatan_fk": "110304",
+			"nama_kelurahan": "Alue Teh"
+		},
+		{
+			"id_kelurahan": "1103042011",
+			"id_kecamatan_fk": "110304",
+			"nama_kelurahan": "Paya Rambong"
+		},
+		{
+			"id_kelurahan": "1103042012",
+			"id_kecamatan_fk": "110304",
+			"nama_kelurahan": "Alue Gadeng SA"
+		},
+		{
+			"id_kelurahan": "1103042013",
+			"id_kecamatan_fk": "110304",
+			"nama_kelurahan": "Paya Tampah"
+		},
+		{
+			"id_kelurahan": "1103042014",
+			"id_kecamatan_fk": "110304",
+			"nama_kelurahan": "Paya Bili Dua"
+		},
+		{
+			"id_kelurahan": "1103042015",
+			"id_kecamatan_fk": "110304",
+			"nama_kelurahan": "Paya Bili Sa"
+		},
+		{
+			"id_kelurahan": "1103042016",
+			"id_kecamatan_fk": "110304",
+			"nama_kelurahan": "Paya Peulawi"
+		},
+		{
+			"id_kelurahan": "1103042017",
+			"id_kecamatan_fk": "110304",
+			"nama_kelurahan": "Keude Birem"
+		},
+		{
+			"id_kelurahan": "1103042018",
+			"id_kecamatan_fk": "110304",
+			"nama_kelurahan": "Bayeun"
+		},
+		{
+			"id_kelurahan": "1103042019",
+			"id_kecamatan_fk": "110304",
+			"nama_kelurahan": "Aramiyah"
+		},
+		{
+			"id_kelurahan": "1103042020",
+			"id_kecamatan_fk": "110304",
+			"nama_kelurahan": "Blang Tualang"
+		},
+		{
+			"id_kelurahan": "1103042021",
+			"id_kecamatan_fk": "110304",
+			"nama_kelurahan": "Buket Seuleumak"
+		},
+		{
+			"id_kelurahan": "1103042022",
+			"id_kecamatan_fk": "110304",
+			"nama_kelurahan": "Birem Rayeuk"
+		},
+		{
+			"id_kelurahan": "1103042023",
+			"id_kecamatan_fk": "110304",
+			"nama_kelurahan": "Alue Gadeng GP"
+		},
+		{
+			"id_kelurahan": "1103042024",
+			"id_kecamatan_fk": "110304",
+			"nama_kelurahan": "Alue Gadeng II"
+		},
+		{
+			"id_kelurahan": "1103042025",
+			"id_kecamatan_fk": "110304",
+			"nama_kelurahan": "Alue Sentang"
+		},
+		{
+			"id_kelurahan": "1103042026",
+			"id_kecamatan_fk": "110304",
+			"nama_kelurahan": "Merbou Dua"
+		},
+		{
+			"id_kelurahan": "1103042027",
+			"id_kecamatan_fk": "110304",
+			"nama_kelurahan": "Alue Nyamuk"
+		},
+		{
+			"id_kelurahan": "1103052001",
+			"id_kecamatan_fk": "110305",
+			"nama_kelurahan": "Lokop"
+		},
+		{
+			"id_kelurahan": "1103052002",
+			"id_kecamatan_fk": "110305",
+			"nama_kelurahan": "Terujak"
+		},
+		{
+			"id_kelurahan": "1103052003",
+			"id_kecamatan_fk": "110305",
+			"nama_kelurahan": "Tualang"
+		},
+		{
+			"id_kelurahan": "1103052004",
+			"id_kecamatan_fk": "110305",
+			"nama_kelurahan": "Leles"
+		},
+		{
+			"id_kelurahan": "1103052005",
+			"id_kecamatan_fk": "110305",
+			"nama_kelurahan": "Ujung Karang"
+		},
+		{
+			"id_kelurahan": "1103052006",
+			"id_kecamatan_fk": "110305",
+			"nama_kelurahan": "Nalon"
+		},
+		{
+			"id_kelurahan": "1103052007",
+			"id_kecamatan_fk": "110305",
+			"nama_kelurahan": "Jering"
+		},
+		{
+			"id_kelurahan": "1103052008",
+			"id_kecamatan_fk": "110305",
+			"nama_kelurahan": "Loot"
+		},
+		{
+			"id_kelurahan": "1103052009",
+			"id_kecamatan_fk": "110305",
+			"nama_kelurahan": "Sekualan"
+		},
+		{
+			"id_kelurahan": "1103052010",
+			"id_kecamatan_fk": "110305",
+			"nama_kelurahan": "Sunti"
+		},
+		{
+			"id_kelurahan": "1103052011",
+			"id_kecamatan_fk": "110305",
+			"nama_kelurahan": "Umah Taring"
+		},
+		{
+			"id_kelurahan": "1103052012",
+			"id_kecamatan_fk": "110305",
+			"nama_kelurahan": "Bunin"
+		},
+		{
+			"id_kelurahan": "1103052013",
+			"id_kecamatan_fk": "110305",
+			"nama_kelurahan": "Sembuang"
+		},
+		{
+			"id_kelurahan": "1103052014",
+			"id_kecamatan_fk": "110305",
+			"nama_kelurahan": "Seuleumak"
+		},
+		{
+			"id_kelurahan": "1103052015",
+			"id_kecamatan_fk": "110305",
+			"nama_kelurahan": "Mesir"
+		},
+		{
+			"id_kelurahan": "1103052016",
+			"id_kecamatan_fk": "110305",
+			"nama_kelurahan": "Rampah"
+		},
+		{
+			"id_kelurahan": "1103052022",
+			"id_kecamatan_fk": "110305",
+			"nama_kelurahan": "Arul Durin"
+		},
+		{
+			"id_kelurahan": "1103062001",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Keude Bagok Sa"
+		},
+		{
+			"id_kelurahan": "1103062002",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Gampong Keude Bagok Dua"
+		},
+		{
+			"id_kelurahan": "1103062003",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Asan Tanjong"
+		},
+		{
+			"id_kelurahan": "1103062004",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Bantayan"
+		},
+		{
+			"id_kelurahan": "1103062005",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Matang Seuleumak"
+		},
+		{
+			"id_kelurahan": "1103062006",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Teupin Pukat"
+		},
+		{
+			"id_kelurahan": "1103062007",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Matang Neuheun"
+		},
+		{
+			"id_kelurahan": "1103062008",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Kuala Bagok"
+		},
+		{
+			"id_kelurahan": "1103062009",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Meunasah Teungoh"
+		},
+		{
+			"id_kelurahan": "1103062010",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Medang Ara"
+		},
+		{
+			"id_kelurahan": "1103062011",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Peulawi"
+		},
+		{
+			"id_kelurahan": "1103062012",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Baroh Bugeng"
+		},
+		{
+			"id_kelurahan": "1103062013",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Seumatang Aron"
+		},
+		{
+			"id_kelurahan": "1103062014",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Blang Panjou"
+		},
+		{
+			"id_kelurahan": "1103062025",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Pulo U"
+		},
+		{
+			"id_kelurahan": "1103062026",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Cot Asan"
+		},
+		{
+			"id_kelurahan": "1103062027",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Paya Enjee"
+		},
+		{
+			"id_kelurahan": "1103062028",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Seuleumak Muda"
+		},
+		{
+			"id_kelurahan": "1103062029",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Matang Panyang"
+		},
+		{
+			"id_kelurahan": "1103062030",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Meunasah Hagu"
+		},
+		{
+			"id_kelurahan": "1103062031",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Matang Kunyet"
+		},
+		{
+			"id_kelurahan": "1103062032",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Buket Panjou"
+		},
+		{
+			"id_kelurahan": "1103062033",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Buket Meurak"
+		},
+		{
+			"id_kelurahan": "1103062034",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Buket Panyang"
+		},
+		{
+			"id_kelurahan": "1103062035",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Seuneubok Dalam"
+		},
+		{
+			"id_kelurahan": "1103062036",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Gampong Mesjid"
+		},
+		{
+			"id_kelurahan": "1103062037",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Alue Siwah Serdang"
+		},
+		{
+			"id_kelurahan": "1103062038",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Gampong Lhee"
+		},
+		{
+			"id_kelurahan": "1103062039",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Beurandang"
+		},
+		{
+			"id_kelurahan": "1103062040",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Gampong Jalan"
+		},
+		{
+			"id_kelurahan": "1103062041",
+			"id_kecamatan_fk": "110306",
+			"nama_kelurahan": "Seuneubok Rambong"
+		},
+		{
+			"id_kelurahan": "1103072001",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Pasir Putih"
+		},
+		{
+			"id_kelurahan": "1103072002",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Tualang"
+		},
+		{
+			"id_kelurahan": "1103072003",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Keude Peureulak"
+		},
+		{
+			"id_kelurahan": "1103072004",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Leuge"
+		},
+		{
+			"id_kelurahan": "1103072005",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Uteun Dama"
+		},
+		{
+			"id_kelurahan": "1103072006",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Punti"
+		},
+		{
+			"id_kelurahan": "1103072007",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Alue Dua Paya Gajah"
+		},
+		{
+			"id_kelurahan": "1103072008",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Blang Bitra"
+		},
+		{
+			"id_kelurahan": "1103072009",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Kuala Bugak"
+		},
+		{
+			"id_kelurahan": "1103072010",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Paya Lipah"
+		},
+		{
+			"id_kelurahan": "1103072011",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Seumatang Muda Itam"
+		},
+		{
+			"id_kelurahan": "1103072012",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Lhok Dalam"
+		},
+		{
+			"id_kelurahan": "1103072013",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Beusa Meuranoe"
+		},
+		{
+			"id_kelurahan": "1103072014",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Bangka Rimung"
+		},
+		{
+			"id_kelurahan": "1103072015",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Tanoh Rata"
+		},
+		{
+			"id_kelurahan": "1103072016",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Bandrong"
+		},
+		{
+			"id_kelurahan": "1103072017",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Blang Balok"
+		},
+		{
+			"id_kelurahan": "1103072018",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Cot Muda Itam"
+		},
+		{
+			"id_kelurahan": "1103072019",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Keumuneng"
+		},
+		{
+			"id_kelurahan": "1103072020",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Kuala Leuge"
+		},
+		{
+			"id_kelurahan": "1103072021",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Balee Buya"
+		},
+		{
+			"id_kelurahan": "1103072022",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Alue Nibong"
+		},
+		{
+			"id_kelurahan": "1103072023",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Seuneubok Peusangan"
+		},
+		{
+			"id_kelurahan": "1103072024",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Seuneubok Aceh"
+		},
+		{
+			"id_kelurahan": "1103072025",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Seuneubok Pidie"
+		},
+		{
+			"id_kelurahan": "1103072026",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Dama Tutong"
+		},
+		{
+			"id_kelurahan": "1103072027",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Matang Gleum"
+		},
+		{
+			"id_kelurahan": "1103072028",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Lubok Pempeng"
+		},
+		{
+			"id_kelurahan": "1103072029",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Buket Pala"
+		},
+		{
+			"id_kelurahan": "1103072030",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Paya Kalui"
+		},
+		{
+			"id_kelurahan": "1103072031",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Cek Mbon"
+		},
+		{
+			"id_kelurahan": "1103072032",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Paya Meuligou"
+		},
+		{
+			"id_kelurahan": "1103072033",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Blang Simpo"
+		},
+		{
+			"id_kelurahan": "1103072034",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Blang Batee"
+		},
+		{
+			"id_kelurahan": "1103072035",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Matang Pelawi"
+		},
+		{
+			"id_kelurahan": "1103072036",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Cot Geulumpang"
+		},
+		{
+			"id_kelurahan": "1103072037",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Alue Rambong"
+		},
+		{
+			"id_kelurahan": "1103072038",
+			"id_kecamatan_fk": "110307",
+			"nama_kelurahan": "Cot Keh"
+		},
+		{
+			"id_kelurahan": "1103082001",
+			"id_kecamatan_fk": "110308",
+			"nama_kelurahan": "Bayeun"
+		},
+		{
+			"id_kelurahan": "1103082002",
+			"id_kecamatan_fk": "110308",
+			"nama_kelurahan": "Rantau Panjang"
+		},
+		{
+			"id_kelurahan": "1103082003",
+			"id_kecamatan_fk": "110308",
+			"nama_kelurahan": "Alue Raya"
+		},
+		{
+			"id_kelurahan": "1103082004",
+			"id_kecamatan_fk": "110308",
+			"nama_kelurahan": "Alue Kumba"
+		},
+		{
+			"id_kelurahan": "1103082005",
+			"id_kecamatan_fk": "110308",
+			"nama_kelurahan": "Seuneubok Dalam"
+		},
+		{
+			"id_kelurahan": "1103082006",
+			"id_kecamatan_fk": "110308",
+			"nama_kelurahan": "Alue Seuleumak"
+		},
+		{
+			"id_kelurahan": "1103082007",
+			"id_kecamatan_fk": "110308",
+			"nama_kelurahan": "Sarah Kayee"
+		},
+		{
+			"id_kelurahan": "1103082008",
+			"id_kecamatan_fk": "110308",
+			"nama_kelurahan": "Damar Siput"
+		},
+		{
+			"id_kelurahan": "1103082009",
+			"id_kecamatan_fk": "110308",
+			"nama_kelurahan": "Simpang Peut"
+		},
+		{
+			"id_kelurahan": "1103082010",
+			"id_kecamatan_fk": "110308",
+			"nama_kelurahan": "Simpang Aneuh"
+		},
+		{
+			"id_kelurahan": "1103082011",
+			"id_kecamatan_fk": "110308",
+			"nama_kelurahan": "Alue Punti"
+		},
+		{
+			"id_kelurahan": "1103082012",
+			"id_kecamatan_fk": "110308",
+			"nama_kelurahan": "Alue Kaul"
+		},
+		{
+			"id_kelurahan": "1103082013",
+			"id_kecamatan_fk": "110308",
+			"nama_kelurahan": "Sarah Taube"
+		},
+		{
+			"id_kelurahan": "1103082014",
+			"id_kecamatan_fk": "110308",
+			"nama_kelurahan": "Alue Tuwi"
+		},
+		{
+			"id_kelurahan": "1103092001",
+			"id_kecamatan_fk": "110309",
+			"nama_kelurahan": "Peulalu"
+		},
+		{
+			"id_kelurahan": "1103092002",
+			"id_kecamatan_fk": "110309",
+			"nama_kelurahan": "Nicah Awe"
+		},
+		{
+			"id_kelurahan": "1103092003",
+			"id_kecamatan_fk": "110309",
+			"nama_kelurahan": "Alue Buloh Sa"
+		},
+		{
+			"id_kelurahan": "1103092004",
+			"id_kecamatan_fk": "110309",
+			"nama_kelurahan": "Alue Buloh Dua"
+		},
+		{
+			"id_kelurahan": "1103092005",
+			"id_kecamatan_fk": "110309",
+			"nama_kelurahan": "Teupin Breuh"
+		},
+		{
+			"id_kelurahan": "1103092006",
+			"id_kecamatan_fk": "110309",
+			"nama_kelurahan": "Matang Rayeuk"
+		},
+		{
+			"id_kelurahan": "1103092007",
+			"id_kecamatan_fk": "110309",
+			"nama_kelurahan": "Matang Kumbang"
+		},
+		{
+			"id_kelurahan": "1103092008",
+			"id_kecamatan_fk": "110309",
+			"nama_kelurahan": "Blang Nie"
+		},
+		{
+			"id_kelurahan": "1103092010",
+			"id_kecamatan_fk": "110309",
+			"nama_kelurahan": "Bantayan"
+		},
+		{
+			"id_kelurahan": "1103092011",
+			"id_kecamatan_fk": "110309",
+			"nama_kelurahan": "Matang Weng"
+		},
+		{
+			"id_kelurahan": "1103092012",
+			"id_kecamatan_fk": "110309",
+			"nama_kelurahan": "Alue Mulieng"
+		},
+		{
+			"id_kelurahan": "1103092013",
+			"id_kecamatan_fk": "110309",
+			"nama_kelurahan": "Pucok Alue II"
+		},
+		{
+			"id_kelurahan": "1103092014",
+			"id_kecamatan_fk": "110309",
+			"nama_kelurahan": "Gampong Blang"
+		},
+		{
+			"id_kelurahan": "1103092015",
+			"id_kecamatan_fk": "110309",
+			"nama_kelurahan": "Keude Tuha"
+		},
+		{
+			"id_kelurahan": "1103092016",
+			"id_kecamatan_fk": "110309",
+			"nama_kelurahan": "Kuala Simpang Ulim"
+		},
+		{
+			"id_kelurahan": "1103092017",
+			"id_kecamatan_fk": "110309",
+			"nama_kelurahan": "Lampoh Rayeuk"
+		},
+		{
+			"id_kelurahan": "1103092018",
+			"id_kecamatan_fk": "110309",
+			"nama_kelurahan": "Teupin Mamplam"
+		},
+		{
+			"id_kelurahan": "1103092019",
+			"id_kecamatan_fk": "110309",
+			"nama_kelurahan": "Titi Bareuh"
+		},
+		{
+			"id_kelurahan": "1103092020",
+			"id_kecamatan_fk": "110309",
+			"nama_kelurahan": "Pucok Alue Sa"
+		},
+		{
+			"id_kelurahan": "1103092021",
+			"id_kecamatan_fk": "110309",
+			"nama_kelurahan": "Pucok Alue Barat"
+		},
+		{
+			"id_kelurahan": "1103092022",
+			"id_kecamatan_fk": "110309",
+			"nama_kelurahan": "Arakundo"
+		},
+		{
+			"id_kelurahan": "1103092023",
+			"id_kecamatan_fk": "110309",
+			"nama_kelurahan": "Gampong Baro"
+		},
+		{
+			"id_kelurahan": "1103092024",
+			"id_kecamatan_fk": "110309",
+			"nama_kelurahan": "Matang Seupeng"
+		},
+		{
+			"id_kelurahan": "1103102001",
+			"id_kecamatan_fk": "110310",
+			"nama_kelurahan": "Paya Unou"
+		},
+		{
+			"id_kelurahan": "1103102002",
+			"id_kecamatan_fk": "110310",
+			"nama_kelurahan": "Seuneubok Johan"
+		},
+		{
+			"id_kelurahan": "1103102003",
+			"id_kecamatan_fk": "110310",
+			"nama_kelurahan": "Seuneubok Baro"
+		},
+		{
+			"id_kelurahan": "1103102004",
+			"id_kecamatan_fk": "110310",
+			"nama_kelurahan": "Pulo Blang"
+		},
+		{
+			"id_kelurahan": "1103102005",
+			"id_kecamatan_fk": "110310",
+			"nama_kelurahan": "Blang Barom"
+		},
+		{
+			"id_kelurahan": "1103102006",
+			"id_kecamatan_fk": "110310",
+			"nama_kelurahan": "Seuneubok Dalam"
+		},
+		{
+			"id_kelurahan": "1103102007",
+			"id_kecamatan_fk": "110310",
+			"nama_kelurahan": "Seuleumak Muda"
+		},
+		{
+			"id_kelurahan": "1103102008",
+			"id_kecamatan_fk": "110310",
+			"nama_kelurahan": "Bhom Lama"
+		},
+		{
+			"id_kelurahan": "1103102009",
+			"id_kecamatan_fk": "110310",
+			"nama_kelurahan": "Pasi Puteh"
+		},
+		{
+			"id_kelurahan": "1103102010",
+			"id_kecamatan_fk": "110310",
+			"nama_kelurahan": "Alue Dua"
+		},
+		{
+			"id_kelurahan": "1103102011",
+			"id_kecamatan_fk": "110310",
+			"nama_kelurahan": "Buket Pala"
+		},
+		{
+			"id_kelurahan": "1103102012",
+			"id_kecamatan_fk": "110310",
+			"nama_kelurahan": "Mata Ie"
+		},
+		{
+			"id_kelurahan": "1103102013",
+			"id_kecamatan_fk": "110310",
+			"nama_kelurahan": "Alue Udep"
+		},
+		{
+			"id_kelurahan": "1103102014",
+			"id_kecamatan_fk": "110310",
+			"nama_kelurahan": "Seumali"
+		},
+		{
+			"id_kelurahan": "1103102015",
+			"id_kecamatan_fk": "110310",
+			"nama_kelurahan": "Punti Payong"
+		},
+		{
+			"id_kelurahan": "1103102016",
+			"id_kecamatan_fk": "110310",
+			"nama_kelurahan": "Paya Palas"
+		},
+		{
+			"id_kelurahan": "1103102017",
+			"id_kecamatan_fk": "110310",
+			"nama_kelurahan": "Tampak"
+		},
+		{
+			"id_kelurahan": "1103102018",
+			"id_kecamatan_fk": "110310",
+			"nama_kelurahan": "Kliet"
+		},
+		{
+			"id_kelurahan": "1103102019",
+			"id_kecamatan_fk": "110310",
+			"nama_kelurahan": "Alue Geunteng"
+		},
+		{
+			"id_kelurahan": "1103102020",
+			"id_kecamatan_fk": "110310",
+			"nama_kelurahan": "Pertamina"
+		},
+		{
+			"id_kelurahan": "1103102021",
+			"id_kecamatan_fk": "110310",
+			"nama_kelurahan": "Alue Batee"
+		},
+		{
+			"id_kelurahan": "1103102022",
+			"id_kecamatan_fk": "110310",
+			"nama_kelurahan": "Beurandang"
+		},
+		{
+			"id_kelurahan": "1103102024",
+			"id_kecamatan_fk": "110310",
+			"nama_kelurahan": "Seumanah Jaya"
+		},
+		{
+			"id_kelurahan": "1103112001",
+			"id_kecamatan_fk": "110311",
+			"nama_kelurahan": "Blang Seunong"
+		},
+		{
+			"id_kelurahan": "1103112002",
+			"id_kecamatan_fk": "110311",
+			"nama_kelurahan": "Suka Damai"
+		},
+		{
+			"id_kelurahan": "1103112003",
+			"id_kecamatan_fk": "110311",
+			"nama_kelurahan": "Pante Labu"
+		},
+		{
+			"id_kelurahan": "1103112004",
+			"id_kecamatan_fk": "110311",
+			"nama_kelurahan": "Pante Rambong"
+		},
+		{
+			"id_kelurahan": "1103112005",
+			"id_kecamatan_fk": "110311",
+			"nama_kelurahan": "Alue Ie Mirah"
+		},
+		{
+			"id_kelurahan": "1103112006",
+			"id_kecamatan_fk": "110311",
+			"nama_kelurahan": "Seuneubok Tuha"
+		},
+		{
+			"id_kelurahan": "1103112007",
+			"id_kecamatan_fk": "110311",
+			"nama_kelurahan": "Seuneubok Saboh"
+		},
+		{
+			"id_kelurahan": "1103112008",
+			"id_kecamatan_fk": "110311",
+			"nama_kelurahan": "Buket Kareung"
+		},
+		{
+			"id_kelurahan": "1103112009",
+			"id_kecamatan_fk": "110311",
+			"nama_kelurahan": "Buket Bata"
+		},
+		{
+			"id_kelurahan": "1103112010",
+			"id_kecamatan_fk": "110311",
+			"nama_kelurahan": "Meunasah Tunong"
+		},
+		{
+			"id_kelurahan": "1103112011",
+			"id_kecamatan_fk": "110311",
+			"nama_kelurahan": "Meunasah Teungoh"
+		},
+		{
+			"id_kelurahan": "1103112012",
+			"id_kecamatan_fk": "110311",
+			"nama_kelurahan": "Keude Baro"
+		},
+		{
+			"id_kelurahan": "1103112013",
+			"id_kecamatan_fk": "110311",
+			"nama_kelurahan": "Matang Perlak"
+		},
+		{
+			"id_kelurahan": "1103112014",
+			"id_kecamatan_fk": "110311",
+			"nama_kelurahan": "Grong-grong"
+		},
+		{
+			"id_kelurahan": "1103112015",
+			"id_kecamatan_fk": "110311",
+			"nama_kelurahan": "Matang Kruet"
+		},
+		{
+			"id_kelurahan": "1103112016",
+			"id_kecamatan_fk": "110311",
+			"nama_kelurahan": "Meunasah Leubok"
+		},
+		{
+			"id_kelurahan": "1103112017",
+			"id_kecamatan_fk": "110311",
+			"nama_kelurahan": "Pante Panah"
+		},
+		{
+			"id_kelurahan": "1103112018",
+			"id_kecamatan_fk": "110311",
+			"nama_kelurahan": "Paya Demam Sa"
+		},
+		{
+			"id_kelurahan": "1103112019",
+			"id_kecamatan_fk": "110311",
+			"nama_kelurahan": "Paya Demam Dua"
+		},
+		{
+			"id_kelurahan": "1103112020",
+			"id_kecamatan_fk": "110311",
+			"nama_kelurahan": "Paya Demam Lhee"
+		},
+		{
+			"id_kelurahan": "1103112021",
+			"id_kecamatan_fk": "110311",
+			"nama_kelurahan": "Matang Pudeng"
+		},
+		{
+			"id_kelurahan": "1103112022",
+			"id_kecamatan_fk": "110311",
+			"nama_kelurahan": "Putoh Sa"
+		},
+		{
+			"id_kelurahan": "1103112023",
+			"id_kecamatan_fk": "110311",
+			"nama_kelurahan": "Putoh Dua"
+		},
+		{
+			"id_kelurahan": "1103112024",
+			"id_kecamatan_fk": "110311",
+			"nama_kelurahan": "Sah Raja"
+		},
+		{
+			"id_kelurahan": "1103112025",
+			"id_kecamatan_fk": "110311",
+			"nama_kelurahan": "Sijudo"
+		},
+		{
+			"id_kelurahan": "1103122001",
+			"id_kecamatan_fk": "110312",
+			"nama_kelurahan": "Madat"
+		},
+		{
+			"id_kelurahan": "1103122002",
+			"id_kecamatan_fk": "110312",
+			"nama_kelurahan": "Matang Kupula Sa"
+		},
+		{
+			"id_kelurahan": "1103122003",
+			"id_kecamatan_fk": "110312",
+			"nama_kelurahan": "Matang Kupula Dua"
+		},
+		{
+			"id_kelurahan": "1103122004",
+			"id_kecamatan_fk": "110312",
+			"nama_kelurahan": "Matang Keupula Lhee"
+		},
+		{
+			"id_kelurahan": "1103122005",
+			"id_kecamatan_fk": "110312",
+			"nama_kelurahan": "Ulee Ateung"
+		},
+		{
+			"id_kelurahan": "1103122006",
+			"id_kecamatan_fk": "110312",
+			"nama_kelurahan": "Blang Ubit"
+		},
+		{
+			"id_kelurahan": "1103122007",
+			"id_kecamatan_fk": "110312",
+			"nama_kelurahan": "Matang Guru"
+		},
+		{
+			"id_kelurahan": "1103122008",
+			"id_kecamatan_fk": "110312",
+			"nama_kelurahan": "Pantee Bayam"
+		},
+		{
+			"id_kelurahan": "1103122009",
+			"id_kecamatan_fk": "110312",
+			"nama_kelurahan": "Meunasah Asan"
+		},
+		{
+			"id_kelurahan": "1103122010",
+			"id_kecamatan_fk": "110312",
+			"nama_kelurahan": "Meunasah Tingkeum"
+		},
+		{
+			"id_kelurahan": "1103122011",
+			"id_kecamatan_fk": "110312",
+			"nama_kelurahan": "Lueng Dua"
+		},
+		{
+			"id_kelurahan": "1103122012",
+			"id_kecamatan_fk": "110312",
+			"nama_kelurahan": "Lueng Peut"
+		},
+		{
+			"id_kelurahan": "1103122013",
+			"id_kecamatan_fk": "110312",
+			"nama_kelurahan": "Paya Demam Peut"
+		},
+		{
+			"id_kelurahan": "1103122014",
+			"id_kecamatan_fk": "110312",
+			"nama_kelurahan": "Abeuk Geulanteu"
+		},
+		{
+			"id_kelurahan": "1103122015",
+			"id_kecamatan_fk": "110312",
+			"nama_kelurahan": "Rambong Lop"
+		},
+		{
+			"id_kelurahan": "1103122016",
+			"id_kecamatan_fk": "110312",
+			"nama_kelurahan": "Tanjong Ara"
+		},
+		{
+			"id_kelurahan": "1103122017",
+			"id_kecamatan_fk": "110312",
+			"nama_kelurahan": "Matang Jrok"
+		},
+		{
+			"id_kelurahan": "1103122018",
+			"id_kecamatan_fk": "110312",
+			"nama_kelurahan": "Paya Naden"
+		},
+		{
+			"id_kelurahan": "1103122019",
+			"id_kecamatan_fk": "110312",
+			"nama_kelurahan": "Tanjong Minjey"
+		},
+		{
+			"id_kelurahan": "1103122020",
+			"id_kecamatan_fk": "110312",
+			"nama_kelurahan": "Pante Merbo"
+		},
+		{
+			"id_kelurahan": "1103122021",
+			"id_kecamatan_fk": "110312",
+			"nama_kelurahan": "Blang Awe"
+		},
+		{
+			"id_kelurahan": "1103122022",
+			"id_kecamatan_fk": "110312",
+			"nama_kelurahan": "Bintah"
+		},
+		{
+			"id_kelurahan": "1103122023",
+			"id_kecamatan_fk": "110312",
+			"nama_kelurahan": "Seuneubok Pidie"
+		},
+		{
+			"id_kelurahan": "1103122024",
+			"id_kecamatan_fk": "110312",
+			"nama_kelurahan": "Blang Andam"
+		},
+		{
+			"id_kelurahan": "1103122025",
+			"id_kecamatan_fk": "110312",
+			"nama_kelurahan": "Matang Nibong"
+		},
+		{
+			"id_kelurahan": "1103122026",
+			"id_kecamatan_fk": "110312",
+			"nama_kelurahan": "Lueng Sa"
+		},
+		{
+			"id_kelurahan": "1103132001",
+			"id_kecamatan_fk": "110313",
+			"nama_kelurahan": "Seuneubok Bayu"
+		},
+		{
+			"id_kelurahan": "1103132002",
+			"id_kecamatan_fk": "110313",
+			"nama_kelurahan": "Alue Ie Itam"
+		},
+		{
+			"id_kelurahan": "1103132003",
+			"id_kecamatan_fk": "110313",
+			"nama_kelurahan": "Blang Nisan"
+		},
+		{
+			"id_kelurahan": "1103132004",
+			"id_kecamatan_fk": "110313",
+			"nama_kelurahan": "Bandar Baro"
+		},
+		{
+			"id_kelurahan": "1103132005",
+			"id_kecamatan_fk": "110313",
+			"nama_kelurahan": "Alue Patong"
+		},
+		{
+			"id_kelurahan": "1103132006",
+			"id_kecamatan_fk": "110313",
+			"nama_kelurahan": "Alue Ie Mirah"
+		},
+		{
+			"id_kelurahan": "1103132007",
+			"id_kecamatan_fk": "110313",
+			"nama_kelurahan": "Suka Makmur"
+		},
+		{
+			"id_kelurahan": "1103132008",
+			"id_kecamatan_fk": "110313",
+			"nama_kelurahan": "Jambo Balee"
+		},
+		{
+			"id_kelurahan": "1103132009",
+			"id_kecamatan_fk": "110313",
+			"nama_kelurahan": "Jambo Lubok"
+		},
+		{
+			"id_kelurahan": "1103132010",
+			"id_kecamatan_fk": "110313",
+			"nama_kelurahan": "Seuneubok Cina"
+		},
+		{
+			"id_kelurahan": "1103132011",
+			"id_kecamatan_fk": "110313",
+			"nama_kelurahan": "Pelita Sagop Jaya"
+		},
+		{
+			"id_kelurahan": "1103132012",
+			"id_kecamatan_fk": "110313",
+			"nama_kelurahan": "Perkebunan Julok Rayeuk Selatan"
+		},
+		{
+			"id_kelurahan": "1103132013",
+			"id_kecamatan_fk": "110313",
+			"nama_kelurahan": "Perkebunan Julok Rayeuk Utara"
+		},
+		{
+			"id_kelurahan": "1103142001",
+			"id_kecamatan_fk": "110314",
+			"nama_kelurahan": "Seuneubok Buloh"
+		}
+	]
+}

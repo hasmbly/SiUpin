@@ -37,13 +37,10 @@ namespace SiUpin.WebAPI
         {
             services.AddApplication();
             services.AddInfrastructure(Configuration);
-            services.AddControllers();
-
             services.AddHttpContextAccessor();
             services.AddScoped<ICurrentUserService, CurrentUserService>();
-
+            services.AddControllers();
             services.AddRazorPages();
-
             services.AddSwaggerGen(setupAction =>
             {
                 setupAction.SwaggerDoc("v1", new OpenApiInfo
@@ -88,9 +85,9 @@ namespace SiUpin.WebAPI
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultScheme = SchemeProvider.Fortifex;
+                options.DefaultScheme = SchemeProvider.SiUpin;
             })
-                .AddCookie(SchemeProvider.Fortifex, options =>
+                .AddCookie(SchemeProvider.SiUpin, options =>
                 {
                     options.LoginPath = new PathString("/account/login");
                 })

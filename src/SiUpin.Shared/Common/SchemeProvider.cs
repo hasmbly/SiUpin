@@ -4,7 +4,7 @@ namespace SiUpin.Shared.Common
 {
     public struct SchemeProvider : IEquatable<SchemeProvider>
     {
-        public static SchemeProvider Fortifex { get { return new SchemeProvider("SiUpin"); } }
+        public static SchemeProvider SiUpin { get { return new SchemeProvider("SiUpin"); } }
         public static SchemeProvider Google { get { return new SchemeProvider("Google"); } }
         public static SchemeProvider Facebook { get { return new SchemeProvider("Facebook"); } }
 

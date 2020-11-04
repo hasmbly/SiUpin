@@ -1,18 +1,446 @@
 ﻿@page "/"
 
-<MatH4>SiUpin - Kementan</MatH4>
+@using Syncfusion.Blazor.Maps
+@inject IJSRuntime JsRuntime
 
-<MatButton Icon="@MatIconNames.Add" Label="Add Document" Style="color:black"></MatButton>
+<MatHidden BreakPoint="@MatBreakpoint.XS" Direction="@MatHiddenDirection.Down">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="bg-dark active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1" class="bg-dark">></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2" class="bg-dark">></li>
+        </ol>
+        <div class="mat-elevation-z3">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="images/data-uph.png" alt="UPH">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="images/cluster.png" alt="Cluster">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="images/informasi.png" alt="Informasi">
+                </div>
+            </div>
+        </div>
 
-<MatTable Items="@cars" class="mat-elevation-z5">
-    <MatTableHeader>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Horsepower</th>
-    </MatTableHeader>
-    <MatTableRow>
-        <td>@context.Name</td>
-        <td>@String.Format("${0:f2}", @context.Price)</td>
-        <td>@context.Horsepower</td>
-    </MatTableRow>
-</MatTable>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <MatFAB Icon="@MatIconNames.Keyboard_arrow_left"></MatFAB>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <MatFAB Icon="@MatIconNames.Keyboard_arrow_right"></MatFAB>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</MatHidden>
+
+<MatHidden BreakPoint="@MatBreakpoint.SM" Direction="@MatHiddenDirection.Up">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="bg-dark active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1" class="bg-dark">></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2" class="bg-dark">></li>
+        </ol>
+        <div class="mat-elevation-z3">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="images/data-uph.png" style="height: auto;" alt="UPH">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="images/cluster.png" style="height: auto;" alt="Cluster">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="images/informasi.png" style="height: auto;" alt="Informasi">
+                </div>
+            </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <MatFAB Icon="@MatIconNames.Keyboard_arrow_left"></MatFAB>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <MatFAB Icon="@MatIconNames.Keyboard_arrow_right"></MatFAB>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</MatHidden>
+
+<div class="mat-elevation-z3 mt-3">
+    <div class="mat-layout-grid">
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+                <MatCard class="has-mat-card">
+                    <MatCardContent>
+                        <MatCardMedia Wide="true" ImageUrl="images/categories/web_daging.png" Style="background-size: 110px 100px;"></MatCardMedia>
+                        <div class="has-mat-card-content">
+                            <MatSubtitle2 class="has-mat-card-clean-margin text-center">
+                                Daging
+                            </MatSubtitle2>
+                        </div>
+                    </MatCardContent>
+                </MatCard>
+            </div>
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+                <MatCard class="has-mat-card">
+                    <MatCardContent>
+                        <MatCardMedia Wide="true" ImageUrl="images/categories/web_limbah.png" Style="background-size: 110px 100px;"></MatCardMedia>
+                        <div class="has-mat-card-content">
+                            <MatSubtitle2 class="has-mat-card-clean-margin text-center">
+                                Limbah
+                            </MatSubtitle2>
+                        </div>
+                    </MatCardContent>
+                </MatCard>
+            </div>
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+                <MatCard class="has-mat-card">
+                    <MatCardContent>
+                        <MatCardMedia Wide="true" ImageUrl="images/categories/web_susu.png" Style="background-size: 110px 100px;"></MatCardMedia>
+                        <div class="has-mat-card-content">
+                            <MatSubtitle2 class="has-mat-card-clean-margin text-center">
+                                Susu
+                            </MatSubtitle2>
+                        </div>
+                    </MatCardContent>
+                </MatCard>
+            </div>
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+                <MatCard class="has-mat-card">
+                    <MatCardContent>
+                        <MatCardMedia Wide="true" ImageUrl="images/categories/web_ternak.png" Style="background-size: 100px 90px;"></MatCardMedia>
+                        <div class="has-mat-card-content">
+                            <MatSubtitle2 class="has-mat-card-clean-margin text-center">
+                                Ternak
+                            </MatSubtitle2>
+                        </div>
+                    </MatCardContent>
+                </MatCard>
+            </div>
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+                <MatCard class="has-mat-card">
+                    <MatCardContent>
+                        <MatCardMedia Wide="true" ImageUrl="images/categories/web_unggas.png"></MatCardMedia>
+                        <div class="has-mat-card-content">
+                            <MatSubtitle2 class="has-mat-card-clean-margin text-center">
+                                Unggas
+                            </MatSubtitle2>
+                        </div>
+                    </MatCardContent>
+                </MatCard>
+            </div>
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
+                <MatCard class="has-mat-card">
+                    <MatCardContent>
+                        <MatCardMedia Wide="true" ImageUrl="images/produk_olahan.png"></MatCardMedia>
+                        <div class="has-mat-card-content">
+                            <MatSubtitle2 class="has-mat-card-clean-margin text-center">
+                                Semua Katalog
+                            </MatSubtitle2>
+                        </div>
+                    </MatCardContent>
+                </MatCard>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mat-elevation-z3 mt-3">
+    <div class="mat-layout-grid">
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12">
+                <div class="control-section">
+                    <SfMaps Format="N0" UseGroupingSeparator="true">
+                        <MapsZoomSettings Enable="true" HorizontalAlignment="Alignment.Near" ToolBarOrientation="Orientation.Vertical" />
+                        <MapsTitleSettings Text="Peta Data Persebaran UPH">
+                            <MapsTitleTextStyle Size="16px" />
+                        </MapsTitleSettings>
+                        <MapsLegendSettings Visible="true" Position="LegendPosition.Bottom" Height="10" Width="80%" Mode="LegendMode.Interactive">
+                            <MapsLegendTitle Text="@LegendText" />
+                            <MapsLegendTitleStyle Size="18px" />
+                        </MapsLegendSettings>
+                        <MapsLayers>
+                            <MapsLayer ShapeData='new {dataOptions ="data/maps/usa.json"}' ShapeDataPath="State" ShapePropertyPath="@ShapePropertyPath" DataSource="@ColorMappingData">
+                                <MapsShapeSettings Fill="#E5E5E5" ColorValuePath="@ColorValuePath">
+                                    <MapsShapeBorder Width="0.2" Color="#000000" />
+                                    <MapsShapeColorMappings>
+                                        <MapsShapeColorMapping From="@ColorMappingFromOne" MinOpacity="@MinOpacity" MaxOpacity="MaxOpacity" To="@ColorMappingToOne" Color="@ColorMappingColorOne" Label="@ColorMappingLabelOne" Value="@ColorMappingValueOne" />
+                                        <MapsShapeColorMapping From="@ColorMappingFromTwo" To="@ColorMappingToTwo" Color="@ColorMappingColorTwo" Label="@ColorMappingLabelTwo" Value="@ColorMappingValueTwo" />
+                                        <MapsShapeColorMapping From="@ColorMappingFromThree" To="@ColorMappingToThree" Color="@ColorMappingColorThree" Label="@ColorMappingLabelThree" Value="@ColorMappingValueThree" />
+                                        <MapsShapeColorMapping From="@ColorMappingFromFour" To="@ColorMappingToFour" Color="@ColorMappingColorFour" Label="@ColorMappingLabelFour" Value="@ColorMappingValueFour" />
+                                        <MapsShapeColorMapping From="@ColorMappingFromFive" To="@ColorMappingToFive" Color="@ColorMappingColorFive" Label="@ColorMappingLabelFive" Value="@ColorMappingValueFive" />
+                                        <MapsShapeColorMapping From="@ColorMappingFromSix" To="@ColorMappingToSix" Color="@ColorMappingColorSix" Label="@ColorMappingLabelSix" Value="@ColorMappingValueSix" />
+                                    </MapsShapeColorMappings>
+                                </MapsShapeSettings>
+                                <MapsLayerTooltipSettings Visible="true" ValuePath="State" Format=" <b> ${State}</b> <br> Inches : ${Inches} <br> Category : ${Value}" />
+                            </MapsLayer>
+                        </MapsLayers>
+                    </SfMaps>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code
+{
+    protected async override Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JsRuntime.InvokeAsync<object>("initializeCarousel");
+            firstRender = false;
+        }
+    }
+
+    // maps
+    public string ColorMappingTypeValue = "Range";
+    public string ShapePropertyPath = "name";
+    public string LegendText = "Inches";
+    public string MinDisplay = "none";
+    public double MinOpacity = 0;
+    public double MaxOpacity = 0;
+    public double MinRange = 0.5;
+    public string Display = "none";
+    public double MaxRange = 1;
+    public bool OpacityChecked;
+    private void OpacityChange(Syncfusion.Blazor.Buttons.ChangeEventArgs<bool> args)
+    {
+        OpacityChecked = args.Checked;
+        if (OpacityChecked == true)
+        {
+            MinDisplay = "block";
+        }
+        else
+        {
+            MinDisplay = "none";
+        }
+    }
+    private void MinRangeChange(Microsoft.AspNetCore.Components.ChangeEventArgs args)
+    {
+        MinRange = Convert.ToDouble(args.Value);
+        MinOpacity = MinRange;
+    }
+    private void MaxRangeChange(Microsoft.AspNetCore.Components.ChangeEventArgs args)
+    {
+        MaxRange = Convert.ToDouble(args.Value);
+        MaxOpacity = MaxRange;
+    }
+    public class Type
+    {
+        public string Value { get; set; }
+        public string Name { get; set; }
+    };
+    public List<Type> ColorMappingType = new List<Type> {
+        new Type { Value="Range", Name="Range" },
+        new Type { Value="Equal", Name="Equal" },
+        new Type { Value="Desaturation", Name="Desaturation" }
+    };
+    public string ColorValuePath = "Inches";
+    public double? ColorMappingFromOne = 0.1;
+    public double? ColorMappingToOne = 1;
+    public string[] ColorMappingColorOne = { "#DEEBAE" };
+    public string ColorMappingLabelOne = "0 - 1";
+    public string ColorMappingValueOne = null;
+    public double? ColorMappingFromTwo = 1;
+    public double? ColorMappingToTwo = 2;
+    public string[] ColorMappingColorTwo = { "#A4D6AD" };
+    public string ColorMappingLabelTwo = "1 - 2";
+    public string ColorMappingValueTwo = null;
+    public double? ColorMappingFromThree = 2;
+    public double? ColorMappingToThree = 3;
+    public string[] ColorMappingColorThree = { "#37AFAB" };
+    public string ColorMappingLabelThree = "2 - 3";
+    public string ColorMappingValueThree = null;
+    public double? ColorMappingFromFour = 3;
+    public double? ColorMappingToFour = 4;
+    public string[] ColorMappingColorFour = { "#547C84" };
+    public string ColorMappingLabelFour = "3 - 4";
+    public string ColorMappingValueFour = null;
+    public double? ColorMappingFromFive = 4;
+    public double? ColorMappingToFive = 5;
+    public string[] ColorMappingColorFive = { "#CEBF93" };
+    public string ColorMappingLabelFive = "4 - 5";
+    public string ColorMappingValueFive = null;
+    public double? ColorMappingFromSix = 5;
+    public double? ColorMappingToSix = 6;
+    public string[] ColorMappingColorSix = { "#a69d70" };
+    public string ColorMappingLabelSix = "5 - 6";
+    public string ColorMappingValueSix = null;
+    private void ColorMappingValueTypeChange(Syncfusion.Blazor.DropDowns.ChangeEventArgs<string, Type> args)
+    {
+        ColorMappingTypeValue = args.Value;
+        if (ColorMappingTypeValue == "Range")
+        {
+            MinDisplay = "none";
+            Display = "none";
+            OpacityChecked = false;
+            LegendText = "Inches";
+            ColorValuePath = "Inches";
+            ColorMappingFromOne = 0.1;
+            ColorMappingToOne = 1;
+            ColorMappingColorOne = new string[] { "#DEEBAE" };
+            ColorMappingLabelOne = "0 - 1";
+            ColorMappingValueOne = null;
+            ColorMappingFromTwo = 1;
+            ColorMappingToTwo = 2;
+            ColorMappingColorTwo = new string[] { "#A4D6AD" };
+            ColorMappingLabelTwo = "1 - 2";
+            ColorMappingValueTwo = null;
+            ColorMappingFromThree = 2;
+            ColorMappingToThree = 3;
+            ColorMappingColorThree = new string[] { "#37AFAB" };
+            ColorMappingLabelThree = "2 - 3";
+            ColorMappingValueThree = null;
+            ColorMappingFromFour = 3;
+            ColorMappingToFour = 4;
+            ColorMappingColorFour = new string[] { "#547C84" };
+            ColorMappingLabelFour = "3 - 4";
+            ColorMappingValueFour = null;
+            ColorMappingFromFive = 4;
+            ColorMappingToFive = 5;
+            ColorMappingColorFive = new string[] { "#CEBF93" };
+            ColorMappingLabelFive = "4 - 5";
+            ColorMappingValueFive = null;
+            ColorMappingFromSix = 5;
+            ColorMappingToSix = 6;
+            ColorMappingColorSix = new string[] { "#a69d70" };
+            ColorMappingLabelSix = "5 - 6";
+            ColorMappingValueSix = null;
+        }
+        else if (ColorMappingTypeValue == "Equal")
+        {
+            MinDisplay = "none";
+            Display = "none";
+            OpacityChecked = false;
+            LegendText = "Category";
+            ColorValuePath = "Value";
+            ColorMappingFromOne = null;
+            ColorMappingToOne = null;
+            ColorMappingColorOne = new string[] { "#DEEBAE" };
+            ColorMappingLabelOne = null;
+            ColorMappingValueOne = "Low";
+            ColorMappingFromTwo = null;
+            ColorMappingToTwo = null;
+            ColorMappingColorTwo = new string[] { "#A4D6AD" };
+            ColorMappingLabelTwo = null;
+            ColorMappingValueTwo = "Moderate";
+            ColorMappingFromThree = null;
+            ColorMappingToThree = null;
+            ColorMappingColorThree = new string[] { "#37AFAB" };
+            ColorMappingLabelThree = null;
+            ColorMappingValueThree = "High";
+            ColorMappingFromFour = null;
+            ColorMappingToFour = null;
+            ColorMappingColorFour = null;
+            ColorMappingLabelFour = null;
+            ColorMappingValueFour = null;
+            ColorMappingFromFive = null;
+            ColorMappingToFive = null;
+            ColorMappingColorFive = null;
+            ColorMappingLabelFive = null;
+            ColorMappingValueFive = null;
+            ColorMappingFromSix = null;
+            ColorMappingToSix = null;
+            ColorMappingColorSix = null;
+            ColorMappingLabelSix = null;
+            ColorMappingValueSix = null;
+        }
+        else
+        {
+            Display = "block";
+            LegendText = "Inches";
+            ColorValuePath = "Inches";
+            ColorMappingFromOne = 0.1;
+            ColorMappingToOne = 6;
+            ColorMappingColorOne = new string[] { "#F0D6AD", "#19547B" };
+            ColorMappingLabelOne = null;
+            ColorMappingValueOne = null;
+            ColorMappingFromTwo = null;
+            ColorMappingToTwo = null;
+            ColorMappingColorTwo = null;
+            ColorMappingLabelTwo = null;
+            ColorMappingValueTwo = null;
+            ColorMappingFromThree = null;
+            ColorMappingToThree = null;
+            ColorMappingColorThree = null;
+            ColorMappingLabelThree = null;
+            ColorMappingValueThree = null;
+            ColorMappingFromFour = null;
+            ColorMappingToFour = null;
+            ColorMappingColorFour = null;
+            ColorMappingLabelFour = null;
+            ColorMappingValueFour = null;
+            ColorMappingFromFive = null;
+            ColorMappingToFive = null;
+            ColorMappingColorFive = null;
+            ColorMappingLabelFive = null;
+            ColorMappingValueFive = null;
+            ColorMappingFromSix = null;
+            ColorMappingToSix = null;
+            ColorMappingColorSix = null;
+            ColorMappingLabelSix = null;
+            ColorMappingValueSix = null;
+        }
+    }
+    public class ColorMappingDatasource
+    {
+        public string State;
+        public double Inches;
+        public string Value;
+    }
+    public List<ColorMappingDatasource> ColorMappingData = new List<ColorMappingDatasource> {
+        new ColorMappingDatasource {State= "Alabama", Inches= 5.37, Value= "High" },
+        new ColorMappingDatasource {State= "Alaska", Inches=1.15, Value= "Low" },
+        new ColorMappingDatasource {State= "Arizona", Inches=0.77, Value= "Low" },
+        new ColorMappingDatasource {State= "Arkansas", Inches=4.99, Value= "High" },
+        new ColorMappingDatasource {State= "California", Inches=1.93, Value= "Low" },
+        new ColorMappingDatasource {State= "Colorado", Inches=1.56, Value= "Low" },
+        new ColorMappingDatasource {State= "Connecticut", Inches=4.35, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Delaware", Inches=4.01, Value= "High" },
+        new ColorMappingDatasource {State= "Florida", Inches=3.63, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Georgia", Inches=4.16, Value= "High" },
+        new ColorMappingDatasource {State= "Hawaii", Inches=5.94, Value= "High" },
+        new ColorMappingDatasource {State= "Idaho", Inches=1.75, Value= "Low" },
+        new ColorMappingDatasource {State= "Illinois", Inches=3.79, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Indiana", Inches=3.94, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Iowa", Inches=3.25, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Kansas", Inches=3.00, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Kentucky", Inches=4.61, Value= "High" },
+        new ColorMappingDatasource {State= "Louisiana", Inches=5.22, Value= "High" },
+        new ColorMappingDatasource {State= "Maine", Inches=3.49, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Maryland", Inches=3.93, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Massachusetts", Inches=4.06, Value= "High" },
+        new ColorMappingDatasource {State= "Michigan", Inches=2.62, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Minnesota", Inches=2.19, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Mississippi", Inches=5.77, Value= "High" },
+        new ColorMappingDatasource {State= "Missouri", Inches=4.12, Value= "High" },
+        new ColorMappingDatasource {State= "Montana", Inches=1.51, Value= "Low" },
+        new ColorMappingDatasource {State= "Nebraska", Inches=2.60, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Nevada", Inches=0.96, Value= "Low" },
+        new ColorMappingDatasource {State= "New Hampshire", Inches=3.54, Value= "Moderate" },
+        new ColorMappingDatasource {State= "New Jersey", Inches=4.13, Value= "High" },
+        new ColorMappingDatasource {State= "New Mexico", Inches=0.82, Value= "Low" },
+        new ColorMappingDatasource {State= "New York", Inches=3.41, Value= "Moderate" },
+        new ColorMappingDatasource {State= "North Carolina", Inches=4.14, Value= "High" },
+        new ColorMappingDatasource {State= "North Dakota", Inches=1.50, Value= "Low" },
+        new ColorMappingDatasource {State= "Ohio", Inches=3.53, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Oklahoma", Inches=3.84, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Oregon", Inches=2.33, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Pennsylvania", Inches=3.67, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Rhode Island", Inches=4.23, Value= "High" },
+        new ColorMappingDatasource {State= "South Carolina", Inches=3.83, Value= "Moderate" },
+        new ColorMappingDatasource {State= "South Dakota", Inches=2.17, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Tennessee", Inches=5.15, Value= "High" },
+        new ColorMappingDatasource {State= "Texas", Inches=2.50, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Utah", Inches=1.16, Value= "Low" },
+        new ColorMappingDatasource {State= "Vermont", Inches=3.40, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Virginia", Inches=3.91, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Washington", Inches=2.90, Value= "Moderate" },
+        new ColorMappingDatasource {State= "West Virginia", Inches=4.06, Value= "High" },
+        new ColorMappingDatasource {State= "Wisconsin", Inches=2.73, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Wyoming", Inches=1.42, Value= "Low" }
+    };
+
+}

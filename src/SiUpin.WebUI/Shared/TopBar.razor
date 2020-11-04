@@ -1,61 +1,98 @@
 ﻿@inject NavigationManager Navigation
-@inject SignOutSessionStateManager SignOutManager
 
 <MatAnchorUtils></MatAnchorUtils>
-<MatAppBar Style="z-index: 100; background-color:#eee;" Class="mat">
-    <MatAppBarRow>
-        <MatAppBarSection>
-            <AuthorizeView>
-                <Authorized>
+<MatAppBar Style="z-index: 100; background-color: #f2f3f8;">
+    <MatAppBarRow Class="app-header-wrapper">
+        <AuthorizeView>
+            <Authorized>
+                <MatAppBarSection>
                     <MatIconButton Icon="menu" Style="color:black" OnClick="OnMenuClicked"></MatIconButton>
-                </Authorized>
-                <NotAuthorized>
                     <MatAppBarTitle>
-                        <MatIcon Style="color:black">
+                        <MatIcon>
                             <img src="icon-nav.png" />
                         </MatIcon>
                     </MatAppBarTitle>
-                </NotAuthorized>
-            </AuthorizeView>
-        </MatAppBarSection>
+                </MatAppBarSection>
+            </Authorized>
+            <NotAuthorized>
+                <MatAppBarSection>
+                    <MatAppBarTitle>
+                        <MatIcon>
+                            <img src="icon-nav.png" />
+                        </MatIcon>
+                    </MatAppBarTitle>
+                </MatAppBarSection>
+                <MatAppBarSection>
+                    <MatHidden BreakPoint="@MatBreakpoint.XS" Direction="@MatHiddenDirection.Down">
+                        <MatButton Link="/" Icon="home"></MatButton>
+                        <MatButton Link="/uph">UPH</MatButton>&nbsp;
+                        <MatButton Link="/cluster">Cluster</MatButton>&nbsp;
+                        <MatButton Link="/katalog">Katalog</MatButton>&nbsp;
+                        <MatButton Link="/informasi">Informasi</MatButton>
+                    </MatHidden>
+                </MatAppBarSection>
+            </NotAuthorized>
+        </AuthorizeView>
+
         <MatAppBarSection Align="@MatAppBarSectionAlign.End">
             <MatHidden BreakPoint="@MatBreakpoint.XS" Direction="@MatHiddenDirection.Down">
                 <AuthorizeView>
                     <Authorized>
+                        <MatIconButton Style="color:black" OnClick="@OpenSmallMenu" @ref="SmallMenuButton">
+                            <i class="fa fa-user-circle" aria-hidden="true"></i>
+                        </MatIconButton>
                         <MatMenu @ref="SmallMenu" style="z-index: 100;">
                             <MatList>
                                 <MatListItem>
                                     <MatIcon Icon="@MatIconNames.Verified_user"></MatIcon>&nbsp;&nbsp; <a href="authentication/profile" class="mat-button">@context.User.Identity.Name</a>
                                 </MatListItem>
-                                <MatListItem OnClick="@BeginSignOut">
+                                <MatListItem>
                                     <MatIcon Icon="@MatIconNames.Directions_run"></MatIcon>&nbsp;&nbsp; Log Out
                                 </MatListItem>
                             </MatList>
                         </MatMenu>
                     </Authorized>
                     <NotAuthorized>
-                        <MatIconButton Style="color:black" Icon="@MatIconNames.Vpn_key" OnClick="@OpenSmallMenu" @ref="SmallMenuButton">&nbsp;&nbsp; Log In</MatIconButton>
+                        <MatButton Link="/auth/login" Raised="true" Icon="@MatIconNames.Vpn_key">Log In</MatButton>
                     </NotAuthorized>
                 </AuthorizeView>
             </MatHidden>
             <MatHidden BreakPoint="@MatBreakpoint.SM" Direction="@MatHiddenDirection.Up">
-                <AuthorizeView>
-                    <Authorized>
-                        <MatMenu @ref="SmallMenu" style="z-index: 100;">
-                            <MatList>
+                <MatIconButton Style="color:black" Icon="more_vert" OnClick="@OpenSmallMenu" @ref="SmallMenuButton"></MatIconButton>
+                <MatMenu @ref="SmallMenu" style="z-index: 100;">
+                    <MatList>
+                        <AuthorizeView>
+                            <Authorized>
                                 <MatListItem>
                                     <MatIcon Icon="@MatIconNames.Verified_user"></MatIcon>&nbsp;&nbsp; <a href="authentication/profile" class="mat-button">@context.User.Identity.Name</a>
                                 </MatListItem>
-                                <MatListItem OnClick="@BeginSignOut">
+                                <MatListItem>
                                     <MatIcon Icon="@MatIconNames.Directions_run"></MatIcon>&nbsp;&nbsp; Log Out
                                 </MatListItem>
-                            </MatList>
-                        </MatMenu>
-                    </Authorized>
-                    <NotAuthorized>
-                        <MatIconButton Style="color:black" Icon="@MatIconNames.Vpn_key" OnClick="@OpenSmallMenu" @ref="SmallMenuButton">&nbsp;&nbsp; Log In</MatIconButton>
-                    </NotAuthorized>
-                </AuthorizeView>
+                            </Authorized>
+                            <NotAuthorized>
+                                <MatListItem>
+                                    <MatButton Link="/" Icon="home">Home</MatButton>
+                                </MatListItem>
+                                <MatListItem>
+                                    <MatButton Link="/uph" Icon="store_mall_directory">UPH</MatButton>
+                                </MatListItem>
+                                <MatListItem>
+                                    <MatButton Link="/cluster" Icon="category">Cluster</MatButton>
+                                </MatListItem>
+                                <MatListItem>
+                                    <MatButton Link="/katalog" Icon="store">Katalog</MatButton>
+                                </MatListItem>
+                                <MatListItem>
+                                    <MatButton Link="/informasi" Icon="file_copy">Informasi</MatButton>
+                                </MatListItem>
+                                <MatListItem>
+                                    <MatButton Link="/auth/login" Raised="true" Icon="@MatIconNames.Vpn_key">Log In</MatButton>
+                                </MatListItem>
+                            </NotAuthorized>
+                        </AuthorizeView>
+                    </MatList>
+                </MatMenu>
             </MatHidden>
         </MatAppBarSection>
     </MatAppBarRow>
@@ -72,11 +109,11 @@
 
     private void OnMenuClicked() => IsMenuClicked.InvokeAsync(null);
 
-    private async Task BeginSignOut(MouseEventArgs args)
-    {
-        await SignOutManager.SetSignOutState();
-        Navigation.NavigateTo("authentication/logout");
-    }
+    //private async Task BeginSignOut(MouseEventArgs args)
+    //{
+    //    //await SignOutManager.SetSignOutState();
+    //    Navigation.NavigateTo("authentication/logout");
+    //}
 
     public void OpenSmallMenu(MouseEventArgs e)
     {

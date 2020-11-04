@@ -6,29 +6,32 @@
 
         <MatDrawerContainer Style="width: 100vw; height: 100vh;" Class="mat">
             <AuthorizeView>
-                <Authorized>
-                    <MatHidden Breakpoint="@MatBreakpoint.SM" Direction="@MatHiddenDirection.Up" HiddenChanged="@ModelDrawerHiddenChanged">
-                        <ChildContent>
-                            <MatDrawer @bind-Opened="@_navMenuOpened" Style="background-color:#fafafa;" Mode="@MatDrawerMode.Modal">
-                                <MatAppBarAdjust></MatAppBarAdjust>
-                                <NavMenu />
-                            </MatDrawer>
-                        </ChildContent>
-                        <ElseContent>
-                            <MatDrawer @bind-Opened="@_navMenuOpened" Style="background-color:#fafafa;" Mode="@MatDrawerMode.Dismissible">
-                                <MatAppBarAdjust></MatAppBarAdjust>
-                                <NavMenu />
-                            </MatDrawer>
-                        </ElseContent>
-                    </MatHidden>
-                </Authorized>
-                <NotAuthorized></NotAuthorized>
+                <MatHidden Breakpoint="@MatBreakpoint.SM" Direction="@MatHiddenDirection.Up" HiddenChanged="@ModelDrawerHiddenChanged">
+                    <ChildContent>
+                        <MatDrawer @bind-Opened="@_navMenuOpened" Style="background-color:#fafafa;" Mode="@MatDrawerMode.Modal">
+                            <MatAppBarAdjust></MatAppBarAdjust>
+                            <NavMenu />
+                        </MatDrawer>
+                    </ChildContent>
+                    <ElseContent>
+                        <MatDrawer @bind-Opened="@_navMenuOpened" Style="background-color:#fafafa;" Mode="@MatDrawerMode.Dismissible">
+                            <MatAppBarAdjust></MatAppBarAdjust>
+                            <NavMenu />
+                        </MatDrawer>
+                    </ElseContent>
+                </MatHidden>
             </AuthorizeView>
 
-            <MatDrawerContent Class="mdc-theme--background">
+            <MatDrawerContent Class="mdc-theme--surface">
                 <MatAppBarAdjust></MatAppBarAdjust>
-                <div class="body-wrapper">
+                <div class="body-wrapper mt-3">
                     @Body
+                </div>
+
+                <div class="content px-0" style="background-color: #1e1e2d;">
+                    <div class="footer-wrapper">
+                        <Footer />
+                    </div>
                 </div>
             </MatDrawerContent>
         </MatDrawerContainer>

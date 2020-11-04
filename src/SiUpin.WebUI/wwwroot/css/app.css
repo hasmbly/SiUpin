@@ -2,6 +2,7 @@
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /*background-color: #d6d5d5;*/
 }
 
 .btn:focus, .btn:active
@@ -214,13 +215,54 @@ app {
 .logo-center
 {
     display: block;
-    margin: 10em auto 0 auto;
+    margin: 9em auto 0 auto;
+}
+
+.carousel-inner img
+{
+    width: 100%;
+    height: 455px;
+}
+
+.carousel-inner-sm img
+{
+    width: 100%;
+    height: auto;
+}
+
+.has-mat-card
+{
+    max-width: 150px;
+}
+
+    .has-mat-card-content
+    {
+        padding: 1rem;
+    }
+
+    .has-mat-card-clean-margin
+    {
+        margin: 0px;
+    }
+
+.app-header-wrapper
+{
+    max-width: 1280px;
+    padding: 15px;
+    margin: 0 auto;
 }
 
 .body-wrapper
 {
     max-width: 1280px;
     padding: 24px;
+    margin: 0 auto;
+}
+
+.footer-wrapper
+{
+    max-width: 1280px;
+    padding: 5px;
     margin: 0 auto;
 }
 

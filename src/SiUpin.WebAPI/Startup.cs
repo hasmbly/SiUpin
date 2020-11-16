@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
@@ -26,11 +27,12 @@ namespace SiUpin.WebAPI
     {
         public IConfiguration Configuration { get; }
 
-        public PhysicalFileProvider physicalProvider { get; set; }
+        public IWebHostEnvironment _hostEnvironment;
 
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IWebHostEnvironment environment)
         {
             Configuration = configuration;
+            _hostEnvironment = environment;
         }
 
         public void ConfigureServices(IServiceCollection services)
@@ -41,6 +43,11 @@ namespace SiUpin.WebAPI
             services.AddScoped<ICurrentUserService, CurrentUserService>();
             services.AddControllers();
             services.AddRazorPages();
+            services.Configure<ForwardedHeadersOptions>(options =>
+            {
+                options.ForwardedHeaders =
+                    ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+            });
             services.AddSwaggerGen(setupAction =>
             {
                 setupAction.SwaggerDoc("v1", new OpenApiInfo
@@ -103,25 +110,15 @@ namespace SiUpin.WebAPI
                     };
                 });
 
-            bool exists = Directory.Exists(Configuration.GetSection(SiUpinOptions.RootSection).Get<SiUpinOptions>().UploadsRootFolderPath);
-
-            if (!exists)
-            {
-                Console.WriteLine($"-- Create new SiUpinFiles Folder --");
-                Directory.CreateDirectory(Configuration.GetSection(SiUpinOptions.RootSection).Get<SiUpinOptions>().UploadsRootFolderPath);
-            }
-            else
-            {
-                Console.WriteLine($"-- SiUpinFiles Folder was ready --");
-            }
-
-            physicalProvider = new PhysicalFileProvider(Configuration.GetSection(SiUpinOptions.RootSection).Get<SiUpinOptions>().UploadsRootFolderPath);
+            var physicalProvider = new PhysicalFileProvider(Path.Combine(_hostEnvironment.ContentRootPath, Configuration.GetSection(SiUpinOptions.RootSection).Get<SiUpinOptions>().UploadsRootFolderPath));
 
             services.AddSingleton<IFileProvider>(physicalProvider);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseForwardedHeaders();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -130,6 +127,12 @@ namespace SiUpin.WebAPI
             app.UseHttpsRedirection();
             app.UseBlazorFrameworkFiles();
             app.UseStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(_hostEnvironment.ContentRootPath,
+                Configuration.GetSection(SiUpinOptions.RootSection).Get<SiUpinOptions>().UploadsRootFolderPath)),
+                RequestPath = new PathString("/images")
+            });
             app.UseRouting();
             app.UseSwagger(c =>
             {

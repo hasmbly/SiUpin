@@ -32,13 +32,8 @@ namespace SiUpin.WebUI.Common
             // Ambil Cookie dari Local Storage
             var savedToken = await GetTokenAsync();
 
-            Console.WriteLine($"savedToken: {savedToken}");
-
             if (!string.IsNullOrEmpty(savedToken))
             {
-                // Jangan dihapus dulu, kayanya bakalan kepake
-                //_httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(Constants.Bearer, savedToken);
-
                 _claims = ParseClaimsFromJwt(savedToken);
 
                 var claimsIdentity = new ClaimsIdentity(_claims, Constants.AuthenticationType.ServerAuthentication);
@@ -49,9 +44,6 @@ namespace SiUpin.WebUI.Common
             }
             else
             {
-                // Jangan dihapus dulu, kayanya bakalan kepake
-                //_httpClient.DefaultRequestHeaders.Authorization = null;
-
                 var claimsIdentity = new ClaimsIdentity();
                 var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
                 var authenticationState = new AuthenticationState(claimsPrincipal);

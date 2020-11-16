@@ -1,184 +1,208 @@
-﻿@page "/"
+﻿@layout AnonymousLayout
+
+@page "/"
 
 @using Syncfusion.Blazor.Maps
+
 @inject IJSRuntime JsRuntime
+@inject NavigationManager Navigation
 
-<MatHidden BreakPoint="@MatBreakpoint.XS" Direction="@MatHiddenDirection.Down">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="bg-dark active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1" class="bg-dark">></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2" class="bg-dark">></li>
-        </ol>
-        <div class="mat-elevation-z3">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="images/data-uph.png" alt="UPH">
+<div class="mat-layout-grid">
+    <div class="mat-layout-grid-inner">
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-middle mat-layout-grid-cell-span-12">
+
+            <MatHidden BreakPoint="@MatBreakpoint.XS" Direction="@MatHiddenDirection.Down">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="bg-dark active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1" class="bg-dark">></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2" class="bg-dark">></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="3" class="bg-dark">></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="4" class="bg-dark">></li>
+                    </ol>
+                    <div class="mat-elevation-z3">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100" src="images/daging.jpg" alt="UPH">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="images/susu.jpg" alt="Cluster">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="images/telur.jpg" alt="Informasi">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="images/sapi.jpg" alt="Informasi">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="images/unggas.png" alt="Informasi">
+                            </div>
+                        </div>
+                    </div>
+
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <MatFAB Icon="@MatIconNames.Keyboard_arrow_left"></MatFAB>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <MatFAB Icon="@MatIconNames.Keyboard_arrow_right"></MatFAB>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="images/cluster.png" alt="Cluster">
+            </MatHidden>
+
+            <MatHidden BreakPoint="@MatBreakpoint.SM" Direction="@MatHiddenDirection.Up">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="bg-dark active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1" class="bg-dark">></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2" class="bg-dark">></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="3" class="bg-dark">></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="4" class="bg-dark">></li>
+                    </ol>
+                    <div class="mat-elevation-z3">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100" src="images/daging.jpg" alt="UPH">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="images/susu.jpg" alt="Cluster">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="images/telur.jpg" alt="Informasi">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="images/sapi.jpg" alt="Informasi">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="images/unggas.png" alt="Informasi">
+                            </div>
+                        </div>
+                    </div>
+
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <MatFAB Icon="@MatIconNames.Keyboard_arrow_left"></MatFAB>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <MatFAB Icon="@MatIconNames.Keyboard_arrow_right"></MatFAB>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="images/informasi.png" alt="Informasi">
-                </div>
-            </div>
+            </MatHidden>
         </div>
 
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <MatFAB Icon="@MatIconNames.Keyboard_arrow_left"></MatFAB>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <MatFAB Icon="@MatIconNames.Keyboard_arrow_right"></MatFAB>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-</MatHidden>
-
-<MatHidden BreakPoint="@MatBreakpoint.SM" Direction="@MatHiddenDirection.Up">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="bg-dark active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1" class="bg-dark">></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2" class="bg-dark">></li>
-        </ol>
-        <div class="mat-elevation-z3">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="images/data-uph.png" style="height: auto;" alt="UPH">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="images/cluster.png" style="height: auto;" alt="Cluster">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="images/informasi.png" style="height: auto;" alt="Informasi">
-                </div>
-            </div>
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-middle mat-layout-grid-cell-span-2">
+            <MatCard class="has-mat-card" @onclick='() => { Navigation.NavigateTo("/katalog"); }'>
+                <MatCardContent>
+                    <MatCardMedia Wide="true" ImageUrl="images/categories/web_daging.png" Style="background-size: 110px 100px;"></MatCardMedia>
+                    <div class="has-mat-card-content">
+                        <MatSubtitle2 class="has-mat-card-clean-margin text-center">
+                            Daging
+                        </MatSubtitle2>
+                    </div>
+                </MatCardContent>
+            </MatCard>
+        </div>
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-middle mat-layout-grid-cell-span-2">
+            <MatCard class="has-mat-card" @onclick='() => { Navigation.NavigateTo("/katalog"); }'>
+                <MatCardContent>
+                    <MatCardMedia Wide="true" ImageUrl="images/categories/web_limbah.png" Style="background-size: 110px 100px;"></MatCardMedia>
+                    <div class="has-mat-card-content">
+                        <MatSubtitle2 class="has-mat-card-clean-margin text-center">
+                            Limbah
+                        </MatSubtitle2>
+                    </div>
+                </MatCardContent>
+            </MatCard>
+        </div>
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-middle mat-layout-grid-cell-span-2">
+            <MatCard class="has-mat-card" @onclick='() => { Navigation.NavigateTo("/katalog"); }'>
+                <MatCardContent>
+                    <MatCardMedia Wide="true" ImageUrl="images/categories/web_susu.png" Style="background-size: 110px 100px;"></MatCardMedia>
+                    <div class="has-mat-card-content">
+                        <MatSubtitle2 class="has-mat-card-clean-margin text-center">
+                            Susu
+                        </MatSubtitle2>
+                    </div>
+                </MatCardContent>
+            </MatCard>
+        </div>
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-middle mat-layout-grid-cell-span-2">
+            <MatCard class="has-mat-card" @onclick='() => { Navigation.NavigateTo("/katalog"); }'>
+                <MatCardContent>
+                    <MatCardMedia Wide="true" ImageUrl="images/categories/web_ternak.png" Style="background-size: 100px 100px;"></MatCardMedia>
+                    <div class="has-mat-card-content">
+                        <MatSubtitle2 class="has-mat-card-clean-margin text-center">
+                            Ternak
+                        </MatSubtitle2>
+                    </div>
+                </MatCardContent>
+            </MatCard>
+        </div>
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-middle mat-layout-grid-cell-span-2">
+            <MatCard class="has-mat-card" @onclick='() => { Navigation.NavigateTo("/"); }'>
+                <MatCardContent>
+                    <MatCardMedia Wide="true" ImageUrl="images/categories/web_unggas.png" Style="background-size: 100px 100px;"></MatCardMedia>
+                    <div class="has-mat-card-content">
+                        <MatSubtitle2 class="has-mat-card-clean-margin text-center">
+                            Unggas
+                        </MatSubtitle2>
+                    </div>
+                </MatCardContent>
+            </MatCard>
+        </div>
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-middle mat-layout-grid-cell-span-2">
+            <MatCard class="has-mat-card" @onclick='() => { Navigation.NavigateTo("/katalog"); }'>
+                <MatCardContent>
+                    <MatCardMedia Wide="true" ImageUrl="images/produk_olahan.png"></MatCardMedia>
+                    <div class="has-mat-card-content">
+                        <MatSubtitle2 class="has-mat-card-clean-margin text-center">
+                            Katalog
+                        </MatSubtitle2>
+                    </div>
+                </MatCardContent>
+            </MatCard>
         </div>
 
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <MatFAB Icon="@MatIconNames.Keyboard_arrow_left"></MatFAB>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <MatFAB Icon="@MatIconNames.Keyboard_arrow_right"></MatFAB>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-</MatHidden>
-
-<div class="mat-elevation-z3 mt-3">
-    <div class="mat-layout-grid">
-        <div class="mat-layout-grid-inner">
-            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
-                <MatCard class="has-mat-card">
-                    <MatCardContent>
-                        <MatCardMedia Wide="true" ImageUrl="images/categories/web_daging.png" Style="background-size: 110px 100px;"></MatCardMedia>
-                        <div class="has-mat-card-content">
-                            <MatSubtitle2 class="has-mat-card-clean-margin text-center">
-                                Daging
-                            </MatSubtitle2>
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-middle mat-layout-grid-cell-span-12">
+            <div class="mat-elevation-z3 mt-3">
+                <div class="mat-layout-grid">
+                    <div class="mat-layout-grid-inner">
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12">
+                            <div class="control-section">
+                                <SfMaps Format="N0" UseGroupingSeparator="true">
+                                    <MapsZoomSettings Enable="true" HorizontalAlignment="Alignment.Near" ToolBarOrientation="Orientation.Vertical" />
+                                    <MapsTitleSettings Text="Peta Data Persebaran UPH">
+                                        <MapsTitleTextStyle Size="16px" />
+                                    </MapsTitleSettings>
+                                    <MapsLegendSettings Visible="true" Position="LegendPosition.Bottom" Height="10" Width="80%" Mode="LegendMode.Interactive">
+                                        <MapsLegendTitle Text="@LegendText" />
+                                        <MapsLegendTitleStyle Size="18px" />
+                                    </MapsLegendSettings>
+                                    <MapsLayers>
+                                        <MapsLayer ShapeData='new {dataOptions ="data/maps/usa.json"}' ShapeDataPath="State" ShapePropertyPath="@ShapePropertyPath" DataSource="@ColorMappingData">
+                                            <MapsShapeSettings Fill="#E5E5E5" ColorValuePath="@ColorValuePath">
+                                                <MapsShapeBorder Width="0.2" Color="#000000" />
+                                                <MapsShapeColorMappings>
+                                                    <MapsShapeColorMapping From="@ColorMappingFromOne" MinOpacity="@MinOpacity" MaxOpacity="MaxOpacity" To="@ColorMappingToOne" Color="@ColorMappingColorOne" Label="@ColorMappingLabelOne" Value="@ColorMappingValueOne" />
+                                                    <MapsShapeColorMapping From="@ColorMappingFromTwo" To="@ColorMappingToTwo" Color="@ColorMappingColorTwo" Label="@ColorMappingLabelTwo" Value="@ColorMappingValueTwo" />
+                                                    <MapsShapeColorMapping From="@ColorMappingFromThree" To="@ColorMappingToThree" Color="@ColorMappingColorThree" Label="@ColorMappingLabelThree" Value="@ColorMappingValueThree" />
+                                                    <MapsShapeColorMapping From="@ColorMappingFromFour" To="@ColorMappingToFour" Color="@ColorMappingColorFour" Label="@ColorMappingLabelFour" Value="@ColorMappingValueFour" />
+                                                    <MapsShapeColorMapping From="@ColorMappingFromFive" To="@ColorMappingToFive" Color="@ColorMappingColorFive" Label="@ColorMappingLabelFive" Value="@ColorMappingValueFive" />
+                                                    <MapsShapeColorMapping From="@ColorMappingFromSix" To="@ColorMappingToSix" Color="@ColorMappingColorSix" Label="@ColorMappingLabelSix" Value="@ColorMappingValueSix" />
+                                                </MapsShapeColorMappings>
+                                            </MapsShapeSettings>
+                                            <MapsLayerTooltipSettings Visible="true" ValuePath="State" Format=" <b> ${State}</b> <br> Inches : ${Inches} <br> Category : ${Value}" />
+                                        </MapsLayer>
+                                    </MapsLayers>
+                                </SfMaps>
+                            </div>
                         </div>
-                    </MatCardContent>
-                </MatCard>
-            </div>
-            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
-                <MatCard class="has-mat-card">
-                    <MatCardContent>
-                        <MatCardMedia Wide="true" ImageUrl="images/categories/web_limbah.png" Style="background-size: 110px 100px;"></MatCardMedia>
-                        <div class="has-mat-card-content">
-                            <MatSubtitle2 class="has-mat-card-clean-margin text-center">
-                                Limbah
-                            </MatSubtitle2>
-                        </div>
-                    </MatCardContent>
-                </MatCard>
-            </div>
-            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
-                <MatCard class="has-mat-card">
-                    <MatCardContent>
-                        <MatCardMedia Wide="true" ImageUrl="images/categories/web_susu.png" Style="background-size: 110px 100px;"></MatCardMedia>
-                        <div class="has-mat-card-content">
-                            <MatSubtitle2 class="has-mat-card-clean-margin text-center">
-                                Susu
-                            </MatSubtitle2>
-                        </div>
-                    </MatCardContent>
-                </MatCard>
-            </div>
-            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
-                <MatCard class="has-mat-card">
-                    <MatCardContent>
-                        <MatCardMedia Wide="true" ImageUrl="images/categories/web_ternak.png" Style="background-size: 100px 90px;"></MatCardMedia>
-                        <div class="has-mat-card-content">
-                            <MatSubtitle2 class="has-mat-card-clean-margin text-center">
-                                Ternak
-                            </MatSubtitle2>
-                        </div>
-                    </MatCardContent>
-                </MatCard>
-            </div>
-            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
-                <MatCard class="has-mat-card">
-                    <MatCardContent>
-                        <MatCardMedia Wide="true" ImageUrl="images/categories/web_unggas.png"></MatCardMedia>
-                        <div class="has-mat-card-content">
-                            <MatSubtitle2 class="has-mat-card-clean-margin text-center">
-                                Unggas
-                            </MatSubtitle2>
-                        </div>
-                    </MatCardContent>
-                </MatCard>
-            </div>
-            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2">
-                <MatCard class="has-mat-card">
-                    <MatCardContent>
-                        <MatCardMedia Wide="true" ImageUrl="images/produk_olahan.png"></MatCardMedia>
-                        <div class="has-mat-card-content">
-                            <MatSubtitle2 class="has-mat-card-clean-margin text-center">
-                                Semua Katalog
-                            </MatSubtitle2>
-                        </div>
-                    </MatCardContent>
-                </MatCard>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="mat-elevation-z3 mt-3">
-    <div class="mat-layout-grid">
-        <div class="mat-layout-grid-inner">
-            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12">
-                <div class="control-section">
-                    <SfMaps Format="N0" UseGroupingSeparator="true">
-                        <MapsZoomSettings Enable="true" HorizontalAlignment="Alignment.Near" ToolBarOrientation="Orientation.Vertical" />
-                        <MapsTitleSettings Text="Peta Data Persebaran UPH">
-                            <MapsTitleTextStyle Size="16px" />
-                        </MapsTitleSettings>
-                        <MapsLegendSettings Visible="true" Position="LegendPosition.Bottom" Height="10" Width="80%" Mode="LegendMode.Interactive">
-                            <MapsLegendTitle Text="@LegendText" />
-                            <MapsLegendTitleStyle Size="18px" />
-                        </MapsLegendSettings>
-                        <MapsLayers>
-                            <MapsLayer ShapeData='new {dataOptions ="data/maps/usa.json"}' ShapeDataPath="State" ShapePropertyPath="@ShapePropertyPath" DataSource="@ColorMappingData">
-                                <MapsShapeSettings Fill="#E5E5E5" ColorValuePath="@ColorValuePath">
-                                    <MapsShapeBorder Width="0.2" Color="#000000" />
-                                    <MapsShapeColorMappings>
-                                        <MapsShapeColorMapping From="@ColorMappingFromOne" MinOpacity="@MinOpacity" MaxOpacity="MaxOpacity" To="@ColorMappingToOne" Color="@ColorMappingColorOne" Label="@ColorMappingLabelOne" Value="@ColorMappingValueOne" />
-                                        <MapsShapeColorMapping From="@ColorMappingFromTwo" To="@ColorMappingToTwo" Color="@ColorMappingColorTwo" Label="@ColorMappingLabelTwo" Value="@ColorMappingValueTwo" />
-                                        <MapsShapeColorMapping From="@ColorMappingFromThree" To="@ColorMappingToThree" Color="@ColorMappingColorThree" Label="@ColorMappingLabelThree" Value="@ColorMappingValueThree" />
-                                        <MapsShapeColorMapping From="@ColorMappingFromFour" To="@ColorMappingToFour" Color="@ColorMappingColorFour" Label="@ColorMappingLabelFour" Value="@ColorMappingValueFour" />
-                                        <MapsShapeColorMapping From="@ColorMappingFromFive" To="@ColorMappingToFive" Color="@ColorMappingColorFive" Label="@ColorMappingLabelFive" Value="@ColorMappingValueFive" />
-                                        <MapsShapeColorMapping From="@ColorMappingFromSix" To="@ColorMappingToSix" Color="@ColorMappingColorSix" Label="@ColorMappingLabelSix" Value="@ColorMappingValueSix" />
-                                    </MapsShapeColorMappings>
-                                </MapsShapeSettings>
-                                <MapsLayerTooltipSettings Visible="true" ValuePath="State" Format=" <b> ${State}</b> <br> Inches : ${Inches} <br> Category : ${Value}" />
-                            </MapsLayer>
-                        </MapsLayers>
-                    </SfMaps>
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>

@@ -30,4 +30,37 @@
     <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Admin\Berita\" />
+    <Folder Include="Pages\Admin\Guest\" />
+    <Folder Include="Pages\Admin\JenisKomoditi\" />
+    <Folder Include="Pages\Admin\Kemitraan\" />
+    <Folder Include="Pages\Admin\ProdukOlahan\" />
+    <Folder Include="Pages\Berita\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Pages\Admin\Cluster\Index.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+    <Content Update="Pages\Admin\Index.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+    <Content Update="Pages\Admin\Informasi\Index.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+    <Content Update="Pages\Admin\Katalog\Detail.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+    <Content Update="Pages\Admin\Katalog\Index.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+    <Content Update="Pages\Admin\Uph\Detail.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+    <Content Update="Pages\Admin\Uph\Index.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+  </ItemGroup>
+
 </Project>

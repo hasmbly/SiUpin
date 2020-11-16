@@ -6,179 +6,64 @@
 
         public static class URI
         {
-            public const string BaseAPI = "api";
+            public const string BaseAPI = "api/v1";
 
             public static class Dev
             {
-                public static readonly string GetFortifexOption = $"{BaseAPI}/dev/getFortifexOption";
+                public static readonly string Base = $"{BaseAPI}/dev";
             }
 
-            public static class Account
+            public static class Auth
             {
-                public static readonly string CheckUsername = $"{BaseAPI}/account/checkUsername";
-                public static readonly string Login = $"{BaseAPI}/account/login";
-                public static readonly string GetMember = $"{BaseAPI}/account/getMember";
-                public static readonly string ActivateMember = $"{BaseAPI}/account/activate?code=";
+                public static readonly string Base = $"{BaseAPI}/auth";
+                public static readonly string CheckUsername = $"{Base}/checkUsername";
+                public static readonly string Login = $"{Base}/login";
             }
 
-            public static class Members
+            public static class User
             {
-                public static readonly string CreateMember = $"{BaseAPI}/members/createMember";
-                public static readonly string UpdateMember = $"{BaseAPI}/members/updateMember";
-
-                public static readonly string GetPreferences = $"{BaseAPI}/members/getPreferences";
-                public static readonly string UpdatePreferredTimeFrame = $"{BaseAPI}/members/updatePreferredTimeFrame";
-                public static readonly string UpdatePreferredCoinCurrency = $"{BaseAPI}/members/updatePreferredCoinCurrency";
-                public static readonly string UpdatePreferredFiatCurrency = $"{BaseAPI}/members/updatePreferredFiatCurrency";
-                public static readonly string GetTransactionsByMemberUsername = $"{BaseAPI}/members/getTransactionsByMemberUsername";
+                public static readonly string Base = $"{BaseAPI}/user";
+                public static readonly string Paginate = $"{Base}/paginate";
             }
 
-            public static class Tools
+            public static class Uph
             {
-                public static readonly string GetPriceConversion = $"{BaseAPI}/tools/getPriceConversion";
-                public static readonly string GetUnitPrice = $"{BaseAPI}/tools/getUnitPrice";
-                public static readonly string GetUnitPriceInUSD = $"{BaseAPI}/tools/getUnitPriceInUSD";
+                public static readonly string Base = $"{BaseAPI}/uph";
+                public static readonly string Paginate = $"{Base}/paginate";
             }
 
-            public static class TimeFrames
+            public static class UphProduk
             {
-                public static readonly string GetAllTimeFrames = $"{BaseAPI}/timeFrames/getAllTimeFrames";
+                public static readonly string Base = $"{BaseAPI}/UphProduk";
+                public static readonly string Paginate = $"{Base}/paginate";
             }
 
-            public static class Genders
+            public static class Berita
             {
-                public static readonly string GetAllGenders = $"{BaseAPI}/genders/getAllGenders";
+                public static readonly string Base = $"{BaseAPI}/Berita";
+                public static readonly string Paginate = $"{Base}/paginate";
             }
 
-            public static class Regions
+            public static class Pesan
             {
-                public static readonly string GetRegions = $"{BaseAPI}/regions/getRegions";
+                public static readonly string Base = $"{BaseAPI}/Pesan";
+                public static readonly string Paginate = $"{Base}/paginate";
             }
+        }
 
-            public static class Blockchains
-            {
-                public static readonly string GetAllBlockchains = $"{BaseAPI}/blockchains/getAllBlockchains";
-            }
+        public static class Pagination
+        {
+            public const int PageSize = 10;
+            public const int PageNumber = 1;
+        }
 
-            public static class Countries
-            {
-                public static readonly string GetAllCountries = $"{BaseAPI}/countries/getAllCountries";
-            }
-
-            public static class Currencies
-            {
-                public static readonly string GetCurrency = $"{BaseAPI}/currencies/getCurrency";
-                public static readonly string GetAvailableCurrencies = $"{BaseAPI}/currencies/getAvailableCurrencies";
-                public static readonly string GetDestinationCurrenciesForMember = $"{BaseAPI}/currencies/getDestinationCurrenciesForMember";
-                public static readonly string GetAllCoinCurrencies = $"{BaseAPI}/currencies/getAllCoinCurrencies";
-                public static readonly string GetAllFiatCurrencies = $"{BaseAPI}/currencies/getAllFiatCurrencies";
-                public static readonly string GetPreferableCoinCurrencies = $"{BaseAPI}/currencies/getPreferableCoinCurrencies";
-                public static readonly string GetDistinctCurrenciesByMemberID = $"{BaseAPI}/currencies/getDistinctCurrenciesByMemberID";
-            }
-
-            public static class Wallets
-            {
-                public static readonly string GetPersonalWallets = $"{BaseAPI}/wallets/getPersonalWallets";
-                public static readonly string GetMyPersonalWallets = $"{BaseAPI}/wallets/getMyPersonalWallets";
-                public static readonly string GetWallet = $"{BaseAPI}/wallets/getWallet";
-                public static readonly string GetPocket = $"{BaseAPI}/wallets/getPocket";
-                public static readonly string CreateExchangeWallet = $"{BaseAPI}/wallets/createExchangeWallet";
-                public static readonly string CreatePersonalWallet = $"{BaseAPI}/wallets/createPersonalWallet";
-                public static readonly string UpdatePersonalWallet = $"{BaseAPI}/wallets/updatePersonalWallet";
-                public static readonly string DeleteWallet = $"{BaseAPI}/wallets/deleteWallet";
-
-                public static readonly string GetSyncPersonalWallet = $"{BaseAPI}/wallets/sync/details";
-                public static readonly string SyncPersonalWallet = $"{BaseAPI}/wallets/syncPersonalWallet";
-                public static readonly string UpdateDetailsSyncPersonalWallet = $"{BaseAPI}/wallets/sync/edit";
-
-                public static readonly string GetStartingBalance = $"{BaseAPI}/wallets/getStartingBalance";
-                public static readonly string UpdateStartingBalance = $"{BaseAPI}/wallets/updateStartingBalance";
-            }
-
-            public static class InternalTransfers
-            {
-                public static readonly string GetInternalTransfer = $"{BaseAPI}/internalTransfers/getInternalTransfer";
-                public static readonly string CreateInternalTransfer = $"{BaseAPI}/internalTransfers/createInternalTransfer";
-                public static readonly string UpdateInternalTransfer = $"{BaseAPI}/internalTransfers/updateInternalTransfer";
-                public static readonly string DeleteInternalTransfer = $"{BaseAPI}/internalTransfers/deleteInternalTransfer";
-                public static readonly string GetWalletsWithSameCurrency = $"{BaseAPI}/internalTransfers/getWalletsWithSameCurrency";
-                public static readonly string GetAllWalletsWithSameCurrency = $"{BaseAPI}/internalTransfers/getAllWalletsWithSameCurrency";
-            }
-
-            public static class ExternalTransfers
-            {
-                public static readonly string GetExternalTransfer = $"{BaseAPI}/externalTransfers/getExternalTransfer";
-                public static readonly string CreateExternalTransfer = $"{BaseAPI}/externalTransfers/createExternalTransfer";
-                public static readonly string UpdateExternalTransfer = $"{BaseAPI}/externalTransfers/updateExternalTransfer";
-                public static readonly string DeleteExternalTransfer = $"{BaseAPI}/externalTransfers/deleteExternalTransfer";
-            }
-
-            public static class Owners
-            {
-                public static readonly string GetOwner = $"{BaseAPI}/owners/getOwner";
-                public static readonly string GetOwners = $"{BaseAPI}/owners/getOwners";
-                public static readonly string GetProvider = $"{BaseAPI}/owners/getProvider";
-                public static readonly string GetExchangeOwners = $"{BaseAPI}/owners/getExchangeOwners";
-                public static readonly string GetAvailableExchangeProviders = $"{BaseAPI}/owners/getAvailableExchangeProviders";
-                public static readonly string CreateExchangeOwner = $"{BaseAPI}/owners/createExchangeOwner";
-                public static readonly string UpdateExchangeOwner = $"{BaseAPI}/owners/updateExchangeOwner";
-                public static readonly string DeleteOwner = $"{BaseAPI}/owners/deleteOwner";
-            }
-
-            public static class Trades
-            {
-                public static readonly string GetTrade = $"{BaseAPI}/trades/getTrade";
-                public static readonly string CreateTrade = $"{BaseAPI}/trades/createTrade";
-                public static readonly string UpdateTrade = $"{BaseAPI}/trades/updateTrade";
-                public static readonly string DeleteTrade = $"{BaseAPI}/trades/deleteTrade";
-            }
-
-            public static class Projects
-            {
-                public static readonly string CreateProject = $"{BaseAPI}/projects/createProject";
-                public static readonly string UpdateProject = $"{BaseAPI}/projects/updateProject";
-                public static readonly string DeleteContributors = $"{BaseAPI}/projects/deleteContributors";
-                public static readonly string InviteMembers = $"{BaseAPI}/projects/inviteMembers";
-                public static readonly string UpdateInvitation = $"{BaseAPI}/projects/updateInvitation";
-                public static readonly string UpdateProjectStatus = $"{BaseAPI}/projects/updateProjectStatus";
-                public static readonly string AcceptProjectInvitation = $"{BaseAPI}/projects/acceptProjectInvitation";
-                public static readonly string RejectProjectInvitation = $"{BaseAPI}/projects/rejectProjectInvitation";
-
-                public static readonly string GetMyProjects = $"{BaseAPI}/projects/getMyProjects";
-                public static readonly string GetProject = $"{BaseAPI}/projects/getProject";
-                public static readonly string GetProjectIsExist = $"{BaseAPI}/projects/getProjectIsExist";
-                public static readonly string GetContributorsByMemberUsername = $"{BaseAPI}/projects/getContributorsByMemberUsername";
-                public static readonly string GetProjectsConfirmation = $"{BaseAPI}/projects/getProjectsConfirmation";
-                public static readonly string GetProjectStatusLogsByProjectID = $"{BaseAPI}/projects/getProjectStatusLogsByProjectID";
-                public static readonly string CheckIsContributor = $"{BaseAPI}/projects/checkIsContributor";
-            }
-
-            public static class ProjectsDocument
-            {
-                public static readonly string CreateProjectDocument = $"{BaseAPI}/projectsDocument/createProjectDocument";
-                public static readonly string GetProjectDocument = $"{BaseAPI}/projectsDocument/getProjectDocument";
-                public static readonly string GetProjectDocumentDownload = $"{BaseAPI}/projectsDocument/getProjectDocument/download";
-                public static readonly string UpdateProjectDocument = $"{BaseAPI}/projectsDocument/updateProjectDocument";
-                public static readonly string DeleteProjectDocument = $"{BaseAPI}/projectsDocument/deleteProjectDocument";
-            }
-
-            public static class Portfolio
-            {
-                public static readonly string GetPortfolio = $"{BaseAPI}/portfolio/getPortfolio";
-            }
-
-            public static class StartingBalance
-            {
-                public static readonly string GetStartingBalance = $"{BaseAPI}/startingBalance/getStartingBalance";
-                public static readonly string UpdateStartingBalance = $"{BaseAPI}/startingBalance/updateStartingBalance";
-            }
-
-            public static class Charts
-            {
-                public static readonly string GetPortfolioByCoinsV2 = $"{BaseAPI}/charts/getPortfolioByCoinsV2";
-                public static readonly string GetPortfolioByExchanges = $"{BaseAPI}/charts/getPortfolioByExchanges";
-                public static readonly string GetCoinByExchanges = $"{BaseAPI}/charts/getCoinByExchanges";
-            }
+        public static class JenisKomoditiID
+        {
+            public const string Susu = "c23ab8a1-54e6-405a-8671-8645e598293b";
+            public const string Daging = "efa802d0-ba25-4aa3-9b9b-bf075cc9aa98";
+            public const string Unggas = "6a009abf-47d4-46ff-aeff-09b938b13a83";
+            public const string HasilTernak = "525e8624-2fee-4d9d-8591-652feed3d8f8";
+            public const string Limbah = "01f61dee-0c71-4e3a-baec-a8e300256aac";
         }
 
         public static class AlertMessageStatus

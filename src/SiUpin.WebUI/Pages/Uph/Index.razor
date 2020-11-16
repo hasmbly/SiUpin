@@ -1,12 +1,20 @@
-﻿@page "/uph"
+﻿@layout AnonymousLayout
 
-<div class="mat-layout-grid">
-    <div class="mat-layout-grid-inner" style="min-height: 100px;">
+@page "/uph"
+
+@inject HttpClient Http
+@inject IMatToaster Toaster
+
+@using SiUpin.Shared.Uphs.Queries.GetAllUph
+@using SiUpin.Shared.Common.ApiEnvelopes
+
+<div class="mat-layout-grid pt-0">
+    <div class="mat-layout-grid-inner mt-0">
         <div class="mat-layout-grid-cell mat-layout-grid-cell-align-middle mat-layout-grid-cell-span-4">
             <MatH4><strong>UPH Peternakan Indonesia</strong></MatH4>
         </div>
         <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2"></div>
-        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-right mat-layout-grid-cell-span-6">
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-6">
             <MatIcon>
                 <img src="images/data-uph.png" />
             </MatIcon>
@@ -14,6 +22,150 @@
     </div>
 </div>
 
-@code {
+@if (IsLoading)
+{
+    <MatDialog @bind-IsOpen="IsLoading" CanBeClosed="false">
+        <MatDialog>Please Wait..</MatDialog>
+        <MatDialogContent>
+            <MatProgressBar Indeterminate="true" Closed="!IsLoading"></MatProgressBar>
+        </MatDialogContent>
+    </MatDialog>
+}
+<p>
+    <MatTextField @bind-Value="@filterByName" HelperText="Filter Berdasarkan: Nama Uph" Label="Cari Uph" Icon="@MatIconNames.Search"></MatTextField>
+</p>
 
+@if (sortedData != null)
+{
+    <MatTable Items="sortedData" PageSize="pageSize" AllowSelection="true" ShowPaging="false" UseSortHeaderRow="true" class="mat-elevation-z5 mt-1">
+        <MatTableHeader>
+            <MatSortHeaderRow SortChanged="SortData">
+                <MatSortHeader SortId="1"><span style="width:150px">Nama UPH</span></MatSortHeader>
+                <MatSortHeader SortId="2"><span style="width:100px">Ketua</span></MatSortHeader>
+                <MatSortHeader SortId="3">Handphone</MatSortHeader>
+                <MatSortHeader SortId="4">Provinsi</MatSortHeader>
+                <MatSortHeader SortId="5">Kota</MatSortHeader>
+                <MatSortHeader SortId="6">Alamat</MatSortHeader>
+            </MatSortHeaderRow>
+        </MatTableHeader>
+        <MatTableRow>
+            <td>@context.Name</td>
+            <td>@context.Ketua</td>
+            <td>@context.Handphone</td>
+            <td>@context.Provinsi</td>
+            <td>@context.Kota</td>
+            <td>@context.Alamat</td>
+        </MatTableRow>
+    </MatTable>
+}
+
+<MatPaginator Length="totalCount" PageSize="pageSize" Page="OnPage"></MatPaginator>
+
+@code
+{
+    private bool IsLoading = false;
+
+    private ApiResponse<GetAllUphResponse> items;
+    private UphDTO[] sortedData = null;
+
+    private int pageSize = Constants.Pagination.PageSize;
+    private int pageIndex = 0;
+    private int totalCount = 0;
+
+    private string _filterByName = "";
+
+    public string filterByName
+    {
+        get => _filterByName;
+        set
+        {
+            _filterByName = value;
+
+            InvokeAsync(async () => { await GetPaginateData(pageSize, pageIndex + 1, _filterByName); });
+
+            this.StateHasChanged();
+        }
+    }
+
+    protected override async Task OnInitializedAsync() => await GetPaginateData();
+
+    private async Task OnPage(MatPaginatorPageEvent e)
+    {
+        pageSize = e.PageSize;
+        pageIndex = e.PageIndex;
+
+        await GetPaginateData(pageSize, pageIndex + 1);
+    }
+
+    private async Task GetPaginateData(int pageSize = Constants.Pagination.PageSize, int pageNumber = Constants.Pagination.PageNumber, string filterName = null)
+    {
+        IsLoading = true;
+
+        var client = await Http.PostAsJsonAsync<GetAllUphRequest>(Constants.URI.Uph.Paginate, new GetAllUphRequest
+        {
+            PageSize = pageSize,
+            PageNumber = pageNumber,
+            FilterUphName = filterName ?? ""
+        });
+
+        items = Task.FromResult(await client.Content.ReadFromJsonAsync<ApiResponse<GetAllUphResponse>>()).Result;
+
+        if (items.Status.IsError)
+        {
+            Toaster.Add(items.Status.Message, MatToastType.Danger);
+
+            IsLoading = false;
+
+            StateHasChanged();
+        }
+        else
+        {
+            if (items.Result.Data.Count() > 0)
+            {
+                totalCount = items.Result.Pagination.TotalCount;
+
+                SortData(null);
+
+                IsLoading = false;
+
+                StateHasChanged();
+            }
+        }
+    }
+
+    void SortData(MatSortChangedEvent sort)
+    {
+        sortedData = items.Result.Data.ToArray();
+        if (!(sort == null || sort.Direction == MatSortDirection.None || string.IsNullOrEmpty(sort.SortId)))
+        {
+            Comparison<UphDTO> comparison = null;
+            switch (sort.SortId)
+            {
+                case "1":
+                    comparison = (s1, s2) => string.Compare(s1.Name, s2.Name, StringComparison.InvariantCultureIgnoreCase);
+                    break;
+                case "2":
+                    comparison = (s1, s2) => s1.Ketua.CompareTo(s2.Ketua);
+                    break;
+                case "4":
+                    comparison = (s1, s2) => s1.Provinsi.CompareTo(s2.Provinsi);
+                    break;
+                case "5":
+                    comparison = (s1, s2) => s1.Kota.CompareTo(s2.Kota);
+                    break;
+            }
+
+            if (comparison != null)
+            {
+                if (sort.Direction == MatSortDirection.Desc)
+                {
+                    Array.Sort(sortedData, (s1, s2) => -1 * comparison(s1, s2));
+                }
+                else
+                {
+                    Array.Sort(sortedData, comparison);
+                }
+            }
+        }
+    }
 }

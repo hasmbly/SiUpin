@@ -1,9 +1,9 @@
 ﻿using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
-using SiUpin.Application.Common.Interfaces;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using SiUpin.Application.Common.Interfaces;
 
 namespace SiUpin.Application.Common.Behaviors
 {

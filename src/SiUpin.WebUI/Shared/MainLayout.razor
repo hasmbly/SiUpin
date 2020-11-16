@@ -2,7 +2,7 @@
 
 <CascadingValue Value="this">
     <MatThemeProvider Theme="@theme">
-        <TopBar IsMenuClicked="OnMenuClicked" />
+        <TopBar IsMenuClicked="OnMenuClicked" IsAdmin="true" />
 
         <MatDrawerContainer Style="width: 100vw; height: 100vh;" Class="mat">
             <AuthorizeView>
@@ -27,12 +27,6 @@
                 <div class="body-wrapper mt-3">
                     @Body
                 </div>
-
-                <div class="content px-0" style="background-color: #1e1e2d;">
-                    <div class="footer-wrapper">
-                        <Footer />
-                    </div>
-                </div>
             </MatDrawerContent>
         </MatDrawerContainer>
     </MatThemeProvider>
@@ -54,7 +48,7 @@
 
     MatTheme theme = new MatTheme()
     {
-        Primary = "#5d2f91",
+        Primary = "#1e1e2d",
         Background = MatThemeColors.Grey._100.Value,
         Secondary = MatThemeColors.BlueGrey._500.Value,
         Surface = "#ffffff"

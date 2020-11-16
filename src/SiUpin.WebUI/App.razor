@@ -1,3 +1,5 @@
+@inject NavigationManager Navigation
+
 <CascadingAuthenticationState>
     <Router AppAssembly="@typeof(Program).Assembly">
         <Found Context="routeData">
@@ -5,7 +7,7 @@
                 <NotAuthorized>
                     @if (!context.User.Identity.IsAuthenticated)
                     {
-                        <RedirectToLogin />
+                        <Login DialogIsOpen="true" DialogIsOpenStatus='() => { Navigation.NavigateTo("/"); }' />
                     }
                     else
                     {
@@ -18,9 +20,8 @@
             </AuthorizeRouteView>
         </Found>
         <NotFound>
-            <LayoutView Layout="@typeof(MainLayout)">
-                <p>Sorry, there's nothing at this address.</p>
-            </LayoutView>
+            <LayoutView Layout="@typeof(NotFoundLayout)" />
         </NotFound>
     </Router>
 </CascadingAuthenticationState>
+<MatToastContainer />

@@ -5,10 +5,24 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Constants\" />
-    <Folder Include="Enums\" />
-    <Folder Include="Exceptions\" />
+    <Compile Remove="Enums\**" />
+    <Compile Remove="Exceptions\**" />
+    <EmbeddedResource Remove="Enums\**" />
+    <EmbeddedResource Remove="Exceptions\**" />
+    <None Remove="Enums\**" />
+    <None Remove="Exceptions\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Auth\Commands\" />
+    <Folder Include="Beritas\Queries\GetBerita\" />
     <Folder Include="Files\Commands\" />
+    <Folder Include="Pesans\Commands\CreatePesan\" />
+    <Folder Include="ProdukOlahans\Queries\GetProdukOlahan\" />
+    <Folder Include="Uphs\Command\CreateUph\" />
+    <Folder Include="Uphs\Command\EditUph\" />
+    <Folder Include="Uphs\Command\DeleteUph\" />
+    <Folder Include="Uphs\Queries\GetUph\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,0 +1,58 @@
+﻿@inherits LayoutComponentBase
+
+<CascadingValue Value="this">
+    <MatThemeProvider Theme="@theme">
+        <TopBar IsMenuClicked="OnMenuClicked" IsAdmin="false" />
+
+        <MatDrawerContainer Style="width: 100vw; height: 100vh;" Class="mat">
+            <MatDrawerContent Class="mdc-theme--surface">
+                <MatAppBarAdjust></MatAppBarAdjust>
+                <div class="body-wrapper mt-3">
+                    @Body
+                </div>
+
+                <div class="content px-0" style="background-color: #1e1e2d;">
+                    <div class="footer-wrapper">
+                        <Footer />
+                    </div>
+                </div>
+            </MatDrawerContent>
+        </MatDrawerContainer>
+    </MatThemeProvider>
+</CascadingValue>
+
+@code
+{
+    private RenderFragment BreadcrumbsPlaceholder;
+
+    public async Task SetBreadcrumbs(RenderFragment breadcrumbsPlaceholder)
+    {
+        this.BreadcrumbsPlaceholder = breadcrumbsPlaceholder;
+        StateHasChanged();
+
+        await Task.CompletedTask;
+    }
+
+    public bool _navMenuOpened { get; set; } = true;
+
+    MatTheme theme = new MatTheme()
+    {
+        Primary = "#1e1e2d",
+        Background = MatThemeColors.Grey._100.Value,
+        Secondary = MatThemeColors.BlueGrey._500.Value,
+        Surface = "#ffffff"
+    };
+
+    private void OnMenuClicked()
+    {
+        _navMenuOpened = !_navMenuOpened;
+    }
+
+    protected void ModelDrawerHiddenChanged(bool hidden)
+    {
+        if (!hidden)
+        {
+            _navMenuOpened = false;
+        }
+    }
+}

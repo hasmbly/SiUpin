@@ -1,8 +1,8 @@
-﻿namespace SiUpin.Shared.Users.Queries.GetUser
+﻿using SiUpin.Shared.Users.Queries.Common;
+
+namespace SiUpin.Shared.Users.Queries.GetUser
 {
-    public class GetUserResponse
+    public class GetUserResponse : UserDTO
     {
-        public string UserID { get; set; }
-        public string Username { get; set; }
     }
 }

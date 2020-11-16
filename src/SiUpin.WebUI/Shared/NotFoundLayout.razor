@@ -1,0 +1,17 @@
+﻿@inherits LayoutComponentBase
+
+@inject NavigationManager Navigation
+
+<div class="mat-layout-grid">
+    <div class="mat-layout-grid-inner">
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-middle mat-layout-grid-cell-span-12">
+            <img class="d-block w-100" src="images/data-uph.png" alt="UPH">
+        </div>
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-middle mat-layout-grid-cell-span-12">
+            <MatBody1>
+                Maaf, Halaman tidak ditemukan
+            </MatBody1>
+            <MatButton OnClick='() => { Navigation.NavigateTo("/"); }'>Go Back to Home</MatButton>
+        </div>
+    </div>
+</div>

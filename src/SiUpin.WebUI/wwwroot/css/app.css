@@ -2,7 +2,6 @@
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    /*background-color: #d6d5d5;*/
 }
 
 .btn:focus, .btn:active
@@ -212,10 +211,11 @@ app {
 }
 
 /* Custom By Has */
+
 .logo-center
 {
     display: block;
-    margin: 9em auto 0 auto;
+    margin: 8em auto 0 auto;
 }
 
 .carousel-inner img
@@ -230,9 +230,14 @@ app {
     height: auto;
 }
 
+.has-table-layout
+{
+    table-layout: fixed;
+}
+
 .has-mat-card
 {
-    max-width: 150px;
+    max-width: 200px;
 }
 
     .has-mat-card-content
@@ -244,6 +249,23 @@ app {
     {
         margin: 0px;
     }
+
+.has-mat-card-informasi
+{
+    max-width: 500px;
+    max-height: 220px;
+}
+
+    .has-mat-card-informasi-content
+    {
+        padding: 1rem;
+    }
+
+    .has-mat-card-informasi-clean-margin
+    {
+        margin: 0px;
+    }
+
 
 .app-header-wrapper
 {
@@ -262,7 +284,7 @@ app {
 .footer-wrapper
 {
     max-width: 1280px;
-    padding: 5px;
+    padding: 20px;
     margin: 0 auto;
 }
 

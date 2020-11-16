@@ -1,8 +1,27 @@
 ﻿<div style="display: flex; flex-direction: column; padding: 10px;">
     <div style="padding: 5px; overflow: auto;">
         <MatNavMenu>
-            <MatNavItem Href="" NavLinkMatch="NavLinkMatch.All"><MatIcon Icon="home"></MatIcon>&nbsp;&nbsp; Home</MatNavItem>
-            <MatNavItem Href="FiscalYears" NavLinkMatch="NavLinkMatch.All"><MatIcon Icon="face"></MatIcon>&nbsp;&nbsp; Data Master</MatNavItem>
+            <MatNavItem Href="/admin" NavLinkMatch="NavLinkMatch.Prefix"><MatIcon Icon="@MatIconNames.Dashboard"></MatIcon>&nbsp;&nbsp; Dashboard</MatNavItem>
+            <MatNavSubMenu>
+                <MatNavSubMenuHeader>
+                    <MatNavItem NavLinkMatch="NavLinkMatch.Prefix" AllowSelection="false"><MatIcon Icon="@MatIconNames.Work"></MatIcon>&nbsp;&nbsp; Data Master</MatNavItem>
+                </MatNavSubMenuHeader>
+                <MatNavSubMenuList>
+                    <MatNavItem Href="/admin/jenisKomoditi">Jenis Komoditi</MatNavItem>
+                    <MatNavItem Href="/admin/produkOlahan">Produk Olahan</MatNavItem>
+                    <MatNavItem Href="/admin/parameter">Parameter</MatNavItem>
+                </MatNavSubMenuList>
+            </MatNavSubMenu>
+            <MatNavItem Href="/admin/uph" NavLinkMatch="NavLinkMatch.Prefix"><MatIcon Icon="@MatIconNames.Business_center"></MatIcon>&nbsp;&nbsp; UPH</MatNavItem>
+            <MatNavItem Href="/admin/kemitraan" NavLinkMatch="NavLinkMatch.Prefix"><MatIcon Icon="@MatIconNames.Business"></MatIcon>&nbsp;&nbsp; Kemitraan</MatNavItem>
+            <MatNavItem Href="/admin/cluster" NavLinkMatch="NavLinkMatch.Prefix"><MatIcon Icon="@MatIconNames.Group_work"></MatIcon>&nbsp;&nbsp; Cluster</MatNavItem>
+            <MatNavItem Href="/admin/berita" NavLinkMatch="NavLinkMatch.Prefix"><MatIcon Icon="@MatIconNames.Featured_play_list"></MatIcon>&nbsp;&nbsp; Berita</MatNavItem>
+            <MatNavItem Href="/admin/pesan" NavLinkMatch="NavLinkMatch.Prefix"><MatIcon Icon="@MatIconNames.Message"></MatIcon>&nbsp;&nbsp; Pesan Masuk</MatNavItem>
+            <MatNavItem Href="/admin/users" NavLinkMatch="NavLinkMatch.Prefix"><MatIcon Icon="@MatIconNames.Person_add"></MatIcon>&nbsp;&nbsp; Pengguna</MatNavItem>
         </MatNavMenu>
     </div>
 </div>
+
+@code
+{
+}

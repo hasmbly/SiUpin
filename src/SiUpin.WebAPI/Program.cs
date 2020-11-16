@@ -7,9 +7,7 @@ namespace SiUpin.WebAPI
     {
         public static void Main(string[] args)
         {
-            var host = CreateHostBuilder(args).Build();
-
-            host.Run();
+            CreateHostBuilder(args).Build().Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -17,6 +15,13 @@ namespace SiUpin.WebAPI
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    webBuilder.UseUrls("http://127.0.0.1:5001");
+                    webBuilder.UseKestrel()
+                            .ConfigureKestrel((context, serverOptions) =>
+                            {
+                                serverOptions.Limits.MaxRequestBodySize = 2147483648;
+
+                            });
                 });
     }
 }

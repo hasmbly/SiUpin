@@ -1,4 +1,6 @@
-﻿@page "/cluster"
+﻿@layout AnonymousLayout
+
+@page "/cluster"
 
 <div class="mat-layout-grid">
     <div class="mat-layout-grid-inner" style="min-height: 100px;">
@@ -14,43 +16,97 @@
     </div>
 </div>
 
-<MatTable Items="@cars" class="mat-elevation-z5">
-    <MatTableHeader>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Horsepower</th>
-    </MatTableHeader>
-    <MatTableRow>
-        <td>@context.Name</td>
-        <td>@String.Format("${0:f2}", @context.Price)</td>
-        <td>@context.Horsepower</td>
-    </MatTableRow>
-</MatTable>
+<div class="mat-layout-grid">
+    <div class="mat-layout-grid-inner" style="min-height: 100px;">
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-middle mat-layout-grid-cell-span-12">
+            <MatTabGroup>
+                <MatTab Label="Cluster UPH">
+                    <MatTable Items="@clusterUphs" class="mat-elevation-z5">
+                        <MatTableHeader>
+                            <th class="text-center">Cluster</th>
+                            <th width="50%" class="text-center">Keterangan</th>
+                            <th class="text-center">Total</th>
+                        </MatTableHeader>
+                        <MatTableRow>
+                            <td class="text-center">@context.Cluster</td>
+                            <td class="text-center">
+                                @for (int i = 0; i < context.Star; i++)
+                                {
+                                    <MatIcon Icon="@MatIconNames.Star"></MatIcon>
+                                }
+                            </td>
+                            <td class="text-center">@context.Total</td>
+                        </MatTableRow>
+                    </MatTable>
+                </MatTab>
+                <MatTab Label="Cluster Kemitraan">
+                    <MatTable Items="@clusterKemitraans" class="mat-elevation-z5">
+                        <MatTableHeader>
+                            <th class="text-center">Cluster</th>
+                            <th width="50%" class="text-center">Keterangan</th>
+                            <th class="text-center">Total</th>
+                        </MatTableHeader>
+                        <MatTableRow>
+                            <td class="text-center">@context.Cluster</td>
+                            <td class="text-center">
+                                @for (int i = 0; i < context.Star; i++)
+                                {
+                                    <MatIcon Icon="@MatIconNames.Star"></MatIcon>
+                                }
+                            </td>
+                            <td class="text-center">@context.Total</td>
+                        </MatTableRow>
+                    </MatTable>
+                </MatTab>
+            </MatTabGroup>
+        </div>
+    </div>
+</div>
+
 
 @code
 {
-    public class Car
+    public class ClusterUPH
     {
-        public string Name { get; set; }
-        public double Price { get; set; }
-        public int Horsepower { get; set; }
+        public string Cluster { get; set; }
+        public int Star { get; set; }
+        public int Total { get; set; }
 
-        public Car(string name, double price, int horsepower)
+        public ClusterUPH(string cluster, int star, int total)
         {
-            Name = name;
-            Price = price;
-            Horsepower = horsepower;
+            Cluster = cluster;
+            Star = star;
+            Total = total;
         }
     }
 
-    Car[] cars = new[]
+    ClusterUPH[] clusterUphs = new[]
     {
-        new Car("Volkswagen Golf", 10000, 220),
-        new Car("Volkswagen Passat", 11000, 240),
-        new Car("Volkswagen Polo", 12000, 110),
-        new Car("Ford Focus", 13000, 200),
-        new Car("Ford Fiesta", 14000, 160),
-        new Car("Ford Fusion", 15000, 260),
-        new Car("Ford Mondeo", 16000, 120),
+        new ClusterUPH("A", 4, 6),
+        new ClusterUPH("B", 3, 46),
+        new ClusterUPH("C", 2, 278),
+        new ClusterUPH("D", 1, 1938)
+    };
+
+    public class ClusterKemitraan
+    {
+        public string Cluster { get; set; }
+        public int Star { get; set; }
+        public int Total { get; set; }
+
+        public ClusterKemitraan(string cluster, int star, int total)
+        {
+            Cluster = cluster;
+            Star = star;
+            Total = total;
+        }
+    }
+
+    ClusterKemitraan[] clusterKemitraans = new[]
+    {
+        new ClusterKemitraan("A", 4, 3),
+        new ClusterKemitraan("B", 3, 1),
+        new ClusterKemitraan("C", 2, 19),
+        new ClusterKemitraan("D", 1, 21)
     };
 }

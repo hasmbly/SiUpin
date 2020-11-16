@@ -17,6 +17,8 @@ namespace SiUpin.Infrastructure
             services.AddTransient<IDateTimeOffsetService, DateTimeOffsetService>();
             services.AddTransient<IFileService, FileService>();
 
+            System.Console.WriteLine($"GetConnectionString: {configuration.GetConnectionString("Database")}");
+
             services.AddDbContext<SiUpinDBContext>(options =>
                         options.UseMySQL(configuration.GetConnectionString("Database")));
 

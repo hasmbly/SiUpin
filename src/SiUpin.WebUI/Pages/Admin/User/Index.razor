@@ -1,0 +1,178 @@
+﻿@page "/admin/users"
+@attribute [Authorize]
+
+@inject HttpClient Http
+
+@using SiUpin.Shared.Users.Queries.Common
+@using SiUpin.Shared.Users.Queries.GetUsers
+@using SiUpin.Shared.Common.ApiEnvelopes
+
+<div class="mat-layout-grid">
+    <div class="mat-layout-grid-inner">
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
+            <MatH4>Data Pengguna</MatH4>
+        </div>
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
+            <MatTextField @bind-Value="@filterByName" HelperText="Filter Berdasarkan: Nama User" Label="Cari User" Icon="@MatIconNames.Search"></MatTextField>
+        </div>
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
+            @if (IsLoading)
+            {
+                <MatDialog @bind-IsOpen="IsLoading" CanBeClosed="false">
+                    <MatDialog>Please Wait..</MatDialog>
+                    <MatDialogContent>
+                        <MatProgressBar Indeterminate="true" Closed="!IsLoading"></MatProgressBar>
+                    </MatDialogContent>
+                </MatDialog>
+            }
+            else
+            {
+                <MatTable Items="sortedData" PageSize="pageSize" AllowSelection="true" ShowPaging="false" UseSortHeaderRow="true" class="mat-elevation-z5 mt-1">
+                    <MatTableHeader>
+                        <MatSortHeaderRow SortChanged="SortData">
+                            <MatSortHeader SortId="1"><span style="width:150px">Username</span></MatSortHeader>
+                            <MatSortHeader SortId="2"><span style="width:150px">Nama</span></MatSortHeader>
+                            <MatSortHeader SortId="3"><span style="width:100px">Role</span></MatSortHeader>
+                            <MatSortHeader SortId="4"><span style="width:100px">Email</span></MatSortHeader>
+                            <MatSortHeader SortId="5">Telepon</MatSortHeader>
+                            <MatSortHeader SortId="6"></MatSortHeader>
+                        </MatSortHeaderRow>
+                    </MatTableHeader>
+                    <MatTableRow>
+                        <td>@context.Username</td>
+                        <td>@context.Fullname</td>
+                        <td>@context.RoleName</td>
+                        <td>@context.Email</td>
+                        <td>@context.Telepon</td>
+                        <td>
+                            <MatIcon Icon="@MatIconNames.Edit" />
+                            &nbsp;
+                            <MatIcon Icon="@MatIconNames.Delete" />
+                        </td>
+                    </MatTableRow>
+                </MatTable>
+            }
+        </div>
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-right mat-layout-grid-cell-span-12">
+            <MatPaginator Length="totalCount" PageSize="pageSize" Page="OnPage"></MatPaginator>
+        </div>
+    </div>
+</div>
+
+@code
+{
+    private bool IsLoading = false;
+
+    private GetUsersResponse items;
+    private UserDTO[] sortedData = null;
+
+    private int pageSize = Constants.Pagination.PageSize;
+    private int pageIndex = 0;
+    private int totalCount = 0;
+
+    private string _filterByName = "";
+
+    public string filterByName
+    {
+        get => _filterByName;
+        set
+        {
+            _filterByName = value;
+
+            InvokeAsync(async () => { await GetPaginateData(pageSize, pageIndex + 1, _filterByName); });
+
+            this.StateHasChanged();
+        }
+    }
+
+    protected override async Task OnInitializedAsync() => await GetPaginateData();
+
+    private async Task OnPage(MatPaginatorPageEvent e)
+    {
+        pageSize = e.PageSize;
+        pageIndex = e.PageIndex;
+
+        await GetPaginateData(pageSize, pageIndex + 1, _filterByName);
+    }
+
+    private async Task GetPaginateData(
+        int pageSize = Constants.Pagination.PageSize,
+        int pageNumber = Constants.Pagination.PageNumber,
+        string filterName = null,
+        string filterProvinsiID = null,
+        string filterKotaID = null,
+        string filterKecamatanID = null
+        )
+    {
+        IsLoading = true;
+
+        var client = await Http.PostAsJsonAsync<GetUsersRequest>(Constants.URI.User.Paginate, new GetUsersRequest
+        {
+            PageSize = pageSize,
+            PageNumber = pageNumber,
+            FilterByUsernameOrEmail = filterName ?? "",
+            FilterProvinsiID = filterProvinsiID ?? "",
+            FilterKotaID = filterKotaID ?? "",
+            FilterKecamatanID = filterKecamatanID ?? ""
+        });
+
+        items = Task.FromResult(await client.Content.ReadFromJsonAsync<ApiResponse<GetUsersResponse>>()).Result.Result;
+
+        if (items.Data.Count() > 0)
+        {
+            totalCount = items.Pagination.TotalCount;
+
+            SortData(null);
+
+            IsLoading = false;
+
+            StateHasChanged();
+        }
+        else
+        {
+            totalCount = items.Pagination.TotalCount;
+
+            SortData(null);
+
+            IsLoading = false;
+
+            StateHasChanged();
+        }
+    }
+
+    private void SortData(MatSortChangedEvent sort)
+    {
+        sortedData = items.Data.ToArray();
+        if (!(sort == null || sort.Direction == MatSortDirection.None || string.IsNullOrEmpty(sort.SortId)))
+        {
+            Comparison<UserDTO> comparison = null;
+            switch (sort.SortId)
+            {
+                case "1":
+                    comparison = (s1, s2) => string.Compare(s1.Username, s2.Username, StringComparison.InvariantCultureIgnoreCase);
+                    break;
+                case "2":
+                    comparison = (s1, s2) => string.Compare(s1.Fullname, s2.Fullname, StringComparison.InvariantCultureIgnoreCase);
+                    break;
+                case "3":
+                    comparison = (s1, s2) => s1.RoleName.CompareTo(s2.RoleName);
+                    break;
+                case "4":
+                    comparison = (s1, s2) => s1.Email.CompareTo(s2.Email);
+                    break;
+            }
+
+            if (comparison != null)
+            {
+                if (sort.Direction == MatSortDirection.Desc)
+                {
+                    Array.Sort(sortedData, (s1, s2) => -1 * comparison(s1, s2));
+                }
+                else
+                {
+                    Array.Sort(sortedData, comparison);
+                }
+            }
+        }
+    }
+}

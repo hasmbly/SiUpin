@@ -36,13 +36,13 @@ namespace SiUpin.Application.Systems.Commands.SeedUph
             var listDataJSON = dataJSON.rows.ToList();
 
             // collect temporary data from db
-            var provinsis = await _context.Provinsis.ToListAsync(cancellationToken);
-            var kotas = await _context.Kotas.ToListAsync(cancellationToken);
-            var kecamatans = await _context.Kecamatans.ToListAsync(cancellationToken);
-            var kelurahans = await _context.Kelurahans.ToListAsync(cancellationToken);
+            var provinsis = await _context.Provinsis.AsNoTracking().ToListAsync(cancellationToken);
+            var kotas = await _context.Kotas.AsNoTracking().ToListAsync(cancellationToken);
+            var kecamatans = await _context.Kecamatans.AsNoTracking().ToListAsync(cancellationToken);
+            var kelurahans = await _context.Kelurahans.AsNoTracking().ToListAsync(cancellationToken);
 
-            var produkOlahans = await _context.ProdukOlahans.ToListAsync(cancellationToken);
-            var jenisTernaks = await _context.JenisTernaks.ToListAsync(cancellationToken);
+            var produkOlahans = await _context.ProdukOlahans.AsNoTracking().ToListAsync(cancellationToken);
+            var jenisTernaks = await _context.JenisTernaks.AsNoTracking().ToListAsync(cancellationToken);
 
             foreach (var data in listDataJSON)
             {
@@ -67,6 +67,9 @@ namespace SiUpin.Application.Systems.Commands.SeedUph
                     kecamatanID = getKecamatanID != null ? getKecamatanID.KecamatanID : null;
                     kelurahanID = getKelurahanID != null ? getKelurahanID.KelurahanID : null;
 
+                    System.Console.WriteLine($"Insert UPH - id_uph: {data.id_uph}");
+
+                    #region Handle UPH
                     uph = new Uph
                     {
                         id_uph = data.id_uph,
@@ -86,6 +89,7 @@ namespace SiUpin.Application.Systems.Commands.SeedUph
 
                     _context.Uphs.Add(uph);
                     await _context.SaveChangesAsync(cancellationToken);
+                    #endregion
 
                     IList<ParameterJawaban> jawabans = new List<ParameterJawaban>();
 
@@ -97,7 +101,9 @@ namespace SiUpin.Application.Systems.Commands.SeedUph
 
                     foreach (var jawaban in jawabans)
                     {
-                        // there is a problem in here !!!!!!!!!!!!!!!
+                        System.Console.WriteLine($"Insert uphParameter - UphID: {uph.UphID}");
+
+                        // there is a problem in here !!!!!!!!!!!!!!! *it seems the problem about tracking
                         if (jawaban != null)
                         {
                             var uphParameter = new UphParameter
@@ -133,6 +139,8 @@ namespace SiUpin.Application.Systems.Commands.SeedUph
 
                 string uphID = !string.IsNullOrEmpty(sameUphID) ? sameUphID : uph.UphID;
 
+                System.Console.WriteLine($"Insert UphProduk - UphID: {uphID}");
+
                 var uphProduk = new UphProduk
                 {
                     UphID = uphID,
@@ -150,9 +158,11 @@ namespace SiUpin.Application.Systems.Commands.SeedUph
                 #region Handle Foto Produk
                 if (!string.IsNullOrEmpty(data.foto) && !string.IsNullOrEmpty(uphID))
                 {
+                    System.Console.WriteLine($"Insert FotoProduk - UphID: {uphID}");
+
                     await _mediator.Send(new SeedFileRequest()
                     {
-                        EntityID = uphID,
+                        EntityID = uphProduk.UphProdukID,
                         EntityType = "UPH_PRODUK",
                         Name = data.foto
                     });

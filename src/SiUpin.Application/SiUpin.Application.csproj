@@ -20,8 +20,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Systems\Commands\SeedUphParameter\" />
-    <Folder Include="Systems\Commands\SeedUphProduk\" />
+    <Folder Include="Auth\Commands\ForgotPassword\" />
+    <Folder Include="Uphs\Command\CreateUph\" />
+    <Folder Include="Uphs\Command\DeleteUph\" />
+    <Folder Include="Uphs\Command\EditUph\" />
+    <Folder Include="Uphs\Queries\GetUph\" />
   </ItemGroup>
 
 </Project>

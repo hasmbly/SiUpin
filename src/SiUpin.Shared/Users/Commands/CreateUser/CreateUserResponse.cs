@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SiUpin.Shared.Users.Commands.CreateUser
+﻿namespace SiUpin.Shared.Users.Commands.CreateUser
 {
     public class CreateUserResponse
     {

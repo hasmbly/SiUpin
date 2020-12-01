@@ -6,15 +6,20 @@
 @using SiUpin.Shared.Users.Queries.Common
 @using SiUpin.Shared.Users.Queries.GetUsers
 @using SiUpin.Shared.Common.ApiEnvelopes
+@using SiUpin.Shared.Modal.User
 
 <div class="mat-layout-grid">
     <div class="mat-layout-grid-inner">
         <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
             <MatH4>Data Pengguna</MatH4>
         </div>
+
         <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
+            <MatFAB OnClick="() => { OpenDialog = true; }" Icon="@MatIconNames.Add"></MatFAB>&nbsp;
+
             <MatTextField @bind-Value="@filterByName" HelperText="Filter Berdasarkan: Nama User" Label="Cari User" Icon="@MatIconNames.Search"></MatTextField>
         </div>
+
         <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
             @if (IsLoading)
             {
@@ -27,30 +32,35 @@
             }
             else
             {
-                <MatTable Items="sortedData" PageSize="pageSize" AllowSelection="true" ShowPaging="false" UseSortHeaderRow="true" class="mat-elevation-z5 mt-1">
-                    <MatTableHeader>
-                        <MatSortHeaderRow SortChanged="SortData">
-                            <MatSortHeader SortId="1"><span style="width:150px">Username</span></MatSortHeader>
-                            <MatSortHeader SortId="2"><span style="width:150px">Nama</span></MatSortHeader>
-                            <MatSortHeader SortId="3"><span style="width:100px">Role</span></MatSortHeader>
-                            <MatSortHeader SortId="4"><span style="width:100px">Email</span></MatSortHeader>
-                            <MatSortHeader SortId="5">Telepon</MatSortHeader>
-                            <MatSortHeader SortId="6"></MatSortHeader>
-                        </MatSortHeaderRow>
-                    </MatTableHeader>
-                    <MatTableRow>
-                        <td>@context.Username</td>
-                        <td>@context.Fullname</td>
-                        <td>@context.RoleName</td>
-                        <td>@context.Email</td>
-                        <td>@context.Telepon</td>
-                        <td>
-                            <MatIcon Icon="@MatIconNames.Edit" />
-                            &nbsp;
-                            <MatIcon Icon="@MatIconNames.Delete" />
-                        </td>
-                    </MatTableRow>
-                </MatTable>
+                if (sortedData.Count() > 0)
+                {
+                    <MatTable Items="sortedData" PageSize="pageSize" AllowSelection="true" Striped="true" ShowPaging="false" UseSortHeaderRow="true" class="mat-elevation-z5 mt-1">
+                        <MatTableHeader>
+                            <MatSortHeaderRow SortChanged="SortData">
+                                <MatSortHeader SortId="1"><span style="width:150px">Username</span></MatSortHeader>
+                                <MatSortHeader SortId="2"><span style="width:150px">Nama</span></MatSortHeader>
+                                <MatSortHeader SortId="3"><span style="width:100px">Role</span></MatSortHeader>
+                                <MatSortHeader SortId="4"><span style="width:100px">Email</span></MatSortHeader>
+                                <MatSortHeader SortId="5">Telepon</MatSortHeader>
+                                <MatSortHeader SortId="6" class="text-center"><span style="width:50px"></span></MatSortHeader>
+                            </MatSortHeaderRow>
+                        </MatTableHeader>
+                        <MatTableRow>
+                            <td>@context.Username</td>
+                            <td>@context.Fullname</td>
+                            <td>@context.RoleName</td>
+                            <td>@context.Email</td>
+                            <td>@context.Telepon</td>
+                            <td class="text-center">
+                                <MatIcon Icon="@MatIconNames.Edit" Style="color: mediumpurple;" @onclick="() => { OpenUpdateDialog = true; EntityID = context.UserID; }" />
+                                &nbsp;
+                                <MatIcon Icon="@MatIconNames.Refresh" Style="color: yellowgreen;" @onclick="() => { OpenResetPasswordDialog = true; EntityID = context.UserID; }" />
+                                &nbsp;
+                                <MatIcon Icon="@MatIconNames.Remove_circle" Style="color: orangered;" @onclick="() => { OpenDeleteDialog = true; EntityID = context.UserID; }" />
+                            </td>
+                        </MatTableRow>
+                    </MatTable>
+                }
             }
         </div>
         <div class="mat-layout-grid-cell mat-layout-grid-cell-align-right mat-layout-grid-cell-span-12">
@@ -58,6 +68,11 @@
         </div>
     </div>
 </div>
+
+<CreateUser DialogIsOpen="OpenDialog" DialogIsOpenStatus="DialogIsOpenStatus" />
+<UpdateUser DialogIsOpen="OpenUpdateDialog" DialogIsOpenStatus="UpdateDialogIsOpenStatus" ID="@EntityID" OnSuccessSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); }))" />
+<ResetPassword DialogIsOpen="OpenResetPasswordDialog" DialogIsOpenStatus="ResetPasswordDialogIsOpenStatus" ID="@EntityID" OnSuccesSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); }))" />
+<DeleteUser DialogIsOpen="OpenDeleteDialog" DialogIsOpenStatus="DeleteDialogIsOpenStatus" ID="@EntityID" OnSuccesSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); }))" />
 
 @code
 {
@@ -84,6 +99,18 @@
             this.StateHasChanged();
         }
     }
+
+    public string EntityID { get; set; }
+
+    public bool OpenDialog { get; set; }
+    public bool OpenUpdateDialog { get; set; }
+    public bool OpenResetPasswordDialog { get; set; }
+    public bool OpenDeleteDialog { get; set; }
+
+    private void DialogIsOpenStatus(bool isOpened) => OpenDialog = isOpened;
+    private void UpdateDialogIsOpenStatus(bool isOpened) => OpenUpdateDialog = isOpened;
+    private void ResetPasswordDialogIsOpenStatus(bool isOpened) => OpenResetPasswordDialog = isOpened;
+    private void DeleteDialogIsOpenStatus(bool isOpened) => OpenDeleteDialog = isOpened;
 
     protected override async Task OnInitializedAsync() => await GetPaginateData();
 

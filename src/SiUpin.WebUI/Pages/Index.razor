@@ -181,7 +181,7 @@
                                         <MapsLegendTitleStyle Size="18px" />
                                     </MapsLegendSettings>
                                     <MapsLayers>
-                                        <MapsLayer ShapeData='new {dataOptions ="data/maps/usa.json"}' ShapeDataPath="State" ShapePropertyPath="@ShapePropertyPath" DataSource="@ColorMappingData">
+                                        <MapsLayer ShapeData='new {dataOptions = "data/maps/indonesia.json"}' ShapeDataPath="State" ShapePropertyPath="@ShapePropertyPath" DataSource="@ColorMappingData">
                                             <MapsShapeSettings Fill="#E5E5E5" ColorValuePath="@ColorValuePath">
                                                 <MapsShapeBorder Width="0.2" Color="#000000" />
                                                 <MapsShapeColorMappings>
@@ -193,7 +193,7 @@
                                                     <MapsShapeColorMapping From="@ColorMappingFromSix" To="@ColorMappingToSix" Color="@ColorMappingColorSix" Label="@ColorMappingLabelSix" Value="@ColorMappingValueSix" />
                                                 </MapsShapeColorMappings>
                                             </MapsShapeSettings>
-                                            <MapsLayerTooltipSettings Visible="true" ValuePath="State" Format=" <b> ${State}</b> <br> Inches : ${Inches} <br> Category : ${Value}" />
+                                            <MapsLayerTooltipSettings Visible="true" ValuePath="State" Format=" <b> ${State}</b> <br> Total UPH : ${Inches}" />
                                         </MapsLayer>
                                     </MapsLayers>
                                 </SfMaps>
@@ -221,7 +221,7 @@
     // maps
     public string ColorMappingTypeValue = "Range";
     public string ShapePropertyPath = "name";
-    public string LegendText = "Inches";
+    public string LegendText = "Total UPH";
     public string MinDisplay = "none";
     public double MinOpacity = 0;
     public double MaxOpacity = 0;
@@ -229,6 +229,7 @@
     public string Display = "none";
     public double MaxRange = 1;
     public bool OpacityChecked;
+
     private void OpacityChange(Syncfusion.Blazor.Buttons.ChangeEventArgs<bool> args)
     {
         OpacityChecked = args.Checked;
@@ -241,26 +242,31 @@
             MinDisplay = "none";
         }
     }
+
     private void MinRangeChange(Microsoft.AspNetCore.Components.ChangeEventArgs args)
     {
         MinRange = Convert.ToDouble(args.Value);
         MinOpacity = MinRange;
     }
+
     private void MaxRangeChange(Microsoft.AspNetCore.Components.ChangeEventArgs args)
     {
         MaxRange = Convert.ToDouble(args.Value);
         MaxOpacity = MaxRange;
     }
+
     public class Type
     {
         public string Value { get; set; }
         public string Name { get; set; }
     };
+
     public List<Type> ColorMappingType = new List<Type> {
         new Type { Value="Range", Name="Range" },
         new Type { Value="Equal", Name="Equal" },
         new Type { Value="Desaturation", Name="Desaturation" }
     };
+
     public string ColorValuePath = "Inches";
     public double? ColorMappingFromOne = 0.1;
     public double? ColorMappingToOne = 1;
@@ -408,63 +414,49 @@
             ColorMappingValueSix = null;
         }
     }
+
     public class ColorMappingDatasource
     {
         public string State;
         public double Inches;
         public string Value;
     }
-    public List<ColorMappingDatasource> ColorMappingData = new List<ColorMappingDatasource> {
-        new ColorMappingDatasource {State= "Alabama", Inches= 5.37, Value= "High" },
-        new ColorMappingDatasource {State= "Alaska", Inches=1.15, Value= "Low" },
-        new ColorMappingDatasource {State= "Arizona", Inches=0.77, Value= "Low" },
-        new ColorMappingDatasource {State= "Arkansas", Inches=4.99, Value= "High" },
-        new ColorMappingDatasource {State= "California", Inches=1.93, Value= "Low" },
-        new ColorMappingDatasource {State= "Colorado", Inches=1.56, Value= "Low" },
-        new ColorMappingDatasource {State= "Connecticut", Inches=4.35, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Delaware", Inches=4.01, Value= "High" },
-        new ColorMappingDatasource {State= "Florida", Inches=3.63, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Georgia", Inches=4.16, Value= "High" },
-        new ColorMappingDatasource {State= "Hawaii", Inches=5.94, Value= "High" },
-        new ColorMappingDatasource {State= "Idaho", Inches=1.75, Value= "Low" },
-        new ColorMappingDatasource {State= "Illinois", Inches=3.79, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Indiana", Inches=3.94, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Iowa", Inches=3.25, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Kansas", Inches=3.00, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Kentucky", Inches=4.61, Value= "High" },
-        new ColorMappingDatasource {State= "Louisiana", Inches=5.22, Value= "High" },
-        new ColorMappingDatasource {State= "Maine", Inches=3.49, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Maryland", Inches=3.93, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Massachusetts", Inches=4.06, Value= "High" },
-        new ColorMappingDatasource {State= "Michigan", Inches=2.62, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Minnesota", Inches=2.19, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Mississippi", Inches=5.77, Value= "High" },
-        new ColorMappingDatasource {State= "Missouri", Inches=4.12, Value= "High" },
-        new ColorMappingDatasource {State= "Montana", Inches=1.51, Value= "Low" },
-        new ColorMappingDatasource {State= "Nebraska", Inches=2.60, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Nevada", Inches=0.96, Value= "Low" },
-        new ColorMappingDatasource {State= "New Hampshire", Inches=3.54, Value= "Moderate" },
-        new ColorMappingDatasource {State= "New Jersey", Inches=4.13, Value= "High" },
-        new ColorMappingDatasource {State= "New Mexico", Inches=0.82, Value= "Low" },
-        new ColorMappingDatasource {State= "New York", Inches=3.41, Value= "Moderate" },
-        new ColorMappingDatasource {State= "North Carolina", Inches=4.14, Value= "High" },
-        new ColorMappingDatasource {State= "North Dakota", Inches=1.50, Value= "Low" },
-        new ColorMappingDatasource {State= "Ohio", Inches=3.53, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Oklahoma", Inches=3.84, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Oregon", Inches=2.33, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Pennsylvania", Inches=3.67, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Rhode Island", Inches=4.23, Value= "High" },
-        new ColorMappingDatasource {State= "South Carolina", Inches=3.83, Value= "Moderate" },
-        new ColorMappingDatasource {State= "South Dakota", Inches=2.17, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Tennessee", Inches=5.15, Value= "High" },
-        new ColorMappingDatasource {State= "Texas", Inches=2.50, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Utah", Inches=1.16, Value= "Low" },
-        new ColorMappingDatasource {State= "Vermont", Inches=3.40, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Virginia", Inches=3.91, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Washington", Inches=2.90, Value= "Moderate" },
-        new ColorMappingDatasource {State= "West Virginia", Inches=4.06, Value= "High" },
-        new ColorMappingDatasource {State= "Wisconsin", Inches=2.73, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Wyoming", Inches=1.42, Value= "Low" }
+
+    public List<ColorMappingDatasource> ColorMappingData = new List<ColorMappingDatasource>
+{
+        new ColorMappingDatasource {State= "Aceh", Inches= 31, Value= "High" },
+        new ColorMappingDatasource {State= "Kalimantan Timur", Inches=1.15, Value= "Low" },
+        new ColorMappingDatasource {State= "Jawa Barat", Inches=0.77, Value= "Low" },
+        new ColorMappingDatasource {State= "Jawa Tengah", Inches=4.99, Value= "High" },
+        new ColorMappingDatasource {State= "Bengkulu", Inches=1.93, Value= "Low" },
+        new ColorMappingDatasource {State= "Banten", Inches=1.56, Value= "Low" },
+        new ColorMappingDatasource {State= "Jakarta Raya", Inches=4.35, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Kalimantan Barat", Inches=4.01, Value= "High" },
+        new ColorMappingDatasource {State= "Lampung", Inches=3.63, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Sumatera Selatan", Inches=4.16, Value= "High" },
+        new ColorMappingDatasource {State= "Bangka-Belitung", Inches=5.94, Value= "High" },
+        new ColorMappingDatasource {State= "Bali", Inches=1.75, Value= "Low" },
+        new ColorMappingDatasource {State= "Jawa Timur", Inches=3.79, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Kalimantan Selatan", Inches=3.94, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Nusa Tenggara Timur", Inches=3.25, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Sulawesi Selatan", Inches=3.00, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Sulawesi Barat", Inches=4.61, Value= "High" },
+        new ColorMappingDatasource {State= "Kepulauan Riau", Inches=5.22, Value= "High" },
+        new ColorMappingDatasource {State= "Gorontalo", Inches=3.49, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Jambi", Inches=3.93, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Kalimantan Tengah", Inches=4.06, Value= "High" },
+        new ColorMappingDatasource {State= "Irian Jaya Barat", Inches=2.62, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Sumatera Utara", Inches=2.62, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Riau", Inches=2.62, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Sulawesi Utara", Inches=51, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Maluku Utara", Inches=2.62, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Sumatera Barat", Inches=2.62, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Yogyakarta", Inches=2.62, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Maluku", Inches=2.62, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Nusa Tenggara Barat", Inches=2.62, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Sulawesi Tenggara", Inches=2.62, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Sulawesi Tengah", Inches=2.62, Value= "Moderate" },
+        new ColorMappingDatasource {State= "Papua", Inches=2.62, Value= "Moderate" }
     };
 
 }

@@ -3,8 +3,18 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
-    <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Pages\Admin\Guest\**" />
+    <Compile Remove="Pages\Berita\**" />
+    <Content Remove="Pages\Admin\Guest\**" />
+    <Content Remove="Pages\Berita\**" />
+    <EmbeddedResource Remove="Pages\Admin\Guest\**" />
+    <EmbeddedResource Remove="Pages\Berita\**" />
+    <None Remove="Pages\Admin\Guest\**" />
+    <None Remove="Pages\Berita\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Include="..\..\.editorconfig" Link=".editorconfig" />
@@ -27,32 +37,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Pages\Admin\Berita\" />
-    <Folder Include="Pages\Admin\Guest\" />
-    <Folder Include="Pages\Admin\JenisKomoditi\" />
-    <Folder Include="Pages\Admin\Kemitraan\" />
-    <Folder Include="Pages\Admin\ProdukOlahan\" />
-    <Folder Include="Pages\Berita\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Update="Pages\Admin\Cluster\Index.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
     <Content Update="Pages\Admin\Index.razor">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-    </Content>
-    <Content Update="Pages\Admin\Informasi\Index.razor">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-    </Content>
-    <Content Update="Pages\Admin\Katalog\Detail.razor">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-    </Content>
-    <Content Update="Pages\Admin\Katalog\Index.razor">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
     </Content>
     <Content Update="Pages\Admin\Uph\Detail.razor">

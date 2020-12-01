@@ -27,10 +27,15 @@ namespace SiUpin.Application.Uphs.Queries.GetAllUphProduk
         {
             try
             {
-                List<UphProduk> records;
-                List<File> files;
-
                 int totalRecords;
+
+                List<UphProduk> records;
+                List<File> files = await _context.Files
+                    .AsNoTracking()
+                    .Where(x => x.EntityType == Constants.File.EntityType.UPH_PRODUK && !x.Name.Contains(".docx"))
+                    .ToListAsync(cancellationToken);
+
+                var filesUph = files.Select(s => s.EntityID);
 
                 if (!string.IsNullOrEmpty(request.FilterJenisKomoditiID))
                 {
@@ -38,18 +43,16 @@ namespace SiUpin.Application.Uphs.Queries.GetAllUphProduk
                         .AsNoTracking()
                         .Include(u => u.Uph).ThenInclude(p => p.Provinsi)
                         .Include(a => a.ProdukOlahan).ThenInclude(b => b.JenisKomoditi)
-                        .Where(x => x.Name.Contains(request.FilterByName ?? "") &&
+                        .Where(x => filesUph.Contains(x.UphProdukID) && x.Name.Contains(request.FilterByName ?? "") &&
                                 x.ProdukOlahan.JenisKomoditi.JenisKomoditiID == request.FilterJenisKomoditiID)
                         .Skip((request.PageNumber - 1) * request.PageSize)
                         .Take(request.PageSize)
                         .ToListAsync(cancellationToken);
 
-                    var photos = await _context.Files.AsNoTracking().ToListAsync(cancellationToken);
-
                     totalRecords = _context.UphProduks
                         .AsNoTracking()
                         .Include(a => a.ProdukOlahan).ThenInclude(b => b.JenisKomoditi)
-                        .Where(x => x.Name.Contains(request.FilterByName ?? "") &&
+                        .Where(x => filesUph.Contains(x.UphProdukID) && x.Name.Contains(request.FilterByName ?? "") &&
                                 x.ProdukOlahan.JenisKomoditi.JenisKomoditiID == request.FilterJenisKomoditiID)
                         .Count();
                 }
@@ -59,15 +62,16 @@ namespace SiUpin.Application.Uphs.Queries.GetAllUphProduk
                         .AsNoTracking()
                         .Include(u => u.Uph).ThenInclude(p => p.Provinsi)
                         .Include(a => a.ProdukOlahan).ThenInclude(b => b.JenisKomoditi)
-                        .Where(x => x.Name.Contains(request.FilterByName ?? ""))
+                        .Where(x => filesUph.Contains(x.UphProdukID) && x.Name.Contains(request.FilterByName ?? ""))
                         .Skip((request.PageNumber - 1) * request.PageSize)
                         .Take(request.PageSize)
                         .ToListAsync(cancellationToken);
 
-                    totalRecords = _context.UphProduks.AsNoTracking().Count(x => x.Name.Contains(request.FilterByName ?? ""));
+                    totalRecords = _context.UphProduks
+                        .AsNoTracking()
+                        .Where(x => filesUph.Contains(x.UphProdukID))
+                        .Count(x => x.Name.Contains(request.FilterByName ?? ""));
                 }
-
-                files = await _context.Files.Where(x => x.EntityType == Constants.File.EntityType.UPH_PRODUK).ToListAsync(cancellationToken);
 
                 List<UphProdukDTO> listOfDTO = new List<UphProdukDTO>();
 
@@ -75,8 +79,14 @@ namespace SiUpin.Application.Uphs.Queries.GetAllUphProduk
                 {
                     foreach (var record in records)
                     {
+                        string fileName;
+
                         var file = files.Where(x => x.EntityID == record.UphProdukID).FirstOrDefault();
-                        string fileName = file != null ? $"images/{file.Name}" : $"images/image_not_available.png";
+
+                        if (file != null && !string.IsNullOrEmpty(file.Name))
+                            fileName = $"images/{file.Name}";
+                        else
+                            continue;
 
                         UphProdukDTO dto = new UphProdukDTO
                         {
@@ -93,7 +103,7 @@ namespace SiUpin.Application.Uphs.Queries.GetAllUphProduk
                 }
                 else
                 {
-                    throw new Exception(ErrorMessage.DataNotFound);
+                    throw new Exception($"{ErrorMessage.DataNotFound} Produk");
                 }
 
                 return new GetAllUphProdukResponse

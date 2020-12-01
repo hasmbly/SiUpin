@@ -1,8 +1,216 @@
 ﻿@layout AnonymousLayout
 
-@page "/uph/{uphID:int}"
+@page "/uph/{uphID}"
 
+@inject HttpClient Http
+@inject IMatToaster Toaster
 
-@code {
+@using SiUpin.Shared.UphProduks.Queries.GetAllUphProdukByUphID
+@using SiUpin.Shared.Uphs.Queries.GetUph
+@using SiUpin.Shared.Common.ApiEnvelopes
 
+<div class="mat-layout-grid mat-elevation-z4 mt-3">
+    <div class="mat-layout-grid-inner">
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-left mat-layout-grid-cell-span-6">
+            @if (IsLoading)
+            {
+                <MatDialog @bind-IsOpen="IsLoading" CanBeClosed="false">
+                    <MatDialog>Please Wait..</MatDialog>
+                    <MatDialogContent>
+                        <MatProgressBar Indeterminate="true" Closed="!IsLoading"></MatProgressBar>
+                    </MatDialogContent>
+                </MatDialog>
+            }
+            else
+            {
+                if (Uph.Result != null)
+                {
+                    <MatH6><MatIcon Icon="@MatIconNames.Verified_user" />&nbsp;&nbsp; @Uph.Result.Name</MatH6>
+                    <MatSubtitle1><MatIcon Icon="@MatIconNames.Person_pin" />&nbsp;&nbsp; @Uph.Result.Ketua</MatSubtitle1>
+                    <MatSubtitle1><MatIcon Icon="@MatIconNames.Contacts" />&nbsp;&nbsp; @Uph.Result.Handphone</MatSubtitle1>
+                    <MatSubtitle1><MatIcon Icon="@MatIconNames.Location_on" />&nbsp;&nbsp; @Uph.Result.Alamat</MatSubtitle1>
+                    <MatSubtitle1><MatIcon Icon="@MatIconNames.Location_city" />&nbsp; &nbsp; @Uph.Result.Kota</MatSubtitle1>
+                    <MatSubtitle1><MatIcon Icon="@MatIconNames.Date_range" />&nbsp; &nbsp; @Uph.Result.TahunBerdiri</MatSubtitle1>
+                }
+            }
+        </div>
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-right mat-layout-grid-cell-span-6">
+            <MatIcon>
+                <img src="images/produk_olahan.png" />
+            </MatIcon>
+        </div>
+    </div>
+</div>
+
+<div class="mat-layout-grid mat-elevation-z4 mt-3">
+    <div class="mat-layout-grid-inner">
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
+            <MatTextField @bind-Value="@filterByName" HelperText="Filter Berdasarkan: Nama Produk" Label="Cari Produk" Icon="@MatIconNames.Search"></MatTextField>
+        </div>
+
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-middle mat-layout-grid-cell-span-12">
+            <div class="mat-layout-grid-inner">
+
+                @if (IsLoading)
+                {
+                    <MatDialog @bind-IsOpen="IsLoading" CanBeClosed="false">
+                        <MatDialog>Please Wait..</MatDialog>
+                        <MatDialogContent>
+                            <MatProgressBar Indeterminate="true" Closed="!IsLoading"></MatProgressBar>
+                        </MatDialogContent>
+                    </MatDialog>
+                }
+                else
+                {
+                    if (items != null && items.Result != null)
+                    {
+                        foreach (var item in items.Result.Data)
+                        {
+                            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-3">
+                                <MatCard>
+                                    <MatCardContent>
+                                        <MatCardMedia Wide="true" ImageUrl="@item.UrlOriginPhoto" Style="background-size: 100% 15vw; height: 15vw; object-fit: cover; "></MatCardMedia>
+                                        <div class="has-mat-card-content">
+                                            <MatSubtitle1 class="has-mat-card-clean-margin">
+                                                @item.Name
+                                            </MatSubtitle1>
+                                            <MatSubtitle2 class="has-mat-card-clean-margin" Style="color: rgb(250, 89, 29);">
+                                                @item.Harga
+                                            </MatSubtitle2>
+                                            <MatCaption class="has-mat-card-clean-margin">
+                                                @item.Provinsi
+                                            </MatCaption>
+                                        </div>
+                                    </MatCardContent>
+                                </MatCard>
+                            </div>
+                        }
+                    }
+                }
+            </div>
+        </div>
+
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-right mat-layout-grid-cell-span-12">
+            <MatPaginator Length="totalCount" PageSize="pageSize" Page="OnPage"></MatPaginator>
+        </div>
+    </div>
+</div>
+
+<MatSnackbar @bind-IsOpen="@snackBarIsOpen">
+    <MatSnackbarContent>@snackBarMessage</MatSnackbarContent>
+</MatSnackbar>
+
+@code
+{
+    private bool IsLoading = false;
+    private bool snackBarIsOpen = false;
+
+    public string snackBarMessage { get; set; }
+
+    [Parameter]
+    public string KatalogName { get; set; }
+
+    [Parameter]
+    public string UphID { get; set; }
+
+    private ApiResponse<GetUphResponse> Uph;
+    private ApiResponse<GetAllUphProdukByUphIDResponse> items;
+
+    private int pageSize = Constants.Pagination.PageSize;
+    private int pageIndex = 0;
+    private int totalCount = 0;
+
+    private string _filterByName = "";
+
+    public string filterByName
+    {
+        get => _filterByName;
+        set
+        {
+            _filterByName = value;
+
+            InvokeAsync(async () => { await GetPaginateData(pageSize, 1, _filterByName); });
+
+            this.StateHasChanged();
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetUph();
+        await GetPaginateData();
+    }
+
+    private async Task OnPage(MatPaginatorPageEvent e)
+    {
+        pageSize = e.PageSize;
+        pageIndex = e.PageIndex;
+
+        await GetPaginateData(pageSize, pageIndex + 1, _filterByName);
+    }
+
+    private async Task GetUph()
+    {
+        IsLoading = true;
+
+        Uph = await Http.GetFromJsonAsync<ApiResponse<GetUphResponse>>($"{Constants.URI.Uph.Base}/{UphID}");
+
+        if (Uph.Status.IsError)
+        {
+            Toaster.Add(Uph.Status.Message, MatToastType.Danger);
+
+            IsLoading = false;
+
+            StateHasChanged();
+        }
+        else
+        {
+            if (Uph.Result != null)
+            {
+                IsLoading = false;
+
+                StateHasChanged();
+            }
+        }
+    }
+
+    private async Task GetPaginateData(
+        int pageSize = Constants.Pagination.PageSize,
+        int pageNumber = Constants.Pagination.PageNumber,
+        string filterName = null
+        )
+    {
+        IsLoading = true;
+
+        var client = await Http.PostAsJsonAsync<GetAllUphProdukByUphIDRequest>(Constants.URI.UphProduk.PaginateByUphID, new GetAllUphProdukByUphIDRequest
+        {
+            PageSize = pageSize,
+            PageNumber = pageNumber,
+            UphID = UphID,
+            FilterByName = filterName ?? ""
+        });
+
+        items = Task.FromResult(await client.Content.ReadFromJsonAsync<ApiResponse<GetAllUphProdukByUphIDResponse>>()).Result;
+
+        if (items.Status.IsError)
+        {
+            snackBarIsOpen = true;
+            snackBarMessage = items.Status.Message;
+
+            IsLoading = false;
+
+            StateHasChanged();
+        }
+        else
+        {
+            if (items.Result.Data.Count() > 0)
+            {
+                totalCount = items.Result.Pagination.TotalCount;
+
+                IsLoading = false;
+
+                StateHasChanged();
+            }
+        }
+    }
 }

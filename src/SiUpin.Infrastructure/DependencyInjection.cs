@@ -13,14 +13,12 @@ namespace SiUpin.Infrastructure
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
             var fortifexOptions = configuration.GetSection(SiUpinOptions.RootSection).Get<SiUpinOptions>();
+            var connection = configuration["ConnectionStrings:Database"];
 
             services.AddTransient<IDateTimeOffsetService, DateTimeOffsetService>();
             services.AddTransient<IFileService, FileService>();
 
-            System.Console.WriteLine($"GetConnectionString: {configuration.GetConnectionString("Database")}");
-
-            services.AddDbContext<SiUpinDBContext>(options =>
-                        options.UseMySQL(configuration.GetConnectionString("Database")));
+            services.AddDbContext<SiUpinDBContext>(options => options.UseMySQL(connection));
 
             services.AddScoped<ISiUpinDBContext>(provider => provider.GetService<SiUpinDBContext>());
 

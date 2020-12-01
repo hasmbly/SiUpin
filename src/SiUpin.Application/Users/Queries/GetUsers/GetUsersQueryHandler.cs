@@ -41,6 +41,7 @@ namespace SiUpin.Application.Users.Queries.GetUsers
                                 x.Provinsi.ProvinsiID == request.FilterProvinsiID ||
                                 x.Kota.KotaID == request.FilterKotaID ||
                                 x.Kecamatan.KecamatanID == request.FilterKecamatanID)
+                        .OrderByDescending(o => o.Created)
                         .Skip((request.PageNumber - 1) * request.PageSize)
                         .Take(request.PageSize)
                         .ToListAsync(cancellationToken);
@@ -68,6 +69,7 @@ namespace SiUpin.Application.Users.Queries.GetUsers
                         .Include(u => u.Kecamatan)
                         .Where(x => x.Username.Contains(request.FilterByUsernameOrEmail ?? "") || x.Email.Contains(request.FilterByUsernameOrEmail ?? "") ||
                             x.Fullname.Contains(request.FilterByUsernameOrEmail ?? ""))
+                        .OrderByDescending(o => o.Created)
                         .Skip((request.PageNumber - 1) * request.PageSize)
                         .Take(request.PageSize)
                         .ToListAsync(cancellationToken);

@@ -1,6 +1,8 @@
 ﻿@inject NavigationManager Navigation
 @inject AuthenticationStateProvider _authenticationStateProvider
 
+@using SiUpin.Shared.Modal.Auth
+
 <MatAnchorUtils></MatAnchorUtils>
 <MatAppBar Style="z-index: 100; background-color: #fcfcfc;" Class="mat-elevation-z3">
     @if (IsAdmin)
@@ -77,8 +79,8 @@
                             <MatButton Link="/admin" Raised="true" Icon="@MatIconNames.Vpn_key">Admin</MatButton>
                         </Authorized>
                         <NotAuthorized>
-                            <MatButton OnClick="() => { OpenLoginDialog = true; }" Raised="true" Icon="@MatIconNames.Vpn_key">Log In</MatButton>
-                            <Login DialogIsOpen="OpenLoginDialog" DialogIsOpenStatus="DialogIsOpenStatus" />
+                            <MatButton OnClick="() => { OpenDialog = true; }" Raised="true" Icon="@MatIconNames.Vpn_key">Log In</MatButton>
+                            <Login DialogIsOpen="OpenDialog" DialogIsOpenStatus="DialogIsOpenStatus" />
                         </NotAuthorized>
                     </AuthorizeView>
                 </MatHidden>
@@ -102,8 +104,8 @@
                                 <MatButton Link="/informasi" Icon="file_copy">Informasi</MatButton>
                             </MatListItem>
                             <MatListItem>
-                                <MatButton OnClick="() => { OpenLoginDialog = true; }" Raised="true" Icon="@MatIconNames.Vpn_key">Log In</MatButton>
-                                <Login DialogIsOpen="OpenLoginDialog" DialogIsOpenStatus="DialogIsOpenStatus" />
+                                <MatButton OnClick="() => { OpenDialog = true; }" Raised="true" Icon="@MatIconNames.Vpn_key">Log In</MatButton>
+                                <Login DialogIsOpen="OpenDialog" DialogIsOpenStatus="DialogIsOpenStatus" />
                             </MatListItem>
                         </MatList>
                     </MatMenu>
@@ -127,9 +129,9 @@
 
     private void OnMenuClicked() => IsMenuClicked.InvokeAsync(null);
 
-    public bool OpenLoginDialog { get; set; }
+    public bool OpenDialog { get; set; }
 
-    private void DialogIsOpenStatus(bool status) => OpenLoginDialog = status;
+    private void DialogIsOpenStatus(bool status) => OpenDialog = status;
 
     //private async Task BeginSignOut(MouseEventArgs args)
     //{

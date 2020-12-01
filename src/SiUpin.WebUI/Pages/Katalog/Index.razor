@@ -11,7 +11,7 @@
 <div class="mat-layout-grid">
     <div class="mat-layout-grid-inner">
         <div class="mat-layout-grid-cell mat-layout-grid-cell-align-middle mat-layout-grid-cell-span-4">
-            <MatH4><strong>Katalog Produk Olahan</strong></MatH4>
+            <MatH4><strong>Katalog Produk</strong></MatH4>
         </div>
         <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2"></div>
         <div class="mat-layout-grid-cell mat-layout-grid-cell-align-right mat-layout-grid-cell-span-6">
@@ -24,26 +24,18 @@
 
 <div class="mat-layout-grid">
     <div class="mat-layout-grid-inner">
-        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-2">
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-2 mat-elevation-z3">
             <MatNavMenu>
-                <MatTextField @bind-Value="@filterByName" HelperText="Filter: Nama Produk" Label="Cari Produk" Icon="@MatIconNames.Search"></MatTextField>
+                <MatTextField @bind-Value="@filterByName" HelperText="@($"Filter: Nama {_kategoryOptionsValue?.Name}")" Label="@($"Cari {_kategoryOptionsValue?.Name}")" Icon="@MatIconNames.Search"></MatTextField>
                 <MatNavItem><MatIcon Icon="face"></MatIcon>&nbsp; Kategori</MatNavItem>
                 <MatList SingleSelection="true">
-                    <MatListItem OnClick="(() => OnClickCategory(Constants.JenisKomoditiID.Susu))">
-                        Susu
-                    </MatListItem>
-                    <MatListItem OnClick="(() => OnClickCategory(Constants.JenisKomoditiID.Daging))">
-                        Daging
-                    </MatListItem>
-                    <MatListItem OnClick="(() => OnClickCategory(Constants.JenisKomoditiID.Unggas))">
-                        Unggas
-                    </MatListItem>
-                    <MatListItem OnClick="(() => OnClickCategory(Constants.JenisKomoditiID.Susu))">
-                        Hasil Ternak
-                    </MatListItem>
-                    <MatListItem OnClick="(() => OnClickCategory(Constants.JenisKomoditiID.Susu))">
-                        Limbah
-                    </MatListItem>
+                    <MatRadioGroup @bind-Value="@kategoryOptionsValue" Items="@kategoryOptions">
+                        <ItemTemplate>
+                            <div>
+                                <MatRadioButton Value="@context">@context.Name</MatRadioButton>
+                            </div>
+                        </ItemTemplate>
+                    </MatRadioGroup>
                 </MatList>
             </MatNavMenu>
         </div>
@@ -95,6 +87,7 @@
         </div>
     </div>
 </div>
+
 @code
 {
     private bool IsLoading = false;
@@ -110,6 +103,7 @@
 
     private string _filterByName = "";
     private string _filterJenisKomoditiID = "";
+    private Kategories _kategoryOptionsValue = new Kategories("", "Produk");
 
     public string filterByName
     {
@@ -119,6 +113,20 @@
             _filterByName = value;
 
             InvokeAsync(async () => { await GetPaginateData(pageSize, 1, _filterByName, _filterJenisKomoditiID); });
+
+            this.StateHasChanged();
+        }
+    }
+
+    public Kategories kategoryOptionsValue
+    {
+        get => _kategoryOptionsValue;
+        set
+        {
+            _kategoryOptionsValue = value;
+            _filterJenisKomoditiID = _kategoryOptionsValue.ID;
+
+            InvokeAsync(async () => { await OnClickCategory(_kategoryOptionsValue.ID); });
 
             this.StateHasChanged();
         }
@@ -137,21 +145,26 @@
         await GetPaginateData(pageSize, pageIndex + 1, _filterByName, _filterJenisKomoditiID);
     }
 
-    private async Task OnClickCategory(string filterJenisKomoditiID)
+    private async Task OnClickCategory(string filterJenisKomoditiID = "")
     {
         _filterJenisKomoditiID = filterJenisKomoditiID;
+
+        pageIndex = 0; // always reset to page 1 when switch between menu
 
         this.StateHasChanged();
 
         await GetPaginateData(pageSize, pageIndex + 1, "", _filterJenisKomoditiID);
     }
 
-    private async Task GetPaginateData(
-        int pageSize = Constants.Pagination.PageSize,
-        int pageNumber = Constants.Pagination.PageNumber,
-        string filterName = null,
-        string filterJenisKomoditiID = "")
+    private async Task GetPaginateData
+        (
+            int pageSize = Constants.Pagination.PageSize,
+            int pageNumber = Constants.Pagination.PageNumber,
+            string filterName = null,
+            string filterJenisKomoditiID = ""
+        )
     {
+
         IsLoading = true;
 
         var client = await Http.PostAsJsonAsync<GetAllUphProdukRequest>(Constants.URI.UphProduk.Paginate, new GetAllUphProdukRequest
@@ -182,6 +195,41 @@
 
                 StateHasChanged();
             }
+            else
+            {
+                Toaster.Add("Maaf, Data tidak ada", MatToastType.Danger);
+
+                IsLoading = false;
+
+                StateHasChanged();
+            }
         }
     }
+
+    public class Kategories
+    {
+        public string ID { get; set; }
+        public string Name { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
+
+        public Kategories(string id, string name)
+        {
+            ID = id;
+            Name = name;
+        }
+    }
+
+    private Kategories[] kategoryOptions = new[]
+    {
+        new Kategories("", "Semua"),
+        new Kategories(Constants.JenisKomoditiID.Susu, "Susu"),
+        new Kategories(Constants.JenisKomoditiID.Daging, "Daging"),
+        new Kategories(Constants.JenisKomoditiID.Unggas, "Unggas"),
+        new Kategories(Constants.JenisKomoditiID.HasilTernak, "Hasil Ternak"),
+        new Kategories(Constants.JenisKomoditiID.Limbah, "Limbah")
+    };
 }

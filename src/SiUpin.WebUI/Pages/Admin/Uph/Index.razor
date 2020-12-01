@@ -1,6 +1,7 @@
 ﻿@page "/admin/uph"
 
 @inject HttpClient Http
+@inject NavigationManager Navigation
 
 @using SiUpin.Shared.Uphs.Queries.GetAllUph
 @using SiUpin.Shared.Common.ApiEnvelopes
@@ -32,7 +33,7 @@
     <MatTextField @bind-Value="@filterByName" HelperText="Filter Berdasarkan: Nama Uph" Label="Cari Uph" Icon="@MatIconNames.Search"></MatTextField>
 </p>
 
-<MatTable Items="sortedData" PageSize="pageSize" AllowSelection="true" ShowPaging="false" UseSortHeaderRow="true" class="mat-elevation-z5 mt-1">
+<MatTable Items="sortedData" PageSize="pageSize" AllowSelection="true" SelectionChanged="SelectionChangedEvent" ShowPaging="false" UseSortHeaderRow="true" class="mat-elevation-z5 mt-1">
     <MatTableHeader>
         <MatSortHeaderRow SortChanged="SortData">
             <MatSortHeader SortId="1"><span style="width:150px">Nama UPH</span></MatSortHeader>
@@ -81,7 +82,20 @@
         }
     }
 
-    protected override async Task OnInitializedAsync() => await GetPaginateData();
+    protected override async Task OnInitializedAsync()
+    {
+        await GetPaginateData();
+    }
+
+    private void SelectionChangedEvent(object row)
+    {
+        if (row != null)
+        {
+            Navigation.NavigateTo($"/uph/{ ((UphDTO)row).UphID }");
+        }
+
+        StateHasChanged();
+    }
 
     private async Task OnPage(MatPaginatorPageEvent e)
     {

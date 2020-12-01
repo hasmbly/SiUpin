@@ -23,9 +23,9 @@ namespace SiUpin.Application.Users.Commands
         {
             var result = new CreateUserResponse();
 
-            if (await _context.Users.AnyAsync(x => x.Username == request.Username, cancellationToken))
+            if (await _context.Users.AnyAsync(x => x.Username == request.Username || x.Email == request.Email, cancellationToken))
             {
-                throw new Exception("Maaf Username sudah di gunakan");
+                throw new Exception("Maaf Username atau Email sudah di gunakan");
             }
             else
             {
@@ -36,7 +36,21 @@ namespace SiUpin.Application.Users.Commands
                 {
                     Username = request.Username,
                     PasswordHash = passwordHash,
-                    PasswordSalt = passwordSalt
+                    PasswordSalt = passwordSalt,
+
+                    Alamat = request.Alamat,
+                    Email = request.Email,
+                    Fullname = request.Fullname,
+                    Instansi = request.Instansi,
+                    Jabatan = request.Jabatan,
+                    NIP = request.NIP,
+                    Telepon = request.Telepon,
+
+                    RoleID = request.RoleID,
+                    ProvinsiID = request.ProvinsiID,
+                    KotaID = request.KotaID,
+                    KecamatanID = request.KecamatanID,
+                    KelurahanID = request.KelurahanID
                 };
 
                 await _context.Users.AddAsync(user);

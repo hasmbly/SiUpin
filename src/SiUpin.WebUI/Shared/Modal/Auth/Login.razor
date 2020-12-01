@@ -1,0 +1,99 @@
+﻿@inject HttpClient Http
+@inject IMatToaster Toaster
+@inject AuthenticationStateProvider _authenticationStateProvider
+@inject NavigationManager _navigationManager
+
+@namespace SiUpin.Shared.Modal.Auth
+
+@using SiUpin.Shared.Auth.Queries.Login
+@using SiUpin.Shared.Common.ApiEnvelopes
+
+@if (IsLoading)
+{
+    <MatDialog @bind-IsOpen="IsLoading" CanBeClosed="false">
+        <MatDialog>Please Wait..</MatDialog>
+        <MatDialogContent>
+            <MatProgressBar Indeterminate="true" Closed="!IsLoading"></MatProgressBar>
+        </MatDialogContent>
+    </MatDialog>
+}
+else
+{
+    <MatDialog @bind-IsOpen="DialogIsOpen" CanBeClosed="false">
+        <MatDialogTitle>Log In</MatDialogTitle>
+        <MatDialogContent>
+            <EditForm Model="Model" OnValidSubmit="Submit">
+                <DataAnnotationsValidator />
+
+                <p>
+                    <MatTextField @bind-Value="Model.UsernameOrEmail" Label="Username or Email" />
+                    <MatCaption Class="mt-1">
+                        <ValidationMessage For="@(() => Model.UsernameOrEmail)" />
+                    </MatCaption>
+                </p>
+
+                <p>
+                    <MatTextField @bind-Value="Model.Password" Label="Password" Type="password" />
+                    <MatCaption Class="mt-1">
+                        <ValidationMessage For="@(() => Model.Password)" />
+                    </MatCaption>
+                </p>
+
+            </EditForm>
+        </MatDialogContent>
+        <MatDialogActions>
+            <MatButton OnClick="CancelClick">Cancel</MatButton>
+            <MatButton Raised="true" OnClick="Submit">Log In</MatButton>
+        </MatDialogActions>
+    </MatDialog>
+}
+
+@code
+{
+    private bool IsLoading = false;
+
+    [Parameter]
+    public bool DialogIsOpen { get; set; } = false;
+
+    [Parameter]
+    public EventCallback<bool> DialogIsOpenStatus { get; set; }
+
+    public bool IsDisabledLoginButton { get; set; }
+
+    public LoginRequest Model { get; set; } = new LoginRequest();
+
+    public ApiResponse<LoginResponse> Response { get; set; }
+
+    public void CancelClick() => DialogIsOpenStatus.InvokeAsync(false);
+
+    private async Task Submit()
+    {
+        IsLoading = true;
+
+        var client = await Http.PostAsJsonAsync<LoginRequest>(Constants.URI.Auth.Login, new LoginRequest
+        {
+            UsernameOrEmail = Model.UsernameOrEmail,
+            Password = Model.Password
+        });
+
+        Response = Task.FromResult(await client.Content.ReadFromJsonAsync<ApiResponse<LoginResponse>>()).Result;
+
+        if (!Response.Status.IsError)
+        {
+            await ((ServerAuthenticationStateProvider)_authenticationStateProvider).MarkUserAsAuthenticatedAsync(Response.Result.Token);
+
+            IsLoading = false;
+
+            await DialogIsOpenStatus.InvokeAsync(false);
+
+            _navigationManager.NavigateTo("/admin");
+        }
+        else
+        {
+            Toaster.Add(Response.Status.Message, MatToastType.Danger);
+
+            IsLoading = false;
+        }
+
+    }
+}

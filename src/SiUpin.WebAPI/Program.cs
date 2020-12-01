@@ -16,12 +16,7 @@ namespace SiUpin.WebAPI
                 {
                     webBuilder.UseStartup<Startup>();
                     webBuilder.UseUrls("http://127.0.0.1:5001");
-                    webBuilder.UseKestrel()
-                            .ConfigureKestrel((context, serverOptions) =>
-                            {
-                                serverOptions.Limits.MaxRequestBodySize = 2147483648;
-
-                            });
+                    webBuilder.UseKestrel();
                 });
     }
 }

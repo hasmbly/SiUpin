@@ -35,6 +35,7 @@ namespace SiUpin.WebUI
             });
 
             builder.Services.AddScoped<AuthenticationStateProvider, ServerAuthenticationStateProvider>();
+
             builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient(httpClientName));
 
             builder.Services.AddSyncfusionBlazor();

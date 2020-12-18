@@ -60,6 +60,62 @@
                 public static readonly string Register = $"{Base}/register";
             }
 
+            public static class UphBahanBaku
+            {
+                public static readonly string Base = $"{BaseAPI}/UphBahanBaku";
+
+                public static readonly string Register = $"{Base}/register";
+                public static readonly string Paginate = $"{Base}/paginate";
+            }
+
+            public static class UphSarana
+            {
+                public static readonly string Base = $"{BaseAPI}/UphSarana";
+
+                public static readonly string Register = $"{Base}/register";
+                public static readonly string Paginate = $"{Base}/paginate";
+            }
+
+            public static class UphGmp
+            {
+                public static readonly string Base = $"{BaseAPI}/UphGmp";
+
+                public static readonly string Register = $"{Base}/register";
+                public static readonly string Paginate = $"{Base}/paginate";
+            }
+
+            public static class UphMitra
+            {
+                public static readonly string Base = $"{BaseAPI}/UphMitra";
+
+                public static readonly string Register = $"{Base}/register";
+                public static readonly string Paginate = $"{Base}/paginate";
+            }
+
+            public static class UphPasar
+            {
+                public static readonly string Base = $"{BaseAPI}/UphPasar";
+
+                public static readonly string Register = $"{Base}/register";
+                public static readonly string Paginate = $"{Base}/paginate";
+            }
+
+            public static class UphProduksi
+            {
+                public static readonly string Base = $"{BaseAPI}/UphProduksi";
+
+                public static readonly string Register = $"{Base}/register";
+                public static readonly string Paginate = $"{Base}/paginate";
+            }
+
+            public static class UphSdm
+            {
+                public static readonly string Base = $"{BaseAPI}/UphSdm";
+
+                public static readonly string Register = $"{Base}/register";
+                public static readonly string Paginate = $"{Base}/paginate";
+            }
+
             public static class Berita
             {
                 public static readonly string Base = $"{BaseAPI}/Berita";

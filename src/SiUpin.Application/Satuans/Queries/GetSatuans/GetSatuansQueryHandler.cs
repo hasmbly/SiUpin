@@ -30,10 +30,12 @@ namespace SiUpin.Application.Satuans.Queries.GetSatuans
 
                 if (records.Count > 0)
                 {
+                    int no = 1;
                     foreach (var record in records)
                     {
                         var data = new SatuanDTO
                         {
+                            No = no++,
                             SatuanID = record.SatuanID,
                             Name = record.Name
                         };

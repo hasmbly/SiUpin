@@ -77,7 +77,7 @@ namespace SiUpin.Application.Systems.Commands.SeedBerita
                             nama_uph = data.nama_uph,
                             satuan = data.satuan,
                             status = data.status,
-                            tahun = data.tahun,
+                            tahun = data.tahun
                         };
 
                         saranas.Add(entity);

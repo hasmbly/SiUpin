@@ -40,5 +40,7 @@ namespace SiUpin.Domain.Entities
         public string akhir_periode { get; set; }
         public string status { get; set; }
         public string user { get; set; }
+
+        public Uph Uph { get; set; }
     }
 }

@@ -16,6 +16,8 @@ namespace SiUpin.Infrastructure.Persistence.Configurations
 
             builder.HasIndex(e => e.UphID);
             builder.HasIndex(e => e.UphMitraID);
+
+            builder.HasOne(e => e.Uph).WithMany(p => p.UphMitras).HasForeignKey(e => e.UphID).OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

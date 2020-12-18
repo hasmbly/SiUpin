@@ -20,5 +20,7 @@ namespace SiUpin.Domain.Entities
         public string omset { get; set; }
         public string lain { get; set; }
         public string user { get; set; }
+
+        public Uph Uph { get; set; }
     }
 }

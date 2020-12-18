@@ -22,5 +22,7 @@ namespace SiUpin.Domain.Entities
         public string lokasi { get; set; }
         public string tahun { get; set; }
         public string user { get; set; }
+
+        public Uph Uph { get; set; }
     }
 }

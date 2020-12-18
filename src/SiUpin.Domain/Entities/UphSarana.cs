@@ -25,5 +25,7 @@ namespace SiUpin.Domain.Entities
         public string alasan { get; set; }
         public string lain_alasan { get; set; }
         public string user { get; set; }
+
+        public Uph Uph { get; set; }
     }
 }

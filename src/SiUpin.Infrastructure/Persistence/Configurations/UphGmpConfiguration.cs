@@ -16,6 +16,8 @@ namespace SiUpin.Infrastructure.Persistence.Configurations
 
             builder.HasIndex(e => e.UphID);
             builder.HasIndex(e => e.UphGmpID);
+
+            builder.HasOne(e => e.Uph).WithMany(p => p.UphGmps).HasForeignKey(e => e.UphID).OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

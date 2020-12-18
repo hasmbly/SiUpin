@@ -23,5 +23,7 @@ namespace SiUpin.Domain.Entities
         public string jml_gmp { get; set; }
         public string jml_hari_produksi { get; set; }
         public string user { get; set; }
+
+        public Uph Uph { get; set; }
     }
 }

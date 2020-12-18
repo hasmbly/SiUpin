@@ -40,6 +40,13 @@ namespace SiUpin.Domain.Entities
 
         public IList<UphProduk> UphProduks { get; set; }
         public IList<UphBahanBaku> UphBahanBakus { get; set; }
+        public IList<UphGmp> UphGmps { get; set; }
+        public IList<UphMitra> UphMitras { get; set; }
+        public IList<UphPasar> UphPasars { get; set; }
+        public IList<UphProduksi> UphProduksis { get; set; }
+        public IList<UphSarana> UphSaranas { get; set; }
+        public IList<UphSdm> UphSdms { get; set; }
+
         public IList<File> Files { get; set; }
         //public IList<UphParameter> UphParameters { get; set; }
 

@@ -6,20 +6,20 @@ namespace SiUpin.Infrastructure.Common
     {
         public string GetAllByEntityName(string entityName)
         {
-            if (entityName == "tb_uph" ||
-                entityName == "tb_user" ||
-                entityName == "tb_bahan_baku" ||
+            //if (entityName == "tb_uph" ||
+            //    entityName == "tb_user" ||
+            //    entityName == "tb_bahan_baku" ||
 
-                entityName == "tb_sarana" ||
-                entityName == "tb_gmp" ||
-                entityName == "tb_mitra" ||
-                entityName == "tb_pasar" ||
-                entityName == "tb_produksi" ||
-                entityName == "tb_sdm"
-                )
-            {
-                return $"select * from {entityName} limit 50";
-            }
+            //    entityName == "tb_sarana" ||
+            //    entityName == "tb_gmp" ||
+            //    entityName == "tb_mitra" ||
+            //    entityName == "tb_pasar" ||
+            //    entityName == "tb_produksi" ||
+            //    entityName == "tb_sdm"
+            //    )
+            //{
+            //    return $"select * from {entityName} limit 500";
+            //}
 
             return $"select * from {entityName}";
         }

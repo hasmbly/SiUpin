@@ -2,6 +2,7 @@
 {
     public class SatuanDTO
     {
+        public int No { get; set; }
         public string SatuanID { get; set; }
         public string Name { get; set; }
     }

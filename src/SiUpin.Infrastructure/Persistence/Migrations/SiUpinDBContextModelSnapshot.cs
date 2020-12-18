@@ -1259,6 +1259,30 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Restrict);
                 });
 
+            modelBuilder.Entity("SiUpin.Domain.Entities.UphGmp", b =>
+                {
+                    b.HasOne("SiUpin.Domain.Entities.Uph", "Uph")
+                        .WithMany("UphGmps")
+                        .HasForeignKey("UphID")
+                        .OnDelete(DeleteBehavior.Restrict);
+                });
+
+            modelBuilder.Entity("SiUpin.Domain.Entities.UphMitra", b =>
+                {
+                    b.HasOne("SiUpin.Domain.Entities.Uph", "Uph")
+                        .WithMany("UphMitras")
+                        .HasForeignKey("UphID")
+                        .OnDelete(DeleteBehavior.Restrict);
+                });
+
+            modelBuilder.Entity("SiUpin.Domain.Entities.UphPasar", b =>
+                {
+                    b.HasOne("SiUpin.Domain.Entities.Uph", "Uph")
+                        .WithMany("UphPasars")
+                        .HasForeignKey("UphID")
+                        .OnDelete(DeleteBehavior.Restrict);
+                });
+
             modelBuilder.Entity("SiUpin.Domain.Entities.UphProduk", b =>
                 {
                     b.HasOne("SiUpin.Domain.Entities.JenisTernak", "JenisTernak")
@@ -1276,6 +1300,30 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
                     b.HasOne("SiUpin.Domain.Entities.Uph", "Uph")
                         .WithMany("UphProduks")
                         .HasForeignKey("UphID");
+                });
+
+            modelBuilder.Entity("SiUpin.Domain.Entities.UphProduksi", b =>
+                {
+                    b.HasOne("SiUpin.Domain.Entities.Uph", "Uph")
+                        .WithMany("UphProduksis")
+                        .HasForeignKey("UphID")
+                        .OnDelete(DeleteBehavior.Restrict);
+                });
+
+            modelBuilder.Entity("SiUpin.Domain.Entities.UphSarana", b =>
+                {
+                    b.HasOne("SiUpin.Domain.Entities.Uph", "Uph")
+                        .WithMany("UphSaranas")
+                        .HasForeignKey("UphID")
+                        .OnDelete(DeleteBehavior.Restrict);
+                });
+
+            modelBuilder.Entity("SiUpin.Domain.Entities.UphSdm", b =>
+                {
+                    b.HasOne("SiUpin.Domain.Entities.Uph", "Uph")
+                        .WithMany("UphSdms")
+                        .HasForeignKey("UphID")
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("SiUpin.Domain.Entities.User", b =>

@@ -11,10 +11,23 @@
                     <MatNavItem Href="/admin/dataMaster/jenisTernak">Jenis Ternak</MatNavItem>
                     <MatNavItem Href="/admin/dataMaster/produkOlahan">Produk Olahan</MatNavItem>
                     <MatNavItem Href="/admin/dataMaster/satuan">Satuan</MatNavItem>
-                    <MatNavItem Href="/admin/dataMaster/parameter">Parameter</MatNavItem>
+                    @*<MatNavItem Href="/admin/dataMaster/parameter">Parameter</MatNavItem>*@
                 </MatNavSubMenuList>
             </MatNavSubMenu>
-            <MatNavItem Href="/admin/uph" NavLinkMatch="NavLinkMatch.Prefix"><MatIcon Icon="@MatIconNames.Business_center"></MatIcon>&nbsp;&nbsp; UPH</MatNavItem>
+            <MatNavSubMenu>
+                <MatNavSubMenuHeader>
+                    <MatNavItem NavLinkMatch="NavLinkMatch.Prefix" AllowSelection="false"><MatIcon Icon="@MatIconNames.Business_center"></MatIcon>&nbsp;&nbsp; Data UPH</MatNavItem>
+                </MatNavSubMenuHeader>
+                <MatNavSubMenuList>
+                    <MatNavItem Href="/admin/uph" NavLinkMatch="NavLinkMatch.Prefix">UPH</MatNavItem>
+                    <MatNavItem Href="/admin/uph/sarana" NavLinkMatch="NavLinkMatch.Prefix">Sarana Prasarana</MatNavItem>
+                    <MatNavItem Href="/admin/uph/sdm" NavLinkMatch="NavLinkMatch.Prefix">Sumber Daya</MatNavItem>
+                    <MatNavItem Href="/admin/uph/produksi" NavLinkMatch="NavLinkMatch.Prefix">Produksi</MatNavItem>
+                    <MatNavItem Href="/admin/uph/bahanbaku" NavLinkMatch="NavLinkMatch.Prefix">Bahan Baku</MatNavItem>
+                    <MatNavItem Href="/admin/uph/gmp" NavLinkMatch="NavLinkMatch.Prefix">Kesesuaian GMP</MatNavItem>
+                    <MatNavItem Href="/admin/uph/pasar" NavLinkMatch="NavLinkMatch.Prefix">Pemasaran</MatNavItem>
+                </MatNavSubMenuList>
+            </MatNavSubMenu>
             <MatNavItem Href="/admin/kemitraan" NavLinkMatch="NavLinkMatch.Prefix"><MatIcon Icon="@MatIconNames.Business"></MatIcon>&nbsp;&nbsp; Kemitraan</MatNavItem>
             <MatNavItem Href="/admin/cluster" NavLinkMatch="NavLinkMatch.Prefix"><MatIcon Icon="@MatIconNames.Group_work"></MatIcon>&nbsp;&nbsp; Cluster</MatNavItem>
             <MatNavItem Href="/admin/berita" NavLinkMatch="NavLinkMatch.Prefix"><MatIcon Icon="@MatIconNames.Featured_play_list"></MatIcon>&nbsp;&nbsp; Berita</MatNavItem>

@@ -58,7 +58,7 @@
     {
         IsLoading = true;
 
-        items = await Http.GetFromJsonAsync<ApiResponse<GetAllJenisKomiditiResponse>>(Constants.URI.JenisTernak.Base);
+        items = await Http.GetFromJsonAsync<ApiResponse<GetAllJenisKomiditiResponse>>(Constants.URI.JenisKomoditi.Base);
 
         if (items.Status.IsError)
         {

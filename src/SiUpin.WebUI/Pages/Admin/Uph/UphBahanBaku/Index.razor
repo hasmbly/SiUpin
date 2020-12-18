@@ -1,0 +1,204 @@
+﻿@page "/admin/uph/bahanbaku"
+
+@inject HttpClient Http
+@inject NavigationManager Navigation
+
+@using SiUpin.Shared.UphBahanBakus.Queries
+@using SiUpin.Shared.Common.ApiEnvelopes
+
+<div class="mat-layout-grid">
+    <div class="mat-layout-grid-inner">
+
+        @if (OpenCreateDialog)
+        {
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
+                @*<Create DialogIsOpen="OpenCreateDialog" DialogIsOpenStatus="CreateDialogIsOpenStatus" OnSuccessSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); }))" />*@
+            </div>
+        }
+        else
+        {
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
+                <MatH4>Data UPH Bahan Baku</MatH4>
+            </div>
+
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
+                <MatFAB OnClick="() => { OpenCreateDialog = true; }" Icon="@MatIconNames.Add"></MatFAB>&nbsp;
+
+                <MatTextField @bind-Value="@filterByName" HelperText="Filter Berdasarkan: Nama Uph" Label="Cari Uph" Icon="@MatIconNames.Search"></MatTextField>
+            </div>
+
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
+                @if (IsLoading)
+                {
+                    <MatDialog @bind-IsOpen="IsLoading" CanBeClosed="false">
+                        <MatDialog>Please Wait..</MatDialog>
+                        <MatDialogContent>
+                            <MatProgressBar Indeterminate="true" Closed="!IsLoading"></MatProgressBar>
+                        </MatDialogContent>
+                    </MatDialog>
+                }
+                else
+                {
+                    if (sortedData.Count() > 0)
+                    {
+
+                        <MatTable Items="sortedData" PageSize="pageSize" AllowSelection="true" SelectionChanged="SelectionChangedEvent" ShowPaging="false" UseSortHeaderRow="true" class="mat-elevation-z5 mt-1">
+                            <MatTableHeader>
+                                <MatSortHeaderRow SortChanged="SortData">
+                                    <MatSortHeader SortId="1">No</MatSortHeader>
+                                    <MatSortHeader SortId="2">Nama UPH</MatSortHeader>
+                                    <MatSortHeader SortId="3">Jenis Ternak</MatSortHeader>
+                                    <MatSortHeader SortId="4">Bahan Utama</MatSortHeader>
+                                    <MatSortHeader SortId="5">Kebutuhan</MatSortHeader>
+                                    <MatSortHeader SortId="6">Asal</MatSortHeader>
+                                    <MatSortHeader SortId="7">Nilai</MatSortHeader>
+                                </MatSortHeaderRow>
+                            </MatTableHeader>
+                            <MatTableRow>
+                                <td>@context.No</td>
+                                <td>@context.Uph.Name</td>
+                                <td>@context.JenisTernak.Name</td>
+                                <td>@context.JenisKomoditi.Name</td>
+                                <td>@context.TotalKebutuhan @context.Satuan.Name</td>
+                                <td>@context.AsalBahanBaku</td>
+                                <td>@context.Nilai</td>
+                            </MatTableRow>
+                        </MatTable>
+                    }
+                }
+            </div>
+
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
+                <MatPaginator Length="totalCount" PageSize="pageSize" Page="OnPage"></MatPaginator>
+            </div>
+        }
+    </div>
+</div>
+
+@code
+{
+    private bool IsLoading = false;
+
+    private GetUphBahanBakusResponse items;
+    private UphBahanBakuDTO[] sortedData = null;
+
+    private int pageSize = Constants.Pagination.PageSize;
+    private int pageIndex = 0;
+    private int totalCount = 0;
+
+    private string _filterByName = "";
+
+    public string filterByName
+    {
+        get => _filterByName;
+        set
+        {
+            _filterByName = value;
+
+            InvokeAsync(async () => { await GetPaginateData(pageSize, pageIndex + 1, _filterByName); });
+
+            this.StateHasChanged();
+        }
+    }
+
+    public bool OpenCreateDialog { get; set; }
+
+    private void CreateDialogIsOpenStatus(bool isOpened) => OpenCreateDialog = isOpened;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetPaginateData();
+    }
+
+    private void SelectionChangedEvent(object row)
+    {
+    }
+
+    private async Task OnPage(MatPaginatorPageEvent e)
+    {
+        pageSize = e.PageSize;
+        pageIndex = e.PageIndex;
+
+        await GetPaginateData(pageSize, pageIndex + 1);
+    }
+
+    private async Task GetPaginateData(int pageSize = Constants.Pagination.PageSize, int pageNumber = Constants.Pagination.PageNumber, string filterName = null)
+    {
+        IsLoading = true;
+
+        var client = await Http.PostAsJsonAsync<GetUphBahanBakusRequest>(Constants.URI.Uph.Paginate, new GetUphBahanBakusRequest
+        {
+            PageSize = pageSize,
+            PageNumber = pageNumber,
+            FilterByName = filterName ?? ""
+        });
+
+        items = Task.FromResult(await client.Content.ReadFromJsonAsync<ApiResponse<GetUphBahanBakusResponse>>()).Result.Result;
+
+        if (items.Data.Count() > 0)
+        {
+            totalCount = items.Pagination.TotalCount;
+
+            SortData(null);
+
+            IsLoading = false;
+
+            StateHasChanged();
+        }
+        else
+        {
+            totalCount = items.Pagination.TotalCount;
+
+            SortData(null);
+
+            IsLoading = false;
+
+            StateHasChanged();
+        }
+    }
+
+    private void SortData(MatSortChangedEvent sort)
+    {
+        sortedData = items.Data.ToArray();
+        if (!(sort == null || sort.Direction == MatSortDirection.None || string.IsNullOrEmpty(sort.SortId)))
+        {
+            Comparison<UphBahanBakuDTO> comparison = null;
+            switch (sort.SortId)
+            {
+                case "1":
+                    comparison = (s1, s2) => s1.No.CompareTo(s2.No);
+                    break;
+                case "2":
+                    comparison = (s1, s2) => s1.Uph.Name.CompareTo(s2.Uph.Name);
+                    break;
+                case "3":
+                    comparison = (s1, s2) => s1.JenisTernak.Name.CompareTo(s2.JenisTernak.Name);
+                    break;
+                case "4":
+                    comparison = (s1, s2) => s1.JenisKomoditi.Name.CompareTo(s2.JenisKomoditi.Name);
+                    break;
+                case "5":
+                    comparison = (s1, s2) => s1.TotalKebutuhan.CompareTo(s2.TotalKebutuhan);
+                    break;
+                case "6":
+                    comparison = (s1, s2) => s1.AsalBahanBaku.CompareTo(s2.AsalBahanBaku);
+                    break;
+                case "7":
+                    comparison = (s1, s2) => s1.Nilai.CompareTo(s2.Nilai);
+                    break;
+            }
+
+            if (comparison != null)
+            {
+                if (sort.Direction == MatSortDirection.Desc)
+                {
+                    Array.Sort(sortedData, (s1, s2) => -1 * comparison(s1, s2));
+                }
+                else
+                {
+                    Array.Sort(sortedData, comparison);
+                }
+            }
+        }
+    }
+}

@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using SiUpin.Domain.Common;
 
 namespace SiUpin.Domain.Entities
 {
+    [Table("users")]
     public class User : AuditableEntity
     {
         public string UserID { get; set; }

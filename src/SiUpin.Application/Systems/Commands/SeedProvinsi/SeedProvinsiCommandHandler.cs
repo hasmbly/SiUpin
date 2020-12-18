@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
-using SiUpin.Application.Common;
+using Microsoft.EntityFrameworkCore;
 using SiUpin.Application.Common.Interfaces;
 using SiUpin.Domain.Entities;
 using SiUpin.Shared.Systems.Commands.SeedProvinsi;
@@ -13,26 +13,23 @@ namespace SiUpin.Application.Systems.Commands.SeedProvinsi
     public class SeedProvinsiCommandHandler : IRequestHandler<SeedProvinsiRequest, SeedProvinsiResponse>
     {
         private readonly ISiUpinDBContext _context;
-        private readonly IFileService _fileService;
+        private readonly IEntityRepository _entityRepository;
 
-        public SeedProvinsiCommandHandler(ISiUpinDBContext context, IFileService fileService)
+        public SeedProvinsiCommandHandler(ISiUpinDBContext context, IEntityRepository entityRepository)
         {
             _context = context;
-            _fileService = fileService;
+            _entityRepository = entityRepository;
         }
 
         public async Task<SeedProvinsiResponse> Handle(SeedProvinsiRequest request, CancellationToken cancellationToken)
         {
             var result = new SeedProvinsiResponse();
 
-            var dataJSON = _fileService.ReadJSONFile<ProvinsiJSON>(FilePath.ProvinsiJSON);
+            var dataOld = await _entityRepository.GetAllProvinsi();
 
-            // this is temporary just to make sure there is no duplicate data
-            List<Provinsi> provinsis = new List<Provinsi>();
+            List<Provinsi> provinsis = await _context.Provinsis.ToListAsync(cancellationToken);
 
-            var listDataJSON = dataJSON.rows.ToList();
-
-            foreach (var data in listDataJSON)
+            foreach (var data in dataOld)
             {
                 Provinsi provinsi = new Provinsi();
 

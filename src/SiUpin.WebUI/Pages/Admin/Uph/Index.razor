@@ -3,58 +3,80 @@
 @inject HttpClient Http
 @inject NavigationManager Navigation
 
+@using SiUpin.Pages.Admin.Uph
+
 @using SiUpin.Shared.Uphs.Queries.GetAllUph
 @using SiUpin.Shared.Common.ApiEnvelopes
 
-<div class="mat-layout-grid pt-0">
-    <div class="mat-layout-grid-inner mt-0">
-        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-middle mat-layout-grid-cell-span-4">
-            <MatH4><strong>UPH Peternakan Indonesia</strong></MatH4>
-        </div>
-        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2"></div>
-        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-6">
-            <MatIcon>
-                <img src="images/data-uph.png" />
-            </MatIcon>
-        </div>
+<div class="mat-layout-grid">
+    <div class="mat-layout-grid-inner">
+
+        @if (OpenCreateDialog)
+        {
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
+                <Create DialogIsOpen="OpenCreateDialog" DialogIsOpenStatus="CreateDialogIsOpenStatus" OnSuccessSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); }))" />
+            </div>
+        }
+        else
+        {
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
+                <MatH4>Data UPH</MatH4>
+            </div>
+
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
+                <MatFAB OnClick="() => { OpenCreateDialog = true; }" Icon="@MatIconNames.Add"></MatFAB>&nbsp;
+
+                <MatTextField @bind-Value="@filterByName" HelperText="Filter Berdasarkan: Nama Uph" Label="Cari Uph" Icon="@MatIconNames.Search"></MatTextField>
+            </div>
+
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
+                @if (IsLoading)
+                {
+                    <MatDialog @bind-IsOpen="IsLoading" CanBeClosed="false">
+                        <MatDialog>Please Wait..</MatDialog>
+                        <MatDialogContent>
+                            <MatProgressBar Indeterminate="true" Closed="!IsLoading"></MatProgressBar>
+                        </MatDialogContent>
+                    </MatDialog>
+                }
+                else
+                {
+                    if (sortedData.Count() > 0)
+                    {
+
+                        <MatTable Items="sortedData" PageSize="pageSize" AllowSelection="true" SelectionChanged="SelectionChangedEvent" ShowPaging="false" UseSortHeaderRow="true" class="mat-elevation-z5 mt-1">
+                            <MatTableHeader>
+                                <MatSortHeaderRow SortChanged="SortData">
+                                    <MatSortHeader>No</MatSortHeader>
+                                    <MatSortHeader SortId="1"><span style="width:150px">Nama UPH</span></MatSortHeader>
+                                    <MatSortHeader SortId="2"><span style="width:100px">Ketua</span></MatSortHeader>
+                                    <MatSortHeader SortId="3">Handphone</MatSortHeader>
+                                    <MatSortHeader SortId="4">Provinsi</MatSortHeader>
+                                    <MatSortHeader SortId="5">Kota</MatSortHeader>
+                                    <MatSortHeader SortId="6">Alamat</MatSortHeader>
+                                </MatSortHeaderRow>
+                            </MatTableHeader>
+                            <MatTableRow>
+                                <td>@context.No</td>
+                                <td>@context.Name</td>
+                                <td>@context.Ketua</td>
+                                <td>@context.Handphone</td>
+                                <td>@context.Provinsi</td>
+                                <td>@context.Kota</td>
+                                <td>@context.Alamat</td>
+                            </MatTableRow>
+                        </MatTable>
+                    }
+                }
+            </div>
+
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
+                <MatPaginator Length="totalCount" PageSize="pageSize" Page="OnPage"></MatPaginator>
+            </div>
+        }
     </div>
 </div>
 
-@if (IsLoading)
-{
-    <MatDialog @bind-IsOpen="IsLoading" CanBeClosed="false">
-        <MatDialog>Please Wait..</MatDialog>
-        <MatDialogContent>
-            <MatProgressBar Indeterminate="true" Closed="!IsLoading"></MatProgressBar>
-        </MatDialogContent>
-    </MatDialog>
-}
-<p>
-    <MatTextField @bind-Value="@filterByName" HelperText="Filter Berdasarkan: Nama Uph" Label="Cari Uph" Icon="@MatIconNames.Search"></MatTextField>
-</p>
-
-<MatTable Items="sortedData" PageSize="pageSize" AllowSelection="true" SelectionChanged="SelectionChangedEvent" ShowPaging="false" UseSortHeaderRow="true" class="mat-elevation-z5 mt-1">
-    <MatTableHeader>
-        <MatSortHeaderRow SortChanged="SortData">
-            <MatSortHeader SortId="1"><span style="width:150px">Nama UPH</span></MatSortHeader>
-            <MatSortHeader SortId="2"><span style="width:100px">Ketua</span></MatSortHeader>
-            <MatSortHeader SortId="3">Handphone</MatSortHeader>
-            <MatSortHeader SortId="4">Provinsi</MatSortHeader>
-            <MatSortHeader SortId="5">Kota</MatSortHeader>
-            <MatSortHeader SortId="6">Alamat</MatSortHeader>
-        </MatSortHeaderRow>
-    </MatTableHeader>
-    <MatTableRow>
-        <td>@context.Name</td>
-        <td>@context.Ketua</td>
-        <td>@context.Handphone</td>
-        <td>@context.Provinsi</td>
-        <td>@context.Kota</td>
-        <td>@context.Alamat</td>
-    </MatTableRow>
-</MatTable>
-
-<MatPaginator Length="totalCount" PageSize="pageSize" Page="OnPage"></MatPaginator>
 
 @code
 {
@@ -81,6 +103,10 @@
             this.StateHasChanged();
         }
     }
+
+    public bool OpenCreateDialog { get; set; }
+
+    private void CreateDialogIsOpenStatus(bool isOpened) => OpenCreateDialog = isOpened;
 
     protected override async Task OnInitializedAsync()
     {
@@ -140,7 +166,7 @@
         }
     }
 
-    void SortData(MatSortChangedEvent sort)
+    private void SortData(MatSortChangedEvent sort)
     {
         sortedData = items.Data.ToArray();
         if (!(sort == null || sort.Direction == MatSortDirection.None || string.IsNullOrEmpty(sort.SortId)))

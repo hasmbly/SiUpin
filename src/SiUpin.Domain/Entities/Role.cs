@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SiUpin.Domain.Entities
 {
+    [Table("roles")]
     public class Role
     {
         public string RoleID { get; set; }

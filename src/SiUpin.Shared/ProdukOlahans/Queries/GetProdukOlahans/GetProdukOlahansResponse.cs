@@ -4,11 +4,11 @@ namespace SiUpin.Shared.ProdukOlahans.Queries.GetProdukOlahans
 {
     public class GetProdukOlahansResponse
     {
-        public IList<ProdukOlahanDTO> ProdukOlahans { get; set; }
+        public IList<ProdukOlahanDTO> Data { get; set; }
 
         public GetProdukOlahansResponse()
         {
-            ProdukOlahans = new List<ProdukOlahanDTO>();
+            Data = new List<ProdukOlahanDTO>();
         }
     }
 }

@@ -40,7 +40,7 @@ namespace SiUpin.Application.Systems.Commands.SeedBerita
                 Berita berita = new Berita();
 
                 berita = beritas
-                    .SingleOrDefault(x => x.BeritaID == data.id_berita);
+                    .SingleOrDefault(x => x.id_berita == data.id_berita);
 
                 if (berita == null)
                 {

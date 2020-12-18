@@ -6,7 +6,7 @@
 @using SiUpin.Shared.Users.Queries.Common
 @using SiUpin.Shared.Users.Queries.GetUsers
 @using SiUpin.Shared.Common.ApiEnvelopes
-@using SiUpin.Shared.Modal.User
+@using SiUpin.Pages.Admin.User
 
 <div class="mat-layout-grid">
     <div class="mat-layout-grid-inner">
@@ -15,7 +15,7 @@
         </div>
 
         <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
-            <MatFAB OnClick="() => { OpenDialog = true; }" Icon="@MatIconNames.Add"></MatFAB>&nbsp;
+            <MatFAB OnClick="() => { OpenCreateDialog = true; }" Icon="@MatIconNames.Add"></MatFAB>&nbsp;
 
             <MatTextField @bind-Value="@filterByName" HelperText="Filter Berdasarkan: Nama User" Label="Cari User" Icon="@MatIconNames.Search"></MatTextField>
         </div>
@@ -37,6 +37,7 @@
                     <MatTable Items="sortedData" PageSize="pageSize" AllowSelection="true" Striped="true" ShowPaging="false" UseSortHeaderRow="true" class="mat-elevation-z5 mt-1">
                         <MatTableHeader>
                             <MatSortHeaderRow SortChanged="SortData">
+                                <MatSortHeader>No</MatSortHeader>
                                 <MatSortHeader SortId="1"><span style="width:150px">Username</span></MatSortHeader>
                                 <MatSortHeader SortId="2"><span style="width:150px">Nama</span></MatSortHeader>
                                 <MatSortHeader SortId="3"><span style="width:100px">Role</span></MatSortHeader>
@@ -46,6 +47,7 @@
                             </MatSortHeaderRow>
                         </MatTableHeader>
                         <MatTableRow>
+                            <td>@context.No</td>
                             <td>@context.Username</td>
                             <td>@context.Fullname</td>
                             <td>@context.RoleName</td>
@@ -69,7 +71,7 @@
     </div>
 </div>
 
-<CreateUser DialogIsOpen="OpenDialog" DialogIsOpenStatus="DialogIsOpenStatus" />
+<CreateUser DialogIsOpen="OpenCreateDialog" DialogIsOpenStatus="CreateDialogIsOpenStatus" OnSuccessSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); }))" />
 <UpdateUser DialogIsOpen="OpenUpdateDialog" DialogIsOpenStatus="UpdateDialogIsOpenStatus" ID="@EntityID" OnSuccessSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); }))" />
 <ResetPassword DialogIsOpen="OpenResetPasswordDialog" DialogIsOpenStatus="ResetPasswordDialogIsOpenStatus" ID="@EntityID" OnSuccesSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); }))" />
 <DeleteUser DialogIsOpen="OpenDeleteDialog" DialogIsOpenStatus="DeleteDialogIsOpenStatus" ID="@EntityID" OnSuccesSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); }))" />
@@ -102,12 +104,12 @@
 
     public string EntityID { get; set; }
 
-    public bool OpenDialog { get; set; }
+    public bool OpenCreateDialog { get; set; }
     public bool OpenUpdateDialog { get; set; }
     public bool OpenResetPasswordDialog { get; set; }
     public bool OpenDeleteDialog { get; set; }
 
-    private void DialogIsOpenStatus(bool isOpened) => OpenDialog = isOpened;
+    private void CreateDialogIsOpenStatus(bool isOpened) => OpenCreateDialog = isOpened;
     private void UpdateDialogIsOpenStatus(bool isOpened) => OpenUpdateDialog = isOpened;
     private void ResetPasswordDialogIsOpenStatus(bool isOpened) => OpenResetPasswordDialog = isOpened;
     private void DeleteDialogIsOpenStatus(bool isOpened) => OpenDeleteDialog = isOpened;

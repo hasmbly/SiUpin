@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SiUpin.Domain.Entities
 {
+    [Table("parameteraspeks")]
     public class ParameterAspek
     {
         public string ParameterAspekID { get; set; }

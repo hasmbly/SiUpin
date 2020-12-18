@@ -14,6 +14,7 @@
         public const string Varchar50 = "varchar(50)";
         public const string Varchar100 = "varchar(100)";
         public const string Varchar200 = "varchar(200)";
+        public const string Varchar255 = "varchar(255)";
         public const string Varchar500 = "varchar(500)";
         public const string Varchar2000 = "varchar(2000)";
         public const string NVarchar200 = "nvarchar(200)";

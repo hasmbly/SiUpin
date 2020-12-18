@@ -80,10 +80,12 @@ namespace SiUpin.Application.Users.Queries.GetUsers
 
                 List<UserDTO> listOfDTO = new List<UserDTO>();
 
+                int no = 1;
                 foreach (var record in records)
                 {
                     var dto = new UserDTO
                     {
+                        No = no++,
                         UserID = record.UserID,
                         Username = record.Username,
                         Alamat = record.Alamat,

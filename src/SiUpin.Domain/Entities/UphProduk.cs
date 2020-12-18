@@ -1,8 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using SiUpin.Domain.Common;
 
 namespace SiUpin.Domain.Entities
 {
-    public class UphProduk
+    [Table("uphproduks")]
+    public class UphProduk : AuditableEntity
     {
         public string UphProdukID { get; set; }
 

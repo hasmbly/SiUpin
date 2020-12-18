@@ -1,7 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>SiUpin.Application</AssemblyName>
+    <RootNamespace>SiUpin.Application</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,7 +23,8 @@
 
   <ItemGroup>
     <Folder Include="Auth\Commands\ForgotPassword\" />
-    <Folder Include="Uphs\Command\CreateUph\" />
+    <Folder Include="JenisTernaks\Commands\" />
+    <Folder Include="Satuans\Commands\" />
     <Folder Include="Uphs\Command\DeleteUph\" />
     <Folder Include="Uphs\Command\EditUph\" />
     <Folder Include="Uphs\Queries\GetUph\" />

@@ -36,8 +36,15 @@ namespace SiUpin.Application.Common.Interfaces
 
         #region Data Main
         DbSet<Uph> Uphs { get; set; }
+        DbSet<UphBahanBaku> UphBahanBakus { get; set; }
         DbSet<UphProduk> UphProduks { get; set; }
-        DbSet<UphParameter> UphParameters { get; set; }
+        DbSet<UphGmp> UphGmps { get; set; }
+        DbSet<UphMitra> UphMitras { get; set; }
+        DbSet<UphPasar> UphPasars { get; set; }
+        DbSet<UphProduksi> UphProduksis { get; set; }
+        DbSet<UphSarana> UphSaranas { get; set; }
+        DbSet<UphSdm> UphSdms { get; set; }
+        //DbSet<UphParameter> UphParameters { get; set; }
 
         DbSet<Berita> Beritas { get; set; }
         DbSet<Pesan> Pesans { get; set; }

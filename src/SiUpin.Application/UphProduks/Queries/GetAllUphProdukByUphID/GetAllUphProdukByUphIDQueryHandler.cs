@@ -35,21 +35,20 @@ namespace SiUpin.Application.Uphs.Queries.GetAllUphProdukByUphID
                     .Where(x => x.EntityType == Constants.File.EntityType.UPH_PRODUK && !x.Name.Contains(".docx"))
                     .ToListAsync(cancellationToken);
 
-                var filesUph = files.Select(s => s.EntityID);
+                //var filesUph = files.Select(s => s.EntityID);
 
                 records = await _context.UphProduks
                     .AsNoTracking()
                     .Include(u => u.Uph).ThenInclude(p => p.Provinsi)
                     .Include(a => a.ProdukOlahan).ThenInclude(b => b.JenisKomoditi)
-                    .Where(x => filesUph.Contains(x.UphProdukID) && x.Name.Contains(request.FilterByName ?? "") && x.UphID == request.UphID)
+                    .Where(x => x.Name.Contains(request.FilterByName ?? "") && x.UphID == request.UphID)
                     .Skip((request.PageNumber - 1) * request.PageSize)
                     .Take(request.PageSize)
                     .ToListAsync(cancellationToken);
 
                 totalRecords = _context.UphProduks
                     .AsNoTracking()
-                    .Where(x => filesUph.Contains(x.UphProdukID) && x.UphID == request.UphID)
-                    .Count(x => x.Name.Contains(request.FilterByName ?? ""));
+                    .Count(x => x.Name.Contains(request.FilterByName ?? "") && x.UphID == request.UphID);
 
                 List<UphProdukDTO> listOfDTO = new List<UphProdukDTO>();
 
@@ -64,7 +63,7 @@ namespace SiUpin.Application.Uphs.Queries.GetAllUphProdukByUphID
                         if (file != null && !string.IsNullOrEmpty(file.Name))
                             fileName = $"images/{file.Name}";
                         else
-                            continue;
+                            fileName = $"images/image_not_available.png";
 
                         UphProdukDTO dto = new UphProdukDTO
                         {

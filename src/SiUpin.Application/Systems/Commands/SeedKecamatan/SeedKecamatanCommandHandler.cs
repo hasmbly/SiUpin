@@ -4,7 +4,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using SiUpin.Application.Common;
 using SiUpin.Application.Common.Interfaces;
 using SiUpin.Domain.Entities;
 using SiUpin.Shared.Systems.Commands.SeedKecamatan;
@@ -14,30 +13,26 @@ namespace SiUpin.Application.Systems.Commands.SeedKecamatan
     public class SeedKecamatanCommandHandler : IRequestHandler<SeedKecamatanRequest, SeedKecamatanResponse>
     {
         private readonly ISiUpinDBContext _context;
-        private readonly IFileService _fileService;
+        private readonly IEntityRepository _entityRepository;
 
-        public SeedKecamatanCommandHandler(ISiUpinDBContext context, IFileService fileService)
+        public SeedKecamatanCommandHandler(ISiUpinDBContext context, IEntityRepository entityRepository)
         {
             _context = context;
-            _fileService = fileService;
+            _entityRepository = entityRepository;
         }
 
         public async Task<SeedKecamatanResponse> Handle(SeedKecamatanRequest request, CancellationToken cancellationToken)
         {
             var result = new SeedKecamatanResponse();
 
-            var dataJSON = _fileService.ReadJSONFile<RoleSON>(FilePath.KecamatanJSON);
+            var dataOld = await _entityRepository.GetAllKecamatan();
 
-            // this is temporary just to make sure there is no duplicate data
-            List<Kecamatan> Kecamatans = new List<Kecamatan>();
+            List<Kecamatan> Kecamatans = await _context.Kecamatans.ToListAsync(cancellationToken);
 
-            var listDataJSON = dataJSON.rows.ToList();
-
-            // collect data from db to temporary List
             var kotas = await _context.Kotas
                 .ToListAsync(cancellationToken);
 
-            foreach (var data in listDataJSON)
+            foreach (var data in dataOld)
             {
                 Kecamatan Kecamatan = new Kecamatan();
 
@@ -46,6 +41,8 @@ namespace SiUpin.Application.Systems.Commands.SeedKecamatan
 
                 if (Kecamatan == null)
                 {
+                    System.Console.WriteLine($"siupin - kecamatan doAdd(): {data.nama_kecamatan} ({data.id_kecamatan})");
+
                     string kotaID = kotas.Where(x => x.id_kota == data.id_kota_fk).FirstOrDefault().KotaID ?? "";
 
                     Kecamatan = new Kecamatan
@@ -54,8 +51,6 @@ namespace SiUpin.Application.Systems.Commands.SeedKecamatan
                         KotaID = kotaID,
                         Name = data.nama_kecamatan
                     };
-
-                    Kecamatans.Add(Kecamatan);
 
                     _context.Kecamatans.Add(Kecamatan);
                 }

@@ -12,7 +12,7 @@ namespace SiUpin.WebAPI.Controllers.V1
     {
         [AllowAnonymous]
         [HttpPost("paginate")]
-        public async Task<IActionResult> GetBeritas(GetBeritasRequest request)
+        public async Task<IActionResult> Paginate(GetBeritasRequest request)
         {
             try
             {

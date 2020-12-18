@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SiUpin.Domain.Entities
 {
+    [Table("parameterjawabans")]
     public class ParameterJawaban
     {
         public string ParameterJawabanID { get; set; }
@@ -11,11 +13,20 @@ namespace SiUpin.Domain.Entities
         public string Skor { get; set; }
 
         public ParameterIndikator ParameterIndikator { get; set; }
-        public IList<UphParameter> UphParameters { get; set; }
+
+        public IList<Uph> UphParameterBadanHukums { get; set; }
+        public IList<Uph> UphParameterAdministrasis { get; set; }
+        public IList<Uph> UphParameterBentukLembagas { get; set; }
+        public IList<Uph> UphParameterStatusUphs { get; set; }
+
+        //public IList<UphParameter> UphParameters { get; set; }
 
         public ParameterJawaban()
         {
-            UphParameters = new List<UphParameter>();
+            UphParameterBadanHukums = new List<Uph>();
+            UphParameterAdministrasis = new List<Uph>();
+            UphParameterBentukLembagas = new List<Uph>();
+            UphParameterStatusUphs = new List<Uph>();
         }
     }
 }

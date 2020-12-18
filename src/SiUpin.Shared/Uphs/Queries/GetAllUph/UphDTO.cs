@@ -2,6 +2,7 @@
 {
     public class UphDTO
     {
+        public int No { get; set; }
         public string UphID { get; set; }
 
         public string Name { get; set; }

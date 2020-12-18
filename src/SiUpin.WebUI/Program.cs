@@ -28,6 +28,7 @@ namespace SiUpin.WebUI
             builder.Services.AddOptions();
             builder.Services.AddAuthorizationCore();
             builder.Services.AddBlazoredLocalStorage();
+            builder.Services.AddMatBlazor();
 
             builder.Services.AddHttpClient(httpClientName, client =>
             {
@@ -47,7 +48,7 @@ namespace SiUpin.WebUI
                 config.NewestOnTop = true;
                 config.ShowCloseButton = true;
                 config.MaximumOpacity = 95;
-                config.VisibleStateDuration = 3000;
+                config.VisibleStateDuration = 4000;
             });
 
             await builder.Build().RunAsync();

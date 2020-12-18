@@ -47,6 +47,7 @@
             {
                 public static readonly string Base = $"{BaseAPI}/uph";
 
+                public static readonly string Register = $"{Base}/register";
                 public static readonly string Paginate = $"{Base}/paginate";
             }
 
@@ -56,6 +57,7 @@
 
                 public static readonly string Paginate = $"{Base}/paginate";
                 public static readonly string PaginateByUphID = $"{Base}/paginateByUphID";
+                public static readonly string Register = $"{Base}/register";
             }
 
             public static class Berita
@@ -69,7 +71,41 @@
             {
                 public static readonly string Base = $"{BaseAPI}/Pesan";
 
-                public static readonly string Paginate = $"{Base}/paginate";
+                public static readonly string GetAll = $"{Base}/GetAll";
+            }
+
+            public static class JenisKomoditi
+            {
+                public static readonly string Base = $"{BaseAPI}/jenisKomoditi";
+            }
+
+            public static class JenisTernak
+            {
+                public static readonly string Base = $"{BaseAPI}/jenisTernak";
+            }
+
+            public static class ProdukOlahan
+            {
+                public static readonly string Base = $"{BaseAPI}/ProdukOlahan";
+            }
+
+            public static class Satuan
+            {
+                public static readonly string Base = $"{BaseAPI}/Satuan";
+            }
+
+            public static class ParameterJawaban
+            {
+                public static readonly string Base = $"{BaseAPI}/ParameterJawaban";
+
+                public static readonly string ByIndikatorName = $"{Base}/byIndikatorName/?indikatorName=";
+            }
+
+            public static class File
+            {
+                public static readonly string Base = $"{BaseAPI}/File";
+
+                public static readonly string Register = $"{Base}/register";
             }
         }
 
@@ -77,6 +113,12 @@
         {
             public const int PageSize = 10;
             public const int PageNumber = 1;
+        }
+
+        public static class FileEntityType
+        {
+            public const string Berita = "BERITA";
+            public const string UphProduk = "UPH_PRODUK";
         }
 
         public static class JenisKomoditiID

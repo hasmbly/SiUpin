@@ -41,6 +41,7 @@
     <MatTable Items="sortedData" PageSize="pageSize" AllowSelection="true" SelectionChanged="SelectionChangedEvent" ShowPaging="false" UseSortHeaderRow="true" class="mat-elevation-z5 mt-1">
         <MatTableHeader>
             <MatSortHeaderRow SortChanged="SortData">
+                <MatSortHeader>No</MatSortHeader>
                 <MatSortHeader SortId="1"><span style="width:150px">Nama UPH</span></MatSortHeader>
                 <MatSortHeader SortId="2"><span style="width:100px">Ketua</span></MatSortHeader>
                 <MatSortHeader SortId="3">Handphone</MatSortHeader>
@@ -50,6 +51,7 @@
             </MatSortHeaderRow>
         </MatTableHeader>
         <MatTableRow>
+            <td>@context.No</td>
             <td>@context.Name</td>
             <td>@context.Ketua</td>
             <td>@context.Handphone</td>

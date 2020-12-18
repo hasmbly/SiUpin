@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>SiUpin.Domain</AssemblyName>
+    <RootNamespace>SiUpin.Domain</RootNamespace>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Mindbox.Data.Linq" Version="3.0.0" />
+  </ItemGroup>
 
 </Project>

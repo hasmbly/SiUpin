@@ -23,42 +23,50 @@ namespace SiUpin.Application.Users.Commands
         {
             var result = new CreateUserResponse();
 
-            if (await _context.Users.AnyAsync(x => x.Username == request.Username || x.Email == request.Email, cancellationToken))
+            if (!string.IsNullOrEmpty(request.Username))
             {
-                throw new Exception("Maaf Username atau Email sudah di gunakan");
-            }
-            else
-            {
-                string passwordSalt = AppUtility.CreatePasswordSalt();
-                string passwordHash = AppUtility.CreatePasswordHash(request.Password, passwordSalt);
-
-                var user = new User
+                if (await _context.Users.AnyAsync(x => x.Username == request.Username))
                 {
-                    Username = request.Username,
-                    PasswordHash = passwordHash,
-                    PasswordSalt = passwordSalt,
-
-                    Alamat = request.Alamat,
-                    Email = request.Email,
-                    Fullname = request.Fullname,
-                    Instansi = request.Instansi,
-                    Jabatan = request.Jabatan,
-                    NIP = request.NIP,
-                    Telepon = request.Telepon,
-
-                    RoleID = request.RoleID,
-                    ProvinsiID = request.ProvinsiID,
-                    KotaID = request.KotaID,
-                    KecamatanID = request.KecamatanID,
-                    KelurahanID = request.KelurahanID
-                };
-
-                await _context.Users.AddAsync(user);
-                await _context.SaveChangesAsync(cancellationToken);
-
-                result.UserID = user.UserID;
-                result.Username = user.Username;
+                    throw new Exception("Maaf Username sudah di gunakan");
+                }
             }
+
+            if (!string.IsNullOrEmpty(request.Email))
+            {
+                if (await _context.Users.AnyAsync(x => x.Email == request.Email, cancellationToken))
+                {
+                    throw new Exception("Maaf Email sudah di gunakan");
+                }
+            }
+            string passwordSalt = AppUtility.CreatePasswordSalt();
+            string passwordHash = AppUtility.CreatePasswordHash(request.Password, passwordSalt);
+
+            var user = new User
+            {
+                Username = request.Username,
+                PasswordHash = passwordHash,
+                PasswordSalt = passwordSalt,
+
+                Alamat = request.Alamat,
+                Email = request.Email,
+                Fullname = request.Fullname,
+                Instansi = request.Instansi,
+                Jabatan = request.Jabatan,
+                NIP = request.NIP,
+                Telepon = request.Telepon,
+
+                RoleID = request.RoleID,
+                ProvinsiID = request.ProvinsiID,
+                KotaID = request.KotaID,
+                KecamatanID = request.KecamatanID,
+                KelurahanID = request.KelurahanID
+            };
+
+            await _context.Users.AddAsync(user);
+            await _context.SaveChangesAsync(cancellationToken);
+
+            result.UserID = user.UserID;
+            result.Username = user.Username;
 
             return result;
         }

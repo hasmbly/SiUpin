@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>SiUpin.WebAPI</AssemblyName>
+    <RootNamespace>SiUpin.WebAPI</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

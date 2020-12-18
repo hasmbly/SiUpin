@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SiUpin.Domain.Entities
 {
+    [Table("produkolahans")]
     public class ProdukOlahan
     {
         public string ProdukOlahanID { get; set; }

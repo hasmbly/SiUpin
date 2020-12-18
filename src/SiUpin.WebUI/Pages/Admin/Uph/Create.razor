@@ -1,0 +1,678 @@
+﻿@inject HttpClient Http
+@inject IMatToaster Toaster
+@inject AuthenticationStateProvider _authenticationStateProvider
+
+@namespace SiUpin.Pages.Admin.Uph
+
+@using SiUpin.Shared.Uphs.Command.CreateUph
+@using SiUpin.Shared.UphProduks.Command.CreateUphProduk
+@using SiUpin.Shared.JenisTernaks.Queries.GetJenisTernaks
+@using SiUpin.Shared.ProdukOlahans.Queries.GetProdukOlahans
+@using SiUpin.Shared.Satuans.Queries.GetSatuans
+
+@using SiUpin.Shared.ParameterJawabans.Common
+@using SiUpin.Shared.ParameterJawabans.Queries.GetParameterJawabansByIndikatorName
+
+@using SiUpin.Shared.Common.ApiEnvelopes
+@using System.Net.Http.Headers;
+
+@using SiUpin.Shared.Provinsis.Queries.GetProvinsis
+@using SiUpin.Shared.Kotas.Queries.GetKotasByProvinsiID
+@using SiUpin.Shared.Kecamatans.Queries.GetKecamatansByKotaID
+@using SiUpin.Shared.Kelurahans.Queries.GetKelurahansByKecamatanID
+
+@using System.IO;
+
+@if (IsLoading)
+{
+    <MatDialog @bind-IsOpen="IsLoading" CanBeClosed="false">
+        <MatDialog>Please Wait..</MatDialog>
+        <MatDialogContent>
+            <MatProgressBar Indeterminate="true" Closed="!IsLoading"></MatProgressBar>
+        </MatDialogContent>
+    </MatDialog>
+}
+else
+{
+    <div class="mat-layout-grid">
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12">
+                <MatButton Icon="@MatIconNames.Keyboard_arrow_left" OnClick="CancelClick">Kembali</MatButton>
+            </div>
+
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12 mat-elevation-z3 p-3">
+                <MatH6>UPH</MatH6>
+                <EditForm EditContext="_uphContext">
+                    <DataAnnotationsValidator />
+                    <div class="mat-layout-grid-inner mt-0">
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-3">
+                            <MatTextField @bind-Value="Model.Name" Label="Name" Required="true" FullWidth="true" />
+                            <MatCaption Class="mt-1">
+                                <ValidationMessage For="@(() => Model.Name)" />
+                            </MatCaption>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-3">
+                            <MatTextField @bind-Value="Model.Ketua" Label="Ketua" Required="true" FullWidth="true" />
+                            <MatCaption Class="mt-1">
+                                <ValidationMessage For="@(() => Model.Ketua)" />
+                            </MatCaption>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-3">
+                            <MatTextField @bind-Value="Model.Handphone" Label="Handphone" Type="number" FullWidth="true" />
+                            <MatCaption Class="mt-1">
+                                <ValidationMessage For="@(() => Model.Handphone)" />
+                            </MatCaption>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-3">
+                            <MatTextField @bind-Value="Model.TahunBerdiri" Label="Tahun Berdiri" Type="number" FullWidth="true" />
+                            <MatCaption Class="mt-1">
+                                <ValidationMessage For="@(() => Model.TahunBerdiri)" />
+                            </MatCaption>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-3">
+                            <MatSelect @bind-Value="SelectProvinsi" Label="Provinsi" FullWidth="true">
+                                <MatOption TValue="string" Value="@(null)"></MatOption>
+                                @if (Provinsis.Count() > 0)
+                                    {
+                                        foreach (var item in Provinsis)
+                                        {
+                                        <MatOption TValue="string" Value="@(item.ProvinsiID)">@item.Name</MatOption>
+                                        }
+                                    }
+                            </MatSelect>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-3">
+                            <MatSelect @bind-Value="SelectKota" Label="Kota" FullWidth="true">
+                                <MatOption TValue="string" Value="@(null)"></MatOption>
+                                @if (Kotas.Count() > 0)
+                                    {
+                                        foreach (var item in Kotas)
+                                        {
+                                        <MatOption TValue="string" Value="@(item.KotaID)">@item.Name</MatOption>
+                                        }
+                                    }
+                            </MatSelect>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-3">
+                            <MatSelect @bind-Value="SelectKecamatan" Label="Kecamatan" FullWidth="true">
+                                <MatOption TValue="string" Value="@(null)"></MatOption>
+                                @if (Kecamatans.Count() > 0)
+                                    {
+                                        foreach (var item in Kecamatans)
+                                        {
+                                        <MatOption TValue="string" Value="@(item.KecamatanID)">@item.Name</MatOption>
+                                        }
+                                    }
+                            </MatSelect>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-3">
+                            <MatSelect @bind-Value="SelectKelurahan" Label="Kelurahan" FullWidth="true">
+                                <MatOption TValue="string" Value="@(null)"></MatOption>
+                                @if (Kelurahans.Count() > 0)
+                                    {
+                                        foreach (var item in Kelurahans)
+                                        {
+                                        <MatOption TValue="string" Value="@(item.KelurahanID)">@item.Name</MatOption>
+                                        }
+                                    }
+                            </MatSelect>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-3">
+                            <MatSelect @bind-Value="Model.ParameterStatusUphID" Label="Status UPH" FullWidth="true">
+                                <MatOption TValue="string" Value="@(null)"></MatOption>
+                                @if (ParameterStatusUPH.Count() > 0)
+                                    {
+                                        foreach (var item in ParameterStatusUPH)
+                                        {
+                                        <MatOption TValue="string" Value="@(item.ParameterJawabanID)">@item.Name</MatOption>
+                                        }
+                                    }
+                            </MatSelect>
+                            <MatCaption Class="mt-1">
+                                <ValidationMessage For="@(() => Model.ParameterStatusUphID)" />
+                            </MatCaption>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-3">
+                            <MatSelect @bind-Value="Model.ParameterBentukLembagaID" Label="Bentuk Lembaga" FullWidth="true">
+                                <MatOption TValue="string" Value="@(null)"></MatOption>
+                                @if (ParameterBentukLembaga.Count() > 0)
+                                    {
+                                        foreach (var item in ParameterBentukLembaga)
+                                        {
+                                        <MatOption TValue="string" Value="@(item.ParameterJawabanID)">@item.Name</MatOption>
+                                        }
+                                    }
+                            </MatSelect>
+                            <MatCaption Class="mt-1">
+                                <ValidationMessage For="@(() => Model.ParameterBentukLembagaID)" />
+                            </MatCaption>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-3">
+                            <MatSelect @bind-Value="Model.ParameterBadanHukumID" Label="Badan Hukum" FullWidth="true">
+                                <MatOption TValue="string" Value="@(null)"></MatOption>
+                                @if (ParameterBadanHukum.Count() > 0)
+                                    {
+                                        foreach (var item in ParameterBadanHukum)
+                                        {
+                                        <MatOption TValue="string" Value="@(item.ParameterJawabanID)">@item.Name</MatOption>
+                                        }
+                                    }
+                            </MatSelect>
+                            <MatCaption Class="mt-1">
+                                <ValidationMessage For="@(() => Model.ParameterBadanHukumID)" />
+                            </MatCaption>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-3">
+                            <MatSelect @bind-Value="Model.ParameterAdministrasiID" Label="Administrasi" FullWidth="true">
+                                <MatOption TValue="string" Value="@(null)"></MatOption>
+                                @if (ParameterAdministrasi.Count() > 0)
+                                    {
+                                        foreach (var item in ParameterAdministrasi)
+                                        {
+                                        <MatOption TValue="string" Value="@(item.ParameterJawabanID)">@item.Name</MatOption>
+                                        }
+                                    }
+                            </MatSelect>
+                            <MatCaption Class="mt-1">
+                                <ValidationMessage For="@(() => Model.ParameterAdministrasiID)" />
+                            </MatCaption>
+                        </div>
+
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                            <MatTextField @bind-Value="Model.Alamat" Label="Alamat" TextArea="true" FullWidth="true" />
+                            <MatCaption Class="mt-1">
+                                <ValidationMessage For="@(() => Model.Alamat)" />
+                            </MatCaption>
+                        </div>
+                    </div>
+                </EditForm>
+            </div>
+
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12 mat-elevation-z3 p-3">
+                <MatH6>Produk UPH</MatH6>
+                <EditForm EditContext="_uphProdukContext">
+                    <DataAnnotationsValidator />
+                    <div class="mat-layout-grid-inner mt-0">
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-3">
+                            <MatTextField @bind-Value="ModelUphProduk.Name" Label="Name" FullWidth="true" />
+                            <MatCaption Class="mt-1">
+                                <ValidationMessage For="@(() => ModelUphProduk.Name)" />
+                            </MatCaption>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-3">
+                            <MatTextField @bind-Value="ModelUphProduk.Harga" Label="Harga" Type="number" FullWidth="true" />
+                            <MatCaption Class="mt-1">
+                                <ValidationMessage For="@(() => ModelUphProduk.Harga)" />
+                            </MatCaption>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-3">
+                            <MatTextField @bind-Value="ModelUphProduk.Berat" Label="Berat" Type="number" FullWidth="true" />
+                            <MatCaption Class="mt-1">
+                                <ValidationMessage For="@(() => ModelUphProduk.Berat)" />
+                            </MatCaption>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-3">
+                            <MatSelect @bind-Value="SelectSatuan" Label="Satuan" FullWidth="true">
+                                <MatOption TValue="string" Value="@(null)"></MatOption>
+                                @if (Satuans.Count() > 0)
+                                    {
+                                        foreach (var item in Satuans)
+                                        {
+                                        <MatOption TValue="string" Value="@(item.SatuanID)">@item.Name</MatOption>
+                                        }
+                                    }
+                            </MatSelect>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-3">
+                            <MatSelect @bind-Value="SelectJenisTernak" Label="Jenis Ternak" FullWidth="true">
+                                <MatOption TValue="string" Value="@(null)"></MatOption>
+                                @if (JenisTernaks.Count() > 0)
+                                    {
+                                        foreach (var item in JenisTernaks)
+                                        {
+                                        <MatOption TValue="string" Value="@(item.JenisTernakID)">@item.Name</MatOption>
+                                        }
+                                    }
+                            </MatSelect>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-3">
+                            <MatSelect @bind-Value="SelectProdukOlahan" Label="Produk Olahan" FullWidth="true">
+                                <MatOption TValue="string" Value="@(null)"></MatOption>
+                                @if (ProdukOlahans.Count() > 0)
+                                    {
+                                        foreach (var item in ProdukOlahans)
+                                        {
+                                        <MatOption TValue="string" Value="@(item.ProdukOlahanID)">@item.Name</MatOption>
+                                        }
+                                    }
+                            </MatSelect>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                            <MatTextField @bind-Value="ModelUphProduk.Description" Label="Description" FullWidth="true" />
+                            <MatCaption Class="mt-1">
+                                <ValidationMessage For="@(() => ModelUphProduk.Description)" />
+                            </MatCaption>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                            <label class="col-form-label">Upload File</label>
+                            <InputFile OnChange="HandleFileListBlazor" multiple />
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-3">
+                            @if (FileList != null)
+                            {
+                                <MatBody2><MatIcon Icon="@MatIconNames.Photo" />&nbsp;&nbsp; @FileList.Name</MatBody2>
+                            }
+                        </div>
+
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                            <MatButton Icon="@MatIconNames.Add" Raised="true" OnClick="HandleAddUphProduks">Add</MatButton>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12">
+                            @foreach (var uphProduk in UphProduks)
+                            {
+                                var item = uphProduk.UphProduk;
+
+                                <MatBody1><MatIcon Icon="@MatIconNames.Fastfood" />&nbsp;&nbsp; @item.Name - Rp @item.Harga</MatBody1>
+                                if (uphProduk.UphProdukFiles != null)
+                                {
+                                    <MatCaption>&nbsp;&nbsp; <MatIcon Icon="@MatIconNames.Photo" />&nbsp; &nbsp; @uphProduk.UphProdukFiles.Name</MatCaption>
+                                }
+                            }
+                        </div>
+                    </div>
+                </EditForm>
+            </div>
+
+            @*<div class="mat-layout-grid-cell mat-layout-grid-cell-span-12 mat-elevation-z3 p-3">
+                    <MatH6>Parameter Cluster</MatH6>
+
+                    <MatTabGroup>
+                        <MatTab Label="Kelembagaan">
+                            <MatAccordion>
+                                <MatExpansionPanel>
+                                    <MatExpansionPanelSummary>
+                                        <MatExpansionPanelHeader>Kelembagaan</MatExpansionPanelHeader>
+                                    </MatExpansionPanelSummary>
+                                    <MatExpansionPanelDetails>
+                                        <MatStringField Label="First name"></MatStringField>
+                                    </MatExpansionPanelDetails>
+                                </MatExpansionPanel>
+
+                                <MatExpansionPanel>
+                                    <MatExpansionPanelSummary>
+                                        <MatExpansionPanelHeader>Kapasitas kelembagaan</MatExpansionPanelHeader>
+                                    </MatExpansionPanelSummary>
+                                    <MatExpansionPanelDetails>
+                                        <MatStringField Label="First name"></MatStringField>
+                                    </MatExpansionPanelDetails>
+                                </MatExpansionPanel>
+                            </MatAccordion>
+                        </MatTab>
+                        <MatTab Label="Kemitraan">
+                        </MatTab>
+                        <MatTab Label="Sumber Daya">
+                        </MatTab>
+                        <MatTab Label="Produksi">
+                        </MatTab>
+                        <MatTab Label="Pemasaran">
+                        </MatTab>
+                    </MatTabGroup>
+                </div>*@
+
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12">
+                <MatButton OnClick="CancelClick">Cancel</MatButton>
+                <MatButton Raised="true" OnClick="HandleSubmit">
+                    Submit &nbsp;
+                    @if (IsLoadingCircle)
+                    {
+                        <i class="fas fa-spinner fa-spin"></i>
+                    }
+                </MatButton>
+            </div>
+        </div>
+    </div>
+}
+
+@code
+{
+    private bool IsLoadingCircle = false;
+
+    [Parameter]
+    public bool DialogIsOpen { get; set; } = false;
+
+    [Parameter]
+    public EventCallback<bool> DialogIsOpenStatus { get; set; }
+
+    [Parameter]
+    public EventCallback<bool> OnSuccessSubmit { get; set; }
+
+    private bool IsLoading = false;
+    public bool IsDisabledLoginButton { get; set; }
+
+    public CreateUphRequest Model { get; set; } = new CreateUphRequest();
+    public CreateUphProdukRequest ModelUphProduk { get; set; } = new CreateUphProdukRequest();
+
+    public ApiResponse<CreateUphResponse> Response { get; set; }
+    public ApiResponse<CreateUphProdukResponse> ResponseUphProduk { get; set; }
+
+    private EditContext _uphContext;
+    private EditContext _uphProdukContext;
+
+    public string SelectProvinsi
+    {
+        get => Model.ProvinsiID;
+        set
+        {
+            Model.ProvinsiID = value;
+            InvokeAsync(async () =>
+            {
+                await GetKotasByProvinsiID(value);
+                StateHasChanged();
+            });
+        }
+    }
+
+    public string SelectKota
+    {
+        get => Model.KotaID;
+        set
+        {
+            Model.KotaID = value;
+            InvokeAsync(async () =>
+            {
+                await GetKecamatansByKotaID(value);
+                StateHasChanged();
+            });
+        }
+    }
+
+    public string SelectKecamatan
+    {
+        get => Model.KecamatanID;
+        set
+        {
+            Model.KecamatanID = value;
+            InvokeAsync(async () =>
+            {
+                await GetKelurahansByKecamatanID(value);
+                StateHasChanged();
+            });
+        }
+    }
+
+    public string SelectKelurahan
+    {
+        get => Model.KelurahanID;
+        set => Model.KelurahanID = value;
+    }
+
+    public string SelectJenisTernak
+    {
+        get => ModelUphProduk.JenisTernakID;
+        set => ModelUphProduk.JenisTernakID = value;
+    }
+
+    public string SelectProdukOlahan
+    {
+        get => ModelUphProduk.ProdukOlahanID;
+        set => ModelUphProduk.ProdukOlahanID = value;
+    }
+
+    public string SelectSatuan
+    {
+        get => ModelUphProduk.SatuanID;
+        set => ModelUphProduk.SatuanID = value;
+    }
+
+    public IList<ProvinsiDTO> Provinsis { get; set; } = new List<ProvinsiDTO>();
+    public IList<KotaDTO> Kotas { get; set; } = new List<KotaDTO>();
+    public IList<KecamatanDTO> Kecamatans { get; set; } = new List<KecamatanDTO>();
+    public IList<KelurahanDTO> Kelurahans { get; set; } = new List<KelurahanDTO>();
+
+    public IList<ParameterJawabanDTO> ParameterBadanHukum { get; set; } = new List<ParameterJawabanDTO>();
+    public IList<ParameterJawabanDTO> ParameterAdministrasi { get; set; } = new List<ParameterJawabanDTO>();
+    public IList<ParameterJawabanDTO> ParameterBentukLembaga { get; set; } = new List<ParameterJawabanDTO>();
+    public IList<ParameterJawabanDTO> ParameterStatusUPH { get; set; } = new List<ParameterJawabanDTO>();
+
+    public IList<JenisTernakDTO> JenisTernaks { get; set; } = new List<JenisTernakDTO>();
+    public IList<ProdukOlahanDTO> ProdukOlahans { get; set; } = new List<ProdukOlahanDTO>();
+    public IList<SatuanDTO> Satuans { get; set; } = new List<SatuanDTO>();
+
+    public IList<ClientUphProduks> UphProduks { get; set; } = new List<ClientUphProduks>();
+
+    public IFileListEntry FileList;
+
+    private void HandleFileListBlazor(IFileListEntry[] files)
+    {
+        FileList = files.FirstOrDefault();
+    }
+
+    public void CancelClick()
+    {
+        DialogIsOpenStatus.InvokeAsync(false);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        _uphContext = new EditContext(Model);
+        _uphProdukContext = new EditContext(ModelUphProduk);
+
+        await GetProvinsis();
+
+        await GetJenisTernaks();
+        await GetProdukOlahans();
+        await GetSatuans();
+        await GetParameterJawabansByIndikatorName();
+
+        StateHasChanged();
+    }
+
+    private async Task GetProvinsis()
+        => Provinsis = Task.FromResult(await Http.GetFromJsonAsync<ApiResponse<GetProvinsisResponse>>(Constants.URI.Region.GetProvinsis)).Result.Result.Data.ToList();
+    private async Task GetKotasByProvinsiID(string ID)
+        => Kotas = Task.FromResult(await Http.GetFromJsonAsync<ApiResponse<GetKotasByProvinsiIDResponse>>($"{Constants.URI.Region.GetKotasByProvinsiID}{ID}")).Result.Result.Data.ToList();
+    private async Task GetKecamatansByKotaID(string ID)
+        => Kecamatans = Task.FromResult(await Http.GetFromJsonAsync<ApiResponse<GetKecamatansByKotaIDResponse>>($"{Constants.URI.Region.GetKecamatansByKotaID}{ID}")).Result.Result.Data.ToList();
+    private async Task GetKelurahansByKecamatanID(string ID)
+        => Kelurahans = Task.FromResult(await Http.GetFromJsonAsync<ApiResponse<GetKelurahansByKecamatanIDResponse>>($"{Constants.URI.Region.GetKelurahansByKecamatanID}{ID}")).Result.Result.Data.ToList();
+
+    private async Task GetJenisTernaks()
+        => JenisTernaks = Task.FromResult(await Http.GetFromJsonAsync<ApiResponse<GetJenisTernaksResponse>>(Constants.URI.JenisTernak.Base)).Result.Result.Data.ToList();
+    private async Task GetProdukOlahans()
+        => ProdukOlahans = Task.FromResult(await Http.GetFromJsonAsync<ApiResponse<GetProdukOlahansResponse>>(Constants.URI.ProdukOlahan.Base)).Result.Result.Data.ToList();
+    private async Task GetSatuans()
+        => Satuans = Task.FromResult(await Http.GetFromJsonAsync<ApiResponse<GetSatuansResponse>>(Constants.URI.Satuan.Base)).Result.Result.Data.ToList();
+
+    private async Task GetParameterJawabansByIndikatorName()
+    {
+        var badanHukum = "Badan Hukum";
+        var administrasi = "Administrasi";
+        var bentukLembaga = "Bentuk kelembagaan";
+        var statusUPH = "Status UPH";
+
+        ParameterBadanHukum = Task.FromResult(await Http.GetFromJsonAsync<ApiResponse<GetParameterJawabansByIndikatorNameResponse>>
+            ($"{Constants.URI.ParameterJawaban.ByIndikatorName}{badanHukum}")).Result.Result.ParameterJawabans.ToList();
+
+        ParameterAdministrasi = Task.FromResult(await Http.GetFromJsonAsync<ApiResponse<GetParameterJawabansByIndikatorNameResponse>>
+            ($"{Constants.URI.ParameterJawaban.ByIndikatorName}{administrasi}")).Result.Result.ParameterJawabans.ToList();
+
+        ParameterBentukLembaga = Task.FromResult(await Http.GetFromJsonAsync<ApiResponse<GetParameterJawabansByIndikatorNameResponse>>
+            ($"{Constants.URI.ParameterJawaban.ByIndikatorName}{bentukLembaga}")).Result.Result.ParameterJawabans.ToList();
+
+        ParameterStatusUPH = Task.FromResult(await Http.GetFromJsonAsync<ApiResponse<GetParameterJawabansByIndikatorNameResponse>>
+            ($"{Constants.URI.ParameterJawaban.ByIndikatorName}{statusUPH}")).Result.Result.ParameterJawabans.ToList();
+    }
+
+
+    private async Task HandleSubmit()
+    {
+        IsLoadingCircle = true;
+
+        var handleSubmitUph = await HandleSubmitUph();
+
+        if (handleSubmitUph)
+        {
+            var handleSubmitUphProduk = await HandleSubmitUphProduk();
+
+            if (handleSubmitUphProduk)
+            {
+                // var handleSubmitUphClusterParameter = await HandleSubmitUphClusterParameter();
+
+                await DialogIsOpenStatus.InvokeAsync(false);
+                await OnSuccessSubmit.InvokeAsync(true);
+
+                IsLoadingCircle = false;
+                StateHasChanged();
+            }
+        }
+    }
+
+    private void HandleAddUphProduks()
+    {
+        if (_uphProdukContext.Validate())
+        {
+            var clientUphProduks = new ClientUphProduks();
+            clientUphProduks.UphProduk = ModelUphProduk;
+
+            if (FileList != null)
+                clientUphProduks.UphProdukFiles = new UphProdukFiles { Data = FileList.Data, Name = FileList.Name };
+
+            UphProduks.Add(clientUphProduks);
+
+            ModelUphProduk = new CreateUphProdukRequest();
+            FileList = null;
+        }
+    }
+
+    private async Task<bool> HandleSubmitUphProduk()
+    {
+        if (UphProduks.Count > 0)
+        {
+            foreach (var uphProduk in UphProduks)
+            {
+                var item = uphProduk.UphProduk;
+
+                var client = await Http.PostAsJsonAsync<CreateUphProdukRequest>(Constants.URI.UphProduk.Register, new CreateUphProdukRequest
+                {
+                    Berat = item.Berat,
+                    Description = item.Description,
+                    Harga = item.Harga,
+                    JenisTernakID = item.JenisTernakID,
+                    Name = item.Name,
+                    ProdukOlahanID = item.ProdukOlahanID,
+                    SatuanID = item.SatuanID,
+                    UphID = item.UphID
+                });
+                ResponseUphProduk = Task.FromResult(await client.Content.ReadFromJsonAsync<ApiResponse<CreateUphProdukResponse>>()).Result;
+
+                if (ResponseUphProduk.Status.IsError)
+                {
+                    Toaster.Add(ResponseUphProduk.Status.Message, MatToastType.Danger);
+
+                    IsLoading = false;
+
+                    StateHasChanged();
+
+                    return false;
+                }
+
+                var file = uphProduk.UphProdukFiles;
+
+                if (file != null)
+                {
+                    var content = new MultipartFormDataContent();
+                    content.Headers.ContentDisposition = new ContentDispositionHeaderValue("form-data");
+
+                    content.Add(new StringContent(ResponseUphProduk.Result.UphProdukID), "EntityID");
+                    content.Add(new StringContent(Constants.FileEntityType.UphProduk), "EntityType");
+
+                    content.Add(new StreamContent(file.Data, (int)file.Data.Length), "Files", file.Name);
+
+                    var result = await Http.PostAsync(Constants.URI.File.Register, content);
+                }
+            }
+
+            IsLoading = false;
+            StateHasChanged();
+
+            return true;
+        }
+
+        return false;
+    }
+
+    private async Task<bool> HandleSubmitUph()
+    {
+        if (_uphContext.Validate())
+        {
+            if (UphProduks.Count > 0)
+            {
+                var client = await Http.PostAsJsonAsync<CreateUphRequest>(Constants.URI.Uph.Register, new CreateUphRequest
+                {
+                    ProvinsiID = Model.ProvinsiID,
+                    KotaID = Model.KotaID,
+                    KecamatanID = Model.KecamatanID,
+                    KelurahanID = Model.KelurahanID,
+
+                    Alamat = Model.Alamat,
+                    Handphone = Model.Alamat,
+                    Ketua = Model.Ketua,
+                    Name = Model.Name,
+                    TahunBerdiri = Model.TahunBerdiri,
+
+                    ParameterAdministrasiID = Model.ParameterAdministrasiID,
+                    ParameterBadanHukumID = Model.ParameterBadanHukumID,
+                    ParameterBentukLembagaID = Model.ParameterBentukLembagaID,
+                    ParameterStatusUphID = Model.ParameterStatusUphID
+                });
+
+                Response = Task.FromResult(await client.Content.ReadFromJsonAsync<ApiResponse<CreateUphResponse>>()).Result;
+
+                if (!Response.Status.IsError)
+                {
+                    foreach (var uphProduk in UphProduks)
+                    {
+                        var item = uphProduk.UphProduk;
+
+                        item.UphID = Response.Result.UphID;
+                    }
+
+                    return true;
+                }
+                else
+                {
+                    Toaster.Add(Response.Status.Message, MatToastType.Danger);
+
+                    IsLoading = false;
+                    StateHasChanged();
+                }
+            }
+            else
+            {
+                IsLoading = false;
+                StateHasChanged();
+
+                Toaster.Add("Maaf, Data Uph Produk tidak boleh Kosong", MatToastType.Danger);
+            }
+        }
+        else
+        {
+            _uphContext.AddDataAnnotationsValidation();
+            Toaster.AddErrors(_uphContext.GetValidationMessages());
+        }
+
+        return false;
+    }
+
+    public class ClientUphProduks
+    {
+        public CreateUphProdukRequest UphProduk { get; set; }
+        public UphProdukFiles UphProdukFiles;
+    }
+
+    public class UphProdukFiles
+    {
+        public Stream Data { get; set; }
+        public string Name { get; set; }
+    }
+}

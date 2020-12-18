@@ -30,6 +30,7 @@ namespace SiUpin.Application.Uphs.Queries.GetAllUph
                     .Where(x => x.Name.Contains(request.FilterUphName ?? ""))
                     .Include(a => a.Provinsi)
                     .Include(a => a.Kota)
+                    .OrderByDescending(o => o.Created)
                     .Skip((request.PageNumber - 1) * request.PageSize)
                     .Take(request.PageSize)
                     .ToListAsync(cancellationToken);
@@ -40,10 +41,12 @@ namespace SiUpin.Application.Uphs.Queries.GetAllUph
 
                 if (records.Count > 0)
                 {
+                    int no = 1;
                     foreach (var data in records)
                     {
                         var uph = new UphDTO
                         {
+                            No = no++,
                             UphID = data.UphID,
                             Name = data.Name,
 

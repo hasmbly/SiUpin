@@ -1,7 +1,9 @@
-﻿using SiUpin.Domain.Common;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using SiUpin.Domain.Common;
 
 namespace SiUpin.Domain.Entities
 {
+    [Table("files")]
     public class File : AuditableEntity
     {
         public string FileID { get; set; }

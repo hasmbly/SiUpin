@@ -3,10 +3,3 @@ dotnet ef migrations remove --project src/SiUpin.Infrastructure --startup-projec
 dotnet ef migrations add SiUpinDB_001 --project src/SiUpin.Infrastructure --startup-project src/SiUpin.WebAPI --output-dir Persistence/Migrations
 dotnet ef database update --project src/SiUpin.Infrastructure --startup-project src/SiUpin.WebAPI
 ====================================================================================================
-Urutan Seeding Data
-----------------------------------------------------------------------------------------------------
-https://localhost:5004/api/dev/seedMasterData
-https://localhost:5004/api/dev/seedFiatCurrencies
-https://localhost:5004/api/dev/updateFiatCurrencyCoinMarketCapIDs
-https://localhost:5004/api/dev/seedCryptoCurrencies
-====================================================================================================

@@ -4,7 +4,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using SiUpin.Application.Common;
 using SiUpin.Application.Common.Interfaces;
 using SiUpin.Domain.Entities;
 using SiUpin.Shared.Systems.Commands.SeedKelurahan;
@@ -14,30 +13,26 @@ namespace SiUpin.Application.Systems.Commands.SeedKelurahan
     public class SeedKelurahanCommandHandler : IRequestHandler<SeedKelurahanRequest, SeedKelurahanResponse>
     {
         private readonly ISiUpinDBContext _context;
-        private readonly IFileService _fileService;
+        private readonly IEntityRepository _entityRepository;
 
-        public SeedKelurahanCommandHandler(ISiUpinDBContext context, IFileService fileService)
+        public SeedKelurahanCommandHandler(ISiUpinDBContext context, IEntityRepository entityRepository)
         {
             _context = context;
-            _fileService = fileService;
+            _entityRepository = entityRepository;
         }
 
         public async Task<SeedKelurahanResponse> Handle(SeedKelurahanRequest request, CancellationToken cancellationToken)
         {
             var result = new SeedKelurahanResponse();
 
-            var dataJSON = _fileService.ReadJSONFile<KelurahanJSON>(FilePath.KelurahanJSON);
+            var dataOld = await _entityRepository.GetAllKelurahan();
 
-            // this is temporary just to make sure there is no duplicate data
-            List<Kelurahan> Kelurahans = new List<Kelurahan>();
+            List<Kelurahan> Kelurahans = await _context.Kelurahans.ToListAsync(cancellationToken);
 
-            var listDataJSON = dataJSON.rows.ToList();
-
-            // collect data from db to temporary List
             var kecamatans = await _context.Kecamatans
                 .ToListAsync(cancellationToken);
 
-            foreach (var data in listDataJSON)
+            foreach (var data in dataOld)
             {
                 Kelurahan Kelurahan = new Kelurahan();
 
@@ -46,6 +41,8 @@ namespace SiUpin.Application.Systems.Commands.SeedKelurahan
 
                 if (Kelurahan == null)
                 {
+                    System.Console.WriteLine($"siupin - kelurahan doAdd(): {data.nama_kelurahan} ({data.id_kelurahan})");
+
                     string kecamatanID = kecamatans.Where(x => x.id_kecamatan == data.id_kecamatan_fk).FirstOrDefault().KecamatanID ?? "";
 
                     Kelurahan = new Kelurahan
@@ -54,8 +51,6 @@ namespace SiUpin.Application.Systems.Commands.SeedKelurahan
                         KecamatanID = kecamatanID,
                         Name = data.nama_kelurahan
                     };
-
-                    Kelurahans.Add(Kelurahan);
 
                     _context.Kelurahans.Add(Kelurahan);
                 }

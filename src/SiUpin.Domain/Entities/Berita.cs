@@ -1,7 +1,9 @@
-﻿using SiUpin.Domain.Common;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using SiUpin.Domain.Common;
 
 namespace SiUpin.Domain.Entities
 {
+    [Table("beritas")]
     public class Berita : AuditableEntity
     {
         public string BeritaID { get; set; }

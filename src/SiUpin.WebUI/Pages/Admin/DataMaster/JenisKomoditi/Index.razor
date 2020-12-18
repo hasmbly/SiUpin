@@ -1,4 +1,118 @@
 ﻿@page "/admin/dataMaster/jenisKomoditi"
 @attribute [Authorize]
 
-<UnderConstructions />
+@inject HttpClient Http
+@inject IMatToaster Toaster
+
+@using SiUpin.Shared.JenisKomiditis.Common.GetAllJenisKomiditi
+@using SiUpin.Shared.JenisKomiditis.Queries.GetAllJenisKomiditi
+@using SiUpin.Shared.Common.ApiEnvelopes
+
+<div class="mat-layout-grid">
+    <div class="mat-layout-grid-inner">
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
+            <MatH4>Data Jenis Komoditi</MatH4>
+        </div>
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
+            @if (IsLoading)
+            {
+                <MatDialog @bind-IsOpen="IsLoading" CanBeClosed="false">
+                    <MatDialog>Please Wait..</MatDialog>
+                    <MatDialogContent>
+                        <MatProgressBar Indeterminate="true" Closed="!IsLoading"></MatProgressBar>
+                    </MatDialogContent>
+                </MatDialog>
+            }
+            else
+            {
+                if (sortedData.Count() > 0)
+                {
+                    <MatTable Items="sortedData" AllowSelection="true" UseSortHeaderRow="true" class="mat-elevation-z5 mt-1">
+                        <MatTableHeader>
+                            <MatSortHeaderRow SortChanged="SortData">
+                                <MatSortHeader SortId="1">No</MatSortHeader>
+                                <MatSortHeader SortId="2"><span style="width:150px">Nama</span></MatSortHeader>
+                            </MatSortHeaderRow>
+                        </MatTableHeader>
+                        <MatTableRow>
+                            <td>@context.No</td>
+                            <td>@context.Name</td>
+                        </MatTableRow>
+                    </MatTable>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+@code
+{
+    private bool IsLoading = false;
+
+    private ApiResponse<GetAllJenisKomiditiResponse> items;
+    private JenisKomoditiDTO[] sortedData = null;
+
+    protected override async Task OnInitializedAsync() => await GetData();
+
+    private async Task GetData()
+    {
+        IsLoading = true;
+
+        items = await Http.GetFromJsonAsync<ApiResponse<GetAllJenisKomiditiResponse>>(Constants.URI.JenisTernak.Base);
+
+        if (items.Status.IsError)
+        {
+            Toaster.Add(items.Status.Message, MatToastType.Danger);
+
+            IsLoading = false;
+
+            StateHasChanged();
+        }
+        else
+        {
+            if (items.Result.JenisKomoditis != null)
+            {
+                if (items.Result.JenisKomoditis.Count == 0)
+                {
+                    Toaster.Add("Tidak ada Data", MatToastType.Danger);
+                }
+
+                SortData(null);
+
+                IsLoading = false;
+
+                StateHasChanged();
+            }
+        }
+    }
+
+    private void SortData(MatSortChangedEvent sort)
+    {
+        sortedData = items.Result.JenisKomoditis.ToArray();
+        if (!(sort == null || sort.Direction == MatSortDirection.None || string.IsNullOrEmpty(sort.SortId)))
+        {
+            Comparison<JenisKomoditiDTO> comparison = null;
+            switch (sort.SortId)
+            {
+                case "1":
+                    comparison = (s1, s2) => s1.No.CompareTo(s2.No);
+                    break;
+                case "2":
+                    comparison = (s1, s2) => string.Compare(s1.Name, s2.Name, StringComparison.InvariantCultureIgnoreCase);
+                    break;
+            }
+
+            if (comparison != null)
+            {
+                if (sort.Direction == MatSortDirection.Desc)
+                {
+                    Array.Sort(sortedData, (s1, s2) => -1 * comparison(s1, s2));
+                }
+                else
+                {
+                    Array.Sort(sortedData, comparison);
+                }
+            }
+        }
+    }
+}

@@ -30,7 +30,7 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("AsalBantuanID");
 
-                    b.ToTable("AsalBantuans");
+                    b.ToTable("asalbantuans");
                 });
 
             modelBuilder.Entity("SiUpin.Domain.Entities.Berita", b =>
@@ -61,7 +61,7 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("BeritaID");
 
-                    b.ToTable("Beritas");
+                    b.ToTable("beritas");
                 });
 
             modelBuilder.Entity("SiUpin.Domain.Entities.File", b =>
@@ -112,7 +112,7 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("UserID");
 
-                    b.ToTable("Files");
+                    b.ToTable("files");
                 });
 
             modelBuilder.Entity("SiUpin.Domain.Entities.JenisKomoditi", b =>
@@ -131,7 +131,7 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("JenisKomoditiID");
 
-                    b.ToTable("JenisKomoditis");
+                    b.ToTable("jeniskomoditis");
                 });
 
             modelBuilder.Entity("SiUpin.Domain.Entities.JenisTernak", b =>
@@ -150,7 +150,7 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("JenisTernakID");
 
-                    b.ToTable("JenisTernaks");
+                    b.ToTable("jenisternaks");
                 });
 
             modelBuilder.Entity("SiUpin.Domain.Entities.Kecamatan", b =>
@@ -174,7 +174,7 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("KotaID");
 
-                    b.ToTable("Kecamatans");
+                    b.ToTable("kecamatans");
                 });
 
             modelBuilder.Entity("SiUpin.Domain.Entities.Kelurahan", b =>
@@ -198,7 +198,7 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("KelurahanID");
 
-                    b.ToTable("Kelurahans");
+                    b.ToTable("kelurahans");
                 });
 
             modelBuilder.Entity("SiUpin.Domain.Entities.Kota", b =>
@@ -222,7 +222,7 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("ProvinsiID");
 
-                    b.ToTable("Kotas");
+                    b.ToTable("kotas");
                 });
 
             modelBuilder.Entity("SiUpin.Domain.Entities.ParameterAspek", b =>
@@ -241,7 +241,7 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("ParameterAspekID");
 
-                    b.ToTable("ParameterAspeks");
+                    b.ToTable("parameteraspeks");
                 });
 
             modelBuilder.Entity("SiUpin.Domain.Entities.ParameterIndikator", b =>
@@ -265,7 +265,7 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("ParameterKriteriaID");
 
-                    b.ToTable("ParameterIndikators");
+                    b.ToTable("parameterindikators");
                 });
 
             modelBuilder.Entity("SiUpin.Domain.Entities.ParameterJawaban", b =>
@@ -289,7 +289,7 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("ParameterJawabanID");
 
-                    b.ToTable("ParameterJawabans");
+                    b.ToTable("parameterjawabans");
                 });
 
             modelBuilder.Entity("SiUpin.Domain.Entities.ParameterKriteria", b =>
@@ -313,7 +313,7 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("ParameterKriteriaID");
 
-                    b.ToTable("ParameterKriterias");
+                    b.ToTable("parameterkriterias");
                 });
 
             modelBuilder.Entity("SiUpin.Domain.Entities.Pesan", b =>
@@ -344,7 +344,7 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("PesanID");
 
-                    b.ToTable("Pesans");
+                    b.ToTable("pesans");
                 });
 
             modelBuilder.Entity("SiUpin.Domain.Entities.ProdukOlahan", b =>
@@ -368,7 +368,7 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("ProdukOlahanID");
 
-                    b.ToTable("ProdukOlahans");
+                    b.ToTable("produkolahans");
                 });
 
             modelBuilder.Entity("SiUpin.Domain.Entities.Provinsi", b =>
@@ -387,7 +387,7 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("ProvinsiID");
 
-                    b.ToTable("Provinsis");
+                    b.ToTable("provinsis");
                 });
 
             modelBuilder.Entity("SiUpin.Domain.Entities.Role", b =>
@@ -403,7 +403,7 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("RoleID");
 
-                    b.ToTable("Roles");
+                    b.ToTable("roles");
                 });
 
             modelBuilder.Entity("SiUpin.Domain.Entities.Satuan", b =>
@@ -419,7 +419,7 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("SatuanID");
 
-                    b.ToTable("Satuans");
+                    b.ToTable("satuans");
                 });
 
             modelBuilder.Entity("SiUpin.Domain.Entities.Uph", b =>
@@ -430,6 +430,12 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
 
                     b.Property<string>("Alamat")
                         .HasColumnType("varchar(200)");
+
+                    b.Property<DateTimeOffset>("Created")
+                        .HasColumnType("timestamp");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("text");
 
                     b.Property<string>("Handphone")
                         .HasColumnType("varchar(50)");
@@ -446,8 +452,23 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
                     b.Property<string>("KotaID")
                         .HasColumnType("varchar(50)");
 
+                    b.Property<DateTimeOffset>("LastModified")
+                        .HasColumnType("timestamp");
+
                     b.Property<string>("Name")
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("ParameterAdministrasiID")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("ParameterBadanHukumID")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("ParameterBentukLembagaID")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("ParameterStatusUphID")
+                        .HasColumnType("varchar(50)");
 
                     b.Property<string>("ProvinsiID")
                         .HasColumnType("varchar(50)");
@@ -466,31 +487,295 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("KotaID");
 
+                    b.HasIndex("ParameterAdministrasiID");
+
+                    b.HasIndex("ParameterBadanHukumID");
+
+                    b.HasIndex("ParameterBentukLembagaID");
+
+                    b.HasIndex("ParameterStatusUphID");
+
                     b.HasIndex("ProvinsiID");
 
                     b.HasIndex("UphID");
 
-                    b.ToTable("Uphs");
+                    b.ToTable("uphs");
                 });
 
-            modelBuilder.Entity("SiUpin.Domain.Entities.UphParameter", b =>
+            modelBuilder.Entity("SiUpin.Domain.Entities.UphBahanBaku", b =>
                 {
+                    b.Property<string>("UphBahanBakuID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("AsalBahanBaku")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<DateTimeOffset>("Created")
+                        .HasColumnType("timestamp");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("text");
+
+                    b.Property<string>("JenisKomoditiID")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("JenisTernakID")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTimeOffset>("LastModified")
+                        .HasColumnType("timestamp");
+
+                    b.Property<string>("Nilai")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("SatuanID")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("TotalKebutuhan")
+                        .HasColumnType("varchar(255)");
+
                     b.Property<string>("UphID")
                         .HasColumnType("varchar(50)");
 
-                    b.Property<string>("ParameterJawabanID")
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Description")
+                    b.Property<string>("id_bahan_baku")
                         .HasColumnType("text");
 
-                    b.HasKey("UphID", "ParameterJawabanID");
+                    b.Property<string>("id_uph")
+                        .HasColumnType("text");
 
-                    b.HasIndex("ParameterJawabanID");
+                    b.HasKey("UphBahanBakuID");
+
+                    b.HasIndex("JenisKomoditiID");
+
+                    b.HasIndex("JenisTernakID");
+
+                    b.HasIndex("SatuanID");
+
+                    b.HasIndex("UphBahanBakuID");
 
                     b.HasIndex("UphID");
 
-                    b.ToTable("UphParameters");
+                    b.ToTable("uphbahanbakus");
+                });
+
+            modelBuilder.Entity("SiUpin.Domain.Entities.UphGmp", b =>
+                {
+                    b.Property<string>("UphGmpID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTimeOffset>("Created")
+                        .HasColumnType("timestamp");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("text");
+
+                    b.Property<DateTimeOffset>("LastModified")
+                        .HasColumnType("timestamp");
+
+                    b.Property<string>("UphID")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("id_gmp")
+                        .HasColumnType("text");
+
+                    b.Property<string>("id_uph")
+                        .HasColumnType("text");
+
+                    b.Property<string>("jml_gmp")
+                        .HasColumnType("text");
+
+                    b.Property<string>("nama_gmp")
+                        .HasColumnType("text");
+
+                    b.Property<string>("user")
+                        .HasColumnType("text");
+
+                    b.HasKey("UphGmpID");
+
+                    b.HasIndex("UphGmpID");
+
+                    b.HasIndex("UphID");
+
+                    b.ToTable("uphgmps");
+                });
+
+            modelBuilder.Entity("SiUpin.Domain.Entities.UphMitra", b =>
+                {
+                    b.Property<string>("UphMitraID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTimeOffset>("Created")
+                        .HasColumnType("timestamp");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("text");
+
+                    b.Property<DateTimeOffset>("LastModified")
+                        .HasColumnType("timestamp");
+
+                    b.Property<string>("UphID")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("akhir_periode")
+                        .HasColumnType("text");
+
+                    b.Property<string>("alamat")
+                        .HasColumnType("text");
+
+                    b.Property<string>("awal_periode")
+                        .HasColumnType("text");
+
+                    b.Property<string>("bermitra")
+                        .HasColumnType("text");
+
+                    b.Property<string>("detail_bahan")
+                        .HasColumnType("text");
+
+                    b.Property<string>("detail_fasilitasi")
+                        .HasColumnType("text");
+
+                    b.Property<string>("detail_kopetensi")
+                        .HasColumnType("text");
+
+                    b.Property<string>("detail_mitra")
+                        .HasColumnType("text");
+
+                    b.Property<string>("detail_promosi")
+                        .HasColumnType("text");
+
+                    b.Property<string>("detail_sarana")
+                        .HasColumnType("text");
+
+                    b.Property<string>("id_mitra")
+                        .HasColumnType("text");
+
+                    b.Property<string>("id_uph")
+                        .HasColumnType("text");
+
+                    b.Property<string>("jenis_mitra")
+                        .HasColumnType("text");
+
+                    b.Property<string>("jenis_usaha")
+                        .HasColumnType("text");
+
+                    b.Property<string>("lain_kopetensi")
+                        .HasColumnType("text");
+
+                    b.Property<string>("lembaga")
+                        .HasColumnType("text");
+
+                    b.Property<string>("lembaga_lain")
+                        .HasColumnType("text");
+
+                    b.Property<string>("manajemen_limbah")
+                        .HasColumnType("text");
+
+                    b.Property<string>("nama_perusahaan")
+                        .HasColumnType("text");
+
+                    b.Property<string>("nilai_lembaga")
+                        .HasColumnType("text");
+
+                    b.Property<string>("nilai_mitra")
+                        .HasColumnType("text");
+
+                    b.Property<string>("nilai_promosi")
+                        .HasColumnType("text");
+
+                    b.Property<string>("nilai_sarana")
+                        .HasColumnType("text");
+
+                    b.Property<string>("no_hp")
+                        .HasColumnType("text");
+
+                    b.Property<string>("penanggungjawab")
+                        .HasColumnType("text");
+
+                    b.Property<string>("perjanjian")
+                        .HasColumnType("text");
+
+                    b.Property<string>("sasaran")
+                        .HasColumnType("text");
+
+                    b.Property<string>("satuan_bahan")
+                        .HasColumnType("text");
+
+                    b.Property<string>("status")
+                        .HasColumnType("text");
+
+                    b.Property<string>("upload_doc")
+                        .HasColumnType("text");
+
+                    b.Property<string>("user")
+                        .HasColumnType("text");
+
+                    b.HasKey("UphMitraID");
+
+                    b.HasIndex("UphID");
+
+                    b.HasIndex("UphMitraID");
+
+                    b.ToTable("uphmitras");
+                });
+
+            modelBuilder.Entity("SiUpin.Domain.Entities.UphPasar", b =>
+                {
+                    b.Property<string>("UphPasarID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTimeOffset>("Created")
+                        .HasColumnType("timestamp");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("text");
+
+                    b.Property<DateTimeOffset>("LastModified")
+                        .HasColumnType("timestamp");
+
+                    b.Property<string>("UphID")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("id_pasar")
+                        .HasColumnType("text");
+
+                    b.Property<string>("id_uph")
+                        .HasColumnType("text");
+
+                    b.Property<string>("jangkauan")
+                        .HasColumnType("text");
+
+                    b.Property<string>("jml_penjualan")
+                        .HasColumnType("text");
+
+                    b.Property<string>("lain")
+                        .HasColumnType("text");
+
+                    b.Property<string>("mekanisme")
+                        .HasColumnType("text");
+
+                    b.Property<string>("nama_uph")
+                        .HasColumnType("text");
+
+                    b.Property<string>("nilai_mekanisme")
+                        .HasColumnType("text");
+
+                    b.Property<string>("omset")
+                        .HasColumnType("text");
+
+                    b.Property<string>("user")
+                        .HasColumnType("text");
+
+                    b.HasKey("UphPasarID");
+
+                    b.HasIndex("UphID");
+
+                    b.HasIndex("UphPasarID");
+
+                    b.ToTable("uphpasars");
                 });
 
             modelBuilder.Entity("SiUpin.Domain.Entities.UphProduk", b =>
@@ -502,6 +787,12 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
                     b.Property<int>("Berat")
                         .HasColumnType("int(5)");
 
+                    b.Property<DateTimeOffset>("Created")
+                        .HasColumnType("timestamp");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("text");
+
                     b.Property<string>("Description")
                         .HasColumnType("text");
 
@@ -510,6 +801,9 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
 
                     b.Property<string>("JenisTernakID")
                         .HasColumnType("varchar(50)");
+
+                    b.Property<DateTimeOffset>("LastModified")
+                        .HasColumnType("timestamp");
 
                     b.Property<string>("Name")
                         .HasColumnType("varchar(100)");
@@ -535,7 +829,214 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("UphProdukID");
 
-                    b.ToTable("UphProduks");
+                    b.ToTable("uphproduks");
+                });
+
+            modelBuilder.Entity("SiUpin.Domain.Entities.UphProduksi", b =>
+                {
+                    b.Property<string>("UphProduksiID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTimeOffset>("Created")
+                        .HasColumnType("timestamp");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("text");
+
+                    b.Property<DateTimeOffset>("LastModified")
+                        .HasColumnType("timestamp");
+
+                    b.Property<string>("UphID")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("bahan_baku")
+                        .HasColumnType("text");
+
+                    b.Property<string>("gmp")
+                        .HasColumnType("text");
+
+                    b.Property<string>("id_produksi")
+                        .HasColumnType("text");
+
+                    b.Property<string>("id_uph")
+                        .HasColumnType("text");
+
+                    b.Property<string>("izin_edar")
+                        .HasColumnType("text");
+
+                    b.Property<string>("jml_edar")
+                        .HasColumnType("text");
+
+                    b.Property<string>("jml_gmp")
+                        .HasColumnType("text");
+
+                    b.Property<string>("jml_hari_produksi")
+                        .HasColumnType("text");
+
+                    b.Property<string>("jml_produksi")
+                        .HasColumnType("text");
+
+                    b.Property<string>("jml_sertifikat")
+                        .HasColumnType("text");
+
+                    b.Property<string>("nama_uph")
+                        .HasColumnType("text");
+
+                    b.Property<string>("satuan")
+                        .HasColumnType("text");
+
+                    b.Property<string>("sertifikat")
+                        .HasColumnType("text");
+
+                    b.Property<string>("user")
+                        .HasColumnType("text");
+
+                    b.HasKey("UphProduksiID");
+
+                    b.HasIndex("UphID");
+
+                    b.HasIndex("UphProduksiID");
+
+                    b.ToTable("uphproduksis");
+                });
+
+            modelBuilder.Entity("SiUpin.Domain.Entities.UphSarana", b =>
+                {
+                    b.Property<string>("UphSaranaID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTimeOffset>("Created")
+                        .HasColumnType("timestamp");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("text");
+
+                    b.Property<DateTimeOffset>("LastModified")
+                        .HasColumnType("timestamp");
+
+                    b.Property<string>("UphID")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("alasan")
+                        .HasColumnType("text");
+
+                    b.Property<string>("asal_bantuan")
+                        .HasColumnType("text");
+
+                    b.Property<string>("id_sarana")
+                        .HasColumnType("text");
+
+                    b.Property<string>("id_uph")
+                        .HasColumnType("text");
+
+                    b.Property<string>("jenis_mesin")
+                        .HasColumnType("text");
+
+                    b.Property<string>("kapasitas_terpakai")
+                        .HasColumnType("text");
+
+                    b.Property<string>("kapasitas_terpasang")
+                        .HasColumnType("text");
+
+                    b.Property<string>("lain")
+                        .HasColumnType("text");
+
+                    b.Property<string>("lain_alasan")
+                        .HasColumnType("text");
+
+                    b.Property<string>("nama_alat")
+                        .HasColumnType("text");
+
+                    b.Property<string>("nama_uph")
+                        .HasColumnType("text");
+
+                    b.Property<string>("satuan")
+                        .HasColumnType("text");
+
+                    b.Property<string>("status")
+                        .HasColumnType("text");
+
+                    b.Property<string>("tahun")
+                        .HasColumnType("text");
+
+                    b.Property<string>("user")
+                        .HasColumnType("text");
+
+                    b.HasKey("UphSaranaID");
+
+                    b.HasIndex("UphID");
+
+                    b.HasIndex("UphSaranaID");
+
+                    b.ToTable("uphsaranas");
+                });
+
+            modelBuilder.Entity("SiUpin.Domain.Entities.UphSdm", b =>
+                {
+                    b.Property<string>("UphSdmID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<DateTimeOffset>("Created")
+                        .HasColumnType("timestamp");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("text");
+
+                    b.Property<DateTimeOffset>("LastModified")
+                        .HasColumnType("timestamp");
+
+                    b.Property<string>("UphID")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("id_sdm")
+                        .HasColumnType("text");
+
+                    b.Property<string>("id_uph")
+                        .HasColumnType("text");
+
+                    b.Property<string>("jml_modal")
+                        .HasColumnType("text");
+
+                    b.Property<string>("jml_sdm")
+                        .HasColumnType("text");
+
+                    b.Property<string>("lokasi")
+                        .HasColumnType("text");
+
+                    b.Property<string>("nama_pelatihan")
+                        .HasColumnType("text");
+
+                    b.Property<string>("nama_uph")
+                        .HasColumnType("text");
+
+                    b.Property<string>("penyelenggara")
+                        .HasColumnType("text");
+
+                    b.Property<string>("sop")
+                        .HasColumnType("text");
+
+                    b.Property<string>("struktur_modal")
+                        .HasColumnType("text");
+
+                    b.Property<string>("sumber_modal")
+                        .HasColumnType("text");
+
+                    b.Property<string>("tahun")
+                        .HasColumnType("text");
+
+                    b.Property<string>("user")
+                        .HasColumnType("text");
+
+                    b.HasKey("UphSdmID");
+
+                    b.HasIndex("UphID");
+
+                    b.HasIndex("UphSdmID");
+
+                    b.ToTable("uphsdms");
                 });
 
             modelBuilder.Entity("SiUpin.Domain.Entities.User", b =>
@@ -545,7 +1046,7 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
                         .HasColumnType("varchar(50)");
 
                     b.Property<string>("Alamat")
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<DateTimeOffset>("Created")
                         .HasColumnType("timestamp");
@@ -554,16 +1055,16 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
                         .HasColumnType("varchar(50)");
 
                     b.Property<string>("Email")
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Fullname")
-                        .HasColumnType("varchar(200)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Instansi")
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Jabatan")
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("KecamatanID")
                         .HasColumnType("varchar(50)");
@@ -578,7 +1079,7 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
                         .HasColumnType("timestamp");
 
                     b.Property<string>("NIP")
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(200)");
@@ -596,10 +1097,10 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
                         .HasColumnType("varchar(50)");
 
                     b.Property<string>("Telepon")
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Username")
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("id")
                         .HasColumnType("varchar(50)");
@@ -618,7 +1119,7 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("UserID");
 
-                    b.ToTable("Users");
+                    b.ToTable("users");
                 });
 
             modelBuilder.Entity("SiUpin.Domain.Entities.File", b =>
@@ -709,25 +1210,53 @@ namespace SiUpin.Infrastructure.Persistence.Migrations
                         .HasForeignKey("KotaID")
                         .OnDelete(DeleteBehavior.Restrict);
 
+                    b.HasOne("SiUpin.Domain.Entities.ParameterJawaban", "ParameterAdministrasi")
+                        .WithMany("UphParameterAdministrasis")
+                        .HasForeignKey("ParameterAdministrasiID")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("SiUpin.Domain.Entities.ParameterJawaban", "ParameterBadanHukum")
+                        .WithMany("UphParameterBadanHukums")
+                        .HasForeignKey("ParameterBadanHukumID")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("SiUpin.Domain.Entities.ParameterJawaban", "ParameterBentukLembaga")
+                        .WithMany("UphParameterBentukLembagas")
+                        .HasForeignKey("ParameterBentukLembagaID")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("SiUpin.Domain.Entities.ParameterJawaban", "ParameterStatusUph")
+                        .WithMany("UphParameterStatusUphs")
+                        .HasForeignKey("ParameterStatusUphID")
+                        .OnDelete(DeleteBehavior.Restrict);
+
                     b.HasOne("SiUpin.Domain.Entities.Provinsi", "Provinsi")
                         .WithMany("Uphs")
                         .HasForeignKey("ProvinsiID")
                         .OnDelete(DeleteBehavior.Restrict);
                 });
 
-            modelBuilder.Entity("SiUpin.Domain.Entities.UphParameter", b =>
+            modelBuilder.Entity("SiUpin.Domain.Entities.UphBahanBaku", b =>
                 {
-                    b.HasOne("SiUpin.Domain.Entities.ParameterJawaban", "ParameterJawaban")
-                        .WithMany("UphParameters")
-                        .HasForeignKey("ParameterJawabanID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasOne("SiUpin.Domain.Entities.JenisKomoditi", "JenisKomoditi")
+                        .WithMany("UphBahanBakus")
+                        .HasForeignKey("JenisKomoditiID")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("SiUpin.Domain.Entities.JenisTernak", "JenisTernak")
+                        .WithMany("UphBahanBakus")
+                        .HasForeignKey("JenisTernakID")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("SiUpin.Domain.Entities.Satuan", "Satuan")
+                        .WithMany("UphBahanBakus")
+                        .HasForeignKey("SatuanID")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("SiUpin.Domain.Entities.Uph", "Uph")
-                        .WithMany("UphParameters")
+                        .WithMany("UphBahanBakus")
                         .HasForeignKey("UphID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("SiUpin.Domain.Entities.UphProduk", b =>

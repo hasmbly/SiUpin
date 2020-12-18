@@ -4,24 +4,24 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using SiUpin.Application.Common;
 using SiUpin.Application.Common.Interfaces;
 using SiUpin.Domain.Entities;
 using SiUpin.Shared.Systems.Commands.SeedFile;
 using SiUpin.Shared.Systems.Commands.SeedUph;
 
+#pragma warning disable CS8632
 namespace SiUpin.Application.Systems.Commands.SeedUph
 {
     public class SeedUphCommandHandler : IRequestHandler<SeedUphRequest, SeedUphResponse>
     {
         private readonly ISiUpinDBContext _context;
-        private readonly IFileService _fileService;
+        private readonly IEntityRepository _entityRepository;
         private IMediator _mediator;
 
-        public SeedUphCommandHandler(ISiUpinDBContext context, IFileService fileService, IMediator mediator)
+        public SeedUphCommandHandler(ISiUpinDBContext context, IMediator mediator, IEntityRepository entityRepository)
         {
             _context = context;
-            _fileService = fileService;
+            _entityRepository = entityRepository;
             _mediator = mediator;
         }
 
@@ -29,31 +29,32 @@ namespace SiUpin.Application.Systems.Commands.SeedUph
         {
             var result = new SeedUphResponse();
 
-            var dataJSON = _fileService.ReadJSONFile<UphJSON>(FilePath.UphJSON);
+            var getAllUph = await _entityRepository.GetAllUph();
+            var getAllBahanBaku = await _entityRepository.GetAllBahanBaku();
 
             List<Uph> uphs = new List<Uph>();
-
-            var listDataJSON = dataJSON.rows.ToList();
 
             // collect temporary data from db
             var provinsis = await _context.Provinsis.AsNoTracking().ToListAsync(cancellationToken);
             var kotas = await _context.Kotas.AsNoTracking().ToListAsync(cancellationToken);
             var kecamatans = await _context.Kecamatans.AsNoTracking().ToListAsync(cancellationToken);
             var kelurahans = await _context.Kelurahans.AsNoTracking().ToListAsync(cancellationToken);
-
             var produkOlahans = await _context.ProdukOlahans.AsNoTracking().ToListAsync(cancellationToken);
             var jenisTernaks = await _context.JenisTernaks.AsNoTracking().ToListAsync(cancellationToken);
 
-            foreach (var data in listDataJSON)
+            // for safety to avoid redundant data between existing db and old db
+            var existingUphs = await _context.Uphs.AsNoTracking().ToListAsync(cancellationToken);
+
+            foreach (var data in getAllUph)
             {
+                if (existingUphs.Any(x => x.id_uph == data.id_uph))
+                    continue;
+
                 Uph uph = new Uph();
 
-#pragma warning disable CS8632
                 string? provinsiID, kotaID, kecamatanID, kelurahanID, produkOlahanID, jenisTernakID, sameUphID = "";
 
-                // Check just make sure if data was not duplicated or if uph's data has same id or name
-                uph = uphs.Where(x => x.id_uph == data.id_uph || x.Name == data.nama_uph.ToLower())
-                    .FirstOrDefault();
+                uph = uphs.FirstOrDefault(x => x.id_uph == data.id_uph || x.Name == data.nama_uph.ToLower());
 
                 if (uph == null)
                 {
@@ -67,7 +68,7 @@ namespace SiUpin.Application.Systems.Commands.SeedUph
                     kecamatanID = getKecamatanID != null ? getKecamatanID.KecamatanID : null;
                     kelurahanID = getKelurahanID != null ? getKelurahanID.KelurahanID : null;
 
-                    System.Console.WriteLine($"Insert UPH - id_uph: {data.id_uph}");
+                    System.Console.WriteLine($"Insert UPH - uph: {data.nama_uph} - {data.id_uph}");
 
                     #region Handle UPH
                     uph = new Uph
@@ -82,7 +83,12 @@ namespace SiUpin.Application.Systems.Commands.SeedUph
                         Ketua = data.nama_ketua,
                         Handphone = data.no_hp,
                         Alamat = data.alamat,
-                        TahunBerdiri = data.tahun_berdiri
+                        TahunBerdiri = data.tahun_berdiri,
+
+                        ParameterAdministrasiID = getJawaban(data.administrasi)?.ParameterJawabanID,
+                        ParameterBadanHukumID = getJawaban(data.badan_hukum)?.ParameterJawabanID,
+                        ParameterBentukLembagaID = getJawaban(data.bentuk_lembaga)?.ParameterJawabanID,
+                        ParameterStatusUphID = getJawaban(data.status_uph)?.ParameterJawabanID
                     };
 
                     uphs.Add(uph);
@@ -91,36 +97,37 @@ namespace SiUpin.Application.Systems.Commands.SeedUph
                     await _context.SaveChangesAsync(cancellationToken);
                     #endregion
 
-                    IList<ParameterJawaban> jawabans = new List<ParameterJawaban>();
-
                     #region Handle UphParameter
-                    jawabans.Add(getJawaban(data.bentuk_lembaga));
-                    jawabans.Add(getJawaban(data.badan_hukum));
-                    jawabans.Add(getJawaban(data.status_uph));
-                    jawabans.Add(getJawaban(data.administrasi));
+                    //IList<ParameterJawaban> jawabans = new List<ParameterJawaban>();
 
-                    foreach (var jawaban in jawabans)
-                    {
-                        System.Console.WriteLine($"Insert uphParameter - UphID: {uph.UphID}");
+                    //jawabans.Add(getJawaban(data.bentuk_lembaga));
+                    //jawabans.Add(getJawaban(data.badan_hukum));
+                    //jawabans.Add(getJawaban(data.status_uph));
+                    //jawabans.Add(getJawaban(data.administrasi));
 
-                        // there is a problem in here !!!!!!!!!!!!!!! *it seems the problem about tracking
-                        if (jawaban != null)
-                        {
-                            var uphParameter = new UphParameter
-                            {
-                                Uph = uph,
-                                ParameterJawaban = jawaban
-                            };
+                    //foreach (var jawaban in jawabans)
+                    //{
+                    //    System.Console.WriteLine($"Insert uphParameter - UphID: {uph.UphID}");
 
-                            _context.UphParameters.Add(uphParameter);
-                        }
-                        else
-                        {
-                            System.Console.WriteLine("uphParameter: jawaban was empty");
-                        }
+                    //    if (jawaban != null)
+                    //    {
+                    //        System.Console.WriteLine("uphParameter: jawaban not empty");
 
-                        await _context.SaveChangesAsync(cancellationToken);
-                    }
+                    //        var uphParameter = new UphParameter
+                    //        {
+                    //            Uph = uph,
+                    //            ParameterJawaban = jawaban
+                    //        };
+
+                    //        _context.UphParameters.Add(uphParameter);
+                    //    }
+                    //    else
+                    //    {
+                    //        System.Console.WriteLine("uphParameter: jawaban was empty");
+                    //    }
+
+                    //    await _context.SaveChangesAsync(cancellationToken);
+                    //}
                     #endregion
                 }
                 else
@@ -180,6 +187,7 @@ namespace SiUpin.Application.Systems.Commands.SeedUph
             if (!string.IsNullOrEmpty(indikatorName))
             {
                 jawaban = _context.ParameterJawabans
+                    .AsNoTracking()
                     .Where(x => x.Name == indikatorName.ToLower())
                     .FirstOrDefault();
             }

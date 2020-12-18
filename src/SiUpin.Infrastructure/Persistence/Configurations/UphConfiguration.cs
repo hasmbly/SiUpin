@@ -17,7 +17,7 @@ namespace SiUpin.Infrastructure.Persistence.Configurations
             builder.Property(e => e.KecamatanID).HasColumnType(SQLDataType.Varchar50);
             builder.Property(e => e.KelurahanID).HasColumnType(SQLDataType.Varchar50);
 
-            builder.Property(e => e.Name).HasColumnType(SQLDataType.Varchar100);
+            builder.Property(e => e.Name).HasColumnType(SQLDataType.Varchar255);
             builder.Property(e => e.Ketua).HasColumnType(SQLDataType.Varchar50);
             builder.Property(e => e.Handphone).HasColumnType(SQLDataType.Varchar50);
             builder.Property(e => e.Alamat).HasColumnType(SQLDataType.Varchar200);
@@ -33,6 +33,11 @@ namespace SiUpin.Infrastructure.Persistence.Configurations
             builder.HasOne(e => e.Kota).WithMany(p => p.Uphs).HasForeignKey(e => e.KotaID).OnDelete(DeleteBehavior.Restrict);
             builder.HasOne(e => e.Kecamatan).WithMany(p => p.Uphs).HasForeignKey(e => e.KecamatanID).OnDelete(DeleteBehavior.Restrict);
             builder.HasOne(e => e.Kelurahan).WithMany(p => p.Uphs).HasForeignKey(e => e.KelurahanID).OnDelete(DeleteBehavior.Restrict);
+
+            builder.HasOne(e => e.ParameterAdministrasi).WithMany(p => p.UphParameterAdministrasis).HasForeignKey(e => e.ParameterAdministrasiID).OnDelete(DeleteBehavior.Restrict);
+            builder.HasOne(e => e.ParameterBadanHukum).WithMany(p => p.UphParameterBadanHukums).HasForeignKey(e => e.ParameterBadanHukumID).OnDelete(DeleteBehavior.Restrict);
+            builder.HasOne(e => e.ParameterBentukLembaga).WithMany(p => p.UphParameterBentukLembagas).HasForeignKey(e => e.ParameterBentukLembagaID).OnDelete(DeleteBehavior.Restrict);
+            builder.HasOne(e => e.ParameterStatusUph).WithMany(p => p.UphParameterStatusUphs).HasForeignKey(e => e.ParameterStatusUphID).OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

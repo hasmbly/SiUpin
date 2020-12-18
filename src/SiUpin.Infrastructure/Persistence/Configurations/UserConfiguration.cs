@@ -20,15 +20,15 @@ namespace SiUpin.Infrastructure.Persistence.Configurations
             builder.Property(e => e.KecamatanID).HasColumnType(SQLDataType.Varchar50);
             builder.Property(e => e.KelurahanID).HasColumnType(SQLDataType.Varchar50);
 
-            builder.Property(e => e.Username).HasColumnType(SQLDataType.Varchar50);
-            builder.Property(e => e.Fullname).HasColumnType(SQLDataType.Varchar200);
-            builder.Property(e => e.Email).HasColumnType(SQLDataType.Varchar50);
-            builder.Property(e => e.NIP).HasColumnType(SQLDataType.Varchar100);
+            builder.Property(e => e.Username).HasColumnType(SQLDataType.Varchar255);
+            builder.Property(e => e.Fullname).HasColumnType(SQLDataType.Varchar255);
+            builder.Property(e => e.Email).HasColumnType(SQLDataType.Varchar255);
+            builder.Property(e => e.NIP).HasColumnType(SQLDataType.Varchar255);
 
-            builder.Property(e => e.Jabatan).HasColumnType(SQLDataType.Varchar100);
-            builder.Property(e => e.Instansi).HasColumnType(SQLDataType.Varchar100);
-            builder.Property(e => e.Telepon).HasColumnType(SQLDataType.Varchar100);
-            builder.Property(e => e.Alamat).HasColumnType(SQLDataType.Varchar100);
+            builder.Property(e => e.Jabatan).HasColumnType(SQLDataType.Varchar255);
+            builder.Property(e => e.Instansi).HasColumnType(SQLDataType.Varchar255);
+            builder.Property(e => e.Telepon).HasColumnType(SQLDataType.Varchar255);
+            builder.Property(e => e.Alamat).HasColumnType(SQLDataType.Varchar255);
 
             builder.Property(e => e.PasswordHash).HasColumnType(SQLDataType.NVarchar200);
             builder.Property(e => e.PasswordSalt).HasColumnType(SQLDataType.NVarchar200);

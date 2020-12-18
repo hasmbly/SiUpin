@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SiUpin.Domain.Entities
 {
+    [Table("parameterkriterias")]
     public class ParameterKriteria
     {
         public string ParameterKriteriaID { get; set; }

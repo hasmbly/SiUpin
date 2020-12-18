@@ -20,6 +20,8 @@ using SiUpin.Shared.Systems.Commands.SeedProvinsi;
 using SiUpin.Shared.Systems.Commands.SeedRole;
 using SiUpin.Shared.Systems.Commands.SeedSatuan;
 using SiUpin.Shared.Systems.Commands.SeedUph;
+using SiUpin.Shared.Systems.Commands.SeedUphBahanBaku;
+using SiUpin.Shared.Systems.Commands.SeedUphOthers;
 using SiUpin.Shared.Systems.Commands.SeedUser;
 using SiUpin.WebAPI.Common.ApiEnvelopes;
 
@@ -53,19 +55,23 @@ namespace SiUpin.WebAPI.Controllers.V1
                 await SeedKota();
                 await SeedKecamatan();
                 await SeedKelurahan();
+                await SeedUser();
+
                 await SeedJenisTernak();
                 await SeedJenisKomoditi();
                 await SeedProdukOlahan();
                 await SeedBerita();
                 await SeedAsalBantuan();
                 await SeedSatuan();
+
                 await SeedParameterAspek();
                 await SeedParameterKriteria();
                 await SeedParameterIndikator();
                 await SeedParameterJawaban();
-                await SeedUph();
 
-                await SeedUser();
+                await SeedUph();
+                await SeedUphBahanBaku();
+                await SeedUphOthers();
 
                 return Ok(new Success("Successfull"));
             }
@@ -320,6 +326,34 @@ namespace SiUpin.WebAPI.Controllers.V1
             try
             {
                 return Ok(new Success(await Mediator.Send(new SeedUphRequest()), "Successfully"));
+            }
+            catch (Exception exception)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, new InternalServerError(exception.Message));
+            }
+        }
+
+        [AllowAnonymous]
+        [HttpGet("seedUphBahanBaku")]
+        public async Task<ActionResult> SeedUphBahanBaku()
+        {
+            try
+            {
+                return Ok(new Success(await Mediator.Send(new SeedUphBahanBakuRequest()), "Successfully"));
+            }
+            catch (Exception exception)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, new InternalServerError(exception.Message));
+            }
+        }
+
+        [AllowAnonymous]
+        [HttpGet("seedUphOthers")]
+        public async Task<ActionResult> SeedUphOthers()
+        {
+            try
+            {
+                return Ok(new Success(await Mediator.Send(new SeedUphOthersRequest()), "Successfully"));
             }
             catch (Exception exception)
             {

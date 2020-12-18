@@ -40,8 +40,16 @@ namespace SiUpin.Infrastructure.Persistence
 
         #region Data Main
         public DbSet<Uph> Uphs { get; set; }
+        public DbSet<UphBahanBaku> UphBahanBakus { get; set; }
         public DbSet<UphProduk> UphProduks { get; set; }
-        public DbSet<UphParameter> UphParameters { get; set; }
+
+        public DbSet<UphGmp> UphGmps { get; set; }
+        public DbSet<UphMitra> UphMitras { get; set; }
+        public DbSet<UphPasar> UphPasars { get; set; }
+        public DbSet<UphProduksi> UphProduksis { get; set; }
+        public DbSet<UphSarana> UphSaranas { get; set; }
+        public DbSet<UphSdm> UphSdms { get; set; }
+        //public DbSet<UphParameter> UphParameters { get; set; }
 
         public DbSet<Berita> Beritas { get; set; }
         public DbSet<Pesan> Pesans { get; set; }

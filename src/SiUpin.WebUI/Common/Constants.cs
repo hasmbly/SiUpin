@@ -49,6 +49,12 @@
 
                 public static readonly string Register = $"{Base}/register";
                 public static readonly string Paginate = $"{Base}/paginate";
+                public static readonly string CountByProvince = $"{Base}/countByProvince";
+
+                public static readonly string Cluster = $"{Base}/cluster/";
+                public static readonly string ClusterPaginate = $"{Base}/cluster/paginate";
+
+                public static readonly string ClusterGrade = $"{Base}/cluster/grade";
             }
 
             public static class UphProduk
@@ -179,11 +185,11 @@
 
         public static class JenisKomoditiID
         {
-            public const string Susu = "c23ab8a1-54e6-405a-8671-8645e598293b";
-            public const string Daging = "efa802d0-ba25-4aa3-9b9b-bf075cc9aa98";
-            public const string Unggas = "6a009abf-47d4-46ff-aeff-09b938b13a83";
-            public const string HasilTernak = "525e8624-2fee-4d9d-8591-652feed3d8f8";
-            public const string Limbah = "01f61dee-0c71-4e3a-baec-a8e300256aac";
+            public const string Susu = "Susu";
+            public const string Daging = "Daging";
+            public const string Unggas = "Unggas dan Aneka Ternak";
+            public const string HasilTernak = "Hasil Ikutan Ternak";
+            public const string Limbah = "Limbah";
         }
 
         public static class AlertMessageStatus

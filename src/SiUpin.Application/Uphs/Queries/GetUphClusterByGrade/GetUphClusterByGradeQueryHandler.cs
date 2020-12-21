@@ -8,59 +8,55 @@ using Microsoft.EntityFrameworkCore;
 using SiUpin.Application.Common.Interfaces;
 using SiUpin.Shared.Common.Pagination;
 using SiUpin.Shared.Constants;
-using SiUpin.Shared.UphGmps.Queries;
+using SiUpin.Shared.Uphs.Queries.GetUphClusterByGrade;
 
-namespace SiUpin.Application.UphGmps.Queries
+namespace SiUpin.Application.Uphs.Queries.GetUphClusterByGrade
 {
-    public class GetUphGmpQueryHandler : IRequestHandler<GetUphGmpsRequest, GetUphGmpsResponse>
+    public class GetUphClusterByGradeQueryHandler : IRequestHandler<GetUphClusterByGradeRequest, GetUphClusterByGradeResponse>
     {
         private readonly ISiUpinDBContext _context;
 
-        public GetUphGmpQueryHandler(ISiUpinDBContext context)
+        public GetUphClusterByGradeQueryHandler(ISiUpinDBContext context)
         {
             _context = context;
         }
 
-        public async Task<GetUphGmpsResponse> Handle(GetUphGmpsRequest request, CancellationToken cancellationToken)
+        public async Task<GetUphClusterByGradeResponse> Handle(GetUphClusterByGradeRequest request, CancellationToken cancellationToken)
         {
             try
             {
-                var records = await _context.UphGmps
+                var records = await _context.Uphs
                     .AsNoTracking()
-                    .Include(a => a.Uph)
-                    .Where(x => x.Uph.Name.Contains(request.FilterByName ?? ""))
+                    .Where(x => x.Name.Contains(request.FilterUphName ?? ""))
+                    .Include(a => a.Provinsi)
+                    .Include(a => a.Kota)
                     .OrderByDescending(o => o.Created)
                     .Skip((request.PageNumber - 1) * request.PageSize)
                     .Take(request.PageSize)
                     .ToListAsync(cancellationToken);
 
-                var totalRecords = _context.UphGmps.AsNoTracking().Count(x => x.Uph.Name.Contains(request.FilterByName ?? ""));
+                var totalRecords = _context.Uphs.Count(x => x.Name.Contains(request.FilterUphName ?? ""));
 
-                List<UphGmpDTO> listOfDTO = new List<UphGmpDTO>();
+                List<ClustersUphByGradeDTO> listOfDTO = new List<ClustersUphByGradeDTO>();
 
                 if (records.Count > 0)
                 {
                     int no = 1;
                     foreach (var data in records)
                     {
-                        var entity = new UphGmpDTO
+                        var uph = new ClustersUphByGradeDTO
                         {
                             No = no++,
-                            UphGmpID = data.UphGmpID,
                             UphID = data.UphID,
-                            id_uph = data.id_uph,
-                            nama_gmp = data.nama_gmp,
-                            id_gmp = data.id_gmp,
-                            jml_gmp = data.jml_gmp,
+                            Name = data.Name,
 
-                            Uph = new Shared.Uphs.Common.UphDTO
-                            {
-                                Name = data.Uph.Name
-                            }
+                            Provinsi = data.Provinsi?.Name,
+                            Handphone = data.Handphone,
+                            Alamat = data.Alamat
                         };
 
-                        if (entity != null)
-                            listOfDTO.Add(entity);
+                        if (uph != null)
+                            listOfDTO.Add(uph);
                     }
                 }
                 else
@@ -68,7 +64,7 @@ namespace SiUpin.Application.UphGmps.Queries
                     throw new Exception(ErrorMessage.DataNotFound);
                 }
 
-                return new GetUphGmpsResponse
+                return new GetUphClusterByGradeResponse
                 {
                     IsSuccessful = true,
                     Data = listOfDTO,

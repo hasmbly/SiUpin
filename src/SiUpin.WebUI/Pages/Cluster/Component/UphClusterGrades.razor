@@ -1,0 +1,218 @@
+﻿@inject HttpClient Http
+@inject IMatToaster Toaster
+@inject UphClusterState uphClusterState
+
+@using SiUpin.Shared.Uphs.Queries.GetUphClusterGrades
+@using SiUpin.Shared.Common.ApiEnvelopes
+
+@namespace SiUpin.Pages.Cluster.Component
+
+<div class="mat-layout-grid">
+    <div class="mat-layout-grid-inner" style="min-height: 100px;">
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-middle mat-layout-grid-cell-span-12">
+            @if (IsListClusterByGrade)
+            {
+                <MatButton Icon="@MatIconNames.Keyboard_arrow_left" OnClick="CancelClick">Kembali</MatButton>
+            }
+        </div>
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-middle mat-layout-grid-cell-span-12">
+            @if (IsLoading)
+            {
+                <MatDialog @bind-IsOpen="IsLoading" CanBeClosed="false">
+                    <MatDialogTitle>Mohon Menunggu...</MatDialogTitle>
+                    <MatDialogContent>
+                        <MatProgressBar Indeterminate="true" Closed="!IsLoading"></MatProgressBar>
+                    </MatDialogContent>
+                </MatDialog>
+            }
+            else
+            {
+                if (IsListClusterByGrade)
+                {
+                    if (uphClusterByGrade != null && uphClusterByGrade.Count() > 0)
+                    {
+                        <MatTable Items="@uphClusterByGrade" class="mat-elevation-z3" FilterByColumnName="Name" PageSize="25">
+                            <MatTableHeader>
+                                <th>No</th>
+                                <th width="30%">Nama UPH</th>
+                                <th>Provinsi</th>
+                                <th>Handphone</th>
+                                <th width="30%">Alamat</th>
+                                <th>Total Nilai</th>
+                                <th>Rata2</th>
+                                <th>Cluster</th>
+                                <th width="25%" class="text-center">Ket</th>
+                            </MatTableHeader>
+                            <MatTableRow>
+                                <td>@context.No</td>
+                                <td width="30%">@context.Name</td>
+                                <td>@context.Provinsi</td>
+                                <td>@context.Handphone</td>
+                                <td width="30%">@context.Alamat</td>
+                                <td>@context.TotalNilai</td>
+                                <td>@context.TotalNilaiRata2</td>
+                                <td class="text-center">@context.ClusterGrade</td>
+                                <td width="25%" class="text-center">
+                                    @for (int i = 0; i < context.ClusterGradeStar; i++)
+                                                {<MatIcon Icon="@MatIconNames.Star"></MatIcon>}
+                                </td>
+                            </MatTableRow>
+                        </MatTable>
+                    }
+                }
+                else
+                {
+                    <MatTabGroup>
+                        <MatTab Label="Cluster UPH">
+                            @if (uphClusterState.Model != null)
+                            {
+                                if (uphClusterState.Model.Datas.Count() > 0)
+                                {
+                                    <MatTable Items="@uphClusterState.Model.Datas" class="mat-elevation-z5" AllowSelection="true" SelectionChanged="SelectionChangedEvent" ShowPaging="false">
+                                        <MatTableHeader>
+                                            <th>No</th>
+                                            <th class="text-center">Cluster</th>
+                                            <th width="50%" class="text-center">Keterangan</th>
+                                            <th class="text-center">Total</th>
+                                        </MatTableHeader>
+                                        <MatTableRow>
+                                            <td>@context.No</td>
+                                            <td class="text-center">@context.ClusterGrade</td>
+                                            <td class="text-center">
+                                                @for (int i = 0; i < context.ClusterGradeStar; i++)
+                                                                {
+                                                    <MatIcon Icon="@MatIconNames.Star"></MatIcon>
+                                                                }
+                                            </td>
+                                            <td class="text-center">@context.ClusterTotal</td>
+                                        </MatTableRow>
+                                    </MatTable>
+                                }
+                            }
+                        </MatTab>
+                        <MatTab Label="Cluster Kemitraan">
+                            <MatTable Items="@clusterKemitraans" class="mat-elevation-z5" AllowSelection="true" ShowPaging="false">
+                                <MatTableHeader>
+                                    <th>No</th>
+                                    <th class="text-center">Cluster</th>
+                                    <th width="50%" class="text-center">Keterangan</th>
+                                    <th class="text-center">Total</th>
+                                </MatTableHeader>
+                                <MatTableRow>
+                                    <td>@context.No</td>
+                                    <td class="text-center">@context.Cluster</td>
+                                    <td class="text-center">
+                                        @for (int i = 0; i < context.Star; i++)
+                                                {
+                                            <MatIcon Icon="@MatIconNames.Star"></MatIcon>
+                                                }
+                                    </td>
+                                    <td class="text-center">@context.Total</td>
+                                </MatTableRow>
+                            </MatTable>
+                        </MatTab>
+                    </MatTabGroup>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+@code
+{
+    private bool IsLoading = false;
+    private bool IsListClusterByGrade = false;
+
+    private ApiResponse<GetUphClusterGradesResponse> items;
+    private IList<UphClusterByGradeDTO> uphClusterByGrade = new List<UphClusterByGradeDTO>();
+
+    protected override async Task OnInitializedAsync() => await GetData();
+
+    private async Task GetData()
+    {
+        if (uphClusterState.ShouldUpdate)
+        {
+            IsLoading = true;
+
+            items = await Http.GetFromJsonAsync<ApiResponse<GetUphClusterGradesResponse>>(Constants.URI.Uph.ClusterGrade);
+
+            if (items.Status.IsError)
+            {
+                Toaster.Add(items.Status.Message, MatToastType.Danger);
+
+                IsLoading = false;
+
+                StateHasChanged();
+            }
+            else
+            {
+                if (items.Result.Datas != null)
+                {
+                    if (items.Result.Datas.Count == 0)
+                    {
+                        Toaster.Add("Tidak ada Data", MatToastType.Danger);
+                    }
+
+                    IsLoading = false;
+
+                    uphClusterState.SetModelState(items.Result);
+                    uphClusterState.SetShouldUpdate(false);
+
+                    StateHasChanged();
+                }
+            }
+        }
+    }
+
+    public void CancelClick()
+    {
+        IsListClusterByGrade = false;
+        StateHasChanged();
+    }
+
+    private void SelectionChangedEvent(object row)
+    {
+        if (row != null)
+        {
+            GetClusterByGrade(((UphClusterDTO)row).Uphs);
+        }
+
+        StateHasChanged();
+    }
+
+    private void GetClusterByGrade(IList<UphClusterByGradeDTO> uphs)
+    {
+        IsLoading = true;
+        IsListClusterByGrade = true;
+
+        // call getuphclusterbygrade
+        uphClusterByGrade = uphs;
+
+        IsLoading = false;
+        StateHasChanged();
+    }
+
+    public class ClusterKemitraan
+    {
+        public int No { get; set; }
+        public string Cluster { get; set; }
+        public int Star { get; set; }
+        public int Total { get; set; }
+
+        public ClusterKemitraan(int no, string cluster, int star, int total)
+        {
+            No = no;
+            Cluster = cluster;
+            Star = star;
+            Total = total;
+        }
+    }
+
+    ClusterKemitraan[] clusterKemitraans = new[]
+    {
+        new ClusterKemitraan(1, "A", 4, 3),
+        new ClusterKemitraan(2, "B", 3, 1),
+        new ClusterKemitraan(3, "C", 2, 19),
+        new ClusterKemitraan(4, "D", 1, 21)
+    };
+}

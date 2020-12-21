@@ -28,13 +28,13 @@ namespace SiUpin.Application.UphSdms.Queries
                 var records = await _context.UphSdms
                     .AsNoTracking()
                     .Include(a => a.Uph)
-                    .Where(x => x.nama_uph.Contains(request.FilterByName ?? ""))
+                    .Where(x => x.Uph.Name.Contains(request.FilterByName ?? ""))
                     .OrderByDescending(o => o.Created)
                     .Skip((request.PageNumber - 1) * request.PageSize)
                     .Take(request.PageSize)
                     .ToListAsync(cancellationToken);
 
-                var totalRecords = _context.UphSaranas.AsNoTracking().Count(x => x.nama_uph.Contains(request.FilterByName ?? ""));
+                var totalRecords = _context.UphSaranas.AsNoTracking().Count(x => x.Uph.Name.Contains(request.FilterByName ?? ""));
 
                 List<UphSdmDTO> listOfDTO = new List<UphSdmDTO>();
 

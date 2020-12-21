@@ -2,6 +2,7 @@
 
 @inject HttpClient Http
 @inject NavigationManager Navigation
+@inject UphClusterState uphClusterState
 
 @using SiUpin.Pages.Admin.Uph
 
@@ -14,7 +15,8 @@
         @if (OpenCreateDialog)
         {
             <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
-                <Create DialogIsOpen="OpenCreateDialog" DialogIsOpenStatus="CreateDialogIsOpenStatus" OnSuccessSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); }))" />
+                <Create DialogIsOpen="OpenCreateDialog" DialogIsOpenStatus="CreateDialogIsOpenStatus" OnSuccessSubmit="@(() => InvokeAsync(async () =>
+                                                                                                                         { await GetPaginateData(); uphClusterState.SetShouldUpdate(true); }))" />
             </div>
         }
         else

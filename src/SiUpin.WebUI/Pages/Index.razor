@@ -7,6 +7,12 @@
 @inject IJSRuntime JsRuntime
 @inject NavigationManager Navigation
 
+@inject HttpClient Http
+@inject IMatToaster Toaster
+
+@using SiUpin.Shared.Uphs.Queries.GetCountUphByProvince
+@using SiUpin.Shared.Common.ApiEnvelopes
+
 <div class="mat-layout-grid">
     <div class="mat-layout-grid-inner">
         <div class="mat-layout-grid-cell mat-layout-grid-cell-align-middle mat-layout-grid-cell-span-12">
@@ -166,54 +172,68 @@
         </div>
 
         <div class="mat-layout-grid-cell mat-layout-grid-cell-align-middle mat-layout-grid-cell-span-12">
-            <div class="mat-elevation-z3 mt-3">
-                <div class="mat-layout-grid">
-                    <div class="mat-layout-grid-inner">
-                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12">
-                            <div class="control-section">
-                                <SfMaps Format="N0" UseGroupingSeparator="true">
-                                    <MapsZoomSettings Enable="true" HorizontalAlignment="Alignment.Near" ToolBarOrientation="Orientation.Vertical" />
-                                    <MapsTitleSettings Text="Peta Data Persebaran UPH">
-                                        <MapsTitleTextStyle Size="16px" />
-                                    </MapsTitleSettings>
-                                    <MapsLegendSettings Visible="true" Position="LegendPosition.Bottom" Height="10" Width="80%" Mode="LegendMode.Interactive">
-                                        <MapsLegendTitle Text="@LegendText" />
-                                        <MapsLegendTitleStyle Size="18px" />
-                                    </MapsLegendSettings>
-                                    <MapsLayers>
-                                        <MapsLayer ShapeData='new {dataOptions = "data/maps/indonesia.json"}' ShapeDataPath="State" ShapePropertyPath="@ShapePropertyPath" DataSource="@ColorMappingData">
-                                            <MapsShapeSettings Fill="#E5E5E5" ColorValuePath="@ColorValuePath">
-                                                <MapsShapeBorder Width="0.2" Color="#000000" />
-                                                <MapsShapeColorMappings>
-                                                    <MapsShapeColorMapping From="@ColorMappingFromOne" MinOpacity="@MinOpacity" MaxOpacity="MaxOpacity" To="@ColorMappingToOne" Color="@ColorMappingColorOne" Label="@ColorMappingLabelOne" Value="@ColorMappingValueOne" />
-                                                    <MapsShapeColorMapping From="@ColorMappingFromTwo" To="@ColorMappingToTwo" Color="@ColorMappingColorTwo" Label="@ColorMappingLabelTwo" Value="@ColorMappingValueTwo" />
-                                                    <MapsShapeColorMapping From="@ColorMappingFromThree" To="@ColorMappingToThree" Color="@ColorMappingColorThree" Label="@ColorMappingLabelThree" Value="@ColorMappingValueThree" />
-                                                    <MapsShapeColorMapping From="@ColorMappingFromFour" To="@ColorMappingToFour" Color="@ColorMappingColorFour" Label="@ColorMappingLabelFour" Value="@ColorMappingValueFour" />
-                                                    <MapsShapeColorMapping From="@ColorMappingFromFive" To="@ColorMappingToFive" Color="@ColorMappingColorFive" Label="@ColorMappingLabelFive" Value="@ColorMappingValueFive" />
-                                                    <MapsShapeColorMapping From="@ColorMappingFromSix" To="@ColorMappingToSix" Color="@ColorMappingColorSix" Label="@ColorMappingLabelSix" Value="@ColorMappingValueSix" />
-                                                </MapsShapeColorMappings>
-                                            </MapsShapeSettings>
-                                            <MapsLayerTooltipSettings Visible="true" ValuePath="State" Format=" <b> ${State}</b> <br> Total UPH : ${Inches}" />
-                                        </MapsLayer>
-                                    </MapsLayers>
-                                </SfMaps>
+            @if (IsLoading)
+            {
+                <i class="fas fa-spinner fa-spin"></i>
+            }
+            else
+            {
+                <div class="mat-elevation-z3 mt-3">
+                    <div class="mat-layout-grid">
+                        <div class="mat-layout-grid-inner">
+                            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12">
+                                @if (ColorMappingData.Count() > 0)
+                                {
+                                    <div class="control-section">
+                                        <SfMaps Format="N0" UseGroupingSeparator="true">
+                                            <MapsZoomSettings Enable="true" HorizontalAlignment="Alignment.Near" ToolBarOrientation="Orientation.Vertical" />
+                                            <MapsTitleSettings Text="Peta Data Persebaran UPH">
+                                                <MapsTitleTextStyle Size="16px" />
+                                            </MapsTitleSettings>
+                                            <MapsLegendSettings Visible="true" Position="LegendPosition.Bottom" Height="10" Width="80%" Mode="LegendMode.Interactive">
+                                                <MapsLegendTitle Text="@LegendText" />
+                                                <MapsLegendTitleStyle Size="18px" />
+                                            </MapsLegendSettings>
+                                            <MapsLayers>
+                                                <MapsLayer ShapeData='new { dataOptions = "data/maps/indonesia.json"}' ShapeDataPath="State" ShapePropertyPath="@ShapePropertyPath" DataSource="@ColorMappingData">
+                                                    <MapsShapeSettings Fill="#E5E5E5" ColorValuePath="@ColorValuePath">
+                                                        <MapsShapeBorder Width="0.2" Color="#000000" />
+                                                        <MapsShapeColorMappings>
+                                                            <MapsShapeColorMapping From="@ColorMappingFromOne" MinOpacity="@MinOpacity" MaxOpacity="MaxOpacity" To="@ColorMappingToOne" Color="@ColorMappingColorOne" Label="@ColorMappingLabelOne" Value="@ColorMappingValueOne" />
+                                                            <MapsShapeColorMapping From="@ColorMappingFromTwo" To="@ColorMappingToTwo" Color="@ColorMappingColorTwo" Label="@ColorMappingLabelTwo" Value="@ColorMappingValueTwo" />
+                                                            <MapsShapeColorMapping From="@ColorMappingFromThree" To="@ColorMappingToThree" Color="@ColorMappingColorThree" Label="@ColorMappingLabelThree" Value="@ColorMappingValueThree" />
+                                                            <MapsShapeColorMapping From="@ColorMappingFromFour" To="@ColorMappingToFour" Color="@ColorMappingColorFour" Label="@ColorMappingLabelFour" Value="@ColorMappingValueFour" />
+                                                            <MapsShapeColorMapping From="@ColorMappingFromFive" To="@ColorMappingToFive" Color="@ColorMappingColorFive" Label="@ColorMappingLabelFive" Value="@ColorMappingValueFive" />
+                                                            <MapsShapeColorMapping From="@ColorMappingFromSix" To="@ColorMappingToSix" Color="@ColorMappingColorSix" Label="@ColorMappingLabelSix" Value="@ColorMappingValueSix" />
+                                                        </MapsShapeColorMappings>
+                                                    </MapsShapeSettings>
+                                                    <MapsLayerTooltipSettings Visible="true" ValuePath="State" Format=" <b> ${State}</b> <br> Total UPH : ${Inches}" />
+                                                </MapsLayer>
+                                            </MapsLayers>
+                                        </SfMaps>
+                                    </div>
+                                }
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
+            }
         </div>
     </div>
 </div>
 
 @code
 {
+    private bool IsLoading = false;
+
     protected async override Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
             await JsRuntime.InvokeAsync<object>("initializeCarousel");
+
+            await GetUphByProvince();
+
             firstRender = false;
         }
     }
@@ -268,35 +288,41 @@
     };
 
     public string ColorValuePath = "Inches";
-    public double? ColorMappingFromOne = 0.1;
-    public double? ColorMappingToOne = 1;
+
+    public double? ColorMappingFromOne = 1;
+    public double? ColorMappingToOne = 10;
     public string[] ColorMappingColorOne = { "#DEEBAE" };
-    public string ColorMappingLabelOne = "0 - 1";
+    public string ColorMappingLabelOne = "1 - 10";
     public string ColorMappingValueOne = null;
-    public double? ColorMappingFromTwo = 1;
-    public double? ColorMappingToTwo = 2;
+
+    public double? ColorMappingFromTwo = 10;
+    public double? ColorMappingToTwo = 22;
     public string[] ColorMappingColorTwo = { "#A4D6AD" };
-    public string ColorMappingLabelTwo = "1 - 2";
+    public string ColorMappingLabelTwo = "10 - 20";
     public string ColorMappingValueTwo = null;
-    public double? ColorMappingFromThree = 2;
-    public double? ColorMappingToThree = 3;
+
+    public double? ColorMappingFromThree = 20;
+    public double? ColorMappingToThree = 30;
     public string[] ColorMappingColorThree = { "#37AFAB" };
-    public string ColorMappingLabelThree = "2 - 3";
+    public string ColorMappingLabelThree = "20 - 30";
     public string ColorMappingValueThree = null;
-    public double? ColorMappingFromFour = 3;
-    public double? ColorMappingToFour = 4;
+
+    public double? ColorMappingFromFour = 30;
+    public double? ColorMappingToFour = 40;
     public string[] ColorMappingColorFour = { "#547C84" };
-    public string ColorMappingLabelFour = "3 - 4";
+    public string ColorMappingLabelFour = "30 - 40";
     public string ColorMappingValueFour = null;
-    public double? ColorMappingFromFive = 4;
-    public double? ColorMappingToFive = 5;
+
+    public double? ColorMappingFromFive = 40;
+    public double? ColorMappingToFive = 50;
     public string[] ColorMappingColorFive = { "#CEBF93" };
-    public string ColorMappingLabelFive = "4 - 5";
+    public string ColorMappingLabelFive = "40 - 50";
     public string ColorMappingValueFive = null;
-    public double? ColorMappingFromSix = 5;
-    public double? ColorMappingToSix = 6;
+
+    public double? ColorMappingFromSix = 50;
+    public double? ColorMappingToSix = 500;
     public string[] ColorMappingColorSix = { "#a69d70" };
-    public string ColorMappingLabelSix = "5 - 6";
+    public string ColorMappingLabelSix = "50 - 500";
     public string ColorMappingValueSix = null;
     private void ColorMappingValueTypeChange(Syncfusion.Blazor.DropDowns.ChangeEventArgs<string, Type> args)
     {
@@ -308,109 +334,41 @@
             OpacityChecked = false;
             LegendText = "Inches";
             ColorValuePath = "Inches";
-            ColorMappingFromOne = 0.1;
-            ColorMappingToOne = 1;
+
+            ColorMappingFromOne = 1;
+            ColorMappingToOne = 10;
             ColorMappingColorOne = new string[] { "#DEEBAE" };
-            ColorMappingLabelOne = "0 - 1";
+            ColorMappingLabelOne = "1 - 10";
             ColorMappingValueOne = null;
-            ColorMappingFromTwo = 1;
-            ColorMappingToTwo = 2;
+
+            ColorMappingFromTwo = 10;
+            ColorMappingToTwo = 20;
             ColorMappingColorTwo = new string[] { "#A4D6AD" };
-            ColorMappingLabelTwo = "1 - 2";
+            ColorMappingLabelTwo = "10 - 20";
             ColorMappingValueTwo = null;
-            ColorMappingFromThree = 2;
-            ColorMappingToThree = 3;
+
+            ColorMappingFromThree = 20;
+            ColorMappingToThree = 30;
             ColorMappingColorThree = new string[] { "#37AFAB" };
-            ColorMappingLabelThree = "2 - 3";
+            ColorMappingLabelThree = "20 - 30";
             ColorMappingValueThree = null;
-            ColorMappingFromFour = 3;
-            ColorMappingToFour = 4;
+
+            ColorMappingFromFour = 30;
+            ColorMappingToFour = 40;
             ColorMappingColorFour = new string[] { "#547C84" };
-            ColorMappingLabelFour = "3 - 4";
+            ColorMappingLabelFour = "30 - 40";
             ColorMappingValueFour = null;
-            ColorMappingFromFive = 4;
-            ColorMappingToFive = 5;
+
+            ColorMappingFromFive = 40;
+            ColorMappingToFive = 50;
             ColorMappingColorFive = new string[] { "#CEBF93" };
-            ColorMappingLabelFive = "4 - 5";
+            ColorMappingLabelFive = "40 - 50";
             ColorMappingValueFive = null;
-            ColorMappingFromSix = 5;
-            ColorMappingToSix = 6;
+
+            ColorMappingFromSix = 50;
+            ColorMappingToSix = 500;
             ColorMappingColorSix = new string[] { "#a69d70" };
-            ColorMappingLabelSix = "5 - 6";
-            ColorMappingValueSix = null;
-        }
-        else if (ColorMappingTypeValue == "Equal")
-        {
-            MinDisplay = "none";
-            Display = "none";
-            OpacityChecked = false;
-            LegendText = "Category";
-            ColorValuePath = "Value";
-            ColorMappingFromOne = null;
-            ColorMappingToOne = null;
-            ColorMappingColorOne = new string[] { "#DEEBAE" };
-            ColorMappingLabelOne = null;
-            ColorMappingValueOne = "Low";
-            ColorMappingFromTwo = null;
-            ColorMappingToTwo = null;
-            ColorMappingColorTwo = new string[] { "#A4D6AD" };
-            ColorMappingLabelTwo = null;
-            ColorMappingValueTwo = "Moderate";
-            ColorMappingFromThree = null;
-            ColorMappingToThree = null;
-            ColorMappingColorThree = new string[] { "#37AFAB" };
-            ColorMappingLabelThree = null;
-            ColorMappingValueThree = "High";
-            ColorMappingFromFour = null;
-            ColorMappingToFour = null;
-            ColorMappingColorFour = null;
-            ColorMappingLabelFour = null;
-            ColorMappingValueFour = null;
-            ColorMappingFromFive = null;
-            ColorMappingToFive = null;
-            ColorMappingColorFive = null;
-            ColorMappingLabelFive = null;
-            ColorMappingValueFive = null;
-            ColorMappingFromSix = null;
-            ColorMappingToSix = null;
-            ColorMappingColorSix = null;
-            ColorMappingLabelSix = null;
-            ColorMappingValueSix = null;
-        }
-        else
-        {
-            Display = "block";
-            LegendText = "Inches";
-            ColorValuePath = "Inches";
-            ColorMappingFromOne = 0.1;
-            ColorMappingToOne = 6;
-            ColorMappingColorOne = new string[] { "#F0D6AD", "#19547B" };
-            ColorMappingLabelOne = null;
-            ColorMappingValueOne = null;
-            ColorMappingFromTwo = null;
-            ColorMappingToTwo = null;
-            ColorMappingColorTwo = null;
-            ColorMappingLabelTwo = null;
-            ColorMappingValueTwo = null;
-            ColorMappingFromThree = null;
-            ColorMappingToThree = null;
-            ColorMappingColorThree = null;
-            ColorMappingLabelThree = null;
-            ColorMappingValueThree = null;
-            ColorMappingFromFour = null;
-            ColorMappingToFour = null;
-            ColorMappingColorFour = null;
-            ColorMappingLabelFour = null;
-            ColorMappingValueFour = null;
-            ColorMappingFromFive = null;
-            ColorMappingToFive = null;
-            ColorMappingColorFive = null;
-            ColorMappingLabelFive = null;
-            ColorMappingValueFive = null;
-            ColorMappingFromSix = null;
-            ColorMappingToSix = null;
-            ColorMappingColorSix = null;
-            ColorMappingLabelSix = null;
+            ColorMappingLabelSix = "50 - 500";
             ColorMappingValueSix = null;
         }
     }
@@ -422,41 +380,75 @@
         public string Value;
     }
 
-    public List<ColorMappingDatasource> ColorMappingData = new List<ColorMappingDatasource>
-{
-        new ColorMappingDatasource {State= "Aceh", Inches= 31, Value= "High" },
-        new ColorMappingDatasource {State= "Kalimantan Timur", Inches=1.15, Value= "Low" },
-        new ColorMappingDatasource {State= "Jawa Barat", Inches=0.77, Value= "Low" },
-        new ColorMappingDatasource {State= "Jawa Tengah", Inches=4.99, Value= "High" },
-        new ColorMappingDatasource {State= "Bengkulu", Inches=1.93, Value= "Low" },
-        new ColorMappingDatasource {State= "Banten", Inches=1.56, Value= "Low" },
-        new ColorMappingDatasource {State= "Jakarta Raya", Inches=4.35, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Kalimantan Barat", Inches=4.01, Value= "High" },
-        new ColorMappingDatasource {State= "Lampung", Inches=3.63, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Sumatera Selatan", Inches=4.16, Value= "High" },
-        new ColorMappingDatasource {State= "Bangka-Belitung", Inches=5.94, Value= "High" },
-        new ColorMappingDatasource {State= "Bali", Inches=1.75, Value= "Low" },
-        new ColorMappingDatasource {State= "Jawa Timur", Inches=3.79, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Kalimantan Selatan", Inches=3.94, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Nusa Tenggara Timur", Inches=3.25, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Sulawesi Selatan", Inches=3.00, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Sulawesi Barat", Inches=4.61, Value= "High" },
-        new ColorMappingDatasource {State= "Kepulauan Riau", Inches=5.22, Value= "High" },
-        new ColorMappingDatasource {State= "Gorontalo", Inches=3.49, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Jambi", Inches=3.93, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Kalimantan Tengah", Inches=4.06, Value= "High" },
-        new ColorMappingDatasource {State= "Irian Jaya Barat", Inches=2.62, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Sumatera Utara", Inches=2.62, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Riau", Inches=2.62, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Sulawesi Utara", Inches=51, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Maluku Utara", Inches=2.62, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Sumatera Barat", Inches=2.62, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Yogyakarta", Inches=2.62, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Maluku", Inches=2.62, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Nusa Tenggara Barat", Inches=2.62, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Sulawesi Tenggara", Inches=2.62, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Sulawesi Tengah", Inches=2.62, Value= "Moderate" },
-        new ColorMappingDatasource {State= "Papua", Inches=2.62, Value= "Moderate" }
-    };
+    //    //new ColorMappingDatasource {State= "Aceh", Inches= 31, Value= "High" },
+    //    //new ColorMappingDatasource {State= "Kalimantan Timur", Inches=1.15, Value= "Low" },
+    //    //new ColorMappingDatasource {State= "Jawa Barat", Inches=0.77, Value= "Low" },
+    //    //new ColorMappingDatasource {State= "Jawa Tengah", Inches=4.99, Value= "High" },
+    //    //new ColorMappingDatasource {State= "Bengkulu", Inches=1.93, Value= "Low" },
+    //    //new ColorMappingDatasource {State= "Banten", Inches=1.56, Value= "Low" },
+    //    //new ColorMappingDatasource {State= "Jakarta Raya", Inches=4.35, Value= "Moderate" },
+    //    //new ColorMappingDatasource {State= "Kalimantan Barat", Inches=4.01, Value= "High" },
+    //    //new ColorMappingDatasource {State= "Lampung", Inches=3.63, Value= "Moderate" },
+    //    //new ColorMappingDatasource {State= "Sumatera Selatan", Inches=4.16, Value= "High" },
+    //    //new ColorMappingDatasource {State= "Bangka-Belitung", Inches=5.94, Value= "High" },
+    //    //new ColorMappingDatasource {State= "Bali", Inches=1.75, Value= "Low" },
+    //    //new ColorMappingDatasource {State= "Jawa Timur", Inches=3.79, Value= "Moderate" },
+    //    //new ColorMappingDatasource {State= "Kalimantan Selatan", Inches=3.94, Value= "Moderate" },
+    //    //new ColorMappingDatasource {State= "Nusa Tenggara Timur", Inches=3.25, Value= "Moderate" },
+    //    //new ColorMappingDatasource {State= "Sulawesi Selatan", Inches=3.00, Value= "Moderate" },
+    //    //new ColorMappingDatasource {State= "Sulawesi Barat", Inches=4.61, Value= "High" },
+    //    //new ColorMappingDatasource {State= "Kepulauan Riau", Inches=5.22, Value= "High" },
+    //    //new ColorMappingDatasource {State= "Gorontalo", Inches=3.49, Value= "Moderate" },
+    //    //new ColorMappingDatasource {State= "Jambi", Inches=3.93, Value= "Moderate" },
+    //    //new ColorMappingDatasource {State= "Kalimantan Tengah", Inches=4.06, Value= "High" },
+    //    //new ColorMappingDatasource {State= "Irian Jaya Barat", Inches=2.62, Value= "Moderate" },
+    //    //new ColorMappingDatasource {State= "Sumatera Utara", Inches=2.62, Value= "Moderate" },
+    //    //new ColorMappingDatasource {State= "Riau", Inches=2.62, Value= "Moderate" },
+    //    //new ColorMappingDatasource {State= "Sulawesi Utara", Inches=51, Value= "Moderate" },
+    //    //new ColorMappingDatasource {State= "Maluku Utara", Inches=2.62, Value= "Moderate" },
+    //    //new ColorMappingDatasource {State= "Sumatera Barat", Inches=2.62, Value= "Moderate" },
+    //    //new ColorMappingDatasource {State= "Yogyakarta", Inches=2.62, Value= "Moderate" },
+    //    //new ColorMappingDatasource {State= "Maluku", Inches=2.62, Value= "Moderate" },
+    //    //new ColorMappingDatasource {State= "Nusa Tenggara Barat", Inches=2.62, Value= "Moderate" },
+    //    //new ColorMappingDatasource {State= "Sulawesi Tenggara", Inches=2.62, Value= "Moderate" },
+    //    //new ColorMappingDatasource {State= "Sulawesi Tengah", Inches=2.62, Value= "Moderate" },
+    //    //new ColorMappingDatasource {State= "Papua", Inches=2.62, Value= "Moderate" }
 
+    public IList<ColorMappingDatasource> ColorMappingData = new List<ColorMappingDatasource>();
+    private ApiResponse<GetCountUphByProvinceResponse> UphByProvince;
+
+    private async Task GetUphByProvince()
+    {
+        IsLoading = true;
+
+        UphByProvince = await Http.GetFromJsonAsync<ApiResponse<GetCountUphByProvinceResponse>>(Constants.URI.Uph.CountByProvince);
+
+        if (UphByProvince.Status.IsError)
+        {
+            Toaster.Add(UphByProvince.Status.Message, MatToastType.Danger);
+
+            IsLoading = false;
+
+            StateHasChanged();
+        }
+        else
+        {
+            if (UphByProvince.Result != null)
+            {
+                foreach (var item in UphByProvince.Result.Datas)
+                {
+                    ColorMappingData.Add(new ColorMappingDatasource
+                    {
+                        State = item.ProvinceName,
+                        Inches = item.TotalUph,
+                        Value = item.TotalValueMark
+                    });
+                }
+
+                IsLoading = false;
+
+                StateHasChanged();
+            }
+        }
+    }
 }

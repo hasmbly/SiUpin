@@ -52,8 +52,34 @@ namespace SiUpin.Application.Systems.Commands.SeedBerita
             {
                 foreach (var data in oldSarana)
                 {
-                    if (existingSaranas.Any(x => x.id_sarana == data.id_sarana))
-                        continue;
+                    var existingEntity = existingSaranas.FirstOrDefault(x => x.id_sarana == data.id_sarana);
+
+                    if (existingEntity != null)
+                    {
+                        if (string.IsNullOrEmpty(existingEntity.UphID))
+                        {
+                            var oldEntity = await _context.UphSaranas.FirstOrDefaultAsync(x => x.id_sarana == data.id_sarana, cancellationToken);
+                            var uph = await _context.Uphs.AsNoTracking().FirstOrDefaultAsync(x => x.id_uph == data.id_uph, cancellationToken);
+
+                            if (uph != null)
+                            {
+                                System.Console.WriteLine($"id_sarana: {oldEntity.id_sarana} -> doUpdate -> UphID: {uph.UphID}");
+
+                                oldEntity.UphID = uph.UphID;
+
+                                await _context.SaveChangesAsync(cancellationToken);
+                                continue;
+                            }
+                            else
+                            {
+                                continue;
+                            }
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
 
                     UphSarana entity = new UphSarana();
 
@@ -81,20 +107,46 @@ namespace SiUpin.Application.Systems.Commands.SeedBerita
                         };
 
                         saranas.Add(entity);
-
                         _context.UphSaranas.Add(entity);
                     }
                 }
 
-                await _context.SaveChangesAsync(cancellationToken);
+                if (saranas.Count > 0)
+                    await _context.SaveChangesAsync(cancellationToken);
             }
 
             if (oldGmp.Count() > 0)
             {
                 foreach (var data in oldGmp)
                 {
-                    if (existingGmps.Any(x => x.id_gmp == data.id_gmp))
-                        continue;
+                    var existingEntity = existingGmps.FirstOrDefault(x => x.id_gmp == data.id_gmp);
+
+                    if (existingEntity != null)
+                    {
+                        if (string.IsNullOrEmpty(existingEntity.UphID))
+                        {
+                            var oldEntity = await _context.UphGmps.FirstOrDefaultAsync(x => x.id_gmp == data.id_gmp, cancellationToken);
+                            var uph = await _context.Uphs.AsNoTracking().FirstOrDefaultAsync(x => x.id_uph == data.id_uph, cancellationToken);
+
+                            if (uph != null)
+                            {
+                                System.Console.WriteLine($"id_gmp: {oldEntity.id_gmp} -> doUpdate -> UphID: {uph.UphID}");
+
+                                oldEntity.UphID = uph.UphID;
+
+                                await _context.SaveChangesAsync(cancellationToken);
+                                continue;
+                            }
+                            else
+                            {
+                                continue;
+                            }
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
 
                     UphGmp entity = new UphGmp();
 
@@ -116,15 +168,42 @@ namespace SiUpin.Application.Systems.Commands.SeedBerita
                     }
                 }
 
-                await _context.SaveChangesAsync(cancellationToken);
+                if (gmps.Count > 0)
+                    await _context.SaveChangesAsync(cancellationToken);
             }
 
             if (oldMitra.Count() > 0)
             {
                 foreach (var data in oldMitra)
                 {
-                    if (existingMitra.Any(x => x.id_mitra == data.id_mitra))
-                        continue;
+                    var existingEntity = existingMitra.FirstOrDefault(x => x.id_mitra == data.id_mitra);
+
+                    if (existingEntity != null)
+                    {
+                        if (string.IsNullOrEmpty(existingEntity.UphID))
+                        {
+                            var oldEntity = await _context.UphMitras.FirstOrDefaultAsync(x => x.id_mitra == data.id_mitra, cancellationToken);
+                            var uph = await _context.Uphs.AsNoTracking().FirstOrDefaultAsync(x => x.id_uph == data.id_uph, cancellationToken);
+
+                            if (uph != null)
+                            {
+                                System.Console.WriteLine($"id_mitra: {oldEntity.id_mitra} -> doUpdate -> UphID: {uph.UphID}");
+
+                                oldEntity.UphID = uph.UphID;
+
+                                await _context.SaveChangesAsync(cancellationToken);
+                                continue;
+                            }
+                            else
+                            {
+                                continue;
+                            }
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
 
                     UphMitra entity = new UphMitra();
 
@@ -172,15 +251,42 @@ namespace SiUpin.Application.Systems.Commands.SeedBerita
                     }
                 }
 
-                await _context.SaveChangesAsync(cancellationToken);
+                if (mitras.Count > 0)
+                    await _context.SaveChangesAsync(cancellationToken);
             }
 
             if (oldPasar.Count() > 0)
             {
                 foreach (var data in oldPasar)
                 {
-                    if (existingPasar.Any(x => x.id_pasar == data.id_pasar))
-                        continue;
+                    var existingEntity = existingPasar.FirstOrDefault(x => x.id_pasar == data.id_pasar);
+
+                    if (existingEntity != null)
+                    {
+                        if (string.IsNullOrEmpty(existingEntity.UphID))
+                        {
+                            var oldEntity = await _context.UphPasars.FirstOrDefaultAsync(x => x.id_pasar == data.id_pasar, cancellationToken);
+                            var uph = await _context.Uphs.AsNoTracking().FirstOrDefaultAsync(x => x.id_uph == data.id_uph, cancellationToken);
+
+                            if (uph != null)
+                            {
+                                System.Console.WriteLine($"id_pasar: {oldEntity.id_pasar} -> doUpdate -> UphID: {uph.UphID}");
+
+                                oldEntity.UphID = uph.UphID;
+
+                                await _context.SaveChangesAsync(cancellationToken);
+                                continue;
+                            }
+                            else
+                            {
+                                continue;
+                            }
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
 
                     UphPasar entity = new UphPasar();
 
@@ -207,15 +313,46 @@ namespace SiUpin.Application.Systems.Commands.SeedBerita
                     }
                 }
 
-                await _context.SaveChangesAsync(cancellationToken);
+                if (pasars.Count > 0)
+                    await _context.SaveChangesAsync(cancellationToken);
             }
 
             if (oldProduksi.Count() > 0)
             {
+                System.Console.WriteLine($"oldProduksi.Count(): {oldProduksi.Count()}");
+
                 foreach (var data in oldProduksi)
                 {
-                    if (existingProduksi.Any(x => x.id_produksi == data.id_produksi))
-                        continue;
+                    var existingEntity = existingProduksi.FirstOrDefault(x => x.id_produksi == data.id_produksi);
+
+                    if (existingEntity != null)
+                    {
+                        if (string.IsNullOrEmpty(existingEntity.UphID))
+                        {
+                            var oldEntity = await _context.UphProduksis.FirstOrDefaultAsync(x => x.id_produksi == data.id_produksi, cancellationToken);
+                            var uph = await _context.Uphs.AsNoTracking().FirstOrDefaultAsync(x => x.id_uph == data.id_uph, cancellationToken);
+
+                            if (uph != null)
+                            {
+                                System.Console.WriteLine($"id_produksi: {oldEntity.id_produksi} -> doUpdate -> UphID: {uph.UphID}");
+
+                                oldEntity.UphID = uph.UphID;
+
+                                await _context.SaveChangesAsync(cancellationToken);
+                                continue;
+                            }
+                            else
+                            {
+                                continue;
+                            }
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+
+                    System.Console.WriteLine($"insert - produksi id_uph ({data.id_uph})");
 
                     UphProduksi entity = new UphProduksi();
 
@@ -234,7 +371,7 @@ namespace SiUpin.Application.Systems.Commands.SeedBerita
                             izin_edar = data.izin_edar,
                             jml_edar = data.jml_edar,
                             jml_gmp = data.jml_gmp,
-                            jml_hari_produksi = data.izin_edar,
+                            jml_hari_produksi = data.jml_hari_produksi,
                             jml_produksi = data.jml_produksi,
                             jml_sertifikat = data.jml_sertifikat,
                             satuan = data.satuan,
@@ -246,15 +383,42 @@ namespace SiUpin.Application.Systems.Commands.SeedBerita
                     }
                 }
 
-                await _context.SaveChangesAsync(cancellationToken);
+                if (produksis.Count > 0)
+                    await _context.SaveChangesAsync(cancellationToken);
             }
 
             if (oldSdm.Count() > 0)
             {
                 foreach (var data in oldSdm)
                 {
-                    if (existingSdm.Any(x => x.id_sdm == data.id_sdm))
-                        continue;
+                    var existingEntity = existingSdm.FirstOrDefault(x => x.id_sdm == data.id_sdm);
+
+                    if (existingEntity != null)
+                    {
+                        if (string.IsNullOrEmpty(existingEntity.UphID))
+                        {
+                            var oldEntity = await _context.UphSdms.FirstOrDefaultAsync(x => x.id_sdm == data.id_sdm, cancellationToken);
+                            var uph = await _context.Uphs.AsNoTracking().FirstOrDefaultAsync(x => x.id_uph == data.id_uph, cancellationToken);
+
+                            if (uph != null)
+                            {
+                                System.Console.WriteLine($"id_sdm: {oldEntity.id_sdm} -> doUpdate -> UphID: {uph.UphID}");
+
+                                oldEntity.UphID = uph.UphID;
+
+                                await _context.SaveChangesAsync(cancellationToken);
+                                continue;
+                            }
+                            else
+                            {
+                                continue;
+                            }
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
 
                     UphSdm entity = new UphSdm();
 
@@ -284,7 +448,8 @@ namespace SiUpin.Application.Systems.Commands.SeedBerita
                     }
                 }
 
-                await _context.SaveChangesAsync(cancellationToken);
+                if (sdms.Count > 0)
+                    await _context.SaveChangesAsync(cancellationToken);
             }
 
             return result;

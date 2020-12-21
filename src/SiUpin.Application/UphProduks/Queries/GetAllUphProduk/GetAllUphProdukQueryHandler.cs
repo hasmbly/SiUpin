@@ -44,7 +44,7 @@ namespace SiUpin.Application.Uphs.Queries.GetAllUphProduk
                         .Include(u => u.Uph).ThenInclude(p => p.Provinsi)
                         .Include(a => a.ProdukOlahan).ThenInclude(b => b.JenisKomoditi)
                         .Where(x => filesUph.Contains(x.UphProdukID) && x.Name.Contains(request.FilterByName ?? "") &&
-                                x.ProdukOlahan.JenisKomoditi.JenisKomoditiID == request.FilterJenisKomoditiID)
+                                x.ProdukOlahan.JenisKomoditi.Name.Contains(request.FilterJenisKomoditiID))
                         .Skip((request.PageNumber - 1) * request.PageSize)
                         .Take(request.PageSize)
                         .ToListAsync(cancellationToken);
@@ -53,7 +53,7 @@ namespace SiUpin.Application.Uphs.Queries.GetAllUphProduk
                         .AsNoTracking()
                         .Include(a => a.ProdukOlahan).ThenInclude(b => b.JenisKomoditi)
                         .Where(x => filesUph.Contains(x.UphProdukID) && x.Name.Contains(request.FilterByName ?? "") &&
-                                x.ProdukOlahan.JenisKomoditi.JenisKomoditiID == request.FilterJenisKomoditiID)
+                                x.ProdukOlahan.JenisKomoditi.Name.Contains(request.FilterJenisKomoditiID))
                         .Count();
                 }
                 else

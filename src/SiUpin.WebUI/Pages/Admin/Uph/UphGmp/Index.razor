@@ -52,7 +52,7 @@
                             </MatTableHeader>
                             <MatTableRow>
                                 <td>@context.No</td>
-                                <td>@context.Uph.Name</td>
+                                <td>@context.Uph?.Name</td>
                                 <td>@context.nama_gmp</td>
                             </MatTableRow>
                         </MatTable>
@@ -118,7 +118,7 @@
     {
         IsLoading = true;
 
-        var client = await Http.PostAsJsonAsync<GetUphGmpsRequest>(Constants.URI.Uph.Paginate, new GetUphGmpsRequest
+        var client = await Http.PostAsJsonAsync<GetUphGmpsRequest>(Constants.URI.UphGmp.Paginate, new GetUphGmpsRequest
         {
             PageSize = pageSize,
             PageNumber = pageNumber,

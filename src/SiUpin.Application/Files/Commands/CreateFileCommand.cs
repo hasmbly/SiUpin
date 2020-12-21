@@ -42,8 +42,20 @@ namespace SiUpin.Application.Files.Commands
 
                 if (processFileResult.IsSuccessful)
                 {
-                    var folderPath = Path.Combine(options.UploadsRootFolderPath);
+                    string folderPath;
+                    if (options.Environment == "Linux")
+                    {
+                        folderPath = Path.Combine(".", "SiUpinFiles", "Pictures");
+                    }
+                    else
+                    {
+                        folderPath = Path.Combine("D:", "SiUpinFiles", "Pictures");
+                    }
+
                     var trustedFileNameForFileStorage = $"{originalFileName}";
+
+                    Console.WriteLine($"Environment: {options.Environment}");
+                    Console.WriteLine($"folderPath: {folderPath}");
 
                     var saveDocumentResult = await _fileService.SaveFile(processFileResult.FileContent, folderPath, trustedFileNameForFileStorage);
 

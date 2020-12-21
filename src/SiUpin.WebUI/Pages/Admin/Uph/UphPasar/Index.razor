@@ -124,7 +124,7 @@
     {
         IsLoading = true;
 
-        var client = await Http.PostAsJsonAsync<GetUphPasarsRequest>(Constants.URI.Uph.Paginate, new GetUphPasarsRequest
+        var client = await Http.PostAsJsonAsync<GetUphPasarsRequest>(Constants.URI.UphPasar.Paginate, new GetUphPasarsRequest
         {
             PageSize = pageSize,
             PageNumber = pageNumber,

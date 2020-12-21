@@ -124,7 +124,7 @@
     {
         IsLoading = true;
 
-        var client = await Http.PostAsJsonAsync<GetUphMitrasRequest>(Constants.URI.Uph.Paginate, new GetUphMitrasRequest
+        var client = await Http.PostAsJsonAsync<GetUphMitrasRequest>(Constants.URI.UphMitra.Paginate, new GetUphMitrasRequest
         {
             PageSize = pageSize,
             PageNumber = pageNumber,

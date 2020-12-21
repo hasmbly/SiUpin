@@ -28,13 +28,13 @@ namespace SiUpin.Application.UphProduksis.Queries
                 var records = await _context.UphProduksis
                     .AsNoTracking()
                     .Include(a => a.Uph)
-                    .Where(x => x.nama_uph.Contains(request.FilterByName ?? ""))
+                    .Where(x => x.Uph.Name.Contains(request.FilterByName ?? ""))
                     .OrderByDescending(o => o.Created)
                     .Skip((request.PageNumber - 1) * request.PageSize)
                     .Take(request.PageSize)
                     .ToListAsync(cancellationToken);
 
-                var totalRecords = _context.UphProduksis.AsNoTracking().Count(x => x.nama_uph.Contains(request.FilterByName ?? ""));
+                var totalRecords = _context.UphProduksis.AsNoTracking().Count(x => x.Uph.Name.Contains(request.FilterByName ?? ""));
 
                 List<UphProduksiDTO> listOfDTO = new List<UphProduksiDTO>();
 
@@ -56,7 +56,7 @@ namespace SiUpin.Application.UphProduksis.Queries
                             izin_edar = data.izin_edar,
                             jml_edar = data.jml_edar,
                             jml_gmp = data.jml_gmp,
-                            jml_hari_produksi = data.izin_edar,
+                            jml_hari_produksi = data.jml_hari_produksi,
                             jml_produksi = data.jml_produksi,
                             jml_sertifikat = data.jml_sertifikat,
                             satuan = data.satuan,

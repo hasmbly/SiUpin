@@ -3,7 +3,6 @@ using MediatR;
 using SiUpin.Shared.Common;
 using SiUpin.Shared.Common.Pagination;
 using SiUpin.Shared.Uphs.Common;
-using SiUpin.Shared.Users.Queries.Common;
 
 namespace SiUpin.Shared.UphMitras.Queries
 {
@@ -63,6 +62,5 @@ namespace SiUpin.Shared.UphMitras.Queries
         public string user { get; set; }
 
         public UphDTO Uph { get; set; }
-        public UserDTO User { get; set; }
     }
 }

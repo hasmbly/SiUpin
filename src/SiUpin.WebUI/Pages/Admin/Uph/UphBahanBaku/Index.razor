@@ -126,7 +126,7 @@
     {
         IsLoading = true;
 
-        var client = await Http.PostAsJsonAsync<GetUphBahanBakusRequest>(Constants.URI.Uph.Paginate, new GetUphBahanBakusRequest
+        var client = await Http.PostAsJsonAsync<GetUphBahanBakusRequest>(Constants.URI.UphBahanBaku.Paginate, new GetUphBahanBakusRequest
         {
             PageSize = pageSize,
             PageNumber = pageNumber,

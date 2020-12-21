@@ -42,6 +42,7 @@ namespace SiUpin.Shared.UphBahanBakus.Queries
         public string TotalKebutuhan { get; set; }
         public string AsalBahanBaku { get; set; }
         public string Nilai { get; set; }
+        public string CreatedBy { get; set; }
 
         public JenisTernakDTO JenisTernak { get; set; }
         public JenisKomoditiDTO JenisKomoditi { get; set; }

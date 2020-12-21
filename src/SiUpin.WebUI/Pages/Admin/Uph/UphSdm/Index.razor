@@ -18,7 +18,7 @@
         else
         {
             <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
-                <MatH4>Data UPH GMP</MatH4>
+                <MatH4>Data UPH Sumber Daya</MatH4>
             </div>
 
             <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
@@ -132,7 +132,7 @@
     {
         IsLoading = true;
 
-        var client = await Http.PostAsJsonAsync<GetUphSdmsRequest>(Constants.URI.Uph.Paginate, new GetUphSdmsRequest
+        var client = await Http.PostAsJsonAsync<GetUphSdmsRequest>(Constants.URI.UphSdm.Paginate, new GetUphSdmsRequest
         {
             PageSize = pageSize,
             PageNumber = pageNumber,

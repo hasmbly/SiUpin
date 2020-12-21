@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using SiUpin.WebUI.Common;
+using SiUpin.WebUI.Common.StateProvider;
 using Syncfusion.Blazor;
 
 namespace SiUpin.WebUI
@@ -36,8 +37,8 @@ namespace SiUpin.WebUI
             });
 
             builder.Services.AddScoped<AuthenticationStateProvider, ServerAuthenticationStateProvider>();
-
             builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient(httpClientName));
+            builder.Services.AddScoped<UphClusterState>();
 
             builder.Services.AddSyncfusionBlazor();
 

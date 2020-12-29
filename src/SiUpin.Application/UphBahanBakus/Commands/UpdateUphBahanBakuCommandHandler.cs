@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using SiUpin.Application.Common.Interfaces;
-using SiUpin.Domain.Entities;
 using SiUpin.Shared.UphBahanBakus.Commands;
 
 namespace SiUpin.Application.UphBahanBakus.Commands
@@ -21,23 +20,19 @@ namespace SiUpin.Application.UphBahanBakus.Commands
         {
             var result = new UpdateUphBahanBakuResponse();
 
-            var data = await _context.UphBahanBakus.FirstOrDefaultAsync(x => x.UphBahanBakuID == request.UphBahanBakuID, cancellationToken);
+            var entity = await _context.UphBahanBakus
+                .FirstOrDefaultAsync(x => x.UphBahanBakuID == request.UphBahanBakuID, cancellationToken);
 
-            var entity = new UphBahanBaku
-            {
-                UphBahanBakuID = data.UphBahanBakuID,
-                UphID = data.UphID,
-                id_uph = data.id_uph,
-
-                id_bahan_baku = data.id_bahan_baku,
-                JenisKomoditiID = data.JenisKomoditiID,
-                JenisTernakID = data.JenisTernakID,
-                SatuanID = data.SatuanID,
-
-                TotalKebutuhan = data.TotalKebutuhan,
-                AsalBahanBaku = data.AsalBahanBaku,
-                Nilai = data.Nilai
-            };
+            entity.UphBahanBakuID = request.UphBahanBakuID;
+            entity.UphID = request.UphID;
+            entity.id_uph = request.id_uph;
+            entity.id_bahan_baku = request.id_bahan_baku;
+            entity.JenisKomoditiID = request.JenisKomoditiID;
+            entity.JenisTernakID = request.JenisTernakID;
+            entity.SatuanID = request.SatuanID;
+            entity.TotalKebutuhan = request.TotalKebutuhan;
+            entity.AsalBahanBaku = string.Join(",", request.AsalBahanBakus);
+            entity.Nilai = request.Nilai;
 
             await _context.SaveChangesAsync(cancellationToken);
 

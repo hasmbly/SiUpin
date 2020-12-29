@@ -11,13 +11,34 @@ using SiUpin.Shared.JenisKomiditis.Queries.GetAllJenisKomiditi;
 using SiUpin.Shared.JenisTernaks.Queries.GetJenisTernaks;
 using SiUpin.Shared.Satuans.Queries.GetSatuans;
 using SiUpin.Shared.UphBahanBakus.Commands;
+using SiUpin.Shared.UphBahanBakus.Queries;
 using SiUpin.Shared.Uphs.Queries.GetUphIDandNames;
 using SiUpin.WebUI.Common;
 
 namespace SiUpin.WebUI.Pages.Admin.Uph.UphBahanBaku
 {
-    public partial class Create
+    public partial class Update
     {
+        public string _ID { get; set; }
+
+        [Parameter]
+        public string EntityID
+        {
+            get => _ID;
+            set
+            {
+                if (_ID != value)
+                {
+                    _ID = value;
+
+                    InvokeAsync(async () =>
+                    {
+                        await GetEntityByID();
+                    });
+                }
+            }
+        }
+
         [Parameter]
         public bool DialogIsOpen { get; set; } = false;
 
@@ -31,8 +52,9 @@ namespace SiUpin.WebUI.Pages.Admin.Uph.UphBahanBaku
         public bool IsLoadingCircle { get; set; }
         public bool IsDisabledLoginButton { get; set; }
 
-        public CreateUphBahanBakuRequest Model { get; set; } = new CreateUphBahanBakuRequest();
-        public ApiResponse<CreateUphBahanBakuResponse> Response { get; set; }
+        public GetUphBahanBakuResponse Entity { get; set; }
+        public UpdateUphBahanBakuRequest Model { get; set; } = new UpdateUphBahanBakuRequest();
+        public ApiResponse<UpdateUphBahanBakuResponse> Response { get; set; }
 
         private EditContext _editContext;
 
@@ -55,6 +77,19 @@ namespace SiUpin.WebUI.Pages.Admin.Uph.UphBahanBaku
         {
             get => Model.SatuanID;
             set => Model.SatuanID = value;
+        }
+
+        public string _uph { get; set; }
+        public string SelectedUph
+        {
+            get => _uph;
+            set
+            {
+                _uph = value;
+
+                if (!string.IsNullOrEmpty(value))
+                    Model.UphID = UphIDandNames.FirstOrDefault(x => x.Name == value).UphID;
+            }
         }
 
         public bool AsalBahanBaku_00 { get; set; }
@@ -94,15 +129,64 @@ namespace SiUpin.WebUI.Pages.Admin.Uph.UphBahanBaku
         public IList<UphIDandNameDTO> UphIDandNames { get; set; } = new List<UphIDandNameDTO>();
         public IList<string> AsalBahanBakus { get; set; } = new List<string>();
 
-        protected override async Task OnInitializedAsync()
+        protected override void OnInitialized()
         {
             _editContext = new EditContext(Model);
+        }
+
+        private async Task GetEntityByID()
+        {
+            IsLoading = true;
+
+            Entity = Task.FromResult(await Http.GetFromJsonAsync<ApiResponse<GetUphBahanBakuResponse>>($"{Constants.URI.UphBahanBaku.Base}/{EntityID}")).Result.Result;
+
+            Model.UphBahanBakuID = Entity.UphBahanBakuID;
+
+            await GetUphIDandNames();
+            Model.UphID = Entity.UphID;
+            SelectedUph = Entity.Uph.Name;
 
             await GetJenisTernaks();
-            await GetJenisKomoditis();
-            await GetSatuans();
-            await GetUphIDandNames();
+            Model.JenisTernakID = Entity.JenisTernakID;
+            SelectJenisTernak = Entity.JenisTernakID;
 
+            await GetJenisKomoditis();
+            Model.JenisKomoditiID = Entity.JenisKomoditiID;
+            SelectJenisKomoditi = Entity.JenisKomoditiID;
+
+            await GetSatuans();
+            Model.SatuanID = Entity.SatuanID;
+            SelectSatuan = Entity.SatuanID;
+
+            Model.TotalKebutuhan = Entity.TotalKebutuhan;
+            Model.Nilai = Entity.Nilai;
+
+            foreach (var item in Entity.AsalBahanBakus)
+            {
+                var isExist = Entity.AsalBahanBakus.Any(x => x == item);
+
+                System.Console.WriteLine($"{item} - isExist: {isExist}");
+
+                if (isExist)
+                {
+                    if (item == Constants.UphBahanBaku.AsalBahanBakus[0])
+                    {
+                        SelectedAsalBahanBaku_00 = true;
+
+                        IsLoading = false;
+                        StateHasChanged();
+                    }
+                    else if (item == Constants.UphBahanBaku.AsalBahanBakus[1])
+                    {
+                        SelectedAsalBahanBaku_01 = true;
+
+                        IsLoading = false;
+                        StateHasChanged();
+                    }
+                }
+            }
+
+            IsLoading = false;
             StateHasChanged();
         }
 
@@ -148,26 +232,25 @@ namespace SiUpin.WebUI.Pages.Admin.Uph.UphBahanBaku
             {
                 IsLoadingCircle = true;
 
-                var client = await Http.PostAsJsonAsync(Constants.URI.UphBahanBaku.Register, new CreateUphBahanBakuRequest
+                var client = await Http.PutAsJsonAsync(Constants.URI.UphBahanBaku.Base, new UpdateUphBahanBakuRequest
                 {
+                    UphBahanBakuID = Model.UphBahanBakuID,
                     UphID = Model.UphID,
                     JenisKomoditiID = Model.JenisKomoditiID,
                     JenisTernakID = Model.JenisTernakID,
                     SatuanID = Model.SatuanID,
-                    TotalKebutuhan = Model.TotalKebutuhan,
                     AsalBahanBakus = Model.AsalBahanBakus,
-                    AsalBahanBaku = Model.AsalBahanBakus.ToString(),
+                    TotalKebutuhan = Model.TotalKebutuhan,
                     Nilai = Model.Nilai
                 });
 
-                Response = Task.FromResult(await client.Content.ReadFromJsonAsync<ApiResponse<CreateUphBahanBakuResponse>>()).Result;
+                Response = Task.FromResult(await client.Content.ReadFromJsonAsync<ApiResponse<UpdateUphBahanBakuResponse>>()).Result;
 
                 if (!Response.Status.IsError)
                 {
                     IsLoadingCircle = false;
 
                     await DialogIsOpenStatus.InvokeAsync(false);
-
                     await OnSuccessSubmit.InvokeAsync(true);
 
                     StateHasChanged();

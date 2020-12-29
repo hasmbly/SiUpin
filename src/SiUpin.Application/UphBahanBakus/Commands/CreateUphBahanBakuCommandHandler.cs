@@ -24,7 +24,6 @@ namespace SiUpin.Application.UphBahanBakus.Commands
 
             var entity = new UphBahanBaku
             {
-                UphBahanBakuID = data.UphBahanBakuID,
                 UphID = data.UphID,
                 id_uph = data.id_uph,
 
@@ -32,10 +31,9 @@ namespace SiUpin.Application.UphBahanBakus.Commands
                 JenisKomoditiID = data.JenisKomoditiID,
                 JenisTernakID = data.JenisTernakID,
                 SatuanID = data.SatuanID,
-
                 TotalKebutuhan = data.TotalKebutuhan,
-                AsalBahanBaku = data.AsalBahanBaku,
-                Nilai = data.Nilai,
+                AsalBahanBaku = string.Join(",", request.AsalBahanBakus),
+                Nilai = data.Nilai
             };
 
             await _context.UphBahanBakus.AddAsync(entity);

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
@@ -31,7 +32,7 @@ namespace SiUpin.Application.UphBahanBakus.Queries
                     .Include(b => b.JenisKomoditi)
                     .Include(c => c.JenisTernak)
                     .Include(d => d.Satuan)
-                    .FirstOrDefaultAsync(cancellationToken);
+                    .FirstOrDefaultAsync(x => x.UphBahanBakuID == request.UphBahanBakuID, cancellationToken);
 
                 if (record != null)
                 {
@@ -50,6 +51,7 @@ namespace SiUpin.Application.UphBahanBakus.Queries
 
                         TotalKebutuhan = data.TotalKebutuhan,
                         AsalBahanBaku = data.AsalBahanBaku,
+                        AsalBahanBakus = data.AsalBahanBaku.Replace(", ", ",").Split(",").ToList(),
                         Nilai = data.Nilai,
                         CreatedBy = data.CreatedBy,
 

@@ -11,6 +11,7 @@ using SiUpin.Shared.Uphs.Queries.GetCountUphByProvince;
 using SiUpin.Shared.Uphs.Queries.GetUph;
 using SiUpin.Shared.Uphs.Queries.GetUphAndProduk;
 using SiUpin.Shared.Uphs.Queries.GetUphClusterGrades;
+using SiUpin.Shared.Uphs.Queries.GetUphIDandNames;
 using SiUpin.WebAPI.Common.ApiEnvelopes;
 
 namespace SiUpin.WebAPI.Controllers.V1
@@ -38,6 +39,20 @@ namespace SiUpin.WebAPI.Controllers.V1
             try
             {
                 return Ok(new Success(await Mediator.Send(new GetCountUphByProvinceRequest()), "Successfully"));
+            }
+            catch (Exception exception)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, new InternalServerError(exception.Message));
+            }
+        }
+
+        [AllowAnonymous]
+        [HttpGet("uphIDandNames")]
+        public async Task<IActionResult> GetUphIDandNames()
+        {
+            try
+            {
+                return Ok(new Success(await Mediator.Send(new GetUphIDandNamesRequest()), "Successfully"));
             }
             catch (Exception exception)
             {

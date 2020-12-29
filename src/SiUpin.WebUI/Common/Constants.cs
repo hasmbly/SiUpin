@@ -55,6 +55,7 @@ namespace SiUpin.WebUI.Common
                 public static readonly string Delete = $"{Base}/Delete";
 
                 public static readonly string CountByProvince = $"{Base}/countByProvince";
+                public static readonly string UphIDandNames = $"{Base}/uphIDandNames";
 
                 public static readonly string Cluster = $"{Base}/cluster/";
                 public static readonly string ClusterPaginate = $"{Base}/cluster/paginate";
@@ -77,6 +78,7 @@ namespace SiUpin.WebUI.Common
                 public static readonly string Base = $"{BaseAPI}/UphBahanBaku";
 
                 public static readonly string Register = $"{Base}/register";
+                public static readonly string Delete = $"{Base}/delete";
                 public static readonly string Paginate = $"{Base}/paginate";
             }
 

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using SiUpin.Shared.JenisKomiditis.Common.GetAllJenisKomiditi;
 using SiUpin.Shared.JenisTernaks.Queries.GetJenisTernaks;
 using SiUpin.Shared.Satuans.Queries.GetSatuans;
@@ -9,6 +10,7 @@ namespace SiUpin.Shared.UphBahanBakus.Common
     public class UphBahanBakuDTO
     {
         public string UphBahanBakuID { get; set; }
+        [Required]
         public string UphID { get; set; }
 
         public int No { get; set; }
@@ -25,7 +27,9 @@ namespace SiUpin.Shared.UphBahanBakus.Common
         [Required]
         public string TotalKebutuhan { get; set; }
         [Required]
+        public IList<string> AsalBahanBakus { get; set; } = new List<string>();
         public string AsalBahanBaku { get; set; }
+
         [Required]
         public string Nilai { get; set; }
 

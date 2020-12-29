@@ -3,6 +3,8 @@
 @inject HttpClient Http
 @inject NavigationManager Navigation
 
+@using SiUpin.Pages.Admin.Uph.UphBahanBaku
+
 @using SiUpin.Shared.UphBahanBakus.Queries
 @using SiUpin.Shared.UphBahanBakus.Common
 @using SiUpin.Shared.Common.ApiEnvelopes
@@ -13,7 +15,14 @@
         @if (OpenCreateDialog)
         {
             <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
-                @*<Create DialogIsOpen="OpenCreateDialog" DialogIsOpenStatus="CreateDialogIsOpenStatus" OnSuccessSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); }))" />*@
+                <Create DialogIsOpen="OpenCreateDialog" DialogIsOpenStatus="CreateDialogIsOpenStatus" OnSuccessSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); }))" />
+            </div>
+        }
+        else if (OpenUpdateDialog)
+        {
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
+                <Update DialogIsOpen="OpenUpdateDialog" EntityID="@EntityID" DialogIsOpenStatus="UpdateIsOpenStatus"
+                        OnSuccessSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); }))" />
             </div>
         }
         else
@@ -51,8 +60,9 @@
                                     <MatSortHeader SortId="3">Jenis Ternak</MatSortHeader>
                                     <MatSortHeader SortId="4">Bahan Utama</MatSortHeader>
                                     <MatSortHeader SortId="5">Kebutuhan</MatSortHeader>
-                                    <MatSortHeader SortId="6">Asal</MatSortHeader>
+                                    <MatSortHeader SortId="6"><span style="width:150px">Asal</span></MatSortHeader>
                                     <MatSortHeader SortId="7">Nilai</MatSortHeader>
+                                    <MatSortHeader class="text-center"><span style="width:10px"></span></MatSortHeader>
                                 </MatSortHeaderRow>
                             </MatTableHeader>
                             <MatTableRow>
@@ -63,6 +73,10 @@
                                 <td>@context.TotalKebutuhan @context.Satuan.Name</td>
                                 <td>@context.AsalBahanBaku</td>
                                 <td>@context.Nilai</td>
+                                <td class="text-center">
+                                    <MatIconButton Icon="@MatIconNames.Edit" Style="color: mediumpurple;" @onclick="() => { OpenUpdateDialog = true; EntityID = context.UphBahanBakuID; }" />
+                                    <MatIconButton Icon="@MatIconNames.Remove_circle" Style="color: orangered;" @onclick="() => { OpenDeleteDialog = true; EntityID = context.UphBahanBakuID; }" />
+                                </td>
                             </MatTableRow>
                         </MatTable>
                     }
@@ -76,9 +90,13 @@
     </div>
 </div>
 
+<Delete DialogIsOpen="OpenDeleteDialog" DialogIsOpenStatus="DeleteDialogIsOpenStatus" ID="@EntityID" OnSuccesSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); }))" />
+
 @code
 {
     private bool IsLoading = false;
+
+    public string EntityID { get; set; }
 
     private GetUphBahanBakusResponse items;
     private UphBahanBakuDTO[] sortedData = null;
@@ -103,8 +121,12 @@
     }
 
     public bool OpenCreateDialog { get; set; }
+    public bool OpenUpdateDialog { get; set; }
+    public bool OpenDeleteDialog { get; set; }
 
     private void CreateDialogIsOpenStatus(bool isOpened) => OpenCreateDialog = isOpened;
+    private void UpdateIsOpenStatus(bool isOpened) => OpenUpdateDialog = isOpened;
+    private void DeleteDialogIsOpenStatus(bool isOpened) => OpenDeleteDialog = isOpened;
 
     protected override async Task OnInitializedAsync()
     {
@@ -180,9 +202,6 @@
                     break;
                 case "5":
                     comparison = (s1, s2) => s1.TotalKebutuhan.CompareTo(s2.TotalKebutuhan);
-                    break;
-                case "6":
-                    comparison = (s1, s2) => s1.AsalBahanBaku.CompareTo(s2.AsalBahanBaku);
                     break;
                 case "7":
                     comparison = (s1, s2) => s1.Nilai.CompareTo(s2.Nilai);

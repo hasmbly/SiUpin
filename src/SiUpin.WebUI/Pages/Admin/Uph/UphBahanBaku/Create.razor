@@ -1,0 +1,148 @@
+﻿@inject HttpClient Http
+@inject IMatToaster Toaster
+
+@if (IsLoading)
+{
+    <MatDialog @bind-IsOpen="IsLoading" CanBeClosed="false">
+        <MatDialog>Please Wait..</MatDialog>
+        <MatDialogContent>
+            <MatProgressBar Indeterminate="true" Closed="!IsLoading"></MatProgressBar>
+        </MatDialogContent>
+    </MatDialog>
+}
+else
+{
+    <MatDialog @bind-IsOpen="DialogIsOpen" CanBeClosed="false">
+        <MatDialogTitle>
+            Create
+        </MatDialogTitle>
+        <MatDialogContent>
+            <EditForm EditContext="_editContext" OnSubmit="HandleSubmit">
+                <DataAnnotationsValidator />
+
+                <div class="mat-layout-grid p-0">
+                    <div class="mat-layout-grid-inner mt-0">
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                            <MatTextField @bind-Value="Model.Username" Label="Username" Required="true" FullWidth="true" />
+                            <MatCaption Class="mt-1">
+                                <ValidationMessage For="@(() => Model.Username)" />
+                            </MatCaption>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                            <MatTextField @bind-Value="Model.Email" Label="Email" Required="true" FullWidth="true" />
+                            <MatCaption Class="mt-1">
+                                <ValidationMessage For="@(() => Model.Email)" />
+                            </MatCaption>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                            <MatTextField @bind-Value="Model.Fullname" Label="Full Name" Required="true" FullWidth="true" />
+                            <MatCaption Class="mt-1">
+                                <ValidationMessage For="@(() => Model.Fullname)" />
+                            </MatCaption>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                            <MatTextField @bind-Value="Model.Password" Label="Password" Type="password" Required="true" />
+                            <MatCaption Class="mt-1">
+                                <ValidationMessage For="@(() => Model.Password)" />
+                            </MatCaption>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                            <MatTextField @bind-Value="Model.NIP" Label="NIP" Type="number" FullWidth="true" />
+                            <MatCaption Class="mt-1">
+                                <ValidationMessage For="@(() => Model.NIP)" />
+                            </MatCaption>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                            <MatTextField @bind-Value="Model.Jabatan" Label="Jabatan" FullWidth="true" />
+                            <MatCaption Class="mt-1">
+                                <ValidationMessage For="@(() => Model.Jabatan)" />
+                            </MatCaption>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                            <MatTextField @bind-Value="Model.Instansi" Label="Instansi" FullWidth="true" />
+                            <MatCaption Class="mt-1">
+                                <ValidationMessage For="@(() => Model.Instansi)" />
+                            </MatCaption>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                            <MatTextField @bind-Value="Model.Telepon" Label="Telepon" Type="number" />
+                            <MatCaption Class="mt-1">
+                                <ValidationMessage For="@(() => Model.Telepon)" />
+                            </MatCaption>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                            <MatSelect @bind-Value="SelectRole" Label="Level">
+                                <MatOption TValue="string" Value="@(null)"></MatOption>
+                                @if (Roles.Count() > 0)
+                                    {
+                                        foreach (var item in Roles)
+                                        {
+                                        <MatOption TValue="string" Value="@(item.RoleID)">@item.Name</MatOption>
+                                        }
+                                    }
+                            </MatSelect>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                            <MatSelect @bind-Value="SelectProvinsi" Label="Provinsi">
+                                <MatOption TValue="string" Value="@(null)"></MatOption>
+                                @if (Provinsis.Count() > 0)
+                                    {
+                                        foreach (var item in Provinsis)
+                                        {
+                                        <MatOption TValue="string" Value="@(item.ProvinsiID)">@item.Name</MatOption>
+                                        }
+                                    }
+                            </MatSelect>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                            <MatSelect @bind-Value="SelectKota" Label="Kota">
+                                <MatOption TValue="string" Value="@(null)"></MatOption>
+                                @if (Kotas.Count() > 0)
+                                    {
+                                        foreach (var item in Kotas)
+                                        {
+                                        <MatOption TValue="string" Value="@(item.KotaID)">@item.Name</MatOption>
+                                        }
+                                    }
+                            </MatSelect>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                            <MatSelect @bind-Value="SelectKecamatan" Label="Kecamatan">
+                                <MatOption TValue="string" Value="@(null)"></MatOption>
+                                @if (Kecamatans.Count() > 0)
+                                    {
+                                        foreach (var item in Kecamatans)
+                                        {
+                                        <MatOption TValue="string" Value="@(item.KecamatanID)">@item.Name</MatOption>
+                                        }
+                                    }
+                            </MatSelect>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                            <MatSelect @bind-Value="SelectKelurahan" Label="Kelurahan">
+                                <MatOption TValue="string" Value="@(null)"></MatOption>
+                                @if (Kelurahans.Count() > 0)
+                                    {
+                                        foreach (var item in Kelurahans)
+                                        {
+                                        <MatOption TValue="string" Value="@(item.KelurahanID)">@item.Name</MatOption>
+                                        }
+                                    }
+                            </MatSelect>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12">
+                            <MatTextField @bind-Value="Model.Alamat" Label="Alamat" TextArea="true" FullWidth="true" />
+                            <MatCaption Class="mt-1">
+                                <ValidationMessage For="@(() => Model.Alamat)" />
+                            </MatCaption>
+                        </div>
+                    </div>
+                </div>
+            </EditForm>
+        </MatDialogContent>
+        <MatDialogActions>
+            <MatButton OnClick="CancelClick">Cancel</MatButton>
+            <MatButton Raised="true" OnClick="HandleSubmit">Submit</MatButton>
+        </MatDialogActions>
+    </MatDialog>
+}

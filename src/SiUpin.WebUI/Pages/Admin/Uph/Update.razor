@@ -1,10 +1,16 @@
 ﻿@inject HttpClient Http
 @inject IMatToaster Toaster
+@inject AuthenticationStateProvider _authenticationStateProvider
 
 @namespace SiUpin.Pages.Admin.Uph
 
-@using SiUpin.Shared.Uphs.Command.CreateUph
+@using SiUpin.Shared.Uphs.Queries.GetUphAndProduk
+
+@using SiUpin.Shared.Uphs.Command.UpdateUph
+@using SiUpin.Shared.UphProduks.Command.UpdateUphProduk
+@using SiUpin.Shared.UphProduks.Command.DeleteUphProduk
 @using SiUpin.Shared.UphProduks.Command.CreateUphProduk
+
 @using SiUpin.Shared.JenisTernaks.Queries.GetJenisTernaks
 @using SiUpin.Shared.ProdukOlahans.Queries.GetProdukOlahans
 @using SiUpin.Shared.Satuans.Queries.GetSatuans
@@ -267,18 +273,33 @@ else
                                 <MatBody2><MatIcon Icon="@MatIconNames.Photo" />&nbsp;&nbsp; @FileList.Name</MatBody2>
                             }
                         </div>
-                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
-                            <MatButton Icon="@MatIconNames.Add" Raised="true" OnClick="HandleAddUphProduks">Add</MatButton>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-4">
+                            @if (IsButtonSave)
+                            {
+                                <MatButton Icon="@MatIconNames.Save" Raised="true" OnClick="HandleSaveEditExistingUphProduk">Save</MatButton>
+                                <MatButton Icon="@MatIconNames.Cancel" Raised="true" OnClick="HandleCancelEditExistingUphProduk">Cancel</MatButton>
+                            }
+                            else
+                            {
+                                <MatButton Icon="@MatIconNames.Add" Raised="true" OnClick="HandleAddUphProduks">Add</MatButton>
+                            }
                         </div>
                         <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12">
                             @foreach (var uphProduk in UphProduks)
                             {
                                 var item = uphProduk.UphProduk;
 
-                                <MatBody1><MatIcon Icon="@MatIconNames.Fastfood" />&nbsp;&nbsp; @item.Name - Rp @item.Harga</MatBody1>
-                                if (uphProduk.UphProdukFiles != null)
+                                if (!item.IsDelete)
                                 {
-                                    <MatCaption>&nbsp;&nbsp; <MatIcon Icon="@MatIconNames.Photo" />&nbsp; &nbsp; @uphProduk.UphProdukFiles.Name</MatCaption>
+                                    <MatBody1>
+                                        <MatIcon Icon="@MatIconNames.Fastfood" />&nbsp;&nbsp; @item.Name - Rp @item.Harga &nbsp;&nbsp;
+                                        <MatIconButton Icon="@MatIconNames.Edit" OnClick="@(() => HandleSelectedUphProduks(uphProduk))" /><MatIconButton Icon="@MatIconNames.Delete" OnClick="@(() => HandleRemoveUphProduks(uphProduk))" />
+                                    </MatBody1>
+
+                                    if (uphProduk.UphProdukFiles != null)
+                                    {
+                                        <MatCaption>&nbsp;&nbsp; <MatIcon Icon="@MatIconNames.Photo" />&nbsp; &nbsp; @uphProduk.UphProdukFiles.Name</MatCaption>
+                                    }
                                 }
                             }
                         </div>
@@ -304,6 +325,28 @@ else
 {
     private bool IsLoadingCircle = false;
 
+    private bool IsButtonSave = false;
+
+    public string _ID { get; set; }
+
+    [Parameter]
+    public string UphID
+    {
+        get => _ID;
+        set
+        {
+            if (_ID != value)
+            {
+                _ID = value;
+
+                InvokeAsync(async () =>
+                {
+                    await GetEntityByID();
+                });
+            }
+        }
+    }
+
     [Parameter]
     public bool DialogIsOpen { get; set; } = false;
 
@@ -316,11 +359,13 @@ else
     private bool IsLoading = false;
     public bool IsDisabledLoginButton { get; set; }
 
-    public CreateUphRequest Model { get; set; } = new CreateUphRequest();
-    public CreateUphProdukRequest ModelUphProduk { get; set; } = new CreateUphProdukRequest();
+    public GetUphAndProdukResponse UphAndProduk { get; set; }
 
-    public ApiResponse<CreateUphResponse> Response { get; set; }
-    public ApiResponse<CreateUphProdukResponse> ResponseUphProduk { get; set; }
+    public UpdateUphRequest Model { get; set; } = new UpdateUphRequest();
+    public UpdateUphProdukRequest ModelUphProduk { get; set; } = new UpdateUphProdukRequest();
+
+    public ApiResponse<UpdateUphResponse> Response { get; set; }
+    public ApiResponse<UpdateUphProdukResponse> ResponseUphProduk { get; set; }
 
     private EditContext _uphContext;
     private EditContext _uphProdukContext;
@@ -407,11 +452,14 @@ else
 
     public IList<ClientUphProduks> UphProduks { get; set; } = new List<ClientUphProduks>();
 
-    public IFileListEntry FileList;
+    public UphProdukFiles FileList;
 
     private void HandleFileListBlazor(IFileListEntry[] files)
     {
-        FileList = files.FirstOrDefault();
+        FileList = new UphProdukFiles();
+
+        FileList.Data = files.FirstOrDefault().Data;
+        FileList.Name = files.FirstOrDefault().Name;
     }
 
     public void CancelClick()
@@ -429,13 +477,164 @@ else
         await GetJenisTernaks();
         await GetProdukOlahans();
         await GetSatuans();
-        await GetParameterJawabansByIndikatorName();
 
         StateHasChanged();
     }
 
+    private async Task GetEntityByID()
+    {
+        IsLoading = true;
+
+        UphAndProduk = Task.FromResult(await Http.GetFromJsonAsync<ApiResponse<GetUphAndProdukResponse>>($"{Constants.URI.Uph.Details}{UphID}")).Result.Result;
+
+        // preparing Uph
+        Model.UphID = UphAndProduk.UphID;
+
+        Model.Name = UphAndProduk.Name;
+        Model.Ketua = UphAndProduk.Ketua;
+        Model.Handphone = UphAndProduk.Handphone;
+        Model.TahunBerdiri = UphAndProduk.TahunBerdiri;
+
+        Model.ProvinsiID = UphAndProduk.ProvinsiID;
+
+        await GetKotasByProvinsiID(Model.ProvinsiID);
+        Model.KotaID = UphAndProduk.KotaID;
+
+        await GetKecamatansByKotaID(Model.KotaID);
+        Model.KecamatanID = UphAndProduk.KecamatanID;
+
+        await GetKelurahansByKecamatanID(Model.KecamatanID);
+        Model.KelurahanID = UphAndProduk.KelurahanID;
+
+        Model.Alamat = UphAndProduk.Alamat;
+
+        await GetParameterJawabansByIndikatorName();
+        Model.ParameterAdministrasiID = UphAndProduk.ParameterAdministrasiID;
+        Model.ParameterBadanHukumID = UphAndProduk.ParameterBadanHukumID;
+        Model.ParameterBentukLembagaID = UphAndProduk.ParameterBentukLembagaID;
+        Model.ParameterStatusUphID = UphAndProduk.ParameterStatusUphID;
+
+        // preparing UphProduks
+        if (UphAndProduk.UphProduks.Count > 0)
+        {
+            foreach (var uphProduk in UphAndProduk.UphProduks)
+            {
+                UphProduks.Add(new ClientUphProduks
+                {
+                    UphProduk = new UpdateUphProdukRequest
+                    {
+                        UphID = uphProduk.UphID,
+                        UphProdukID = uphProduk.UphProdukID,
+                        Name = uphProduk.Name,
+                        Berat = uphProduk.Berat,
+                        Harga = uphProduk.Harga,
+                        SatuanID = uphProduk.SatuanID,
+                        JenisTernakID = uphProduk.JenisTernakID,
+                        ProdukOlahanID = uphProduk.ProdukOlahanID,
+                        Description = uphProduk.Description
+                    },
+
+                    UphProdukFiles = new UphProdukFiles
+                    {
+                        Name = uphProduk.File.Name,
+                    }
+                });
+            }
+        }
+
+        IsLoading = false;
+
+        StateHasChanged();
+    }
+
+    private void HandleSelectedUphProduks(ClientUphProduks clientUphProduks)
+    {
+        ModelUphProduk.UphID = clientUphProduks.UphProduk.UphID;
+        ModelUphProduk.UphProdukID = clientUphProduks.UphProduk.UphProdukID;
+        ModelUphProduk.Name = clientUphProduks.UphProduk.Name;
+        ModelUphProduk.Berat = clientUphProduks.UphProduk.Berat;
+        ModelUphProduk.Harga = clientUphProduks.UphProduk.Harga;
+        ModelUphProduk.SatuanID = clientUphProduks.UphProduk.SatuanID;
+        ModelUphProduk.JenisTernakID = clientUphProduks.UphProduk.JenisTernakID;
+        ModelUphProduk.ProdukOlahanID = clientUphProduks.UphProduk.ProdukOlahanID;
+        ModelUphProduk.Description = clientUphProduks.UphProduk.Description;
+
+        FileList = new UphProdukFiles();
+        FileList.Name = clientUphProduks.UphProdukFiles.Name;
+
+        if (clientUphProduks.UphProdukFiles.Data != null)
+        {
+            FileList.Data = clientUphProduks.UphProdukFiles.Data;
+        }
+
+        IsButtonSave = true;
+    }
+
+    private void HandleAddUphProduks()
+    {
+        if (_uphProdukContext.Validate())
+        {
+            if (string.IsNullOrEmpty(ModelUphProduk.UphID))
+            {
+                ModelUphProduk.UphID = UphID;
+            }
+
+            var clientUphProduks = new ClientUphProduks();
+            clientUphProduks.UphProduk = ModelUphProduk;
+
+            if (FileList.Data != null)
+                clientUphProduks.UphProdukFiles = new UphProdukFiles
+                {
+                    Data = FileList.Data,
+                    Name = FileList.Name
+                };
+
+            UphProduks.Add(clientUphProduks);
+
+            ModelUphProduk = new UpdateUphProdukRequest();
+            FileList = null;
+
+            StateHasChanged();
+        }
+        else
+        {
+            _uphProdukContext.AddDataAnnotationsValidation();
+            Toaster.AddErrors(_uphProdukContext.GetValidationMessages());
+        }
+    }
+
+    private void HandleSaveEditExistingUphProduk()
+    {
+        if (FileList.Data != null)
+        {
+            UphProduks.FirstOrDefault(x => x.UphProduk.UphProdukID == ModelUphProduk.UphProdukID).UphProdukFiles.Name = FileList.Name;
+            UphProduks.FirstOrDefault(x => x.UphProduk.UphProdukID == ModelUphProduk.UphProdukID).UphProdukFiles.Data = FileList.Data;
+        }
+
+        UphProduks.FirstOrDefault(x => x.UphProduk.UphProdukID == ModelUphProduk.UphProdukID).UphProduk = ModelUphProduk;
+
+        ModelUphProduk = new UpdateUphProdukRequest();
+        FileList = null;
+        IsButtonSave = false;
+
+        StateHasChanged();
+    }
+
+    private void HandleCancelEditExistingUphProduk()
+    {
+        ModelUphProduk = new UpdateUphProdukRequest();
+        FileList = null;
+        IsButtonSave = false;
+    }
+
+    private void HandleRemoveUphProduks(ClientUphProduks clientUphProduks)
+    {
+        UphProduks.FirstOrDefault(x => x.UphProduk.UphProdukID == clientUphProduks.UphProduk.UphProdukID).UphProduk.IsDelete = true;
+        StateHasChanged();
+    }
+
     private async Task GetProvinsis()
-        => Provinsis = Task.FromResult(await Http.GetFromJsonAsync<ApiResponse<GetProvinsisResponse>>(Constants.URI.Region.GetProvinsis)).Result.Result.Data.ToList();
+    => Provinsis = Task.FromResult(await Http.GetFromJsonAsync<ApiResponse<GetProvinsisResponse>>(Constants.URI.Region.GetProvinsis)).Result.Result.Data.ToList();
     private async Task GetKotasByProvinsiID(string ID)
         => Kotas = Task.FromResult(await Http.GetFromJsonAsync<ApiResponse<GetKotasByProvinsiIDResponse>>($"{Constants.URI.Region.GetKotasByProvinsiID}{ID}")).Result.Result.Data.ToList();
     private async Task GetKecamatansByKotaID(string ID)
@@ -470,7 +669,6 @@ else
             ($"{Constants.URI.ParameterJawaban.ByIndikatorName}{statusUPH}")).Result.Result.ParameterJawabans.ToList();
     }
 
-
     private async Task HandleSubmit()
     {
         IsLoadingCircle = true;
@@ -492,23 +690,6 @@ else
         }
     }
 
-    private void HandleAddUphProduks()
-    {
-        if (_uphProdukContext.Validate())
-        {
-            var clientUphProduks = new ClientUphProduks();
-            clientUphProduks.UphProduk = ModelUphProduk;
-
-            if (FileList != null)
-                clientUphProduks.UphProdukFiles = new UphProdukFiles { Data = FileList.Data, Name = FileList.Name };
-
-            UphProduks.Add(clientUphProduks);
-
-            ModelUphProduk = new CreateUphProdukRequest();
-            FileList = null;
-        }
-    }
-
     private async Task<bool> HandleSubmitUphProduk()
     {
         if (UphProduks.Count > 0)
@@ -517,43 +698,112 @@ else
             {
                 var item = uphProduk.UphProduk;
 
-                var client = await Http.PostAsJsonAsync<CreateUphProdukRequest>(Constants.URI.UphProduk.Register, new CreateUphProdukRequest
+                if (!string.IsNullOrEmpty(item.UphID))
                 {
-                    Berat = item.Berat,
-                    Description = item.Description,
-                    Harga = item.Harga,
-                    JenisTernakID = item.JenisTernakID,
-                    Name = item.Name,
-                    ProdukOlahanID = item.ProdukOlahanID,
-                    SatuanID = item.SatuanID,
-                    UphID = item.UphID
-                });
-                ResponseUphProduk = Task.FromResult(await client.Content.ReadFromJsonAsync<ApiResponse<CreateUphProdukResponse>>()).Result;
+                    if (!string.IsNullOrEmpty(item.UphProdukID))
+                    {
+                        IList<string> deleteUphIDs = new List<string>();
 
-                if (ResponseUphProduk.Status.IsError)
-                {
-                    Toaster.Add(ResponseUphProduk.Status.Message, MatToastType.Danger);
+                        if (!item.IsDelete)
+                        {
+                            var client = await Http.PutAsJsonAsync<UpdateUphProdukRequest>(Constants.URI.UphProduk.Base, new UpdateUphProdukRequest
+                            {
+                                UphProdukID = item.UphProdukID,
+                                UphID = item.UphID,
+                                Berat = item.Berat,
+                                Description = item.Description,
+                                Harga = item.Harga,
+                                JenisTernakID = item.JenisTernakID,
+                                ProdukOlahanID = item.ProdukOlahanID,
+                                Name = item.Name,
+                                SatuanID = item.SatuanID
+                            });
 
-                    IsLoading = false;
+                            ResponseUphProduk = Task.FromResult(await client.Content.ReadFromJsonAsync<ApiResponse<UpdateUphProdukResponse>>()).Result;
 
-                    StateHasChanged();
+                            if (ResponseUphProduk.Status.IsError)
+                            {
+                                Toaster.Add(ResponseUphProduk.Status.Message, MatToastType.Danger);
 
-                    return false;
-                }
+                                IsLoading = false;
 
-                var file = uphProduk.UphProdukFiles;
+                                StateHasChanged();
 
-                if (file != null)
-                {
-                    var content = new MultipartFormDataContent();
-                    content.Headers.ContentDisposition = new ContentDispositionHeaderValue("form-data");
+                                return false;
+                            }
 
-                    content.Add(new StringContent(ResponseUphProduk.Result.UphProdukID), "EntityID");
-                    content.Add(new StringContent(Constants.FileEntityType.UphProduk), "EntityType");
+                            var file = uphProduk.UphProdukFiles;
 
-                    content.Add(new StreamContent(file.Data, (int)file.Data.Length), "Files", file.Name);
+                            if (file.Data != null)
+                            {
+                                var content = new MultipartFormDataContent();
+                                content.Headers.ContentDisposition = new ContentDispositionHeaderValue("form-data");
 
-                    var result = await Http.PostAsync(Constants.URI.File.Register, content);
+                                content.Add(new StringContent(ResponseUphProduk.Result.UphProdukID), "EntityID");
+                                content.Add(new StringContent(Constants.FileEntityType.UphProduk), "EntityType");
+
+                                content.Add(new StreamContent(file.Data, (int)file.Data.Length), "Files", file.Name);
+
+                                var result = await Http.PostAsync(Constants.URI.File.Register, content);
+                            }
+                        }
+                        else
+                        {
+                            // delete uph produk
+                            deleteUphIDs.Add(item.UphProdukID);
+                        }
+
+                        if (deleteUphIDs.Count > 0)
+                        {
+                            await Http.PostAsJsonAsync<DeleteUphProdukRequest>(Constants.URI.UphProduk.Delete, new DeleteUphProdukRequest { UphProdukIDs = deleteUphIDs });
+                        }
+                    }
+                    else
+                    {
+                        if (!item.IsDelete)
+                        {
+                            var client = await Http.PostAsJsonAsync<CreateUphProdukRequest>(Constants.URI.UphProduk.Register, new CreateUphProdukRequest
+                            {
+                                UphProdukID = item.UphProdukID,
+                                UphID = item.UphID,
+                                Berat = item.Berat,
+                                Description = item.Description,
+                                Harga = item.Harga,
+                                JenisTernakID = item.JenisTernakID,
+                                Name = item.Name,
+                                ProdukOlahanID = item.ProdukOlahanID,
+                                SatuanID = item.SatuanID
+                            });
+
+                            var ResponseCreateUphProduk = Task.FromResult(await client.Content.ReadFromJsonAsync<ApiResponse<CreateUphProdukResponse>>()).Result;
+
+                            if (ResponseCreateUphProduk.Status.IsError)
+                            {
+                                Toaster.Add(ResponseCreateUphProduk.Status.Message, MatToastType.Danger);
+
+                                IsLoading = false;
+
+                                StateHasChanged();
+
+                                return false;
+                            }
+
+                            var file = uphProduk.UphProdukFiles;
+
+                            if (file.Data != null)
+                            {
+                                var content = new MultipartFormDataContent();
+                                content.Headers.ContentDisposition = new ContentDispositionHeaderValue("form-data");
+
+                                content.Add(new StringContent(ResponseCreateUphProduk.Result.UphProdukID), "EntityID");
+                                content.Add(new StringContent(Constants.FileEntityType.UphProduk), "EntityType");
+
+                                content.Add(new StreamContent(file.Data, (int)file.Data.Length), "Files", file.Name);
+
+                                var result = await Http.PostAsync(Constants.URI.File.Register, content);
+                            }
+                        }
+                    }
                 }
             }
 
@@ -572,15 +822,16 @@ else
         {
             if (UphProduks.Count > 0)
             {
-                var client = await Http.PostAsJsonAsync<CreateUphRequest>(Constants.URI.Uph.Register, new CreateUphRequest
+                var client = await Http.PutAsJsonAsync<UpdateUphRequest>(Constants.URI.Uph.Base, new UpdateUphRequest
                 {
+                    UphID = Model.UphID,
                     ProvinsiID = Model.ProvinsiID,
                     KotaID = Model.KotaID,
                     KecamatanID = Model.KecamatanID,
                     KelurahanID = Model.KelurahanID,
 
                     Alamat = Model.Alamat,
-                    Handphone = Model.Handphone,
+                    Handphone = Model.Alamat,
                     Ketua = Model.Ketua,
                     Name = Model.Name,
                     TahunBerdiri = Model.TahunBerdiri,
@@ -591,17 +842,10 @@ else
                     ParameterStatusUphID = Model.ParameterStatusUphID
                 });
 
-                Response = Task.FromResult(await client.Content.ReadFromJsonAsync<ApiResponse<CreateUphResponse>>()).Result;
+                Response = Task.FromResult(await client.Content.ReadFromJsonAsync<ApiResponse<UpdateUphResponse>>()).Result;
 
                 if (!Response.Status.IsError)
                 {
-                    foreach (var uphProduk in UphProduks)
-                    {
-                        var item = uphProduk.UphProduk;
-
-                        item.UphID = Response.Result.UphID;
-                    }
-
                     return true;
                 }
                 else
@@ -631,7 +875,7 @@ else
 
     public class ClientUphProduks
     {
-        public CreateUphProdukRequest UphProduk { get; set; }
+        public UpdateUphProdukRequest UphProduk { get; set; }
         public UphProdukFiles UphProdukFiles;
     }
 

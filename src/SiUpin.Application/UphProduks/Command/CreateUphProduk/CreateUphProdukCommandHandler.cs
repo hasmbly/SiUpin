@@ -14,16 +14,12 @@ namespace SiUpin.Application.Uphs.Command.CreateUphProduk
     public class CreateUphProdukCommandHandler : IRequestHandler<CreateUphProdukRequest, CreateUphProdukResponse>
     {
         private readonly IConfiguration _configuration;
-        private readonly IFileService _fileService;
         private readonly ISiUpinDBContext _context;
-        private IMediator _mediator;
 
-        public CreateUphProdukCommandHandler(ISiUpinDBContext context, IConfiguration configuration, IFileService fileService, IMediator mediator)
+        public CreateUphProdukCommandHandler(ISiUpinDBContext context, IConfiguration configuration)
         {
             _configuration = configuration;
-            _fileService = fileService;
             _context = context;
-            _mediator = mediator;
         }
 
         public async Task<CreateUphProdukResponse> Handle(CreateUphProdukRequest request, CancellationToken cancellationToken)

@@ -11,6 +11,7 @@ using SiUpin.Shared.Constants;
 using SiUpin.Shared.JenisKomiditis.Common.GetAllJenisKomiditi;
 using SiUpin.Shared.JenisTernaks.Queries.GetJenisTernaks;
 using SiUpin.Shared.Satuans.Queries.GetSatuans;
+using SiUpin.Shared.UphBahanBakus.Common;
 using SiUpin.Shared.UphBahanBakus.Queries;
 
 namespace SiUpin.Application.UphBahanBakus.Queries

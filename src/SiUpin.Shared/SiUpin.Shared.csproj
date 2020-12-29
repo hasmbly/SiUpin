@@ -18,8 +18,6 @@
   <ItemGroup>
     <Folder Include="Auth\Commands\" />
     <Folder Include="Beritas\Queries\GetBerita\" />
-    <Folder Include="UphBahanBakus\Commands\" />
-    <Folder Include="UphBahanBakus\Common\" />
     <Folder Include="UphGmps\Commands\" />
     <Folder Include="UphGmps\Common\" />
     <Folder Include="UphMitras\Commands\" />
@@ -35,8 +33,6 @@
     <Folder Include="Satuans\Command\" />
     <Folder Include="UphSdms\Commands\" />
     <Folder Include="UphSdms\Common\" />
-    <Folder Include="Uphs\Command\EditUph\" />
-    <Folder Include="Uphs\Command\DeleteUph\" />
     <Folder Include="Uphs\Queries\GetUph\" />
   </ItemGroup>
 

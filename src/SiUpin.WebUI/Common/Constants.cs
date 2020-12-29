@@ -1,4 +1,6 @@
-﻿namespace SiUpin.WebUI.Common
+﻿using System.Collections.Generic;
+
+namespace SiUpin.WebUI.Common
 {
     public static class Constants
     {
@@ -47,8 +49,11 @@
             {
                 public static readonly string Base = $"{BaseAPI}/uph";
 
+                public static readonly string Details = $"{Base}/details/";
                 public static readonly string Register = $"{Base}/register";
                 public static readonly string Paginate = $"{Base}/paginate";
+                public static readonly string Delete = $"{Base}/Delete";
+
                 public static readonly string CountByProvince = $"{Base}/countByProvince";
 
                 public static readonly string Cluster = $"{Base}/cluster/";
@@ -62,6 +67,7 @@
                 public static readonly string Base = $"{BaseAPI}/UphProduk";
 
                 public static readonly string Paginate = $"{Base}/paginate";
+                public static readonly string Delete = $"{Base}/Delete";
                 public static readonly string PaginateByUphID = $"{Base}/paginateByUphID";
                 public static readonly string Register = $"{Base}/register";
             }
@@ -190,6 +196,15 @@
             public const string Unggas = "Unggas dan Aneka Ternak";
             public const string HasilTernak = "Hasil Ikutan Ternak";
             public const string Limbah = "Limbah";
+        }
+
+        public static class UphBahanBaku
+        {
+            public static IList<string> AsalBahanBakus { get; set; } = new List<string>
+            {
+                "Dari Peternakan UPH",
+                "Membeli Dari Peternak Lain"
+            };
         }
 
         public static class AlertMessageStatus

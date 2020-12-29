@@ -87,7 +87,7 @@ namespace SiUpin.WebAPI.Controllers.V1
         }
 
         [AllowAnonymous]
-        [HttpDelete]
+        [HttpPost("delete")]
         public async Task<IActionResult> Delete(DeleteUserRequest request)
         {
             try

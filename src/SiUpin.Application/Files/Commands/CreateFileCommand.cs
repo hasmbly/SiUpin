@@ -4,6 +4,7 @@ using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using SiUpin.Application.Common.Interfaces;
 using SiUpin.Shared;
@@ -16,18 +17,17 @@ namespace SiUpin.Application.Files.Commands
         private readonly IConfiguration _configuration;
         private readonly IFileService _fileService;
         private readonly ISiUpinDBContext _context;
-        private IMediator _mediator;
 
-        public CreateFileCommand(ISiUpinDBContext context, IConfiguration configuration, IFileService fileService, IMediator mediator)
+        public CreateFileCommand(ISiUpinDBContext context, IConfiguration configuration, IFileService fileService)
         {
             _configuration = configuration;
             _fileService = fileService;
             _context = context;
-            _mediator = mediator;
         }
 
         public async Task<CreateFileResponse> Handle(CreateFileRequest request, CancellationToken cancellationToken)
         {
+            // create or update
             var result = new CreateFileResponse();
 
             var options = _configuration.GetSection(SiUpinOptions.RootSection).Get<SiUpinOptions>();
@@ -38,9 +38,50 @@ namespace SiUpin.Application.Files.Commands
             {
                 var originalFileName = WebUtility.HtmlEncode(file.FileName);
 
-                var processFileResult = await _fileService.ProcessFile(file);
+                var existingFile = await _context.Files.FirstOrDefaultAsync(x => x.EntityID == request.EntityID, cancellationToken);
 
-                if (processFileResult.IsSuccessful)
+                if (existingFile == null)
+                {
+                    // save file to directory
+                    var processFileResult = await _fileService.ProcessFile(file);
+
+                    if (processFileResult.IsSuccessful)
+                    {
+                        string folderPath;
+                        if (options.Environment == "Linux")
+                        {
+                            folderPath = Path.Combine(".", "SiUpinFiles", "Pictures");
+                        }
+                        else
+                        {
+                            folderPath = Path.Combine("D:", "SiUpinFiles", "Pictures");
+                        }
+
+                        var trustedFileNameForFileStorage = $"{originalFileName}";
+
+                        var saveDocumentResult = await _fileService.SaveFile(processFileResult.FileContent, folderPath, trustedFileNameForFileStorage);
+
+                        if (!saveDocumentResult.IsSuccessful)
+                        {
+                            throw new Exception("Maaf ada kesalahan pada proses simpan File");
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception($"{processFileResult.ErrorMessage}");
+                    }
+
+                    // save file to db
+                    var entity = new Domain.Entities.File
+                    {
+                        EntityID = request.EntityID,
+                        EntityType = request.EntityType,
+                        Name = originalFileName
+                    };
+
+                    await _context.Files.AddAsync(entity);
+                }
+                else
                 {
                     string folderPath;
                     if (options.Environment == "Linux")
@@ -52,35 +93,43 @@ namespace SiUpin.Application.Files.Commands
                         folderPath = Path.Combine("D:", "SiUpinFiles", "Pictures");
                     }
 
-                    var trustedFileNameForFileStorage = $"{originalFileName}";
+                    // remove existing file
+                    var removeDocumentResult = await _fileService.RemoveFile(folderPath, existingFile.Name);
 
-                    Console.WriteLine($"Environment: {options.Environment}");
-                    Console.WriteLine($"folderPath: {folderPath}");
+                    // save new file to directory
+                    var processFileResult = await _fileService.ProcessFile(file);
 
-                    var saveDocumentResult = await _fileService.SaveFile(processFileResult.FileContent, folderPath, trustedFileNameForFileStorage);
-
-                    if (!saveDocumentResult.IsSuccessful)
+                    if (processFileResult.IsSuccessful)
                     {
-                        throw new Exception("Maaf ada kesalahan pada proses simpan File");
+                        if (options.Environment == "Linux")
+                        {
+                            folderPath = Path.Combine(".", "SiUpinFiles", "Pictures");
+                        }
+                        else
+                        {
+                            folderPath = Path.Combine("D:", "SiUpinFiles", "Pictures");
+                        }
+
+                        var trustedFileNameForFileStorage = $"{originalFileName}";
+
+                        var saveDocumentResult = await _fileService.SaveFile(processFileResult.FileContent, folderPath, trustedFileNameForFileStorage);
+
+                        if (!saveDocumentResult.IsSuccessful)
+                        {
+                            throw new Exception("Maaf ada kesalahan pada proses simpan File");
+                        }
                     }
-                }
-                else
-                {
-                    throw new Exception($"{processFileResult.ErrorMessage}");
+                    else
+                    {
+                        throw new Exception($"{processFileResult.ErrorMessage}");
+                    }
+
+                    // update file name to database
+                    existingFile.Name = originalFileName;
                 }
 
-                // save file to db
-                var entity = new Domain.Entities.File
-                {
-                    EntityID = request.EntityID,
-                    EntityType = request.EntityType,
-                    Name = originalFileName
-                };
-
-                await _context.Files.AddAsync(entity);
+                await _context.SaveChangesAsync(cancellationToken);
             }
-
-            await _context.SaveChangesAsync(cancellationToken);
 
             return result;
         }

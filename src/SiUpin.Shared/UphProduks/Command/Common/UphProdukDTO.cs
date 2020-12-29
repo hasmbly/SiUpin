@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SiUpin.Shared.UphProduks.Command.CreateUphProduk
+namespace SiUpin.Shared.UphProduks.Command.Common
 {
     public class UphProdukDTO
     {
         public string UphID { get; set; }
+        public string UphProdukID { get; set; }
 
 #pragma warning disable CS8632
         public string? ProdukOlahanID { get; set; }
@@ -19,5 +20,7 @@ namespace SiUpin.Shared.UphProduks.Command.CreateUphProduk
 
         public int Berat { get; set; }
         public string Description { get; set; }
+
+        public bool IsDelete { get; set; }
     }
 }

@@ -1,33 +1,48 @@
 ﻿using System;
+using System.Net.Http;
+using System.Net.Http.Json;
+using SiUpin.Shared.Common.ApiEnvelopes;
 using SiUpin.Shared.Uphs.Queries.GetUphClusterGrades;
 
 namespace SiUpin.WebUI.Common.StateProvider
 {
     public class UphClusterState
     {
-        public bool ShouldUpdate { get; set; } = true;
+        private HttpClient _httpClient;
 
         public GetUphClusterGradesResponse Model = new GetUphClusterGradesResponse();
 
+        private ApiResponse<GetUphClusterGradesResponse> items;
+
         public event Action OnChange;
 
-        public void SetShouldUpdate(bool condition)
-        {
-            ShouldUpdate = condition;
+        public bool IsLoadForModel { get; set; } = false;
 
-            NotifyStateChanged();
+        public UphClusterState(HttpClient httpClient)
+        {
+            _httpClient = httpClient;
+
+            SetShouldUpdate();
         }
 
-        public void SetModelState(GetUphClusterGradesResponse model)
+        public async void SetShouldUpdate()
         {
-            Model = model;
+            IsLoadForModel = true;
 
-            NotifyStateChanged();
+            items = await _httpClient.GetFromJsonAsync<ApiResponse<GetUphClusterGradesResponse>>(Constants.URI.Uph.ClusterGrade);
+
+            if (!items.Status.IsError && items.Result != null)
+            {
+                Model = items.Result;
+
+                IsLoadForModel = false;
+
+                NotifyStateChanged();
+            }
         }
 
         public void ResetState()
         {
-            ShouldUpdate = false;
             Model = null;
 
             NotifyStateChanged();

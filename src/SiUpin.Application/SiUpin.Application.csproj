@@ -37,8 +37,6 @@
     <Folder Include="UphSaranas\Common\" />
     <Folder Include="UphSdms\Commands\" />
     <Folder Include="UphSdms\Common\" />
-    <Folder Include="Uphs\Command\DeleteUph\" />
-    <Folder Include="Uphs\Command\EditUph\" />
     <Folder Include="Uphs\Queries\GetUph\" />
   </ItemGroup>
 

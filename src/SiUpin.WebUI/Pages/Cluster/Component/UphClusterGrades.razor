@@ -2,8 +2,9 @@
 @inject IMatToaster Toaster
 @inject UphClusterState uphClusterState
 
+@implements IDisposable
+
 @using SiUpin.Shared.Uphs.Queries.GetUphClusterGrades
-@using SiUpin.Shared.Common.ApiEnvelopes
 
 @namespace SiUpin.Pages.Cluster.Component
 
@@ -24,6 +25,10 @@
                         <MatProgressBar Indeterminate="true" Closed="!IsLoading"></MatProgressBar>
                     </MatDialogContent>
                 </MatDialog>
+            }
+            else if (uphClusterState.IsLoadForModel)
+            {
+                <MatProgressBar Indeterminate="true"></MatProgressBar>
             }
             else
             {
@@ -123,45 +128,16 @@
     private bool IsLoading = false;
     private bool IsListClusterByGrade = false;
 
-    private ApiResponse<GetUphClusterGradesResponse> items;
     private IList<UphClusterByGradeDTO> uphClusterByGrade = new List<UphClusterByGradeDTO>();
 
-    protected override async Task OnInitializedAsync() => await GetData();
-
-    private async Task GetData()
+    protected override void OnInitialized()
     {
-        if (uphClusterState.ShouldUpdate)
-        {
-            IsLoading = true;
+        uphClusterState.OnChange += StateHasChanged;
+    }
 
-            items = await Http.GetFromJsonAsync<ApiResponse<GetUphClusterGradesResponse>>(Constants.URI.Uph.ClusterGrade);
-
-            if (items.Status.IsError)
-            {
-                Toaster.Add(items.Status.Message, MatToastType.Danger);
-
-                IsLoading = false;
-
-                StateHasChanged();
-            }
-            else
-            {
-                if (items.Result.Datas != null)
-                {
-                    if (items.Result.Datas.Count == 0)
-                    {
-                        Toaster.Add("Tidak ada Data", MatToastType.Danger);
-                    }
-
-                    IsLoading = false;
-
-                    uphClusterState.SetModelState(items.Result);
-                    uphClusterState.SetShouldUpdate(false);
-
-                    StateHasChanged();
-                }
-            }
-        }
+    public void Dispose()
+    {
+        uphClusterState.OnChange -= StateHasChanged;
     }
 
     public void CancelClick()

@@ -15,8 +15,15 @@
         @if (OpenCreateDialog)
         {
             <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
-                <Create DialogIsOpen="OpenCreateDialog" DialogIsOpenStatus="CreateDialogIsOpenStatus" OnSuccessSubmit="@(() => InvokeAsync(async () =>
-                                                                                                                         { await GetPaginateData(); uphClusterState.SetShouldUpdate(true); }))" />
+                <Create DialogIsOpen="OpenCreateDialog" DialogIsOpenStatus="CreateDialogIsOpenStatus"
+                        OnSuccessSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); uphClusterState.SetShouldUpdate(); }))" />
+            </div>
+        }
+        else if (OpenUpdateDialog)
+        {
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
+                <Update DialogIsOpen="OpenUpdateDialog" UphID="@EntityID" DialogIsOpenStatus="UpdateIsOpenStatus"
+                        OnSuccessSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); }))" />
             </div>
         }
         else
@@ -45,17 +52,18 @@
                 {
                     if (sortedData.Count() > 0)
                     {
-
-                        <MatTable Items="sortedData" PageSize="pageSize" AllowSelection="true" SelectionChanged="SelectionChangedEvent" ShowPaging="false" UseSortHeaderRow="true" class="mat-elevation-z5 mt-1">
+                        // AllowSelection="true" SelectionChanged="SelectionChangedEvent"
+                        <MatTable Items="sortedData" PageSize="pageSize" ShowPaging="false" UseSortHeaderRow="true" class="mat-elevation-z5 mt-1">
                             <MatTableHeader>
                                 <MatSortHeaderRow SortChanged="SortData">
                                     <MatSortHeader>No</MatSortHeader>
-                                    <MatSortHeader SortId="1"><span style="width:150px">Nama UPH</span></MatSortHeader>
+                                    <MatSortHeader SortId="1"><span style="width:130px">Nama UPH</span></MatSortHeader>
                                     <MatSortHeader SortId="2"><span style="width:100px">Ketua</span></MatSortHeader>
                                     <MatSortHeader SortId="3">Handphone</MatSortHeader>
                                     <MatSortHeader SortId="4">Provinsi</MatSortHeader>
                                     <MatSortHeader SortId="5">Kota</MatSortHeader>
                                     <MatSortHeader SortId="6">Alamat</MatSortHeader>
+                                    <MatSortHeader class="text-center"><span style="width:50px"></span></MatSortHeader>
                                 </MatSortHeaderRow>
                             </MatTableHeader>
                             <MatTableRow>
@@ -66,6 +74,11 @@
                                 <td>@context.Provinsi</td>
                                 <td>@context.Kota</td>
                                 <td>@context.Alamat</td>
+                                <td class="text-center">
+                                    <MatIconButton Icon="@MatIconNames.Remove_red_eye" Style="color: mediumpurple;" @onclick="() => { SelectionChangedEvent(context.UphID); }" />
+                                    <MatIconButton Icon="@MatIconNames.Edit" Style="color: mediumpurple;" @onclick="() => { OpenUpdateDialog = true; EntityID = context.UphID; }" />
+                                    <MatIconButton Icon="@MatIconNames.Remove_circle" Style="color: orangered;" @onclick="() => { OpenDeleteDialog = true; EntityID = context.UphID; }" />
+                                </td>
                             </MatTableRow>
                         </MatTable>
                     }
@@ -79,10 +92,13 @@
     </div>
 </div>
 
+<Delete DialogIsOpen="OpenDeleteDialog" DialogIsOpenStatus="DeleteDialogIsOpenStatus" ID="@EntityID" OnSuccesSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); }))" />
 
 @code
 {
     private bool IsLoading = false;
+
+    public string EntityID { get; set; }
 
     private GetAllUphResponse items;
     private UphDTO[] sortedData = null;
@@ -107,19 +123,24 @@
     }
 
     public bool OpenCreateDialog { get; set; }
+    public bool OpenUpdateDialog { get; set; }
+    public bool OpenDeleteDialog { get; set; }
 
     private void CreateDialogIsOpenStatus(bool isOpened) => OpenCreateDialog = isOpened;
+    private void UpdateIsOpenStatus(bool isOpened) => OpenUpdateDialog = isOpened;
+    private void DeleteDialogIsOpenStatus(bool isOpened) => OpenDeleteDialog = isOpened;
 
     protected override async Task OnInitializedAsync()
     {
         await GetPaginateData();
     }
 
-    private void SelectionChangedEvent(object row)
+    private void SelectionChangedEvent(string Id)
     {
-        if (row != null)
+        if (!string.IsNullOrEmpty(Id))
         {
-            Navigation.NavigateTo($"/uph/{ ((UphDTO)row).UphID }");
+            //Navigation.NavigateTo($"/uph/{ ((UphDTO)row).UphID }");
+            Navigation.NavigateTo($"/uph/{Id}");
         }
 
         StateHasChanged();

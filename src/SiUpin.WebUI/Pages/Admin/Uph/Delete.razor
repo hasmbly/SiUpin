@@ -1,9 +1,9 @@
 ﻿@inject HttpClient Http
 @inject IMatToaster Toaster
 
-@namespace SiUpin.Pages.Admin.User
+@namespace SiUpin.Pages.Admin.Uph
 
-@using SiUpin.Shared.Users.Commands.DeleteUser
+@using SiUpin.Shared.Uphs.Command.DeleteUph
 @using SiUpin.Shared.Common.ApiEnvelopes
 
 @if (IsLoading)
@@ -19,7 +19,7 @@ else
 {
     <MatDialog @bind-IsOpen="DialogIsOpen" CanBeClosed="false">
         <MatDialogTitle>
-            Delete User
+            Delete Data
         </MatDialogTitle>
         <MatDialogContent>
             <EditForm Model="Model" OnValidSubmit="Submit">
@@ -55,8 +55,8 @@ else
 
     private bool IsLoading = false;
 
-    public DeleteUserRequest Model { get; set; } = new DeleteUserRequest();
-    public ApiResponse<DeleteUserResponse> Response { get; set; }
+    public DeleteUphRequest Model { get; set; } = new DeleteUphRequest();
+    public ApiResponse<DeleteUphResponse> Response { get; set; }
 
     public void CancelClick() => DialogIsOpenStatus.InvokeAsync(false);
 
@@ -64,11 +64,11 @@ else
     {
         IsLoading = true;
 
-        Model.UserID = _ID;
+        Model.UphID = _ID;
 
-        var client = await Http.PostAsJsonAsync<DeleteUserRequest>(Constants.URI.User.Delete, Model);
+        var client = await Http.PostAsJsonAsync<DeleteUphRequest>(Constants.URI.Uph.Delete, Model);
 
-        Response = Task.FromResult(await client.Content.ReadFromJsonAsync<ApiResponse<DeleteUserResponse>>()).Result;
+        Response = Task.FromResult(await client.Content.ReadFromJsonAsync<ApiResponse<DeleteUphResponse>>()).Result;
 
         if (!Response.Status.IsError)
         {

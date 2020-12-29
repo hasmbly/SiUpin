@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SiUpin.Shared.Files.Commands.CreateFile;
+using SiUpin.Shared.Files.Commands.DeleteFile;
 using SiUpin.WebAPI.Common.ApiEnvelopes;
 
 namespace SiUpin.WebAPI.Controllers.V1
@@ -13,6 +14,20 @@ namespace SiUpin.WebAPI.Controllers.V1
         [AllowAnonymous]
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromForm] CreateFileRequest request)
+        {
+            try
+            {
+                return Ok(new Success(await Mediator.Send(request), "Successfully"));
+            }
+            catch (Exception exception)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, new InternalServerError(exception.Message));
+            }
+        }
+
+        [AllowAnonymous]
+        [HttpDelete]
+        public async Task<IActionResult> Delete(DeleteFileRequest request)
         {
             try
             {

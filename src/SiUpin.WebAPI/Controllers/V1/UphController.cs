@@ -4,9 +4,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SiUpin.Shared.Uphs.Command.CreateUph;
+using SiUpin.Shared.Uphs.Command.DeleteUph;
+using SiUpin.Shared.Uphs.Command.UpdateUph;
 using SiUpin.Shared.Uphs.Queries.GetAllUph;
 using SiUpin.Shared.Uphs.Queries.GetCountUphByProvince;
 using SiUpin.Shared.Uphs.Queries.GetUph;
+using SiUpin.Shared.Uphs.Queries.GetUphAndProduk;
 using SiUpin.Shared.Uphs.Queries.GetUphClusterGrades;
 using SiUpin.WebAPI.Common.ApiEnvelopes;
 
@@ -35,6 +38,20 @@ namespace SiUpin.WebAPI.Controllers.V1
             try
             {
                 return Ok(new Success(await Mediator.Send(new GetCountUphByProvinceRequest()), "Successfully"));
+            }
+            catch (Exception exception)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, new InternalServerError(exception.Message));
+            }
+        }
+
+        [AllowAnonymous]
+        [HttpGet("details/{uphID}")]
+        public async Task<IActionResult> Details(string uphID)
+        {
+            try
+            {
+                return Ok(new Success(await Mediator.Send(new GetUphAndProdukRequest { UphID = uphID }), "Successfully"));
             }
             catch (Exception exception)
             {
@@ -77,6 +94,34 @@ namespace SiUpin.WebAPI.Controllers.V1
             try
             {
                 return Ok(new Success(await Mediator.Send(new GetUphClusterGradesRequest()), "Successfully"));
+            }
+            catch (Exception exception)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, new InternalServerError(exception.Message));
+            }
+        }
+
+        [AllowAnonymous]
+        [HttpPut]
+        public async Task<IActionResult> Update(UpdateUphRequest request)
+        {
+            try
+            {
+                return Ok(new Success(await Mediator.Send(request), "Successfully"));
+            }
+            catch (Exception exception)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, new InternalServerError(exception.Message));
+            }
+        }
+
+        [AllowAnonymous]
+        [HttpPost("delete")]
+        public async Task<IActionResult> Delete(DeleteUphRequest request)
+        {
+            try
+            {
+                return Ok(new Success(await Mediator.Send(request), "Successfully"));
             }
             catch (Exception exception)
             {

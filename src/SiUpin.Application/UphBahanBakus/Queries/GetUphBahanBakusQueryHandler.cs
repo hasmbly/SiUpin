@@ -9,7 +9,7 @@ using SiUpin.Application.Common.Interfaces;
 using SiUpin.Shared.Common.Pagination;
 using SiUpin.Shared.Constants;
 using SiUpin.Shared.JenisKomiditis.Common.GetAllJenisKomiditi;
-using SiUpin.Shared.JenisTernaks.Queries.GetJenisTernaks;
+using SiUpin.Shared.JenisTernaks.Queries.Common;
 using SiUpin.Shared.Satuans.Queries.GetSatuans;
 using SiUpin.Shared.UphBahanBakus.Common;
 using SiUpin.Shared.UphBahanBakus.Queries;

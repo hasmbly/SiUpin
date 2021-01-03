@@ -1,10 +1,9 @@
 ﻿using MediatR;
+using SiUpin.Shared.ProdukOlahans.Common;
 
 namespace SiUpin.Shared.ProdukOlahans.Commands.CreateProdukOlahan
 {
-    public class CreateProdukOlahanRequest : IRequest<CreateProdukOlahanResponse>
+    public class CreateProdukOlahanRequest : ProdukOlahanDTO, IRequest<CreateProdukOlahanResponse>
     {
-        public string JenisKomditiID { get; set; }
-        public int Name { get; set; }
     }
 }

@@ -4,5 +4,6 @@
     {
         public const string Token = "Token";
         public const string PictureUrl = "PictureUrl";
+        public const string UserID = "UserID";
     }
 }

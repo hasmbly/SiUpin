@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using SiUpin.Shared.JenisKomiditis.Common.GetAllJenisKomiditi;
-using SiUpin.Shared.JenisTernaks.Queries.GetJenisTernaks;
+using SiUpin.Shared.JenisTernaks.Queries.Common;
 using SiUpin.Shared.Satuans.Queries.GetSatuans;
 using SiUpin.Shared.Uphs.Common;
 

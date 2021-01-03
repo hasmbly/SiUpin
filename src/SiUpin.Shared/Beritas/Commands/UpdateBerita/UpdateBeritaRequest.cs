@@ -1,9 +1,9 @@
 ﻿using MediatR;
+using SiUpin.Shared.Beritas.Common;
 
 namespace SiUpin.Shared.Beritas.Commands.UpdateBerita
 {
-    public class UpdateBeritaRequest : IRequest<UpdateBeritaResponse>
+    public class UpdateBeritaRequest : BeritaDTO, IRequest<UpdateBeritaResponse>
     {
-        public string BeritaID { get; set; }
     }
 }

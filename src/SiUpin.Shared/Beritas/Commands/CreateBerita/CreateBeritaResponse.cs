@@ -2,5 +2,6 @@
 {
     public class CreateBeritaResponse
     {
+        public string BeritaID { get; set; }
     }
 }

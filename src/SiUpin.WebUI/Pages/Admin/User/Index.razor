@@ -11,12 +11,10 @@
 <div class="mat-layout-grid">
     <div class="mat-layout-grid-inner">
         <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
-            <MatH4>Data Pengguna</MatH4>
+            <MatH4>Data Pengguna &nbsp; <MatFAB OnClick="() => { OpenCreateDialog = true; }" Icon="@MatIconNames.Add" /></MatH4>
         </div>
 
         <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
-            <MatFAB OnClick="() => { OpenCreateDialog = true; }" Icon="@MatIconNames.Add"></MatFAB>&nbsp;
-
             <MatTextField @bind-Value="@filterByName" HelperText="Filter Berdasarkan: Nama User" Label="Cari User" Icon="@MatIconNames.Search"></MatTextField>
         </div>
 
@@ -73,8 +71,8 @@
 
 <CreateUser DialogIsOpen="OpenCreateDialog" DialogIsOpenStatus="CreateDialogIsOpenStatus" OnSuccessSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); }))" />
 <UpdateUser DialogIsOpen="OpenUpdateDialog" DialogIsOpenStatus="UpdateDialogIsOpenStatus" ID="@EntityID" OnSuccessSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); }))" />
-<ResetPassword DialogIsOpen="OpenResetPasswordDialog" DialogIsOpenStatus="ResetPasswordDialogIsOpenStatus" ID="@EntityID" OnSuccesSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); }))" />
 <DeleteUser DialogIsOpen="OpenDeleteDialog" DialogIsOpenStatus="DeleteDialogIsOpenStatus" ID="@EntityID" OnSuccesSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); }))" />
+<ResetPassword DialogIsOpen="OpenResetPasswordDialog" DialogIsOpenStatus="ResetPasswordDialogIsOpenStatus" ID="@EntityID" OnSuccesSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); }))" />
 
 @code
 {

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using SiUpin.Shared.JenisTernaks.Queries.Common;
 
 namespace SiUpin.Shared.JenisTernaks.Queries.GetJenisTernaks
 {

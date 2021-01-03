@@ -28,12 +28,10 @@
         else
         {
             <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
-                <MatH4>Data UPH Bahan Baku</MatH4>
+                <MatH4>Data UPH Bahan Baku &nbsp; <MatFAB OnClick="() => { OpenCreateDialog = true; }" Icon="@MatIconNames.Add" /></MatH4>
             </div>
 
             <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
-                <MatFAB OnClick="() => { OpenCreateDialog = true; }" Icon="@MatIconNames.Add"></MatFAB>&nbsp;
-
                 <MatTextField @bind-Value="@filterByName" HelperText="Filter Berdasarkan: Nama Uph" Label="Cari Uph" Icon="@MatIconNames.Search"></MatTextField>
             </div>
 
@@ -96,8 +94,6 @@
 {
     private bool IsLoading = false;
 
-    public string EntityID { get; set; }
-
     private GetUphBahanBakusResponse items;
     private UphBahanBakuDTO[] sortedData = null;
 
@@ -119,6 +115,8 @@
             this.StateHasChanged();
         }
     }
+
+    public string EntityID { get; set; }
 
     public bool OpenCreateDialog { get; set; }
     public bool OpenUpdateDialog { get; set; }

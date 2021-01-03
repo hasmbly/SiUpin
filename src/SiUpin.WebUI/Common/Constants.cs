@@ -135,33 +135,48 @@ namespace SiUpin.WebUI.Common
                 public static readonly string Base = $"{BaseAPI}/Berita";
 
                 public static readonly string Paginate = $"{Base}/paginate";
+                public static readonly string Register = $"{Base}/register";
+                public static readonly string Delete = $"{Base}/delete";
             }
 
             public static class Pesan
             {
                 public static readonly string Base = $"{BaseAPI}/Pesan";
 
-                public static readonly string GetAll = $"{Base}/GetAll";
+                public static readonly string Register = $"{Base}/register";
+                public static readonly string Delete = $"{Base}/delete";
             }
 
             public static class JenisKomoditi
             {
                 public static readonly string Base = $"{BaseAPI}/jenisKomoditi";
+
+                public static readonly string Register = $"{Base}/register";
+                public static readonly string Delete = $"{Base}/delete";
             }
 
             public static class JenisTernak
             {
                 public static readonly string Base = $"{BaseAPI}/jenisTernak";
+
+                public static readonly string Register = $"{Base}/register";
+                public static readonly string Delete = $"{Base}/delete";
             }
 
             public static class ProdukOlahan
             {
                 public static readonly string Base = $"{BaseAPI}/ProdukOlahan";
+
+                public static readonly string Register = $"{Base}/register";
+                public static readonly string Delete = $"{Base}/delete";
             }
 
             public static class Satuan
             {
                 public static readonly string Base = $"{BaseAPI}/Satuan";
+
+                public static readonly string Register = $"{Base}/register";
+                public static readonly string Delete = $"{Base}/delete";
             }
 
             public static class ParameterJawaban
@@ -218,6 +233,7 @@ namespace SiUpin.WebUI.Common
         public static class StorageKey
         {
             public const string Token = "Token";
+            public const string UserID = "UserID";
         }
 
         public static class AuthenticationType

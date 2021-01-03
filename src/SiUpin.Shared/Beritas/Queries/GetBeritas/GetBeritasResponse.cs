@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using SiUpin.Shared.Beritas.Common;
 using SiUpin.Shared.Common.Pagination;
 
 namespace SiUpin.Shared.Beritas.Queries.GetBeritas

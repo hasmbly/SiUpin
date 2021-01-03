@@ -27,6 +27,7 @@ namespace SiUpin.WebUI.Common
 
         public string GetParsedMemberUsername() => _claims.Select(x => x.Value).ToList()[0];
 
+        #region Base
         public override async Task<AuthenticationState> GetAuthenticationStateAsync()
         {
             // Ambil Cookie dari Local Storage
@@ -129,10 +130,16 @@ namespace SiUpin.WebUI.Common
             }
             return Convert.FromBase64String(base64);
         }
+        #endregion
 
         public async Task<string> GetTokenAsync()
         {
             return await _localStorage.GetItemAsync<string>(Constants.StorageKey.Token);
+        }
+
+        public string GetValueOfTokenByType(string type)
+        {
+            return _claims.FirstOrDefault(x => x.Type == type).Value;
         }
     }
 }

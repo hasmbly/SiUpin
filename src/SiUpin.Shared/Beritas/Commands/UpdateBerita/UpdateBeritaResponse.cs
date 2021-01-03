@@ -2,5 +2,6 @@
 {
     public class UpdateBeritaResponse
     {
+        public string BeritaID { get; set; }
     }
 }

@@ -1,0 +1,140 @@
+﻿@inject HttpClient Http
+@inject IMatToaster Toaster
+@inject AuthenticationStateProvider _authenticationStateProvider
+
+@namespace SiUpin.Pages.Admin.DataMaster.ProdukOlahan
+
+@using SiUpin.Shared.JenisKomiditis.Queries.GetAllJenisKomiditi
+@using SiUpin.Shared.JenisKomiditis.Common.GetAllJenisKomiditi
+
+@using SiUpin.Shared.ProdukOlahans.Commands.CreateProdukOlahan
+@using SiUpin.Shared.Common.ApiEnvelopes
+
+@if (IsLoading)
+{
+    <MatDialog @bind-IsOpen="IsLoading" CanBeClosed="false">
+        <MatDialog>Please Wait..</MatDialog>
+        <MatDialogContent>
+            <MatProgressBar Indeterminate="true" Closed="!IsLoading"></MatProgressBar>
+        </MatDialogContent>
+    </MatDialog>
+}
+else
+{
+    <MatDialog @bind-IsOpen="DialogIsOpen" CanBeClosed="false">
+        <MatDialogTitle>
+            Create
+        </MatDialogTitle>
+        <MatDialogContent>
+            <EditForm EditContext="_editContext" OnSubmit="HandleSubmit">
+                <DataAnnotationsValidator />
+
+                <div class="mat-layout-grid p-0">
+                    <div class="mat-layout-grid-inner mt-0">
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                            <MatSelect @bind-Value="Model.JenisKomoditiID" Label="Provinsi">
+                                <MatOption TValue="string" Value="@(null)"></MatOption>
+                                @if (JenisKomoditis.Count() > 0)
+                                    {
+                                        foreach (var item in JenisKomoditis)
+                                        {
+                                        <MatOption TValue="string" Value="@(item.JenisKomoditiID)">@item.Name</MatOption>
+                                        }
+                                    }
+                            </MatSelect>
+                            <MatCaption Class="mt-1">
+                                <ValidationMessage For="@(() => Model.JenisKomoditiID)" />
+                            </MatCaption>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                            <MatTextField @bind-Value="Model.Name" Label="Nama" Required="true" FullWidth="true" />
+                            <MatCaption Class="mt-1">
+                                <ValidationMessage For="@(() => Model.Name)" />
+                            </MatCaption>
+                        </div>
+                    </div>
+                </div>
+            </EditForm>
+        </MatDialogContent>
+        <MatDialogActions>
+            <MatButton OnClick="CancelClick">Cancel</MatButton>
+            <MatButton Raised="true" OnClick="HandleSubmit">Submit</MatButton>
+        </MatDialogActions>
+    </MatDialog>
+}
+
+@code
+{
+    [Parameter]
+    public bool DialogIsOpen { get; set; } = false;
+
+    [Parameter]
+    public EventCallback<bool> DialogIsOpenStatus { get; set; }
+
+    [Parameter]
+    public EventCallback<bool> OnSuccessSubmit { get; set; }
+
+    private bool IsLoading = false;
+    public bool IsDisabledLoginButton { get; set; }
+
+    public CreateProdukOlahanRequest Model { get; set; } = new CreateProdukOlahanRequest();
+    public ApiResponse<CreateProdukOlahanResponse> Response { get; set; }
+
+    public IList<JenisKomoditiDTO> JenisKomoditis { get; set; } = new List<JenisKomoditiDTO>();
+
+    private EditContext _editContext;
+
+    public void CancelClick()
+    {
+        DialogIsOpenStatus.InvokeAsync(false);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        _editContext = new EditContext(Model);
+
+        await GetJenisKomoditis();
+    }
+
+    private async Task GetJenisKomoditis()
+      => JenisKomoditis = Task.FromResult(await Http.GetFromJsonAsync<ApiResponse<GetAllJenisKomiditiResponse>>(Constants.URI.JenisKomoditi.Base)).Result.Result.JenisKomoditis.ToList();
+
+    private async Task HandleSubmit()
+    {
+        if (_editContext.Validate())
+        {
+            IsLoading = true;
+
+            var client = await Http.PostAsJsonAsync<CreateProdukOlahanRequest>(Constants.URI.ProdukOlahan.Register, new CreateProdukOlahanRequest
+            {
+                Name = Model.Name,
+                JenisKomoditiID = Model.JenisKomoditiID
+            });
+
+            Response = Task.FromResult(await client.Content.ReadFromJsonAsync<ApiResponse<CreateProdukOlahanResponse>>()).Result;
+
+            if (!Response.Status.IsError)
+            {
+                IsLoading = false;
+
+                await DialogIsOpenStatus.InvokeAsync(false);
+
+                await OnSuccessSubmit.InvokeAsync(true);
+
+                StateHasChanged();
+            }
+            else
+            {
+                Toaster.Add(Response.Status.Message, MatToastType.Danger);
+
+                IsLoading = false;
+                StateHasChanged();
+            }
+        }
+        else
+        {
+            _editContext.AddDataAnnotationsValidation();
+            Toaster.AddErrors(_editContext.GetValidationMessages());
+        }
+    }
+}

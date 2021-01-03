@@ -29,12 +29,10 @@
         else
         {
             <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
-                <MatH4>Data UPH</MatH4>
+                <MatH4>Data UPH &nbsp; <MatFAB OnClick="() => { OpenCreateDialog = true; }" Icon="@MatIconNames.Add" /></MatH4>
             </div>
 
             <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
-                <MatFAB OnClick="() => { OpenCreateDialog = true; }" Icon="@MatIconNames.Add"></MatFAB>&nbsp;
-
                 <MatTextField @bind-Value="@filterByName" HelperText="Filter Berdasarkan: Nama Uph" Label="Cari Uph" Icon="@MatIconNames.Search"></MatTextField>
             </div>
 

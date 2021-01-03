@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using SiUpin.Application.Common.Interfaces;
+using SiUpin.Shared.JenisTernaks.Queries.Common;
 using SiUpin.Shared.JenisTernaks.Queries.GetJenisTernaks;
 
 namespace SiUpin.Application.JenisTernaks.Queries.GetJenisTernaks

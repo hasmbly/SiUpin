@@ -1,0 +1,91 @@
+﻿@inject HttpClient Http
+@inject IMatToaster Toaster
+
+@namespace SiUpin.Pages.Admin.Berita
+
+@using SiUpin.Shared.Beritas.Commands.DeleteBerita
+@using SiUpin.Shared.Common.ApiEnvelopes
+
+@if (IsLoading)
+{
+    <MatDialog @bind-IsOpen="IsLoading" CanBeClosed="false">
+        <MatDialog>Please Wait..</MatDialog>
+        <MatDialogContent>
+            <MatProgressBar Indeterminate="true" Closed="!IsLoading"></MatProgressBar>
+        </MatDialogContent>
+    </MatDialog>
+}
+else
+{
+    <MatDialog @bind-IsOpen="DialogIsOpen" CanBeClosed="false">
+        <MatDialogTitle>
+            Delete User
+        </MatDialogTitle>
+        <MatDialogContent>
+            <EditForm Model="Model" OnValidSubmit="Submit">
+                Are you sure want to Delete this Data ?
+            </EditForm>
+        </MatDialogContent>
+        <MatDialogActions>
+            <MatButton OnClick="CancelClick">Cancel</MatButton>
+            <MatButton Raised="true" OnClick="Submit">Submit</MatButton>
+        </MatDialogActions>
+    </MatDialog>
+}
+
+@code
+{
+    public string _ID { get; set; }
+
+    [Parameter]
+    public string ID
+    {
+        get => _ID;
+        set => _ID = value;
+    }
+
+    [Parameter]
+    public bool DialogIsOpen { get; set; } = false;
+
+    [Parameter]
+    public EventCallback<bool> DialogIsOpenStatus { get; set; }
+
+    [Parameter]
+    public EventCallback<bool> OnSuccesSubmit { get; set; }
+
+    private bool IsLoading = false;
+
+    public DeleteBeritaRequest Model { get; set; } = new DeleteBeritaRequest();
+    public ApiResponse<DeleteBeritaResponse> Response { get; set; }
+
+    public void CancelClick() => DialogIsOpenStatus.InvokeAsync(false);
+
+    private async Task Submit()
+    {
+        IsLoading = true;
+
+        Model.BeritaID = _ID;
+
+        var client = await Http.PostAsJsonAsync<DeleteBeritaRequest>(Constants.URI.Berita.Delete, Model);
+
+        Response = Task.FromResult(await client.Content.ReadFromJsonAsync<ApiResponse<DeleteBeritaResponse>>()).Result;
+
+        if (!Response.Status.IsError)
+        {
+            IsLoading = false;
+
+            await DialogIsOpenStatus.InvokeAsync(false);
+
+            await OnSuccesSubmit.InvokeAsync(true);
+
+            StateHasChanged();
+        }
+        else
+        {
+            Toaster.Add(Response.Status.Message, MatToastType.Danger);
+
+            IsLoading = false;
+            StateHasChanged();
+        }
+    }
+}

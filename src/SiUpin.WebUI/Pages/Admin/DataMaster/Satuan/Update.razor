@@ -1,0 +1,151 @@
+﻿@inject HttpClient Http
+@inject IMatToaster Toaster
+@inject AuthenticationStateProvider _authenticationStateProvider
+
+@namespace SiUpin.Pages.Admin.DataMaster.Satuan
+
+@using SiUpin.Shared.Satuans.Queries.GetSatuan
+@using SiUpin.Shared.Satuans.Command
+@using SiUpin.Shared.Common.ApiEnvelopes
+
+@if (IsLoading)
+{
+    <MatDialog @bind-IsOpen="IsLoading" CanBeClosed="false">
+        <MatDialog>Please Wait..</MatDialog>
+        <MatDialogContent>
+            <MatProgressBar Indeterminate="true" Closed="!IsLoading"></MatProgressBar>
+        </MatDialogContent>
+    </MatDialog>
+}
+else
+{
+    <MatDialog @bind-IsOpen="DialogIsOpen" CanBeClosed="false">
+        <MatDialogTitle>
+            Edit
+        </MatDialogTitle>
+        <MatDialogContent>
+            <EditForm EditContext="_editContext" OnSubmit="HandleSubmit">
+                <DataAnnotationsValidator />
+
+                <div class="mat-layout-grid p-0">
+                    <div class="mat-layout-grid-inner mt-0">
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12">
+                            <MatTextField @bind-Value="Model.Name" Label="Nama" Required="true" />
+                            <MatCaption Class="mt-1">
+                                <ValidationMessage For="@(() => Model.Name)" />
+                            </MatCaption>
+                        </div>
+                    </div>
+                </div>
+            </EditForm>
+        </MatDialogContent>
+        <MatDialogActions>
+            <MatButton OnClick="CancelClick">Cancel</MatButton>
+            <MatButton Raised="true" OnClick="HandleSubmit">Submit</MatButton>
+        </MatDialogActions>
+    </MatDialog>
+}
+
+@code
+{
+    public string _ID { get; set; }
+
+    [Parameter]
+    public string ID
+    {
+        get => _ID;
+        set
+        {
+            if (_ID != value)
+            {
+                _ID = value;
+
+                InvokeAsync(async () =>
+                {
+                    Model = null;
+                    Model = new UpdateSatuanRequest();
+
+                    await GetEntityByID();
+                });
+            }
+        }
+    }
+
+    [Parameter]
+    public bool DialogIsOpen { get; set; } = false;
+
+    [Parameter]
+    public EventCallback<bool> DialogIsOpenStatus { get; set; }
+
+    [Parameter]
+    public EventCallback<bool> OnSuccessSubmit { get; set; }
+
+    private bool IsLoading = false;
+
+    public UpdateSatuanRequest Model { get; set; } = new UpdateSatuanRequest();
+    public GetSatuanResponse Entity { get; set; }
+    public ApiResponse<UpdateSatuanResponse> Response { get; set; }
+
+    private EditContext _editContext;
+
+    public void CancelClick()
+    {
+        DialogIsOpenStatus.InvokeAsync(false);
+    }
+
+    protected override void OnInitialized()
+    {
+        _editContext = new EditContext(Model);
+    }
+
+    private async Task GetEntityByID()
+    {
+        IsLoading = true;
+
+        _editContext = new EditContext(Model);
+
+        Entity = Task.FromResult(await Http.GetFromJsonAsync<ApiResponse<GetSatuanResponse>>($"{Constants.URI.Satuan.Base}/{ID}")).Result.Result;
+
+        Model.SatuanID = Entity.SatuanID;
+        Model.Name = Entity.Name;
+
+        IsLoading = false;
+
+        StateHasChanged();
+    }
+
+    private async Task HandleSubmit()
+    {
+        if (_editContext.Validate())
+        {
+            IsLoading = true;
+
+            var client = await Http.PutAsJsonAsync<UpdateSatuanRequest>(Constants.URI.Satuan.Base, Model);
+
+            Response = Task.FromResult(await client.Content.ReadFromJsonAsync<ApiResponse<UpdateSatuanResponse>>()).Result;
+
+            if (!Response.Status.IsError)
+            {
+                IsLoading = false;
+
+                await DialogIsOpenStatus.InvokeAsync(false);
+
+                await OnSuccessSubmit.InvokeAsync(true);
+
+                StateHasChanged();
+            }
+            else
+            {
+                Toaster.Add(Response.Status.Message, MatToastType.Danger);
+
+                IsLoading = false;
+                StateHasChanged();
+            }
+        }
+        else
+        {
+            _editContext.AddDataAnnotationsValidation();
+            Toaster.AddErrors(_editContext.GetValidationMessages());
+        }
+    }
+}

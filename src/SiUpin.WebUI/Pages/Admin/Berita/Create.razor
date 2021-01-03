@@ -1,0 +1,70 @@
+﻿@inject HttpClient Http
+@inject IMatToaster Toaster
+
+@inject AuthenticationStateProvider _authenticationStateProvider
+
+@if (IsLoading)
+{
+    <MatDialog @bind-IsOpen="IsLoading" CanBeClosed="false">
+        <MatDialog>Please Wait..</MatDialog>
+        <MatDialogContent>
+            <MatProgressBar Indeterminate="true" Closed="!IsLoading"></MatProgressBar>
+        </MatDialogContent>
+    </MatDialog>
+}
+else
+{
+    <div class="mat-layout-grid">
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12">
+                <MatButton Icon="@MatIconNames.Keyboard_arrow_left" OnClick="CancelClick">Kembali</MatButton>
+            </div>
+
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12 mat-elevation-z3 p-3">
+                <MatH6>Berita</MatH6>
+                <EditForm EditContext="_editContext">
+                    <DataAnnotationsValidator />
+
+                    <div class="mat-layout-grid-inner mt-0">
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                            <MatTextField @bind-Value="Model.Title" Label="Title" Required="true" FullWidth="true" />
+                            <MatCaption Class="mt-1">
+                                <ValidationMessage For="@(() => Model.Title)" />
+                            </MatCaption>
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                            <div class="matBlazor_theme_0e31435e-da49-44a4-b48a-b1ada743d996 mat-file-upload mdc-ripple-surface mdc-ripple-upgraded"
+                                 style="--mdc-ripple-fg-size:323px; --mdc-ripple-fg-scale:1.72817; --mdc-ripple-fg-translate-start:-27.9063px, -110.5px; --mdc-ripple-fg-translate-end:108.453px, -114px;">
+                                <InputFile OnChange="HandleFileListBlazor" multiple />
+                                <div class="mat-file-upload-content">
+                                    <span>Drop files here or Browse</span>
+                                </div>
+                            </div>
+                            @if (FileList != null)
+                            {
+                                <MatBody2><MatIcon Icon="@MatIconNames.Photo" />&nbsp;&nbsp; @FileList.Name</MatBody2>
+                            }
+                        </div>
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12">
+                            <MatTextField TextArea="true" @bind-Value="Model.Description" Label="Deskripsi" Required="true" FullWidth="true" />
+                            <MatCaption Class="mt-1">
+                                <ValidationMessage For="@(() => Model.Description)" />
+                            </MatCaption>
+                        </div>
+                    </div>
+                </EditForm>
+            </div>
+
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12">
+                <MatButton OnClick="CancelClick">Cancel</MatButton>
+                <MatButton Raised="true" OnClick="HandleSubmit">
+                    Submit &nbsp;
+                    @if (IsLoadingCircle)
+                    {
+                        <i class="fas fa-spinner fa-spin"></i>
+                    }
+                </MatButton>
+            </div>
+        </div>
+    </div>
+}

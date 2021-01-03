@@ -25,6 +25,7 @@ namespace SiUpin.Application.Auth.Common
             claims.Add(new Claim(ClaimTypes.Name, user.Username));
             claims.Add(new Claim(ClaimType.PictureUrl, user.PictureURL));
             claims.Add(new Claim(ClaimTypes.Role, user.Role.Name));
+            claims.Add(new Claim(ClaimType.UserID, user.UserID));
 
             var token = new JwtSecurityToken(
                 claims: claims,

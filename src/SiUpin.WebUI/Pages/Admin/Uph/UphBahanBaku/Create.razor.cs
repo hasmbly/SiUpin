@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Components.Forms;
 using SiUpin.Shared.Common.ApiEnvelopes;
 using SiUpin.Shared.JenisKomiditis.Common.GetAllJenisKomiditi;
 using SiUpin.Shared.JenisKomiditis.Queries.GetAllJenisKomiditi;
+using SiUpin.Shared.JenisTernaks.Queries.Common;
 using SiUpin.Shared.JenisTernaks.Queries.GetJenisTernaks;
 using SiUpin.Shared.Satuans.Queries.GetSatuans;
 using SiUpin.Shared.UphBahanBakus.Commands;

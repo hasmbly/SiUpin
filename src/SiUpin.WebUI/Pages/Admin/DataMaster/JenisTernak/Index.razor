@@ -4,13 +4,16 @@
 @inject HttpClient Http
 @inject IMatToaster Toaster
 
+@using SiUpin.Pages.Admin.DataMaster.JenisTernak
+
+@using SiUpin.Shared.JenisTernaks.Queries.Common
 @using SiUpin.Shared.JenisTernaks.Queries.GetJenisTernaks
 @using SiUpin.Shared.Common.ApiEnvelopes
 
 <div class="mat-layout-grid">
     <div class="mat-layout-grid-inner">
         <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
-            <MatH4>Data Jenis Ternak</MatH4>
+            <MatH4>Data Jenis Ternak &nbsp; <MatFAB OnClick="() => { OpenCreateDialog = true; }" Icon="@MatIconNames.Add" /></MatH4>
         </div>
         <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
             @if (IsLoading)
@@ -26,16 +29,21 @@
             {
                 if (sortedData.Count() > 0)
                 {
-                    <MatTable Items="sortedData" AllowSelection="true" UseSortHeaderRow="true" class="mat-elevation-z5 mt-1">
+                    <MatTable Items="sortedData" AllowSelection="true" UseSortHeaderRow="true" class="mat-elevation-z5 mt-1" FilterByColumnName="Name">
                         <MatTableHeader>
                             <MatSortHeaderRow SortChanged="SortData">
                                 <MatSortHeader SortId="1">No</MatSortHeader>
-                                <MatSortHeader SortId="2"><span style="width:150px">Nama</span></MatSortHeader>
+                                <MatSortHeader SortId="2"><span style="width:700px;">Nama</span></MatSortHeader>
+                                <MatSortHeader></MatSortHeader>
                             </MatSortHeaderRow>
                         </MatTableHeader>
                         <MatTableRow>
                             <td>@context.No</td>
                             <td>@context.Name</td>
+                            <td class="text-center">
+                                <MatIconButton Icon="@MatIconNames.Edit" Style="color: mediumpurple;" @onclick="() => { OpenUpdateDialog = true; EntityID = context.JenisTernakID; }" />
+                                <MatIconButton Icon="@MatIconNames.Remove_circle" Style="color: orangered;" @onclick="() => { OpenDeleteDialog = true; EntityID = context.JenisTernakID; }" />
+                            </td>
                         </MatTableRow>
                     </MatTable>
                 }
@@ -44,12 +52,26 @@
     </div>
 </div>
 
+<Create DialogIsOpen="OpenCreateDialog" DialogIsOpenStatus="CreateDialogIsOpenStatus" OnSuccessSubmit="@(() => InvokeAsync(async () => { await GetData(); }))" />
+<Update DialogIsOpen="OpenUpdateDialog" DialogIsOpenStatus="UpdateDialogIsOpenStatus" ID="@EntityID" OnSuccessSubmit="@(() => InvokeAsync(async () => { await GetData(); }))" />
+<Delete DialogIsOpen="OpenDeleteDialog" DialogIsOpenStatus="DeleteDialogIsOpenStatus" ID="@EntityID" OnSuccesSubmit="@(() => InvokeAsync(async () => { await GetData(); }))" />
+
 @code
 {
     private bool IsLoading = false;
 
     private ApiResponse<GetJenisTernaksResponse> items;
     private JenisTernakDTO[] sortedData = null;
+
+    public string EntityID { get; set; }
+
+    public bool OpenCreateDialog { get; set; }
+    public bool OpenUpdateDialog { get; set; }
+    public bool OpenDeleteDialog { get; set; }
+
+    private void CreateDialogIsOpenStatus(bool isOpened) => OpenCreateDialog = isOpened;
+    private void UpdateDialogIsOpenStatus(bool isOpened) => OpenUpdateDialog = isOpened;
+    private void DeleteDialogIsOpenStatus(bool isOpened) => OpenDeleteDialog = isOpened;
 
     protected override async Task OnInitializedAsync() => await GetData();
 

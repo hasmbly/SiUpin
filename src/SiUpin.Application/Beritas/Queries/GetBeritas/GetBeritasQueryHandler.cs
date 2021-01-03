@@ -6,6 +6,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using SiUpin.Application.Common.Interfaces;
 using SiUpin.Domain.Entities;
+using SiUpin.Shared.Beritas.Common;
 using SiUpin.Shared.Beritas.Queries.GetBeritas;
 using SiUpin.Shared.Common;
 using SiUpin.Shared.Common.Pagination;
@@ -43,6 +44,7 @@ namespace SiUpin.Application.Beritas.Queries.GetBeritas
 
                 List<BeritaDTO> listOfDTO = new List<BeritaDTO>();
 
+                int no = 1;
                 foreach (var record in records)
                 {
                     var file = files.Where(x => x.EntityID == record.BeritaID).FirstOrDefault();
@@ -50,9 +52,10 @@ namespace SiUpin.Application.Beritas.Queries.GetBeritas
 
                     BeritaDTO dto = new BeritaDTO
                     {
+                        No = no++,
                         BeritaID = record.BeritaID,
                         UrlOriginPhoto = fileName,
-                        Title = string.IsNullOrEmpty(record.Title) ? "Unknown" : record.Title
+                        Title = string.IsNullOrEmpty(record.Title) ? "Unknown" : record.Title,
                     };
 
                     if (dto != null)

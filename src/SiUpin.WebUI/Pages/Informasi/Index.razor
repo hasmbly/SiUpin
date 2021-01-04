@@ -5,6 +5,7 @@
 @inject HttpClient Http
 @inject IMatToaster Toaster
 
+@using SiUpin.Shared.Pesans.Commands
 @using SiUpin.Shared.Beritas.Queries.GetBeritas
 @using SiUpin.Shared.Common.ApiEnvelopes
 
@@ -16,7 +17,7 @@
         <div class="mat-layout-grid-cell mat-layout-grid-cell-span-2"></div>
         <div class="mat-layout-grid-cell mat-layout-grid-cell-align-right mat-layout-grid-cell-span-6">
             <MatIcon>
-                <img src="images/informasi.png" />
+                <img src="images/informasi.png" style="width: 90%;" />
             </MatIcon>
         </div>
     </div>
@@ -26,7 +27,11 @@
     <div class="mat-layout-grid-inner">
         <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-2">
             <MatNavMenu>
-                <MatTextField @bind-Value="@filterByName" HelperText="Filter: Nama Berita" Label="Cari Berita" Icon="@MatIconNames.Search"></MatTextField>
+                @if (!IsContactUs)
+                {
+                    <MatTextField @bind-Value="@filterByName" HelperText="Filter: Nama Berita" Label="Cari Berita" Icon="@MatIconNames.Search"></MatTextField>
+                }
+                <MatNavItem OnClick="(() => { IsContactUs = false; } )">Berita</MatNavItem>
                 <MatNavSubMenu>
                     <MatNavSubMenuHeader>
                         <MatNavItem AllowSelection="false">Regulasi</MatNavItem>
@@ -69,24 +74,62 @@
                         <MatNavItem Href="https://drive.google.com/file/d/1RyUgnPWmZJTEiYPc4Djl2sc-vcIPG_tD/view?usp=sharing" Target="_blank">Buku Kemitraan</MatNavItem>
                     </MatNavSubMenuList>
                 </MatNavSubMenu>
+                <MatNavItem OnClick="(() => { IsContactUs = true; } )">Contact Us</MatNavItem>
             </MatNavMenu>
         </div>
 
-        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-10">
-            <div class="mat-layout-grid-inner">
+        @if (IsLoading)
+        {
+            <MatDialog @bind-IsOpen="IsLoading" CanBeClosed="false">
+                <MatDialog>Please Wait..</MatDialog>
+                <MatDialogContent>
+                    <MatProgressBar Indeterminate="true" Closed="!IsLoading"></MatProgressBar>
+                </MatDialogContent>
+            </MatDialog>
+        }
+        else if (IsContactUs)
+        {
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-10">
+                <EditForm EditContext="_editContext" OnSubmit="HandleSubmit">
+                    <DataAnnotationsValidator />
 
-                @if (IsLoading)
-                {
-                    <MatDialog @bind-IsOpen="IsLoading" CanBeClosed="false">
-                        <MatDialog>Please Wait..</MatDialog>
-                        <MatDialogContent>
-                            <MatProgressBar Indeterminate="true" Closed="!IsLoading"></MatProgressBar>
-                        </MatDialogContent>
-                    </MatDialog>
-                }
-                else
-                {
-                    if (items.Result != null)
+                    <div class="mat-layout-grid p-0">
+                        <div class="mat-layout-grid-inner mt-0">
+                            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-5">
+                                <MatTextField @bind-Value="Model.Name" Label="Nama" Required="true" FullWidth="true" />
+                                <MatCaption Class="mt-1">
+                                    <ValidationMessage For="@(() => Model.Name)" />
+                                </MatCaption>
+                            </div>
+                            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-5">
+                                <MatTextField @bind-Value="Model.Email" Label="Email" Required="true" FullWidth="true" />
+                                <MatCaption Class="mt-1">
+                                    <ValidationMessage For="@(() => Model.Email)" />
+                                </MatCaption>
+                            </div>
+                            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-10">
+                                <MatTextField @bind-Value="Model.Description" Label="Deskripsi" TextArea="true" Required="true" FullWidth="true" />
+                                <MatCaption Class="mt-1">
+                                    <ValidationMessage For="@(() => Model.Description)" />
+                                </MatCaption>
+                            </div>
+
+                            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-10">
+                                <MatButton Raised="true" OnClick="HandleSubmit">
+                                    Submit
+                                </MatButton>
+                            </div>
+                        </div>
+                    </div>
+                </EditForm>
+            </div>
+        }
+        else
+        {
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-10">
+                <div class="mat-layout-grid-inner">
+
+                    @if (items.Result != null)
                     {
                         foreach (var item in items.Result.Data)
                         {
@@ -104,18 +147,23 @@
                             </div>
                         }
                     }
-                }
-            </div>
-        </div>
 
-        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-right mat-layout-grid-cell-span-12">
-            <MatPaginator Length="totalCount" PageSize="pageSize" Page="OnPage"></MatPaginator>
-        </div>
+
+                </div>
+            </div>
+
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-align-right mat-layout-grid-cell-span-12">
+                <MatPaginator Length="totalCount" PageSize="pageSize" Page="OnPage"></MatPaginator>
+            </div>
+        }
+
     </div>
 </div>
 @code
 {
     private bool IsLoading = false;
+
+    private bool IsContactUs = false;
 
     private ApiResponse<GetBeritasResponse> items;
 
@@ -155,7 +203,57 @@
         }
     }
 
-    protected override async Task OnInitializedAsync() => await GetPaginateData();
+    public CreatePesanRequest Model { get; set; } = new CreatePesanRequest();
+    public ApiResponse<CreatePesanResponse> Response { get; set; }
+
+    private EditContext _editContext;
+
+    private async Task HandleSubmit()
+    {
+        if (_editContext.Validate())
+        {
+            IsLoading = true;
+
+            var client = await Http.PostAsJsonAsync<CreatePesanRequest>(Constants.URI.Pesan.Register, new CreatePesanRequest
+            {
+                Name = Model.Name,
+                Email = Model.Email,
+                Description = Model.Description
+            });
+
+            Response = Task.FromResult(await client.Content.ReadFromJsonAsync<ApiResponse<CreatePesanResponse>>()).Result;
+
+            if (!Response.Status.IsError)
+            {
+                IsContactUs = false;
+                IsLoading = false;
+
+                Model = new CreatePesanRequest();
+                _editContext = new EditContext(Model);
+
+                StateHasChanged();
+            }
+            else
+            {
+                Toaster.Add(Response.Status.Message, MatToastType.Danger);
+
+                IsLoading = false;
+                StateHasChanged();
+            }
+        }
+        else
+        {
+            _editContext.AddDataAnnotationsValidation();
+            Toaster.AddErrors(_editContext.GetValidationMessages());
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetPaginateData();
+
+        _editContext = new EditContext(Model);
+    }
 
     private async Task OnPage(MatPaginatorPageEvent e)
     {

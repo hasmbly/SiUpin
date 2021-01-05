@@ -104,6 +104,8 @@ namespace SiUpin.WebUI.Common
 
                 public static readonly string Register = $"{Base}/register";
                 public static readonly string Paginate = $"{Base}/paginate";
+
+                public static readonly string ClusterGrade = $"{Base}/cluster/grade";
             }
 
             public static class UphPasar

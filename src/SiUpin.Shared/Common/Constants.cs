@@ -207,6 +207,60 @@ namespace SiUpin.Shared.Common
             };
         }
 
+        public static class UphMitra
+        {
+            public static IList<string> JenisKemitraans { get; set; } = new List<string>
+            {
+                "Bahan baku",
+                "Sarana Prasarana",
+                "Peningkatan kompetensi",
+                "Promosi dan pemasaran",
+                "Fasilitasi",
+                "Manajemen Limbah"
+            };
+
+            public static IList<string> Perjanjians { get; set; } = new List<string>
+            {
+                "Ada",
+                "Tidak Ada"
+            };
+
+            public static IList<string> Bermitras { get; set; } = new List<string>
+            {
+                "Ya",
+                "Tidak"
+            };
+
+            public static IList<string> Status { get; set; } = new List<string>
+            {
+                "Aktif",
+                "Tidak Aktif"
+            };
+
+            public static IList<string> Kemitraans { get; set; } = new List<string>
+            {
+                "Kemitraan Pengolahan",
+                "Kemitraan Non Pengolahan"
+            };
+
+            public static IList<string> JenisUsahas { get; set; } = new List<string>
+            {
+                "IPS",
+                "Importir",
+                "Industri Olahan Lain",
+                "Peternak"
+            };
+
+            public static IList<string> Lembagas { get; set; } = new List<string>
+            {
+                "BUMN",
+                "Swasta",
+                "Perbankan",
+                "Yayasan/LSM",
+                "Lainya"
+            };
+        }
+
         public static class AlertMessageStatus
         {
             public const string Success = "alert-success";

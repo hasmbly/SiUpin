@@ -2,6 +2,7 @@
 using System.Net.Http;
 using System.Net.Http.Json;
 using SiUpin.Shared.Common.ApiEnvelopes;
+using SiUpin.Shared.UphMitras.Queries;
 using SiUpin.Shared.Uphs.Queries.GetUphClusterGrades;
 
 namespace SiUpin.WebUI.Common.StateProvider
@@ -11,8 +12,10 @@ namespace SiUpin.WebUI.Common.StateProvider
         private HttpClient _httpClient;
 
         public GetUphClusterGradesResponse Model = new GetUphClusterGradesResponse();
-
         private ApiResponse<GetUphClusterGradesResponse> items;
+
+        public GetUphMitraClusterGradesResponse ModelUphMitraCluster = new GetUphMitraClusterGradesResponse();
+        private ApiResponse<GetUphMitraClusterGradesResponse> itemsUphMitraCluster;
 
         public event Action OnChange;
 
@@ -30,10 +33,12 @@ namespace SiUpin.WebUI.Common.StateProvider
             IsLoadForModel = true;
 
             items = await _httpClient.GetFromJsonAsync<ApiResponse<GetUphClusterGradesResponse>>(Constants.URI.Uph.ClusterGrade);
+            itemsUphMitraCluster = await _httpClient.GetFromJsonAsync<ApiResponse<GetUphMitraClusterGradesResponse>>(Constants.URI.UphMitra.ClusterGrade);
 
-            if (!items.Status.IsError && items.Result != null)
+            if (items.Result != null && itemsUphMitraCluster.Result != null)
             {
                 Model = items.Result;
+                ModelUphMitraCluster = itemsUphMitraCluster.Result;
 
                 IsLoadForModel = false;
 

@@ -199,12 +199,6 @@ namespace SiUpin.Application.Uphs.Queries.GetUphClusters
 
                 if (rata2totalNilaiAspek.HasValue)
                 {
-                    //Console.WriteLine($"");
-                    //Console.WriteLine($"uph.Name: {uph.Name}");
-                    //Console.WriteLine($"totalNilaiAspek: {totalNilaiAspek}");
-                    //Console.WriteLine($"rata2totalNilaiAspek: {rata2totalNilaiAspek}");
-                    //Console.WriteLine($"");
-
                     if (rata2totalNilaiAspek >= 4)
                     {
                         uphClustersA.ClusterTotal++; // A

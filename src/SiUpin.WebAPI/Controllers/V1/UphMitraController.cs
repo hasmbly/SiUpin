@@ -23,5 +23,20 @@ namespace SiUpin.WebAPI.Controllers.V1
                 return StatusCode((int)HttpStatusCode.InternalServerError, new InternalServerError(exception.Message));
             }
         }
+
+        // GetUphMitraClusterGradesRequest
+        [AllowAnonymous]
+        [HttpGet("cluster/grade")]
+        public async Task<IActionResult> clusterGrades()
+        {
+            try
+            {
+                return Ok(new Success(await Mediator.Send(new GetUphMitraClusterGradesRequest()), "Successfully"));
+            }
+            catch (Exception exception)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, new InternalServerError(exception.Message));
+            }
+        }
     }
 }

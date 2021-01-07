@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using SiUpin.Application.Common.Interfaces;
 using SiUpin.Shared.Common.Pagination;
 using SiUpin.Shared.Constants;
+using SiUpin.Shared.UphProduksis.Common;
 using SiUpin.Shared.UphProduksis.Queries;
 
 namespace SiUpin.Application.UphProduksis.Queries

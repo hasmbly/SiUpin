@@ -23,10 +23,6 @@
 
   <ItemGroup>
     <Folder Include="Auth\Commands\ForgotPassword\" />
-    <Folder Include="UphPasars\Commands\" />
-    <Folder Include="UphPasars\Common\" />
-    <Folder Include="UphProduksis\Commands\" />
-    <Folder Include="UphProduksis\Common\" />
     <Folder Include="UphSaranas\Commands\" />
     <Folder Include="UphSaranas\Common\" />
     <Folder Include="UphSdms\Commands\" />

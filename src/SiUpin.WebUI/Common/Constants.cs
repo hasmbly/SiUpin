@@ -103,6 +103,7 @@ namespace SiUpin.WebUI.Common
                 public static readonly string Base = $"{BaseAPI}/UphMitra";
 
                 public static readonly string Register = $"{Base}/register";
+                public static readonly string Delete = $"{Base}/delete";
                 public static readonly string Paginate = $"{Base}/paginate";
 
                 public static readonly string ClusterGrade = $"{Base}/cluster/grade";

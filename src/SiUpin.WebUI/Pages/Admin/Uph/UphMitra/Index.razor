@@ -4,6 +4,7 @@
 @inject NavigationManager Navigation
 
 @using SiUpin.Shared.UphMitras.Queries
+@using SiUpin.Shared.UphMitras.Common
 @using SiUpin.Shared.Common.ApiEnvelopes
 
 <div class="mat-layout-grid">
@@ -78,7 +79,7 @@
     private bool IsLoading = false;
 
     private GetUphMitrasResponse items;
-    private UphMitrasDTO[] sortedData = null;
+    private UphMitraDTO[] sortedData = null;
 
     private int pageSize = Constants.Pagination.PageSize;
     private int pageIndex = 0;
@@ -160,7 +161,7 @@
         sortedData = items.Data.ToArray();
         if (!(sort == null || sort.Direction == MatSortDirection.None || string.IsNullOrEmpty(sort.SortId)))
         {
-            Comparison<UphMitrasDTO> comparison = null;
+            Comparison<UphMitraDTO> comparison = null;
             switch (sort.SortId)
             {
                 case "1":

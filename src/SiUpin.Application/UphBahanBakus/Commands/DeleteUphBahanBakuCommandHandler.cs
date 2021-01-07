@@ -26,8 +26,6 @@ namespace SiUpin.Application.UphBahanBakus.Commands
 
                 foreach (var Ids in listOfData)
                 {
-                    System.Console.WriteLine($"entityID: {Ids}");
-
                     var entity = await _context.UphBahanBakus.FirstOrDefaultAsync(x => x.UphBahanBakuID == Ids, cancellationToken);
 
                     _context.UphBahanBakus.Remove(entity);

@@ -87,6 +87,7 @@ namespace SiUpin.WebUI.Common
                 public static readonly string Base = $"{BaseAPI}/UphSarana";
 
                 public static readonly string Register = $"{Base}/register";
+                public static readonly string Delete = $"{Base}/delete";
                 public static readonly string Paginate = $"{Base}/paginate";
             }
 
@@ -95,6 +96,7 @@ namespace SiUpin.WebUI.Common
                 public static readonly string Base = $"{BaseAPI}/UphGmp";
 
                 public static readonly string Register = $"{Base}/register";
+                public static readonly string Delete = $"{Base}/delete";
                 public static readonly string Paginate = $"{Base}/paginate";
             }
 
@@ -114,6 +116,7 @@ namespace SiUpin.WebUI.Common
                 public static readonly string Base = $"{BaseAPI}/UphPasar";
 
                 public static readonly string Register = $"{Base}/register";
+                public static readonly string Delete = $"{Base}/delete";
                 public static readonly string Paginate = $"{Base}/paginate";
             }
 
@@ -122,6 +125,7 @@ namespace SiUpin.WebUI.Common
                 public static readonly string Base = $"{BaseAPI}/UphProduksi";
 
                 public static readonly string Register = $"{Base}/register";
+                public static readonly string Delete = $"{Base}/delete";
                 public static readonly string Paginate = $"{Base}/paginate";
             }
 
@@ -130,6 +134,7 @@ namespace SiUpin.WebUI.Common
                 public static readonly string Base = $"{BaseAPI}/UphSdm";
 
                 public static readonly string Register = $"{Base}/register";
+                public static readonly string Delete = $"{Base}/delete";
                 public static readonly string Paginate = $"{Base}/paginate";
             }
 

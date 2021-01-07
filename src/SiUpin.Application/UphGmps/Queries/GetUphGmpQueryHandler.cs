@@ -1,18 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using SiUpin.Application.Common.Interfaces;
-using SiUpin.Shared.Common.Pagination;
 using SiUpin.Shared.Constants;
 using SiUpin.Shared.UphGmps.Queries;
 
 namespace SiUpin.Application.UphGmps.Queries
 {
-    public class GetUphGmpQueryHandler : IRequestHandler<GetUphGmpsRequest, GetUphGmpsResponse>
+    public class GetUphGmpQueryHandler : IRequestHandler<GetUphGmpRequest, GetUphGmpResponse>
     {
         private readonly ISiUpinDBContext _context;
 
@@ -21,64 +19,39 @@ namespace SiUpin.Application.UphGmps.Queries
             _context = context;
         }
 
-        public async Task<GetUphGmpsResponse> Handle(GetUphGmpsRequest request, CancellationToken cancellationToken)
+        public async Task<GetUphGmpResponse> Handle(GetUphGmpRequest request, CancellationToken cancellationToken)
         {
             try
             {
-                var records = await _context.UphGmps
+                var record = await _context.UphGmps
                     .AsNoTracking()
                     .Include(a => a.Uph)
-                    .Where(x => x.Uph.Name.Contains(request.FilterByName ?? ""))
-                    .OrderByDescending(o => o.Created)
-                    .Skip((request.PageNumber - 1) * request.PageSize)
-                    .Take(request.PageSize)
-                    .ToListAsync(cancellationToken);
+                    .FirstOrDefaultAsync(x => x.UphGmpID == request.UphGmpID, cancellationToken);
 
-                var totalRecords = _context.UphGmps.AsNoTracking().Count(x => x.Uph.Name.Contains(request.FilterByName ?? ""));
-
-                List<UphGmpDTO> listOfDTO = new List<UphGmpDTO>();
-
-                if (records.Count > 0)
+                if (record != null)
                 {
-                    int no = 1;
-                    foreach (var data in records)
+                    var data = record;
+
+                    return new GetUphGmpResponse
                     {
-                        var entity = new UphGmpDTO
+                        UphGmpID = data.UphGmpID,
+                        UphID = data.UphID,
+
+                        nama_gmp = data.nama_gmp,
+                        nama_gmps = data.nama_gmp.Replace(", ", ",").Split(",").ToList(),
+
+                        jml_gmp = data.jml_gmp,
+
+                        Uph = new Shared.Uphs.Common.UphDTO
                         {
-                            No = no++,
-                            UphGmpID = data.UphGmpID,
-                            UphID = data.UphID,
-                            id_uph = data.id_uph,
-                            nama_gmp = data.nama_gmp,
-                            id_gmp = data.id_gmp,
-                            jml_gmp = data.jml_gmp,
-
-                            Uph = new Shared.Uphs.Common.UphDTO
-                            {
-                                Name = data.Uph.Name
-                            }
-                        };
-
-                        if (entity != null)
-                            listOfDTO.Add(entity);
-                    }
+                            Name = data.Uph?.Name
+                        },
+                    };
                 }
                 else
                 {
                     throw new Exception(ErrorMessage.DataNotFound);
                 }
-
-                return new GetUphGmpsResponse
-                {
-                    IsSuccessful = true,
-                    Data = listOfDTO,
-                    Pagination = new PaginationResponse()
-                    {
-                        TotalCount = totalRecords,
-                        PageSize = request.PageSize,
-                        CurrentPage = request.PageNumber
-                    }
-                };
             }
             catch (Exception ex)
             {

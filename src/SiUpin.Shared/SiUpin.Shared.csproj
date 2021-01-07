@@ -17,8 +17,6 @@
 
   <ItemGroup>
     <Folder Include="Auth\Commands\" />
-    <Folder Include="UphGmps\Commands\" />
-    <Folder Include="UphGmps\Common\" />
     <Folder Include="UphMitras\Commands\" />
     <Folder Include="UphMitras\Common\" />
     <Folder Include="UphPasars\Commands\" />

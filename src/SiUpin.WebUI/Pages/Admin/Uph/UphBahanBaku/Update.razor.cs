@@ -166,8 +166,6 @@ namespace SiUpin.WebUI.Pages.Admin.Uph.UphBahanBaku
             {
                 var isExist = Entity.AsalBahanBakus.Any(x => x == item);
 
-                System.Console.WriteLine($"{item} - isExist: {isExist}");
-
                 if (isExist)
                 {
                     if (item == Constants.UphBahanBaku.AsalBahanBakus[0])

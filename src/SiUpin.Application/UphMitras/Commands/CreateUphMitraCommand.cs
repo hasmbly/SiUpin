@@ -43,7 +43,7 @@ namespace SiUpin.Application.UphMitras.Commands
             int count_nilai_sarana = 0;
             foreach (var item in request.detail_saranas)
             {
-                if (item == "Bangunan / Rumah Produksi/ Outlet Pemasaran")
+                if (item == "Bangunan / Rumah Produksi / Outlet Pemasaran")
                     count_nilai_sarana += 4;
 
                 if (item == "Alat Pengolahan dan Produksi")

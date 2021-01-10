@@ -1,0 +1,75 @@
+﻿@inject HttpClient Http
+@inject IMatToaster Toaster
+
+@if (IsLoading)
+{
+    <MatDialog @bind-IsOpen="IsLoading" CanBeClosed="false">
+        <MatDialog>Please Wait..</MatDialog>
+        <MatDialogContent>
+            <MatProgressBar Indeterminate="true" Closed="!IsLoading"></MatProgressBar>
+        </MatDialogContent>
+    </MatDialog>
+}
+else
+{
+    <div class="mat-layout-grid">
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12">
+                <MatButton Icon="@MatIconNames.Keyboard_arrow_left" OnClick="CancelClick">Kembali</MatButton>
+            </div>
+
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12 mat-elevation-z3 p-3">
+                <MatH6>Bahan Baku</MatH6>
+                <EditForm EditContext="_editContext">
+                    <DataAnnotationsValidator />
+
+                    <div class="mat-layout-grid-inner mt-0">
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12">
+                            @if (UphIDandNames.Count > 0)
+                            {
+                                <MatAutocompleteList FullWidth="true" Items="UphIDandNames.Select(x => x.Name).ToList()"
+                                                     TItem="string"
+                                                     Label="Pilih UPH"
+                                                     OnOpenedChanged="@((stats) =>
+                                                                        { if (stats) { IsHidden = true; } else { IsHidden = false; } })"
+                                                     @bind-Value="SelectedUph" />
+                                <ValidationMessage For="@(() => Model.UphID)" />
+                            }
+                        </div>
+                        @if (!IsHidden)
+                        {
+                            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                                @if (Gmps.Count() > 0)
+                                {
+                                    for (int i = 0; i < Gmps.Count(); i++)
+                                    {
+                                        int index = i;
+
+                                        <MatCheckbox TValue="bool"
+                                                     Value="Gmps[index].IsGmpChoosen"
+                                                     ValueExpression="@( () => Gmps[index].IsGmpChoosen )"
+                                                     ValueChanged="@((e) => { HandleNamaGmp(e, index); })" Label="@Gmps[index].NamaGmp"></MatCheckbox>
+                                        <br />
+                                    }
+                                }
+                            </div>
+                        }
+                    </div>
+                </EditForm>
+            </div>
+            @if (!IsHidden)
+            {
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12">
+                    <MatButton OnClick="CancelClick">Cancel</MatButton>
+                    <MatButton Raised="true" OnClick="HandleSubmit">
+                        Submit &nbsp;
+                        @if (IsLoadingCircle)
+                        {
+                            <i class="fas fa-spinner fa-spin"></i>
+                        }
+                    </MatButton>
+                </div>
+            }
+        </div>
+    </div>
+}

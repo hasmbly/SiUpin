@@ -223,12 +223,47 @@ namespace SiUpin.WebUI.Common
             public const string Limbah = "Limbah";
         }
 
+        public static class ParameterIndikator
+        {
+            public static class ParameterIndikatorName
+            {
+                public const string AdministrasiKegiatanDanKeuangan = "Administrasi kegiatan dan keuangan";
+                public const string KesesuaianDenganGMP = "Kesesuaian dengan GMP";
+                public const string Bermitra = "Bermitra";
+                public const string Sertifikat = "Sertifikat";
+                public const string JumlahHariProduksi = "Jumlah hari produksi";
+                public const string StatusUPH = "Status UPH";
+                public const string MoU = "MoU";
+                public const string IzinEdar = "Izin edar";
+                public const string LembagaYangBermitra = "Lembaga yang bermitra";
+                public const string SumberModal = "Sumber modal";
+                public const string StrukturPermodalan = "Struktur permodalan";
+                public const string BentukKelembagaan = "Bentuk kelembagaan";
+                public const string MekanismePemasaran = "Mekanisme pemasaran";
+                public const string RasioKapasitasTerpakaiTerhadapKapasitasTerpasang = "Rasio kapasitas terpakai terhadap kapasitas terpasang";
+                public const string JangkauanPemasaran = "Jangkauan Pemasaran";
+                public const string JenisKemitraan = "Jenis Kemitraan";
+                public const string BadanHukum = "Badan hukum";
+            }
+        }
+
         public static class UphBahanBaku
         {
             public static IList<string> AsalBahanBakus { get; set; } = new List<string>
             {
                 "Dari Peternakan UPH",
                 "Membeli Dari Peternak Lain"
+            };
+        }
+
+        public static class UphMitra
+        {
+            public static IList<string> DetailSaranas { get; set; } = new List<string>
+            {
+                "Bangunan / Rumah Produksi / Outlet Pemasaran",
+                "Alat Pengolahan dan Produksi",
+                "Alat Pengemasan",
+                "Lainya"
             };
         }
 

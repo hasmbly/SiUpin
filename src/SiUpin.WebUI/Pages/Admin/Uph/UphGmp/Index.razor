@@ -3,6 +3,8 @@
 @inject HttpClient Http
 @inject NavigationManager Navigation
 
+@using SiUpin.Pages.Admin.Uph.UphGmp
+
 @using SiUpin.Shared.UphGmps.Queries
 @using SiUpin.Shared.UphGmps.Common
 @using SiUpin.Shared.Common.ApiEnvelopes
@@ -13,7 +15,14 @@
         @if (OpenCreateDialog)
         {
             <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
-                @*<Create DialogIsOpen="OpenCreateDialog" DialogIsOpenStatus="CreateDialogIsOpenStatus" OnSuccessSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); }))" />*@
+                <Create DialogIsOpen="OpenCreateDialog" DialogIsOpenStatus="CreateDialogIsOpenStatus" OnSuccessSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); }))" />
+            </div>
+        }
+        else if (OpenUpdateDialog)
+        {
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
+                <Update DialogIsOpen="OpenUpdateDialog" EntityID="@EntityID" DialogIsOpenStatus="UpdateIsOpenStatus"
+                        OnSuccessSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); }))" />
             </div>
         }
         else
@@ -47,14 +56,19 @@
                             <MatTableHeader>
                                 <MatSortHeaderRow SortChanged="SortData">
                                     <MatSortHeader SortId="1">No</MatSortHeader>
-                                    <MatSortHeader SortId="2">Nama UPH</MatSortHeader>
-                                    <MatSortHeader>Kesesuaian GMP</MatSortHeader>
+                                    <MatSortHeader SortId="2"><span style="width:100px">Nama UPH</span></MatSortHeader>
+                                    <MatSortHeader><span style="width:600px">Kesesuaian GMP</span></MatSortHeader>
+                                    <MatSortHeader class="text-center"><span style="width:10px"></span></MatSortHeader>
                                 </MatSortHeaderRow>
                             </MatTableHeader>
                             <MatTableRow>
                                 <td>@context.No</td>
                                 <td>@context.Uph?.Name</td>
                                 <td>@context.nama_gmp</td>
+                                <td class="text-center">
+                                    <MatIconButton Icon="@MatIconNames.Edit" Style="color: mediumpurple;" @onclick="() => { OpenUpdateDialog = true; EntityID = context.UphGmpID; }" />
+                                    <MatIconButton Icon="@MatIconNames.Remove_circle" Style="color: orangered;" @onclick="() => { OpenDeleteDialog = true; EntityID = context.UphGmpID; }" />
+                                </td>
                             </MatTableRow>
                         </MatTable>
                     }
@@ -67,6 +81,8 @@
         }
     </div>
 </div>
+
+<Delete DialogIsOpen="OpenDeleteDialog" DialogIsOpenStatus="DeleteDialogIsOpenStatus" ID="@EntityID" OnSuccesSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); }))" />
 
 @code
 {
@@ -94,9 +110,15 @@
         }
     }
 
+    public string EntityID { get; set; }
+
     public bool OpenCreateDialog { get; set; }
+    public bool OpenUpdateDialog { get; set; }
+    public bool OpenDeleteDialog { get; set; }
 
     private void CreateDialogIsOpenStatus(bool isOpened) => OpenCreateDialog = isOpened;
+    private void UpdateIsOpenStatus(bool isOpened) => OpenUpdateDialog = isOpened;
+    private void DeleteDialogIsOpenStatus(bool isOpened) => OpenDeleteDialog = isOpened;
 
     protected override async Task OnInitializedAsync()
     {

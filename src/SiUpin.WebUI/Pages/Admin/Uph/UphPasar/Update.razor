@@ -19,7 +19,7 @@ else
             </div>
 
             <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12 mat-elevation-z3 p-3">
-                <MatH6>GMP</MatH6>
+                <MatH6>Pemasaran</MatH6>
                 <EditForm EditContext="_editContext">
                     <DataAnnotationsValidator />
 
@@ -39,19 +39,53 @@ else
                         @if (!IsHidden)
                         {
                             <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
-                                @if (Gmps.Count() > 0)
+                                @if (Mekanismes.Count() > 0)
                                 {
-                                    for (int i = 0; i < Gmps.Count(); i++)
+                                    <MatBody1>Mekanisme</MatBody1>
+
+                                    for (int i = 0; i < Mekanismes.Count(); i++)
                                     {
                                         int index = i;
 
                                         <MatCheckbox TValue="bool"
-                                                     Value="Gmps[index].IsGmpChoosen"
-                                                     ValueExpression="@( () => Gmps[index].IsGmpChoosen )"
-                                                     ValueChanged="@((e) => { HandleNamaGmp(e, index); })" Label="@Gmps[index].NamaGmp"></MatCheckbox>
-                                        <br />
+                                                     Value="Mekanismes[index].IsChoosen"
+                                                     ValueExpression="@( () => Mekanismes[index].IsChoosen )"
+                                                     ValueChanged="@((e) => { HandleMekanisme(e, index); })" Label="@Mekanismes[index].Name" />
+                                        @:&nbsp;
+
+                                        if (Mekanismes[index].IsChoosen)
+                                        {
+                                            if (Mekanismes[index].Name == "Lainya")
+                                            {
+                                                <MatTextField @bind-Value="Model.lain" Label="Lainnya" />
+                                            }
+                                        }
                                     }
                                 }
+                            </div>
+                            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                                <MatSelect @bind-Value="SelectJangkauanPemasaran" Label="Jangkauan Pemasaran" FullWidth="true">
+                                    <MatOption TValue="string" Value="@(null)"></MatOption>
+                                    @if (JangkauanPemasarans.Count() > 0)
+                                            {
+                                                foreach (var item in JangkauanPemasarans)
+                                                {
+                                            <MatOption TValue="string" Value="@(item)">@item</MatOption>
+                                                }
+                                            }
+                                </MatSelect>
+                            </div>
+                            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                                <MatTextField @bind-Value="Model.jml_penjualan" Label="Penjualan" Type="number" Required="true" FullWidth="true" />
+                                <MatCaption Class="mt-1">
+                                    <ValidationMessage For="@(() => Model.jml_penjualan)" />
+                                </MatCaption>
+                            </div>
+                            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                                <MatTextField @bind-Value="Model.omset" Label="Omset" Type="number" Required="true" FullWidth="true" />
+                                <MatCaption Class="mt-1">
+                                    <ValidationMessage For="@(() => Model.omset)" />
+                                </MatCaption>
                             </div>
                         }
                     </div>

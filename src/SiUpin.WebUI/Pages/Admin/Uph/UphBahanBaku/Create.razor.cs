@@ -84,7 +84,7 @@ namespace SiUpin.WebUI.Pages.Admin.Uph.UphBahanBaku
 
         private string asalBahanBaku_00 = Constants.UphBahanBaku.AsalBahanBakus[0];
         private string asalBahanBaku_01 = Constants.UphBahanBaku.AsalBahanBakus[1];
-
+        
         private bool IsHidden = false;
 
         public void CancelClick()

@@ -3,6 +3,8 @@
 @inject HttpClient Http
 @inject NavigationManager Navigation
 
+@using SiUpin.Pages.Admin.Uph.UphProduksi
+
 @using SiUpin.Shared.UphProduksis.Queries
 @using SiUpin.Shared.UphProduksis.Common
 @using SiUpin.Shared.Common.ApiEnvelopes
@@ -13,18 +15,23 @@
         @if (OpenCreateDialog)
         {
             <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
-                @*<Create DialogIsOpen="OpenCreateDialog" DialogIsOpenStatus="CreateDialogIsOpenStatus" OnSuccessSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); }))" />*@
+                <Create DialogIsOpen="OpenCreateDialog" DialogIsOpenStatus="CreateDialogIsOpenStatus" OnSuccessSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); }))" />
+            </div>
+        }
+        else if (OpenUpdateDialog)
+        {
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
+                <Update DialogIsOpen="OpenUpdateDialog" EntityID="@EntityID" DialogIsOpenStatus="UpdateIsOpenStatus"
+                        OnSuccessSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); }))" />
             </div>
         }
         else
         {
             <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
-                <MatH4>Data UPH Produksi</MatH4>
+                <MatH4>Data UPH Produksi &nbsp; <MatFAB OnClick="() => { OpenCreateDialog = true; }" Icon="@MatIconNames.Add" /></MatH4>
             </div>
 
             <div class="mat-layout-grid-cell mat-layout-grid-cell-align-top mat-layout-grid-cell-span-12">
-                <MatFAB OnClick="() => { OpenCreateDialog = true; }" Icon="@MatIconNames.Add"></MatFAB>&nbsp;
-
                 <MatTextField @bind-Value="@filterByName" HelperText="Filter Berdasarkan: Nama Uph" Label="Cari Uph" Icon="@MatIconNames.Search"></MatTextField>
             </div>
 
@@ -53,6 +60,7 @@
                                     <MatSortHeader>Jumlah Hari Produksi</MatSortHeader>
                                     <MatSortHeader>Izin Edar</MatSortHeader>
                                     <MatSortHeader>Sertifikat</MatSortHeader>
+                                    <MatSortHeader class="text-center"><span style="width:10px"></span></MatSortHeader>
                                 </MatSortHeaderRow>
                             </MatTableHeader>
                             <MatTableRow>
@@ -63,6 +71,10 @@
                                 <td>@context.jml_hari_produksi</td>
                                 <td>@context.izin_edar</td>
                                 <td>@context.sertifikat</td>
+                                <td class="text-center">
+                                    <MatIconButton Icon="@MatIconNames.Edit" Style="color: mediumpurple;" @onclick="() => { OpenUpdateDialog = true; EntityID = context.UphProduksiID; }" />
+                                    <MatIconButton Icon="@MatIconNames.Remove_circle" Style="color: orangered;" @onclick="() => { OpenDeleteDialog = true; EntityID = context.UphProduksiID; }" />
+                                </td>
                             </MatTableRow>
                         </MatTable>
                     }
@@ -75,6 +87,8 @@
         }
     </div>
 </div>
+
+<Delete DialogIsOpen="OpenDeleteDialog" DialogIsOpenStatus="DeleteDialogIsOpenStatus" ID="@EntityID" OnSuccesSubmit="@(() => InvokeAsync(async () => { await GetPaginateData(); }))" />
 
 @code
 {
@@ -102,9 +116,15 @@
         }
     }
 
+    public string EntityID { get; set; }
+
     public bool OpenCreateDialog { get; set; }
+    public bool OpenUpdateDialog { get; set; }
+    public bool OpenDeleteDialog { get; set; }
 
     private void CreateDialogIsOpenStatus(bool isOpened) => OpenCreateDialog = isOpened;
+    private void UpdateIsOpenStatus(bool isOpened) => OpenUpdateDialog = isOpened;
+    private void DeleteDialogIsOpenStatus(bool isOpened) => OpenDeleteDialog = isOpened;
 
     protected override async Task OnInitializedAsync()
     {

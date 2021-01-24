@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SiUpin.WebUI.Common
 {
@@ -247,12 +249,108 @@ namespace SiUpin.WebUI.Common
             }
         }
 
+        public static class UphSdm
+        {
+            public static IList<string> SumberModals { get; set; } = new List<string>
+            {
+                "Bank",
+                "Koperasi",
+                "Non Bank",
+                "Perorangan",
+                "Keluarga",
+                "Lainya"
+            };
+
+            public static IList<string> SOPs { get; set; } = new List<string>
+            {
+                "Keamanan Air",
+                "Kondisi dan Kebersihan Permukaan Yang Kontak Dengan Bahan Pangan",
+                "Pencegahan Kontaminasi Silang",
+                "Menjaga Fasilitas Pencuci Tangan, Toilet dan Sanitasi Pekerja",
+                "Proteksi Dari Bahan Kontaminan",
+                "Pelabelan, Penyimpanan dan Pengunaan Bahan Toksin Yang Benar",
+                "Pengawasan Kondisi Kesehatan Personil Yang Dapat Menyebabkan Kontaminasi",
+                "Menghilangkan Hama Dari Unit Pengolahan"
+            };
+
+            public static IList<string> StrukturModals { get; set; } = new List<string>
+            {
+                "Modal Sendiri",
+                "Sebagian dari pihak lain",
+                "Sepenuhnya dari pihak lain",
+            };
+
+            public static IList<int> Tahuns { get; set; } = Enumerable.Range(1992, (DateTime.Now.Year - 1992) + 1).ToList();
+        }
+
+        public static class UphSarana
+        {
+            public static IList<string> AsalBantuans { get; set; } = new List<string>
+            {
+                "APBN",
+                "APBD"
+            };
+
+            public static IList<int> Tahuns { get; set; } = Enumerable.Range(1992, (DateTime.Now.Year - 1992) + 1).ToList();
+
+            public static IList<string> Alasans { get; set; } = new List<string>
+            {
+                "Kekurangan Bahan Baku",
+                "Rusak",
+                "Alat Tidak Seuai",
+                "Hilang",
+            };
+
+            public static IList<string> JenisMesins { get; set; } = new List<string>
+            {
+                "Mesin Utama",
+                "Mesin Pendukung"
+            };
+
+            public static IList<string> Status { get; set; } = new List<string>
+            {
+                "Beroperasi",
+                "Tidak Beroperasi"
+            };
+        }
+
         public static class UphBahanBaku
         {
             public static IList<string> AsalBahanBakus { get; set; } = new List<string>
             {
                 "Dari Peternakan UPH",
                 "Membeli Dari Peternak Lain"
+            };
+        }
+
+        public static class UphProduksi
+        {
+            public static IList<string> Sertifikats { get; set; } = new List<string>
+            {
+                "Organik",
+                "Halal",
+                "Sertifikat Penyuluhan",
+                "NKV",
+            };
+        }
+
+        public static class UphPasar
+        {
+            public static IList<string> Mekanismes { get; set; } = new List<string>
+            {
+                "Langsung ke konsumen",
+                "Pedagang Perantara",
+                "Online",
+                "Lainya",
+            };
+
+            public static IList<string> JangkauanPemasarans { get; set; } = new List<string>
+            {
+                "DN Dalam Kecamatan",
+                "DN Dalam Kabupaten",
+                "DN Dalam Provinsi",
+                "DN Antar Provinsi",
+                "Luar Negeri/Ekspor",
             };
         }
 
@@ -264,6 +362,88 @@ namespace SiUpin.WebUI.Common
                 "Alat Pengolahan dan Produksi",
                 "Alat Pengemasan",
                 "Lainya"
+            };
+
+            public static IList<string> Bermitras { get; set; } = new List<string>
+            {
+                "Ya",
+                "Tidak",
+            };
+
+            public static IList<string> SasaranKemitraans { get; set; } = new List<string>
+            {
+                "Kemitraan Pengolahan",
+                "Kemitraan Non Pengolahan",
+            };
+
+            public static IList<string> JenisUsahas { get; set; } = new List<string>
+            {
+                "IPS",
+                "Importir",
+                "Industri Olahan Lain",
+                "Peternak",
+            };
+
+            public static IList<string> LembagaBermitras { get; set; } = new List<string>
+            {
+                "BUMN",
+                "Swasta",
+                "Perbankan",
+                "Yayasan/LSM",
+                "Lainya",
+            };
+
+            public static IList<string> JenisMitras { get; set; } = new List<string>
+            {
+                "Bahan baku",
+                "Sarana Prasarana",
+                "Peningkatan kompetensi",
+                "Promosi dan pemasaran",
+                "Fasilitasi",
+                "Manajemen Limbah",
+            };
+
+            public static IList<string> DetailPromosis { get; set; } = new List<string>
+            {
+                "Media",
+                "Pameran",
+                "Campaign",
+                "Gerakan Minum Susu",
+                "Kontrak Pemasaran",
+                "Rebranding Produk"
+            };
+
+            public static IList<string> DetailFasilitasis { get; set; } = new List<string>
+            {
+                "MD",
+                "Halal",
+                "NKV",
+                "PIRT",
+            };
+
+            public static IList<string> DetailKompetensis { get; set; } = new List<string>
+            {
+                "Lebih Dari 2 Bimtek",
+                "2 Bimtek",
+                "1 Kali Bimtek",
+            };
+
+            public static IList<string> DetailLimbahs { get; set; } = new List<string>
+            {
+                "Melakukan Manajemen Limbah",
+                "Tidak Melakukan Manajemen Limbah",
+            };
+
+            public static IList<string> Perjanjians { get; set; } = new List<string>
+            {
+                "Ada",
+                "Tidak",
+            };
+
+            public static IList<string> Status { get; set; } = new List<string>
+            {
+                "Aktif",
+                "Tidak Aktif",
             };
         }
 

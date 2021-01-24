@@ -1,0 +1,131 @@
+﻿@inject HttpClient Http
+@inject IMatToaster Toaster
+
+@if (IsLoading)
+{
+    <MatDialog @bind-IsOpen="IsLoading" CanBeClosed="false">
+        <MatDialog>Please Wait..</MatDialog>
+        <MatDialogContent>
+            <MatProgressBar Indeterminate="true" Closed="!IsLoading"></MatProgressBar>
+        </MatDialogContent>
+    </MatDialog>
+}
+else
+{
+    <div class="mat-layout-grid">
+        <div class="mat-layout-grid-inner">
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12">
+                <MatButton Icon="@MatIconNames.Keyboard_arrow_left" OnClick="CancelClick">Kembali</MatButton>
+            </div>
+
+            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12 mat-elevation-z3 p-3">
+                <MatH6>Produksi</MatH6>
+                <EditForm EditContext="_editContext">
+                    <DataAnnotationsValidator />
+
+                    <div class="mat-layout-grid-inner mt-0">
+                        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12">
+                            @if (UphIDandNames.Count > 0)
+                            {
+                                <MatAutocompleteList FullWidth="true" Items="UphIDandNames.Select(x => x.Name).ToList()"
+                                                     TItem="string"
+                                                     Label="Pilih UPH"
+                                                     OnOpenedChanged="@((stats) =>
+                                                                        { if (stats) { IsHidden = true; } else { IsHidden = false; } })"
+                                                     ValueChanged="@(i => Model.UphID = UphIDandNames.FirstOrDefault(x => x.Name == i).UphID)" />
+                                <ValidationMessage For="@(() => Model.UphID)" />
+                            }
+                        </div>
+                        @if (!IsHidden)
+                        {
+                            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                                <MatSelect @bind-Value="SelectProdukOlahans" Label="Produk Olahan" FullWidth="true">
+                                    <MatOption TValue="string" Value="@(null)"></MatOption>
+                                    @if (ProdukOlahans.Count() > 0)
+                                            {
+                                                foreach (var item in ProdukOlahans)
+                                                {
+                                            <MatOption TValue="string" Value="@(item)">@item</MatOption>
+                                                }
+                                            }
+                                </MatSelect>
+                            </div>
+                            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                                <MatTextField @bind-Value="Model.jml_produksi" Label="Jumlah produksi" Type="number" Required="true" FullWidth="true" />
+                                <MatCaption Class="mt-1">
+                                    <ValidationMessage For="@(() => Model.jml_produksi)" />
+                                </MatCaption>
+                            </div>
+                            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                                <MatSelect @bind-Value="SelectSatuans" Label="Satuan" FullWidth="true">
+                                    <MatOption TValue="string" Value="@(null)"></MatOption>
+                                    @if (Satuans.Count() > 0)
+                                            {
+                                                foreach (var item in Satuans)
+                                                {
+                                            <MatOption TValue="string" Value="@(item)">@item</MatOption>
+                                                }
+                                            }
+                                </MatSelect>
+                            </div>
+                            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                                <MatSelect @bind-Value="SelectJumlahHariProduksi" Label="Jumlah Hari Produksi" FullWidth="true">
+                                    <MatOption TValue="string" Value="@(null)"></MatOption>
+                                    @if (JumlahHariProduksis.Count() > 0)
+                                            {
+                                                foreach (var item in JumlahHariProduksis)
+                                                {
+                                            <MatOption TValue="string" Value="@(item)">@item</MatOption>
+                                                }
+                                            }
+                                </MatSelect>
+                            </div>
+                            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                                <MatSelect @bind-Value="SelectIzinEdar" Label="Izin Edar" FullWidth="true">
+                                    <MatOption TValue="string" Value="@(null)"></MatOption>
+                                    @if (IzinEdars.Count() > 0)
+                                            {
+                                                foreach (var item in IzinEdars)
+                                                {
+                                            <MatOption TValue="string" Value="@(item)">@item</MatOption>
+                                                }
+                                            }
+                                </MatSelect>
+                            </div>
+                            <div class="mat-layout-grid-cell mat-layout-grid-cell-span-6">
+                                @if (Sertifikats.Count() > 0)
+                                {
+                                    <MatBody1>Sertifikat</MatBody1>
+
+                                    for (int i = 0; i < Sertifikats.Count(); i++)
+                                    {
+                                        int index = i;
+
+                                        <MatCheckbox TValue="bool"
+                                                     Value="Sertifikats[index].IsChoosen"
+                                                     ValueExpression="@( () => Sertifikats[index].IsChoosen )"
+                                                     ValueChanged="@((e) => { HandleSertifikat(e, index); })" Label="@Sertifikats[index].Name" />
+                                        @:&nbsp;
+                                    }
+                                }
+                            </div>
+                        }
+                    </div>
+                </EditForm>
+            </div>
+            @if (!IsHidden)
+            {
+                <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12">
+                    <MatButton OnClick="CancelClick">Cancel</MatButton>
+                    <MatButton Raised="true" OnClick="HandleSubmit">
+                        Submit &nbsp;
+                        @if (IsLoadingCircle)
+                        {
+                            <i class="fas fa-spinner fa-spin"></i>
+                        }
+                    </MatButton>
+                </div>
+            }
+        </div>
+    </div>
+}

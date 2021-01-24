@@ -31,6 +31,7 @@ namespace SiUpin.Application.UphPasars.Commands
                 jangkauan = request.jangkauan,
                 jml_penjualan = request.jml_penjualan,
                 omset = request.omset,
+                lain = request.lain
             };
 
             await _context.UphPasars.AddAsync(entity);

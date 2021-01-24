@@ -1,9 +1,9 @@
 ﻿@inject HttpClient Http
 @inject IMatToaster Toaster
 
-@namespace SiUpin.Pages.Admin.Uph.UphSdm
+@namespace SiUpin.Pages.Admin.Uph.UphSarana
 
-@using SiUpin.Shared.UphSdms.Commands
+@using SiUpin.Shared.UphSaranas.Commands
 @using SiUpin.Shared.Common.ApiEnvelopes
 
 @if (IsLoading)
@@ -55,8 +55,8 @@ else
 
     private bool IsLoading = false;
 
-    public DeleteUphSdmRequest Model { get; set; } = new DeleteUphSdmRequest();
-    public ApiResponse<DeleteUphSdmResponse> Response { get; set; }
+    public DeleteUphSaranaRequest Model { get; set; } = new DeleteUphSaranaRequest();
+    public ApiResponse<DeleteUphSaranaResponse> Response { get; set; }
 
     public void CancelClick() => DialogIsOpenStatus.InvokeAsync(false);
 
@@ -64,11 +64,11 @@ else
     {
         IsLoading = true;
 
-        Model.UphSdmIDs.Add(_ID);
+        Model.UphSaranaIDs.Add(_ID);
 
-        var client = await Http.PostAsJsonAsync<DeleteUphSdmRequest>(Constants.URI.UphSdm.Delete, Model);
+        var client = await Http.PostAsJsonAsync<DeleteUphSaranaRequest>(Constants.URI.UphSarana.Delete, Model);
 
-        Response = Task.FromResult(await client.Content.ReadFromJsonAsync<ApiResponse<DeleteUphSdmResponse>>()).Result;
+        Response = Task.FromResult(await client.Content.ReadFromJsonAsync<ApiResponse<DeleteUphSaranaResponse>>()).Result;
 
         if (!Response.Status.IsError)
         {
@@ -78,7 +78,7 @@ else
 
             await OnSuccesSubmit.InvokeAsync(true);
 
-            Model.UphSdmIDs = new List<string>();
+            Model.UphSaranaIDs = new List<string>();
 
             StateHasChanged();
         }

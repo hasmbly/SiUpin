@@ -31,6 +31,7 @@ namespace SiUpin.Application.UphPasars.Commands
             entity.jangkauan = request.jangkauan;
             entity.jml_penjualan = request.jml_penjualan;
             entity.omset = request.omset;
+            entity.lain = request.lain;
 
             await _context.SaveChangesAsync(cancellationToken);
 

@@ -36,7 +36,6 @@ namespace SiUpin.Shared.UphMitras.Common
         [Required]
         public string status { get; set; }
 
-        [Required]
         public string user { get; set; }
 
         [Required]

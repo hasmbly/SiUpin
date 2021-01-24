@@ -6,13 +6,12 @@ using MatBlazor;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using SiUpin.Shared.Common.ApiEnvelopes;
-using SiUpin.Shared.ParameterJawabans.Queries.GetParameterJawabansByIndikatorName;
-using SiUpin.Shared.UphGmps.Commands;
-using SiUpin.Shared.UphGmps.Queries;
+using SiUpin.Shared.UphPasars.Commands;
+using SiUpin.Shared.UphPasars.Queries;
 using SiUpin.Shared.Uphs.Queries.GetUphIDandNames;
 using SiUpin.WebUI.Common;
 
-namespace SiUpin.WebUI.Pages.Admin.Uph.UphGmp
+namespace SiUpin.WebUI.Pages.Admin.Uph.UphPasar
 {
     public partial class Update
     {
@@ -48,9 +47,9 @@ namespace SiUpin.WebUI.Pages.Admin.Uph.UphGmp
         private bool IsLoading = false;
         public bool IsLoadingCircle { get; set; }
 
-        public GetUphGmpResponse Entity { get; set; }
-        public UpdateUphGmpRequest Model { get; set; } = new UpdateUphGmpRequest();
-        public ApiResponse<UpdateUphGmpResponse> Response { get; set; }
+        public GetUphPasarResponse Entity { get; set; }
+        public CreateUphPasarRequest Model { get; set; } = new CreateUphPasarRequest();
+        public ApiResponse<CreateUphPasarResponse> Response { get; set; }
 
         private EditContext _editContext;
 
@@ -69,13 +68,17 @@ namespace SiUpin.WebUI.Pages.Admin.Uph.UphGmp
             }
         }
 
-        public void CancelClick()
-        {
-            DialogIsOpenStatus.InvokeAsync(false);
-        }
+        public void CancelClick() => DialogIsOpenStatus.InvokeAsync(false);
 
-        public IList<Gmp> Gmps { get; set; } = new List<Gmp>();
+        public IList<Mekanisme> Mekanismes { get; set; } = new List<Mekanisme>();
         public IList<UphIDandNameDTO> UphIDandNames { get; set; } = new List<UphIDandNameDTO>();
+
+        public IList<string> JangkauanPemasarans { get; set; } = new List<string>();
+        public string SelectJangkauanPemasaran
+        {
+            get => Model.jangkauan;
+            set => Model.jangkauan = value;
+        }
 
         protected override void OnInitialized()
         {
@@ -86,52 +89,70 @@ namespace SiUpin.WebUI.Pages.Admin.Uph.UphGmp
         {
             IsLoading = true;
 
-            Entity = Task.FromResult(await Http.GetFromJsonAsync<ApiResponse<GetUphGmpResponse>>($"{Constants.URI.UphGmp.Base}/{EntityID}")).Result.Result;
+            Entity = Task.FromResult(await Http.GetFromJsonAsync<ApiResponse<GetUphPasarResponse>>
+                ($"{Constants.URI.UphPasar.Base}/{EntityID}")).Result.Result;
 
-            Model.UphGmpID = Entity.UphGmpID;
+            Model.UphPasarID = Entity.UphPasarID;
 
             await GetUphIDandNames();
             Model.UphID = Entity.UphID;
             SelectedUph = Entity.Uph.Name;
 
-            Model.nama_gmps = Entity.nama_gmps;
-            await GetNamaGmps();
+            Model.mekanismes = Entity.mekanismes;
+            Model.lain = Entity.lain;
+            Model.jangkauan = Entity.jangkauan;
+            Model.jml_penjualan = Entity.jml_penjualan;
+            Model.omset = Entity.omset;
+
+            await GetUphIDandNames();
+
+            GetMekanismes();
+            GetJangkauanPemasarans();
 
             IsLoading = false;
             StateHasChanged();
         }
 
-        private void HandleNamaGmp(bool condition, int index)
+        private void HandleMekanisme(bool condition, int index)
         {
-            Gmps[index].IsGmpChoosen = condition;
+            Mekanismes[index].IsChoosen = condition;
 
             if (condition)
             {
-                Model.nama_gmps.Add(Gmps[index].NamaGmp);
+                Model.mekanismes.Add(Mekanismes[index].Name);
             }
             else
             {
-                Model.nama_gmps.Remove(Gmps[index].NamaGmp);
+                Model.mekanismes.Remove(Mekanismes[index].Name);
+
+                if (Mekanismes[index].Name == "Lainya")
+                {
+                    Model.lain = null;
+                }
             }
         }
 
-        private async Task GetNamaGmps()
+        private void GetMekanismes()
         {
-            var result = Task.FromResult(await Http.GetFromJsonAsync<ApiResponse<GetParameterJawabansByIndikatorNameResponse>>
-                ($"{Constants.URI.ParameterJawaban.ByIndikatorName}" +
-                $"{Constants.ParameterIndikator.ParameterIndikatorName.KesesuaianDenganGMP}")).Result.Result.ParameterJawabans.Select(x => x.Name).ToList();
+            foreach (var item in Constants.UphPasar.Mekanismes)
+                Mekanismes.Add(new Mekanisme { IsChoosen = false, Name = item });
 
-            foreach (var item in result)
-                Gmps.Add(new Gmp { IsGmpChoosen = false, NamaGmp = item });
-
-            if (Model.nama_gmps.Count() > 0)
-                foreach (var item in Gmps)
-                    if (Model.nama_gmps.Any(x => x == item.NamaGmp))
-                        item.IsGmpChoosen = true;
+            if (Model.mekanismes.Count() > 0)
+            {
+                foreach (var item in Mekanismes)
+                    if (Model.mekanismes.Any(x => x == item.Name))
+                        item.IsChoosen = true;
+            }
         }
 
-        private async Task GetUphIDandNames()
-            => UphIDandNames = Task.FromResult(await Http.GetFromJsonAsync<ApiResponse<GetUphIDandNamesResponse>>(Constants.URI.Uph.UphIDandNames)).Result.Result.UphIDandNames.ToList();
+        private void GetJangkauanPemasarans()
+        {
+            foreach (var item in Constants.UphPasar.JangkauanPemasarans)
+                JangkauanPemasarans.Add(item);
+        }
+
+        private async Task GetUphIDandNames() =>
+            UphIDandNames = Task.FromResult(await Http.GetFromJsonAsync<ApiResponse<GetUphIDandNamesResponse>>(Constants.URI.Uph.UphIDandNames)).Result.Result.UphIDandNames.ToList();
 
         private async Task HandleSubmit()
         {
@@ -139,21 +160,25 @@ namespace SiUpin.WebUI.Pages.Admin.Uph.UphGmp
             {
                 IsLoadingCircle = true;
 
-                var client = await Http.PutAsJsonAsync(Constants.URI.UphGmp.Base, new UpdateUphGmpRequest
+                var client = await Http.PutAsJsonAsync(Constants.URI.UphPasar.Base, new CreateUphPasarRequest
                 {
-                    UphGmpID = Model.UphGmpID,
+                    UphPasarID = Model.UphPasarID,
                     UphID = Model.UphID,
-
-                    nama_gmps = Model.nama_gmps,
+                    mekanismes = Model.mekanismes,
+                    lain = Model.lain,
+                    jangkauan = Model.jangkauan,
+                    jml_penjualan = Model.jml_penjualan,
+                    omset = Model.omset
                 });
 
-                Response = Task.FromResult(await client.Content.ReadFromJsonAsync<ApiResponse<UpdateUphGmpResponse>>()).Result;
+                Response = Task.FromResult(await client.Content.ReadFromJsonAsync<ApiResponse<CreateUphPasarResponse>>()).Result;
 
                 if (!Response.Status.IsError)
                 {
                     IsLoadingCircle = false;
 
                     await DialogIsOpenStatus.InvokeAsync(false);
+
                     await OnSuccessSubmit.InvokeAsync(true);
 
                     StateHasChanged();
@@ -173,10 +198,10 @@ namespace SiUpin.WebUI.Pages.Admin.Uph.UphGmp
             }
         }
 
-        public class Gmp
+        public class Mekanisme
         {
-            public string NamaGmp { get; set; }
-            public bool IsGmpChoosen { get; set; }
+            public string Name { get; set; }
+            public bool IsChoosen { get; set; }
         }
     }
 }

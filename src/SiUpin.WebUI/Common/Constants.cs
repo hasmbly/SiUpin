@@ -57,6 +57,8 @@ namespace SiUpin.WebUI.Common
                 public static readonly string Delete = $"{Base}/Delete";
 
                 public static readonly string CountByProvince = $"{Base}/countByProvince";
+                public static readonly string CountByJenisKomoditi = $"{Base}/countByJenisKomoditi";
+                public static readonly string CountByJenisTernak = $"{Base}/countByJenisTernak";
                 public static readonly string UphIDandNames = $"{Base}/uphIDandNames";
 
                 public static readonly string Cluster = $"{Base}/cluster/";

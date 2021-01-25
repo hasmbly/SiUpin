@@ -1,6 +1,124 @@
 ﻿@page "/admin"
 @attribute [Authorize]
 
-@using SiUpin.Pages.Cluster.Component
+@inject HttpClient Http
 
-<UphClusterGrades />
+@using SiUpin.Shared.Uphs.Queries.GetCountUphByJenisKomoditi
+@using SiUpin.Shared.Uphs.Queries.GetCountUphByJenisTernak
+@using SiUpin.Shared.Common.ApiEnvelopes
+@using SiUpin.Pages.Cluster.Component
+@using Syncfusion.Blazor.Charts
+
+<div class="mat-layout-grid">
+    <div class="mat-layout-grid-inner" style="min-height: 100px;">
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-middle mat-layout-grid-cell-span-6">
+            @if (JenisKomoditis != null)
+            {
+                <SfChart Title="Jenis Komoditi">
+                    <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category" />
+
+                    <ChartTooltipSettings Enable="true"></ChartTooltipSettings>
+
+                    <ChartSeriesCollection>
+                        <ChartSeries DataSource="@DataJenisKomoditis" XName="X" YName="YValue" PointColorMapping="Color" Type="ChartSeriesType.Column">
+                        </ChartSeries>
+                    </ChartSeriesCollection>
+                </SfChart>
+            }
+            else
+            {
+                <MatProgressBar Indeterminate="true"></MatProgressBar>
+            }
+        </div>
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-align-middle mat-layout-grid-cell-span-6">
+            @if (JenisTernaks != null)
+            {
+                <SfAccumulationChart Title="Jenis Ternak">
+                    <AccumulationChartSeriesCollection>
+                        <AccumulationChartSeries DataSource="@DataJenisTernaks" XName="X" YName="YValue"
+                                                 Name="Jenis Ternak">
+                        </AccumulationChartSeries>
+                    </AccumulationChartSeriesCollection>
+
+                    <AccumulationChartLegendSettings Visible="true"></AccumulationChartLegendSettings>
+                    <AccumulationChartTooltipSettings Enable="true"></AccumulationChartTooltipSettings>
+                </SfAccumulationChart>
+            }
+            else
+            {
+                <MatProgressBar Indeterminate="true"></MatProgressBar>
+            }
+        </div>
+
+        <UphClusterGrades />
+    </div>
+</div>
+
+@code
+{
+    public class DataJenisKomoditi
+    {
+        public string X { get; set; }
+        public double YValue { get; set; }
+        public string Color { get; set; }
+    }
+
+    public class DataJenisTernak
+    {
+        public string X { get; set; }
+        public double YValue { get; set; }
+    }
+
+    private ApiResponse<GetCountUphByJenisKomoditiResponse> JenisKomoditis;
+    private ApiResponse<GetCountUphByJenisTernakResponse> JenisTernaks;
+
+    public List<DataJenisKomoditi> DataJenisKomoditis = new List<DataJenisKomoditi>();
+    public List<DataJenisTernak> DataJenisTernaks = new List<DataJenisTernak>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetUphByJenisKomoditi();
+        await GetUphByJenisTernak();
+    }
+
+    private async Task GetUphByJenisKomoditi()
+    {
+        JenisKomoditis = await Http.GetFromJsonAsync<ApiResponse<GetCountUphByJenisKomoditiResponse>>(Constants.URI.Uph.CountByJenisKomoditi);
+
+        if (!JenisKomoditis.Status.IsError)
+        {
+            if (JenisKomoditis.Result != null)
+            {
+                foreach (var item in JenisKomoditis.Result.UphByJenisKomoditis)
+                {
+                    DataJenisKomoditis.Add(new DataJenisKomoditi
+                    {
+                        X = item.Name,
+                        YValue = item.TotalUph,
+                        Color = item.Color
+                    });
+                }
+            }
+        }
+    }
+
+    private async Task GetUphByJenisTernak()
+    {
+        JenisTernaks = await Http.GetFromJsonAsync<ApiResponse<GetCountUphByJenisTernakResponse>>(Constants.URI.Uph.CountByJenisTernak);
+
+        if (!JenisTernaks.Status.IsError)
+        {
+            if (JenisTernaks.Result != null)
+            {
+                foreach (var item in JenisTernaks.Result.UphByJenisTernaks)
+                {
+                    DataJenisTernaks.Add(new DataJenisTernak
+                    {
+                        X = item.Name,
+                        YValue = item.Total
+                    });
+                }
+            }
+        }
+    }
+}

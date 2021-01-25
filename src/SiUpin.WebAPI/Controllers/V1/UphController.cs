@@ -7,6 +7,8 @@ using SiUpin.Shared.Uphs.Command.CreateUph;
 using SiUpin.Shared.Uphs.Command.DeleteUph;
 using SiUpin.Shared.Uphs.Command.UpdateUph;
 using SiUpin.Shared.Uphs.Queries.GetAllUph;
+using SiUpin.Shared.Uphs.Queries.GetCountUphByJenisKomoditi;
+using SiUpin.Shared.Uphs.Queries.GetCountUphByJenisTernak;
 using SiUpin.Shared.Uphs.Queries.GetCountUphByProvince;
 using SiUpin.Shared.Uphs.Queries.GetUph;
 using SiUpin.Shared.Uphs.Queries.GetUphAndProduk;
@@ -39,6 +41,34 @@ namespace SiUpin.WebAPI.Controllers.V1
             try
             {
                 return Ok(new Success(await Mediator.Send(new GetCountUphByProvinceRequest()), "Successfully"));
+            }
+            catch (Exception exception)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, new InternalServerError(exception.Message));
+            }
+        }
+
+        [AllowAnonymous]
+        [HttpGet("countByJenisKomoditi")]
+        public async Task<IActionResult> CountByJenisKomoditi()
+        {
+            try
+            {
+                return Ok(new Success(await Mediator.Send(new GetCountUphByJenisKomoditiRequest()), "Successfully"));
+            }
+            catch (Exception exception)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, new InternalServerError(exception.Message));
+            }
+        }
+
+        [AllowAnonymous]
+        [HttpGet("countByJenisTernak")]
+        public async Task<IActionResult> CountByJenisTernak()
+        {
+            try
+            {
+                return Ok(new Success(await Mediator.Send(new GetCountUphByJenisTernakRequest()), "Successfully"));
             }
             catch (Exception exception)
             {

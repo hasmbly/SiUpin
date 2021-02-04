@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SiUpin.Shared.Common
 {
@@ -55,6 +57,9 @@ namespace SiUpin.Shared.Common
                 public static readonly string Delete = $"{Base}/Delete";
 
                 public static readonly string CountByProvince = $"{Base}/countByProvince";
+                public static readonly string CountByJenisKomoditi = $"{Base}/countByJenisKomoditi";
+                public static readonly string CountByJenisTernak = $"{Base}/countByJenisTernak";
+                public static readonly string UphIDandNames = $"{Base}/uphIDandNames";
 
                 public static readonly string Cluster = $"{Base}/cluster/";
                 public static readonly string ClusterPaginate = $"{Base}/cluster/paginate";
@@ -77,6 +82,7 @@ namespace SiUpin.Shared.Common
                 public static readonly string Base = $"{BaseAPI}/UphBahanBaku";
 
                 public static readonly string Register = $"{Base}/register";
+                public static readonly string Delete = $"{Base}/delete";
                 public static readonly string Paginate = $"{Base}/paginate";
             }
 
@@ -85,6 +91,7 @@ namespace SiUpin.Shared.Common
                 public static readonly string Base = $"{BaseAPI}/UphSarana";
 
                 public static readonly string Register = $"{Base}/register";
+                public static readonly string Delete = $"{Base}/delete";
                 public static readonly string Paginate = $"{Base}/paginate";
             }
 
@@ -93,6 +100,7 @@ namespace SiUpin.Shared.Common
                 public static readonly string Base = $"{BaseAPI}/UphGmp";
 
                 public static readonly string Register = $"{Base}/register";
+                public static readonly string Delete = $"{Base}/delete";
                 public static readonly string Paginate = $"{Base}/paginate";
             }
 
@@ -101,7 +109,10 @@ namespace SiUpin.Shared.Common
                 public static readonly string Base = $"{BaseAPI}/UphMitra";
 
                 public static readonly string Register = $"{Base}/register";
+                public static readonly string Delete = $"{Base}/delete";
                 public static readonly string Paginate = $"{Base}/paginate";
+
+                public static readonly string ClusterGrade = $"{Base}/cluster/grade";
             }
 
             public static class UphPasar
@@ -109,6 +120,7 @@ namespace SiUpin.Shared.Common
                 public static readonly string Base = $"{BaseAPI}/UphPasar";
 
                 public static readonly string Register = $"{Base}/register";
+                public static readonly string Delete = $"{Base}/delete";
                 public static readonly string Paginate = $"{Base}/paginate";
             }
 
@@ -117,6 +129,7 @@ namespace SiUpin.Shared.Common
                 public static readonly string Base = $"{BaseAPI}/UphProduksi";
 
                 public static readonly string Register = $"{Base}/register";
+                public static readonly string Delete = $"{Base}/delete";
                 public static readonly string Paginate = $"{Base}/paginate";
             }
 
@@ -125,6 +138,7 @@ namespace SiUpin.Shared.Common
                 public static readonly string Base = $"{BaseAPI}/UphSdm";
 
                 public static readonly string Register = $"{Base}/register";
+                public static readonly string Delete = $"{Base}/delete";
                 public static readonly string Paginate = $"{Base}/paginate";
             }
 
@@ -133,33 +147,48 @@ namespace SiUpin.Shared.Common
                 public static readonly string Base = $"{BaseAPI}/Berita";
 
                 public static readonly string Paginate = $"{Base}/paginate";
+                public static readonly string Register = $"{Base}/register";
+                public static readonly string Delete = $"{Base}/delete";
             }
 
             public static class Pesan
             {
                 public static readonly string Base = $"{BaseAPI}/Pesan";
 
-                public static readonly string GetAll = $"{Base}/GetAll";
+                public static readonly string Register = $"{Base}/register";
+                public static readonly string Delete = $"{Base}/delete";
             }
 
             public static class JenisKomoditi
             {
                 public static readonly string Base = $"{BaseAPI}/jenisKomoditi";
+
+                public static readonly string Register = $"{Base}/register";
+                public static readonly string Delete = $"{Base}/delete";
             }
 
             public static class JenisTernak
             {
                 public static readonly string Base = $"{BaseAPI}/jenisTernak";
+
+                public static readonly string Register = $"{Base}/register";
+                public static readonly string Delete = $"{Base}/delete";
             }
 
             public static class ProdukOlahan
             {
                 public static readonly string Base = $"{BaseAPI}/ProdukOlahan";
+
+                public static readonly string Register = $"{Base}/register";
+                public static readonly string Delete = $"{Base}/delete";
             }
 
             public static class Satuan
             {
                 public static readonly string Base = $"{BaseAPI}/Satuan";
+
+                public static readonly string Register = $"{Base}/register";
+                public static readonly string Delete = $"{Base}/delete";
             }
 
             public static class ParameterJawaban
@@ -198,6 +227,95 @@ namespace SiUpin.Shared.Common
             public const string Limbah = "Limbah";
         }
 
+        public static class ParameterIndikator
+        {
+            public static class ParameterIndikatorName
+            {
+                public const string AdministrasiKegiatanDanKeuangan = "Administrasi kegiatan dan keuangan";
+                public const string KesesuaianDenganGMP = "Kesesuaian dengan GMP";
+                public const string Bermitra = "Bermitra";
+                public const string Sertifikat = "Sertifikat";
+                public const string JumlahHariProduksi = "Jumlah hari produksi";
+                public const string StatusUPH = "Status UPH";
+                public const string MoU = "MoU";
+                public const string IzinEdar = "Izin edar";
+                public const string LembagaYangBermitra = "Lembaga yang bermitra";
+                public const string SumberModal = "Sumber modal";
+                public const string StrukturPermodalan = "Struktur permodalan";
+                public const string BentukKelembagaan = "Bentuk kelembagaan";
+                public const string MekanismePemasaran = "Mekanisme pemasaran";
+                public const string RasioKapasitasTerpakaiTerhadapKapasitasTerpasang = "Rasio kapasitas terpakai terhadap kapasitas terpasang";
+                public const string JangkauanPemasaran = "Jangkauan Pemasaran";
+                public const string JenisKemitraan = "Jenis Kemitraan";
+                public const string BadanHukum = "Badan hukum";
+            }
+        }
+
+        public static class UphSdm
+        {
+            public static IList<string> SumberModals { get; set; } = new List<string>
+            {
+                "Bank",
+                "Koperasi",
+                "Non Bank",
+                "Perorangan",
+                "Keluarga",
+                "Lainya"
+            };
+
+            public static IList<string> SOPs { get; set; } = new List<string>
+            {
+                "Keamanan Air",
+                "Kondisi dan Kebersihan Permukaan Yang Kontak Dengan Bahan Pangan",
+                "Pencegahan Kontaminasi Silang",
+                "Menjaga Fasilitas Pencuci Tangan, Toilet dan Sanitasi Pekerja",
+                "Proteksi Dari Bahan Kontaminan",
+                "Pelabelan, Penyimpanan dan Pengunaan Bahan Toksin Yang Benar",
+                "Pengawasan Kondisi Kesehatan Personil Yang Dapat Menyebabkan Kontaminasi",
+                "Menghilangkan Hama Dari Unit Pengolahan"
+            };
+
+            public static IList<string> StrukturModals { get; set; } = new List<string>
+            {
+                "Modal Sendiri",
+                "Sebagian dari pihak lain",
+                "Sepenuhnya dari pihak lain",
+            };
+
+            public static IList<int> Tahuns { get; set; } = Enumerable.Range(1992, (DateTime.Now.Year - 1992) + 1).ToList();
+        }
+
+        public static class UphSarana
+        {
+            public static IList<string> AsalBantuans { get; set; } = new List<string>
+            {
+                "APBN",
+                "APBD"
+            };
+
+            public static IList<int> Tahuns { get; set; } = Enumerable.Range(1992, (DateTime.Now.Year - 1992) + 1).ToList();
+
+            public static IList<string> Alasans { get; set; } = new List<string>
+            {
+                "Kekurangan Bahan Baku",
+                "Rusak",
+                "Alat Tidak Seuai",
+                "Hilang",
+            };
+
+            public static IList<string> JenisMesins { get; set; } = new List<string>
+            {
+                "Mesin Utama",
+                "Mesin Pendukung"
+            };
+
+            public static IList<string> Status { get; set; } = new List<string>
+            {
+                "Beroperasi",
+                "Tidak Beroperasi"
+            };
+        }
+
         public static class UphBahanBaku
         {
             public static IList<string> AsalBahanBakus { get; set; } = new List<string>
@@ -207,40 +325,57 @@ namespace SiUpin.Shared.Common
             };
         }
 
-        public static class UphMitra
+        public static class UphProduksi
         {
-            public static IList<string> JenisKemitraans { get; set; } = new List<string>
+            public static IList<string> Sertifikats { get; set; } = new List<string>
             {
-                "Bahan baku",
-                "Sarana Prasarana",
-                "Peningkatan kompetensi",
-                "Promosi dan pemasaran",
-                "Fasilitasi",
-                "Manajemen Limbah"
+                "Organik",
+                "Halal",
+                "Sertifikat Penyuluhan",
+                "NKV",
+            };
+        }
+
+        public static class UphPasar
+        {
+            public static IList<string> Mekanismes { get; set; } = new List<string>
+            {
+                "Langsung ke konsumen",
+                "Pedagang Perantara",
+                "Online",
+                "Lainya",
             };
 
-            public static IList<string> Perjanjians { get; set; } = new List<string>
+            public static IList<string> JangkauanPemasarans { get; set; } = new List<string>
             {
-                "Ada",
-                "Tidak Ada"
+                "DN Dalam Kecamatan",
+                "DN Dalam Kabupaten",
+                "DN Dalam Provinsi",
+                "DN Antar Provinsi",
+                "Luar Negeri/Ekspor",
+            };
+        }
+
+        public static class UphMitra
+        {
+            public static IList<string> DetailSaranas { get; set; } = new List<string>
+            {
+                "Bangunan / Rumah Produksi / Outlet Pemasaran",
+                "Alat Pengolahan dan Produksi",
+                "Alat Pengemasan",
+                "Lainya"
             };
 
             public static IList<string> Bermitras { get; set; } = new List<string>
             {
                 "Ya",
-                "Tidak"
+                "Tidak",
             };
 
-            public static IList<string> Status { get; set; } = new List<string>
-            {
-                "Aktif",
-                "Tidak Aktif"
-            };
-
-            public static IList<string> Kemitraans { get; set; } = new List<string>
+            public static IList<string> SasaranKemitraans { get; set; } = new List<string>
             {
                 "Kemitraan Pengolahan",
-                "Kemitraan Non Pengolahan"
+                "Kemitraan Non Pengolahan",
             };
 
             public static IList<string> JenisUsahas { get; set; } = new List<string>
@@ -248,16 +383,69 @@ namespace SiUpin.Shared.Common
                 "IPS",
                 "Importir",
                 "Industri Olahan Lain",
-                "Peternak"
+                "Peternak",
             };
 
-            public static IList<string> Lembagas { get; set; } = new List<string>
+            public static IList<string> LembagaBermitras { get; set; } = new List<string>
             {
                 "BUMN",
                 "Swasta",
                 "Perbankan",
                 "Yayasan/LSM",
-                "Lainya"
+                "Lainya",
+            };
+
+            public static IList<string> JenisMitras { get; set; } = new List<string>
+            {
+                "Bahan baku",
+                "Sarana Prasarana",
+                "Peningkatan kompetensi",
+                "Promosi dan pemasaran",
+                "Fasilitasi",
+                "Manajemen Limbah",
+            };
+
+            public static IList<string> DetailPromosis { get; set; } = new List<string>
+            {
+                "Media",
+                "Pameran",
+                "Campaign",
+                "Gerakan Minum Susu",
+                "Kontrak Pemasaran",
+                "Rebranding Produk"
+            };
+
+            public static IList<string> DetailFasilitasis { get; set; } = new List<string>
+            {
+                "MD",
+                "Halal",
+                "NKV",
+                "PIRT",
+            };
+
+            public static IList<string> DetailKompetensis { get; set; } = new List<string>
+            {
+                "Lebih Dari 2 Bimtek",
+                "2 Bimtek",
+                "1 Kali Bimtek",
+            };
+
+            public static IList<string> DetailLimbahs { get; set; } = new List<string>
+            {
+                "Melakukan Manajemen Limbah",
+                "Tidak Melakukan Manajemen Limbah",
+            };
+
+            public static IList<string> Perjanjians { get; set; } = new List<string>
+            {
+                "Ada",
+                "Tidak",
+            };
+
+            public static IList<string> Status { get; set; } = new List<string>
+            {
+                "Aktif",
+                "Tidak Aktif",
             };
         }
 
@@ -270,20 +458,12 @@ namespace SiUpin.Shared.Common
         public static class StorageKey
         {
             public const string Token = "Token";
+            public const string UserID = "UserID";
         }
 
         public static class AuthenticationType
         {
             public const string ServerAuthentication = "ServerAuthentication";
-        }
-
-        public static class File
-        {
-            public static class EntityType
-            {
-                public const string UPH_PRODUK = "UPH_PRODUK";
-                public const string BERITA = "BERITA";
-            }
         }
     }
 }

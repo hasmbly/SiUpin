@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using SiUpin.Application.Common.Interfaces;
-using SiUpin.Shared.Common;
 using SiUpin.Shared.Constants;
 using SiUpin.Shared.Uphs.Queries.GetUphAndProduk;
+using static SiUpin.Shared.Common.Constants;
 
 namespace SiUpin.Application.Uphs.Queries.GetUphAndProduk
 {
@@ -43,7 +43,7 @@ namespace SiUpin.Application.Uphs.Queries.GetUphAndProduk
 
                 var files = await _context.Files
                   .AsNoTracking()
-                  .Where(x => x.EntityType == Constants.File.EntityType.UPH_PRODUK && !x.Name.Contains(".docx") &&
+                  .Where(x => x.EntityType == FileEntityType.UphProduk && !x.Name.Contains(".docx") &&
                     !x.Name.Contains(".doc") && !x.Name.Contains(".pdf"))
                   .ToListAsync(cancellationToken);
 

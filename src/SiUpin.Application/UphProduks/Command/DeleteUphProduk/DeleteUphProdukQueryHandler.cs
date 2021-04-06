@@ -4,9 +4,9 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using SiUpin.Application.Common.Interfaces;
-using SiUpin.Shared.Common;
 using SiUpin.Shared.Files.Commands.DeleteFile;
 using SiUpin.Shared.UphProduks.Command.DeleteUphProduk;
+using static SiUpin.Shared.Common.Constants;
 
 namespace SiUpin.Application.UphProduks.Commands.DeleteUphProduk
 {
@@ -35,7 +35,7 @@ namespace SiUpin.Application.UphProduks.Commands.DeleteUphProduk
                     {
                         // delete file uph produk
                         var file = await _context.Files.AsNoTracking()
-                            .Where(x => x.EntityID == entity.UphProdukID && x.EntityType == Constants.File.EntityType.UPH_PRODUK)
+                            .Where(x => x.EntityID == entity.UphProdukID && x.EntityType == FileEntityType.UphProduk)
                             .FirstOrDefaultAsync(cancellationToken);
 
                         await _mediator.Send(new DeleteFileRequest { EntityID = file.EntityID, EntityType = file.EntityType });

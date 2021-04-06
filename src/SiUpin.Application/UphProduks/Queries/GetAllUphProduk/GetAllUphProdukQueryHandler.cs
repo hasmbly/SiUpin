@@ -7,10 +7,10 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using SiUpin.Application.Common.Interfaces;
 using SiUpin.Domain.Entities;
-using SiUpin.Shared.Common;
 using SiUpin.Shared.Common.Pagination;
 using SiUpin.Shared.Constants;
 using SiUpin.Shared.UphProduks.Queries.GetAllUphProduk;
+using static SiUpin.Shared.Common.Constants;
 
 namespace SiUpin.Application.Uphs.Queries.GetAllUphProduk
 {
@@ -32,7 +32,7 @@ namespace SiUpin.Application.Uphs.Queries.GetAllUphProduk
                 List<UphProduk> records;
                 List<File> files = await _context.Files
                     .AsNoTracking()
-                    .Where(x => x.EntityType == Constants.File.EntityType.UPH_PRODUK && !x.Name.Contains(".docx"))
+                    .Where(x => x.EntityType == FileEntityType.UphProduk && !x.Name.Contains(".docx"))
                     .ToListAsync(cancellationToken);
 
                 var filesUph = files.Select(s => s.EntityID);

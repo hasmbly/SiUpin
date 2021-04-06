@@ -4,8 +4,8 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using SiUpin.Application.Common.Interfaces;
 using SiUpin.Shared.Beritas.Commands.DeleteBerita;
-using SiUpin.Shared.Common;
 using SiUpin.Shared.Files.Commands.DeleteFile;
+using static SiUpin.Shared.Common.Constants;
 
 namespace SiUpin.Application.Beritas.Commands
 {
@@ -27,7 +27,7 @@ namespace SiUpin.Application.Beritas.Commands
             var entity = await _context.Beritas.FirstOrDefaultAsync(x => x.BeritaID == request.BeritaID, cancellationToken);
 
             var file = await _context.Files.AsNoTracking()
-                .FirstOrDefaultAsync(x => x.EntityID == entity.BeritaID && x.EntityType == Constants.File.EntityType.BERITA, cancellationToken);
+                .FirstOrDefaultAsync(x => x.EntityID == entity.BeritaID && x.EntityType == FileEntityType.Berita, cancellationToken);
 
             if (file != null)
             {

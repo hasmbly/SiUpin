@@ -8,8 +8,8 @@ using SiUpin.Application.Common.Interfaces;
 using SiUpin.Domain.Entities;
 using SiUpin.Shared.Beritas.Common;
 using SiUpin.Shared.Beritas.Queries.GetBeritas;
-using SiUpin.Shared.Common;
 using SiUpin.Shared.Common.Pagination;
+using static SiUpin.Shared.Common.Constants;
 
 namespace SiUpin.Application.Beritas.Queries.GetBeritas
 {
@@ -40,7 +40,7 @@ namespace SiUpin.Application.Beritas.Queries.GetBeritas
 
                 totalRecords = _context.Beritas.AsNoTracking().Count(x => x.Title.Contains(request.FilterByName ?? ""));
 
-                files = await _context.Files.Where(x => x.EntityType == Constants.File.EntityType.BERITA).ToListAsync(cancellationToken);
+                files = await _context.Files.Where(x => x.EntityType == FileEntityType.Berita).ToListAsync(cancellationToken);
 
                 List<BeritaDTO> listOfDTO = new List<BeritaDTO>();
 

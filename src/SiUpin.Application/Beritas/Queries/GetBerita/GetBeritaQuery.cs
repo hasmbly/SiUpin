@@ -4,7 +4,7 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using SiUpin.Application.Common.Interfaces;
 using SiUpin.Shared.Beritas.Queries.GetBerita;
-using SiUpin.Shared.Common;
+using static SiUpin.Shared.Common.Constants;
 
 namespace SiUpin.Application.Beritas.Queries.GetBerita
 {
@@ -25,7 +25,7 @@ namespace SiUpin.Application.Beritas.Queries.GetBerita
 
                 var file = await _context.Files
                     .AsNoTracking()
-                    .FirstOrDefaultAsync(x => x.EntityID == record.BeritaID && x.EntityType == Constants.File.EntityType.BERITA, cancellationToken);
+                    .FirstOrDefaultAsync(x => x.EntityID == record.BeritaID && x.EntityType == FileEntityType.Berita, cancellationToken);
 
                 string fileName = file != null && !string.IsNullOrEmpty(file.Name) ?
                     $"images/{file.Name}" : $"images/image_not_available.png";
